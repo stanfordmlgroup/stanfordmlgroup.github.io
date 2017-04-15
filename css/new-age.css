@@ -1,3 +1,7 @@
+#people {
+  background-color: #f5f5f5;
+}
+
 /*!
  * Start Bootstrap - New Age v3.3.7 (http://startbootstrap.com/template-overviews/new-age)
  * Copyright 2013-2016 Start Bootstrap
@@ -284,8 +288,8 @@ section.features .feature-item h3 {
 }
 section.features .feature-item i {
   font-size: 80px;
-  background: -webkit-linear-gradient(to left, #7b4397, #dc2430);
-  background: linear-gradient(to left, #7b4397, #dc2430);
+  background: -webkit-linear-gradient(to left, #5b9ae2, #244cdc);
+  background: linear-gradient(to left, #5b9ae2, #244cdc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -365,6 +369,11 @@ footer ul li a.active {
 .text-primary {
   color: #244cdc;
 }
+
+.text-secondary {
+  color: #5b9ae2;
+}
+
 .no-gutter > [class*='col-'] {
   padding-right: 0;
   padding-left: 0;
