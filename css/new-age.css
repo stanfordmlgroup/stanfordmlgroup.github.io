@@ -38,7 +38,7 @@ a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  color: #244cdc;
+  color: #a90531;
 }
 a:hover,
 a:focus {
@@ -82,7 +82,7 @@ p {
   font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
-  color: #244cdc;
+  color: #a90531;
 }
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
@@ -105,11 +105,11 @@ p {
 }
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus:hover {
-  color: #244cdc;
+  color: #a90531;
 }
 .navbar-default .nav > li.active > a,
 .navbar-default .nav > li.active > a:focus {
-  color: #244cdc !important;
+  color: #a90531 !important;
   background-color: transparent;
 }
 .navbar-default .nav > li.active > a:hover,
@@ -145,7 +145,7 @@ p {
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
-    color: #244cdc;
+    color: #a90531;
   }
   .navbar-default.affix .nav > li > a,
   .navbar-default.affix .nav > li > a:focus {
@@ -153,15 +153,15 @@ p {
   }
   .navbar-default.affix .nav > li > a:hover,
   .navbar-default.affix .nav > li > a:focus:hover {
-    color: #244cdc;
+    color: #a90531;
   }
 }
 #header {
-  background: url("../img/bg-pattern.png"), #5b9ae2;
+  background: #a90531;
   /* fallback for old browsers */
-  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #5b9ae2, #244cdc);
+  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #c50c3e, #a90531);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: url("../img/bg-pattern.png"), linear-gradient(to left, #5b9ae2, #244cdc);
+  background: url("../img/bg-pattern.png"), linear-gradient(to left, #c50c3e, #a90531);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
 }
@@ -190,8 +190,8 @@ section.features .feature-item {
 
 section.features .feature-item i {
   font-size: 80px;
-  background: -webkit-linear-gradient(to left, #5b9ae2, #244cdc);
-  background: linear-gradient(to left, #5b9ae2, #244cdc);
+  background: -webkit-linear-gradient(to left, #c50c3e, #a90531);
+  background: linear-gradient(to left, #c50c3e, #a90531);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -231,14 +231,14 @@ footer ul li a.active {
   text-decoration: none;
 }
 .bg-primary {
-  background: #246ed8;
+  background: #a90531;
 }
 .text-primary {
-  color: #244cdc;
+  color: #a90531;
 }
 
 .text-secondary {
-  color: #5b9ae2;
+  color: #c50c3e;
 }
 
 .no-gutter > [class*='col-'] {
@@ -255,8 +255,8 @@ footer ul li a.active {
 .btn-outline:active,
 .btn-outline.active {
   color: white;
-  background-color: #244cdc;
-  border-color: #244cdc;
+  background-color: #a90531;
+  border-color: #a90531;
 }
 .btn {
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
