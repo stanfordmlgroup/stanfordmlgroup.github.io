@@ -8,6 +8,16 @@
   letter-spacing: 2px;
 }
 
+.feature-item img {
+  width: 100%;
+  max-width: 200px; 
+  margin: 0px;
+}
+
+.feature-item > .fa {
+  font-size: 200px !important;
+}
+
 /*!
  * Start Bootstrap - New Age v3.3.7 (http://startbootstrap.com/template-overviews/new-age)
  * Copyright 2013-2016 Start Bootstrap
