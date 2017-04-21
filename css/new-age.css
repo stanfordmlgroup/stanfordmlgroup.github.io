@@ -10,12 +10,12 @@
 
 .feature-item img {
   width: 100%;
-  max-width: 200px; 
+  max-width: 150px;
   margin: 0px;
 }
 
-.feature-item > .fa {
-  font-size: 200px !important;
+.feature-item {
+  height: 220px; 
 }
 
 /*!
