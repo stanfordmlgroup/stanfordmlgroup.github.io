@@ -73,11 +73,13 @@ h6 {
   font-weight: 200;
   letter-spacing: 1px;
 }
-p {
+p, ul > li {
   font-size: 1.2em;
-  line-height: 1.5;
-  margin-bottom: 20px;
+  line-height: 2.4rem;
+  margin-bottom: 1rem;
 }
+
+
 .navbar-default {
   background-color: white;
   border-color: rgba(34, 34, 34, 0.05);
@@ -177,14 +179,14 @@ p {
 }
 
 section {
-  padding: 70px 0;
+  padding: 60px 0;
 }
 
-section.features .section-heading {
-  margin-bottom: 60px;
+.section-heading {
+  margin-bottom: 30px;
 }
 
-section.features .section-heading p {
+.section-heading p {
   margin-bottom: 0;
 }
 section.features .device-container,
@@ -216,7 +218,6 @@ footer {
   background-color: #222222;
   padding: 50px 0;
   color: rgba(255, 255, 255, 0.3);
-  text-align: center;
 }
 
 footer img {
@@ -242,6 +243,7 @@ footer ul li a.active {
 }
 .bg-primary {
   background: #a90531;
+  color: white;
 }
 .text-primary {
   color: #a90531;
