@@ -1,4 +1,4 @@
-(function (google) {
+(function (google, $) {
   google.charts.load('current', {'packages': ['bar']})
   google.charts.setOnLoadCallback(drawChart)
 
@@ -14,10 +14,11 @@
       bars: 'horizontal', // Required for Material Bar Charts.
       bar: { groupWidth: '50%' },
       hAxes: [{title: 'Score', viewWindow: {min: 0.5, max: 0.85}}],
-      height: 200,
+      height: $('#resultsChart').width() / 2,
+      legend: {position: 'left'},
       colors: ['#cfe2f3', '#fff1cc']
     }
     var chart = new google.charts.Bar(document.getElementById('resultsChart'))
     chart.draw(data, google.charts.Bar.convertOptions(options))
   }
-})(google)
+})(google, $)

@@ -1,5 +1,6 @@
 (function ($, d3) {
   'use strict'
+
   $.widget('.ecgChart', {
     options: {
       margin: {
@@ -8,8 +9,8 @@
         bottom: 1,
         left: 0
       },
-      height: 200,
-      width: 500,
+      height: $('.ecgChart').width() / 1.6,
+      width: $('.ecgChart').width(),
       xMin: 0,
       xMax: 3e3,
       xMajorTicks: 1e3,
