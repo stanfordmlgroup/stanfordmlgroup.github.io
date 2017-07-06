@@ -6,17 +6,18 @@ nav#mainNav.navbar.navbar-default.navbar-fixed-top
         span.sr-only Toggle navigation
         |  Menu 
         i.fa.fa-bars
-      a.navbar-brand.page-scroll(href='#page-top') Stanford ML Group
+      a.navbar-brand.page-scroll(href='/') Stanford ML Group
     // Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-right
-        li
-          a.page-scroll(href='#projects') Projects
-        li
-          a.page-scroll(href='#people') People
-        li
-          a.page-scroll(href='#volunteering') Volunteering
-        li
-          a.page-scroll(href='#contact') Contact
-    // /.navbar-collapse
-  // /.container-fluid
+      if index
+        ul.nav.navbar-nav.navbar-right
+          li
+            a.page-scroll(href='#projects') Projects
+          li
+            a.page-scroll(href='#people') People
+          li
+            a.page-scroll(href='#volunteering') Volunteering
+          li
+            a.page-scroll(href='#contact') Contact
+      else
+        block navbar
