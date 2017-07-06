@@ -1,23 +1,21 @@
 extends ../../layout
 
 block title
-  title Cardiologist-Level Arrhythmia Detection
+  title Cardiologist-Level Arrhythmia Detection With Convolutional Neural Networks
 
 block description
-  meta(name='description', content='something')
+  meta(name='description', content='Diagnosing arrhythmias from single-lead ECG signals better than a cardiologist.')
 
 block extralinks
   link(rel='stylesheet', type='text/css', href='/projects/ecg/css/ecg.css')
 
 block extrascripts
-  script(src='/js/new-age.js')
-  script(src='/projects/ecg/js/jquery.min.js')
   script(src='/projects/ecg/js/jquery-ui-widget.min.js')
   script(src='/projects/ecg/js/d3.min.js')
   script(src='/projects/ecg/js/data.js')
   script(src='/projects/ecg/js/ecgChart.js')
   script(src='/projects/ecg/js/draw.js')
-  script(src="https://www.gstatic.com/charts/loader.js")
+  script(src="/projects/ecg/js/gchart.js")
   script(src='/projects/ecg/js/resultsChart.js')
 
 block content
@@ -27,10 +25,30 @@ block content
         .col-lg-8
           h1#page-title Cardiologist-Level Arrhythmia Detection With Convolutional Neural Networks
           h2 Pranav Rajpurkar*, Awni Hannun*, Masoumeh Haghpanahi, Codie Bourn, and Andrew Ng
-  section#projects.features
+  section
     .container
-      .ecgChart
-  section.features
+      .row
+        .col-md-7
+          h2 We develop a model which can diagnose irregular heart rhythms, also known as arrhythmias, from single-lead ECG signals better than a cardiologist.
+          p Key to exceeding expert performance is a deep convolutional network which can map a sequence of ECG samples to a sequence of arrhythmia annotations along with a novel dataset two orders of magnitude larger than previous datasets of its kind.
+        .col-md-5
+          .ecgChart
+  section.gray
     .container
-      #resultsChart
+      .row
+        .col-md-7
+          img(src='/projects/ecg/img/ecg-nnet.svg', style='max-height:900px;')
+        .col-md-5
+          h2 We train a 34-layer convolutional neural network (CNN) to detect arrhythmias in arbitrary length ECG time-series.
+          p The network takes as input a time-series of raw ECG signal, and outputs a sequence of label predictions. The 30 second long ECG signal is sampled at 200Hz, and the model outputs a new prediction once every second. We arrive at an architecture which is 33 layers of convolution followed by a fully connected layer and a softmax. 
+          p To make the optimization of such a deep model tractable, we use residual connections and batch-normalization. The depth increases both the non-linearity of the computation as well as the size of the context window for each classification decision.
+          img(src='/projects/ecg/img/main-figure.svg', style='padding:10px 0px;')
+  section
+    .container
+      .row
+        .col-md-7
+          #resultsChart
+        .col-md-5
+          h2 The model outperforms the cardiologist average on both the Sequence and Set F1 metrics.
+          p The Sequence F1 measures the average overlap between the prediction and the ground truth sequence labels, while the Set F1 measures the average overlap between the unique class labels from the prediction and those from the ground truth.
   section
