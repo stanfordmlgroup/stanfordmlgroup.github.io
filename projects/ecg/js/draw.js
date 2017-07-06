@@ -3,17 +3,20 @@
   function randomIntFromInterval (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
-  var index = randomIntFromInterval(0, window.data.data.length - 1)
-  var _data = window.data.data[index].x
-  var _labels = window.data.data[index].y
-    // Create a data point generator.
+  // Create a data point generator.
   var getDataPoint = (function () {
+    var index, _data, _labels
     var _x = -1
-    var _max = _data.length
+    var _max = window.data.data[0].x.length
 
     return function () {
       _x = (_x + 1) % _max
-      return { x: Date.now(), y: _data[_x], z: _labels[_x]}
+      if (_x === 0) {
+        index = randomIntFromInterval(0, window.data.data.length - 1)
+        _data = window.data.data[index].x
+        _labels = window.data.data[index].y
+      }
+      return {x: Date.now(), y: _data[_x], z: _labels[_x]}
     }
   })()
 
