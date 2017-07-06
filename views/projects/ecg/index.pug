@@ -31,7 +31,7 @@ block content
         .col-md-7
           h2 We develop a model which can diagnose irregular heart rhythms, also known as arrhythmias, from single-lead ECG signals better than a cardiologist.
           p Key to exceeding expert performance is a deep convolutional network which can map a sequence of ECG samples to a sequence of arrhythmia annotations along with a novel dataset two orders of magnitude larger than previous datasets of its kind.
-          //-a.btn.btn-large.btn-default.disabled(href="#") Read our paper
+          //-a.btn.btn-lg.btn-default.disabled(href="#") Read the paper
         .col-md-5
           .ecgChart
   section.gray
@@ -65,8 +65,26 @@ block content
     .container
       .row
         .col-md-7
-          img(src='/projects/ecg/img/confusion.png', style="max-width: 600px;")
+          img(src='/projects/ecg/img/confusion.png')
         .col-md-5
           h2 Mistakes made by the model are understandable
           p One of the most common confusions is between Ectopic Atrial Rhythm (EAR) and the sinus rhythm (SINUS). The main distinguishing criteria for this rhythm is an irregular P wave. This can be subtle to detect especially when the P wave has a small amplitude or when noise is present in the signal.
           p Similarly, Supraventricular Tachycardia (SVT) and Atrial Fibrillation (AFIB) are often confused with Atrial Flutter (AFL) which is understandable given that they are all atrial arrhythmias. Idioventricular Rhythm (IVR) is sometimes mistaken as Ventricular Tachycardia (VT), which again makes sense given that the two only differ in heart-rate and are difficult to distinguish close to the 100 beats per minute delineation.
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h3 
+            | Given that more than 300 million ECGs are recorded annually, high-accuracy diagnosis from ECG can save expert clinicians and cardiologists considerable time and decrease the number of misdiagnoses. Furthermore, we hope that this technology coupled with low-cost ECG devices enables more widespread use of the ECG as a diagnostic tool in places where access to a cardiologist is difficult.
+          //-a.btn.btn-lg.btn-default(href="#") Read our paper
+  section.bg-primary
+    .container
+      .row
+        .col-md-12
+          h3
+            | If you have questions about our work,
+            | contact us at:
+          h4
+            code awni@cs.stanford.edu
+            |  and 
+            code pranavsr@cs.stanford.edu

@@ -6,6 +6,10 @@ img {
     display: block;
 }
 
+svg {
+    margin: 10px 0px;
+}
+
 .ecgChart{
     text-align: center;
     width: 100%;
