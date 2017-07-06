@@ -1,0 +1,184 @@
+extends layout
+
+block title
+  title Stanford Machine Learning Group
+
+block description
+  meta(name='description', content='Our mission is to significantly improve people\'s lives through our work in Artificial Intelligence')
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-8
+          h1#page-title Stanford Machine Learning Group
+          h2
+            | Our mission is to significantly improve people's lives through our work in Artificial Intelligence
+  section#projects.features
+    .container
+      .row
+        .col-lg-12.text-center
+          .section-heading
+            h1 Projects
+            p.text-muted We work on developing AI solutions for a variety of high-impact problems
+            hr
+      .row
+        .col-md-3
+          .feature-item
+            i.fa.fa-heartbeat.text-primary
+            h2 ECG | Healthcare
+            p.text-muted
+              | Developing and deploying learning systems that perform automatic arrythmia detection from ECG signals.
+        .col-md-3
+          .feature-item
+            i.fa.fa-medkit.text-primary
+            h2 EHR | Healthcare
+            p.text-muted
+              | Using Electronic Health Record Data for mortality prediction to direct palliative care resources.
+        .col-md-3
+          .feature-item
+            i.fa.fa-graduation-cap.text-primary
+            h2 NLP | Education
+            p.text-muted
+              | Designing natural language models to detect detect writing errors and provide feedback.
+        .col-md-3
+          .feature-item
+            i.fa.fa-shopping-cart.text-primary
+            h2 Retail
+            p.text-muted
+              | Predicting the optimal marketing mix and advertisement spend allocation for online retailers.
+  section#people.features
+    .container
+      .row
+        .col-lg-12.text-center
+          .section-heading
+            h1 People
+      .row
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/AndrewNg.jpg')
+            h3 Andrew Ng
+            h4 Professor
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/AnandAvati.jpg')
+            h3 Anand Avati
+            h4 PhD
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/AwniHannun.jpg')
+            h3 Awni Hannun
+            h4 PhD
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/PranavRajpurkar.jpg')
+            h3 Pranav Rajpukar
+            h4 PhD
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/SwatiDube.jpg')
+            h3 Swati Dube Batra
+            h4 Program Manager
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/ZiangXie.jpg')
+            h3 Ziang Xie
+            h4 PhD
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/SudnyaDiamos.jpg')
+            h3 Sudnya Diamos
+            h4 Visiting
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/DanZylberglejd.jpg')
+            h3 Dan Zylberglejd
+            h4 Masters
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/DillonLaird.jpg')
+            h3 Dillon Laird
+            h4 Masters
+        .col-sm-2.col-xs-6
+          .feature-item
+            img.img-circle(src='/img/headshots/JeremyIrvin.jpg')
+            h3 Jeremy Irvin
+            h4 Masters
+  section#volunteering
+    .container
+      .row
+        .col-lg-12.text-center
+          .section-heading
+            h1 Volunteering with us
+      .row
+        .col-md-10.col-md-offset-1
+          h2
+            | By working with our group, you will:
+          ul
+            li
+              | Work on important problems in areas such as healthcare and education, using AI.
+            li
+              | Build and deploy machine learning / deep learning algorithms and applications.
+          h2 Values
+          p
+            | Here are some values that we would like to see in you:
+          ul
+            li
+              strong Hard work
+              | : We expect you to have a strong work ethic. Many of us work evenings and weekends because we love our work and are passionate about the AI mission. We also value velocity, and like people that get things done quickly.
+            li
+              strong Flexibility
+              | : You should be willing to dive into different facets of a project. For example, besides developing machine learning algorithms, you may also need to work on data acquisition, conduct user interviews, or do frontend engineering. This may also require going outside your comfort zone, and learning to do new tasks in which you’re not an expert.
+            li
+              strong Learning
+              | : You should have a strong growth mindset, and want to learn continuously. This can involve reading books, taking coursework, talking to experts, or re-implementing research papers. We will also prioritize your learning and help point you in the right direction; but you need to put in the work to take advantage of this.
+            li
+              strong Teamwork
+              | : We work together in small teams. You are expected to support and collaborate with others; in turn you will also receive support from your teammates.
+          h2 Prerequisites
+          p
+            | You should have either a strong ML/AI background, or a strong software engineering background.
+          ul
+            li
+              strong ML/AI background
+              | : You have a solid background in probability and linear algebra, and have done well in AI/ML coursework. For example, Stanford students should have taken CS221 and/or CS229 before applying. Previous ML/AI research experience would be a plus but is not required.
+            li
+              strong Software engineering background
+              | : We also encourage engineers without much AI background who are interested in developing ML applications to apply. Applicants should have made significant contributions to software projects in the past, for example through developing software systems at a company or through significant open source contributions.
+          h2
+            | Applying
+          h3
+            | Stanford Students
+          ul
+            li
+              br
+              code ml-apply@cs.stanford.edu
+              | .
+            li
+              | We expect that students will commit 20 hours a week as a minimum. Students who complete successful research projects typically commit significantly more time than this.
+            li
+              | Outside of coursework, we expect this to be your primary academic activity.
+              | As it takes time to familiarize oneself with a research project and to make significant contributions, we expect that students will be involved for at least two quarters, with a strong preference for those who can potentially stay involved for the full school year.
+          h3
+            | Non-Stanford student Volunteers
+          ul
+            li
+              | Please email us at ml-apply@cs.stanford.edu with your resume, unofficial transcript if you are a current student or recent graduate, and two paragraphs on why you’d like to get involved. Due to a high number of applicants we may be unable to respond to individual emails.
+            li
+              | We expect that volunteers will be able to work on campus a minimum of 40 hours/week, though significantly more time than this is likely required to complete a successful project. This should be your primary work commitment.
+              | We may ask that you complete a MOOC or other coursework before joining the group.
+              | Volunteers must be available for at least 12 weeks of research, with a strong preference for volunteers who can potentially stay involved for longer.
+            li
+              | You must be currently living in the United States (or already be authorized and willing to move to the United States) and able to work on the Stanford University campus. We are not able to sponsor visas nor take on volunteers that want to work remotely.
+  section#contact.bg-primary
+    .container
+      .row
+        .col-lg-12.text-center
+          .section-heading
+            h1 Contact us
+      .row
+        .col-md-10.col-md-offset-1.text-center
+          h3
+            strong ml-apply@cs.stanford.edu
+            | .
+            |                         We hope you will join us in our mission to significantly improve people's lives through our work in AI!

@@ -1,0 +1,36 @@
+extends ../../layout
+
+block title
+  title Cardiologist-Level Arrhythmia Detection
+
+block description
+  meta(name='description', content='something')
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/ecg/css/ecg.css')
+
+block extrascripts
+  script(src='/js/new-age.js')
+  script(src='/projects/ecg/js/jquery.min.js')
+  script(src='/projects/ecg/js/jquery-ui-widget.min.js')
+  script(src='/projects/ecg/js/d3.min.js')
+  script(src='/projects/ecg/js/data.js')
+  script(src='/projects/ecg/js/ecgChart.js')
+  script(src='/projects/ecg/js/draw.js')
+  script(src="https://www.gstatic.com/charts/loader.js")
+  script(src='/projects/ecg/js/resultsChart.js')
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-8
+          h1#page-title Cardiologist-Level Arrhythmia Detection With Convolutional Neural Networks
+          h2 Pranav Rajpurkar, Awni Hannun, Masoumeh Haghpanahi, Codie Bourn, and Andrew Ng
+  section#projects.features
+    .container
+      .ecgChart
+  section.features
+    .container
+      #resultsChart
+  section

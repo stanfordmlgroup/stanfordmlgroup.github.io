@@ -1,0 +1,23 @@
+{
+  "name": "stanfordmlgroup.github.io",
+  "version": "1.0.0",
+  "description": "Website for the Stanford Machine Learning Group",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanfordmlgroup/stanfordmlgroup.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stanfordmlgroup/stanfordmlgroup.github.io/issues"
+  },
+  "homepage": "https://github.com/stanfordmlgroup/stanfordmlgroup.github.io#readme",
+  "dependencies": {
+    "gulp-pug": "^3.3.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
