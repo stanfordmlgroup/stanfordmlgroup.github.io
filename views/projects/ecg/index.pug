@@ -25,13 +25,14 @@ block content
         .col-lg-8
           h1#page-title Cardiologist-Level Arrhythmia Detection With Convolutional Neural Networks
           h2 Pranav Rajpurkar*, Awni Hannun*, Masoumeh Haghpanahi, Codie Bourn, and Andrew Ng
+          p A collaboration between Stanford University and iRhythm Technologies
   section
     .container
       .row
         .col-md-7
           h2 We develop a model which can diagnose irregular heart rhythms, also known as arrhythmias, from single-lead ECG signals better than a cardiologist.
           p Key to exceeding expert performance is a deep convolutional network which can map a sequence of ECG samples to a sequence of arrhythmia annotations along with a novel dataset two orders of magnitude larger than previous datasets of its kind.
-          //-a.btn.btn-lg.btn-default.disabled(href="#") Read the paper
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1707.01836") Read our paper
         .col-md-5
           .ecgChart
   section.gray
@@ -49,7 +50,7 @@ block content
       .row
         .col-md-7
           h2 We collect and annotate a dataset of 64,121 ECG records from 29,163 patients.
-          p The ECG data is sampled at a frequency of 200 Hz and is collected from a single-lead, noninvasive and  continuous monitoring device called the Zio Patch which has a wear period up to 14 days. Each ECG record in the training set is 30 seconds long and can contain more than one rhythm type. Each record is annotated by a clinical ECG expert: the expert highlights segments of the signal and marks it as corresponding to one of the 14 rhythm classes.
+          p The ECG data is sampled at a frequency of 200 Hz and is collected from a single-lead, noninvasive and  continuous monitoring device called the Zio Patch (iRhythm Technologies) which has a wear period up to 14 days. Each ECG record in the training set is 30 seconds long and can contain more than one rhythm type. Each record is annotated by a clinical ECG expert: the expert highlights segments of the signal and marks it as corresponding to one of the 14 rhythm classes.
           p We collect a test set of 336 records from 328 unique patients. For the test set, ground truth annotations for each record were obtained by a committee of three board-certified cardiologists; there are three committees responsible for different splits of the test set. The cardiologists discussed each individual record as a group and came to a consensus labeling. For each record in the test set we also collect 6 individual annotations from cardiologists not participating in the group. This is used to assess performance of the model compared to an individual cardiologist.
         .col-md-5
           img(src='/projects/ecg/img/ecg-annotation.svg')
@@ -76,7 +77,7 @@ block content
         .col-md-7
           h3 
             | Given that more than 300 million ECGs are recorded annually, high-accuracy diagnosis from ECG can save expert clinicians and cardiologists considerable time and decrease the number of misdiagnoses. Furthermore, we hope that this technology coupled with low-cost ECG devices enables more widespread use of the ECG as a diagnostic tool in places where access to a cardiologist is difficult.
-          //-a.btn.btn-lg.btn-default(href="#") Read our paper
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1707.01836#") Read our paper
   section.bg-primary
     .container
       .row
