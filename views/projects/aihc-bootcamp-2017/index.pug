@@ -45,7 +45,12 @@ block content
                   a(href="http://www.deeplearningbook.org/contents/optimization.html") Optimization for Training Deep Models
               h3
                 strong Exercise: Concept Distillation 
-                | Within each reading, find 3 concepts to explain in your own words (12 total). The idea of this exercise is to be able to distill and communicate a machine learning technique into its core idea. We encourage you to pick concepts which you find particularly tough to understand, and want to explore more in depth. You'll present 1 concept to the rest of the group in a one-minute blitz talk.
+                | Within each reading, find 3 concepts to explain in your own words (12 total). The idea of this exercise is to be able to distill and communicate a machine learning technique into its core idea. We encourage you to pick concepts which you find particularly tough to understand, and want to explore more in depth. You'll present 
+                strong 2 
+                | concepts to the rest of the group 
+                strong for one minute each.
+              h3
+                | Due: Thursday 10/5 at 1p
               p
                 | Example: "Bayesian statistics describes an approach to integrate uncertainty into our understanding of the world. Let's say we want to understand how a system works. As Bayesians, we consider all possible designs of the system and decide how probable each possible design of the system is based on our beliefs ("prior"). We also compute the probability of our observations ("evidence") for each possible design ("likelihood"). We can then combine  our prior knowledge and evidence to update our belief ("posterior") about the probabiltity of each design."
             li  
@@ -56,10 +61,14 @@ block content
               h3
                 strong Assignment: Patient Risk Prediction 
                 | You're tasked with predicting the 10-year probability of heart attack for the general population. You've looked at literature and found that logistic regression is the most widely used method for making predictions. You're trying to test your hypothesis that neural networks can improve upon the performance of a logistic regression approach.
+              h3
+                | Due: Saturday 10/5 at 11:59p
               p
                 | Simulate a population of 10000 people with varying risks (probabilities) of heart attack. Each patient has 10 attributes that are continuous in the domain (0, 1), with 5 attributes responsible for risk, and 5 attributes that do not affect risk. First, design a risk function that has 
                 a(href="https://en.wikipedia.org/wiki/Framingham_Risk_Score") clinical backing
                 |. Then train a logistic regression classifier and NN classifier on the outcomes (not the risks!) of a subset of 1000 people. How do the classifiers compare? What attributes of the risk function affect the differences in performance between the classifiers?
+              p 
+                em Check back for instructions on how to submit and deliverables!
   section.features
     .container
       .row
