@@ -43,62 +43,98 @@ block content
                   a(href="http://www.deeplearningbook.org/contents/regularization.html") Regularization for Deep Learning
                 li
                   a(href="http://www.deeplearningbook.org/contents/optimization.html") Optimization for Training Deep Models
-              h3
+              h4
                 strong Exercise: Concept Distillation 
                 | Within each reading, find 3 concepts to explain in your own words (12 total). The idea of this exercise is to be able to distill and communicate a machine learning technique into its core idea. We encourage you to pick concepts which you find particularly tough to understand, and want to explore more in depth. You'll present 
                 strong 2 
                 | concepts to the rest of the group 
                 strong for one minute each.
-              h3
-                | Due: Thursday 10/5 at 1p
-              p
+              h4 Due: Thursday 10/5 at 1p
+              h4
                 | Example: "Bayesian statistics describes an approach to integrate uncertainty into our understanding of the world. Let's say we want to understand how a system works. As Bayesians, we consider all possible designs of the system and decide how probable each possible design of the system is based on our beliefs ("prior"). We also compute the probability of our observations ("evidence") for each possible design ("likelihood"). We can then combine  our prior knowledge and evidence to update our belief ("posterior") about the probabiltity of each design."
             li  
               h3 Practice
               ul.list-inline
                 li
                   a(href="http://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html") 60 min PyTorch Blitz
-              h3
+              h4
                 strong Assignment: Patient Risk Prediction 
                 | You're tasked with predicting the 10-year probability of heart attack for the general population. You've looked at literature and found that logistic regression is the most widely used method for making predictions. You're trying to test your hypothesis that neural networks can improve upon the performance of a logistic regression approach.
-              h3
-                | Due: Saturday 10/7 at 11:59p
-              p
+              h4 Due: Saturday 10/7 at 11:59p
+              h4
                 | Simulate a population of 10000 people with varying risks (probabilities) of heart attack. Each patient has 10 attributes that are continuous in the domain (0, 1), with 5 attributes responsible for risk, and 5 attributes that do not affect risk. First, design a risk function that has 
                 a(href="https://en.wikipedia.org/wiki/Framingham_Risk_Score") clinical backing
                 |. Then train a logistic regression classifier and NN classifier on the outcomes (not the risks!) of a subset of 1000 people. How do the classifiers compare? What attributes of the risk function affect the differences in performance between the classifiers?
           h3 Week 2: Convolutional Neural Networks and Medical Imaging
           ul.list
             li
-              h3 Theory
+              h3 Convolutional Neural Networks
               ul.list-inline
                 li
-                  a(href="http://www.deeplearningbook.org//contents/convnets.html")
+                  a(href="http://cs231n.github.io/convolutional-networks/")
                     | Convolutional Neural Networks
+                li
+                  a(href="http://cs231n.github.io/transfer-learning/")
+                    | Transfer Learning
                 li
                   a(href="https://adeshpande3.github.io/adeshpande3.github.io/The-9-Deep-Learning-Papers-You-Need-To-Know-About.html")
                     | 9 CNN architectures to know about
                 li
                   a(href="https://rajpurkar.github.io/mlx/visualizing-cnns/")
                     | Visualizing CNNs
-              h3
-                | Exercise: Releasing Sunday 10/8
+              h4
+                strong Exercise: Transfer Learning 
+                | Follow the PyTorch 
+                a(href="http://pytorch.org/tutorials/beginner/data_loading_tutorial.html") Data Loading 
+                | tutorial, followed by the 
+                a(href="http://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html") Transfer learning 
+                | tutorial! Compare the train+test accuracy and training times of the default resnet18 model with alexnet, and with densenet161.
+              h4 Due: Tuesday 10/10 at 11:59p
             li
-              h3 Practice
+              h3 Medical Imaging
               ul.list-inline
+                h4 Chest X-rays
                 li
                   a(href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Wang_ChestX-ray8_Hospital-Scale_Chest_CVPR_2017_paper.pdf")
-                    | Detection of Thoracic Diseases
+                    | ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases
+                li
+                  a(href="https://www.cs.tau.ac.il/~wolf/papers/chest_miccai2015.pdf")
+                    | Chest Pathology Identification using Deep Feature Selection with Non-Medical Training
                 li
                   a(href="http://pubs.rsna.org/doi/full/10.1148/radiol.2017162326")
-                    | Classification of Pulmonary Tuberculosis
+                    | Deep Learning at Chest Radiography: Automated Classification of Pulmonary Tuberculosis by Using Convolutional Neural Networks
+                h4 Skeletal X-rays
                 li
-                  a(href="https://link.springer.com/article/10.1007/s10278-017-9955-8")
-                    | Assessment of Bone Age
-                li More Readings TBD
-              h3 Event: Talk on Assessment of Tumor Proliferation Thursday 1p!
-              h3
-                | Assignment: Releasing Sunday 10/8
+                  a(href="https://www.ncbi.nlm.nih.gov/pubmed/27816861")
+                    | Deep learning for automated skeletal bone age assessment in X-ray images
+                li
+                  a(href="https://arxiv.org/abs/1609.02469")
+                    | Quantifying Radiographic Knee Osteoarthritis Severity using Deep Convolutional Neural Networks
+                h4 Overview
+                li
+                  a(href="https://arxiv.org/pdf/1602.03409.pdf")
+                    | Deep Convolutional Neural Networks for Computer-Aided Detection: CNN Architectures, Dataset Characteristics and Transfer Learning
+                h4
+                  strong Exercise: Paper Distillation 
+                  | For 1 paper within each of the 3 subsections above, take notes on what the main contribution of the paper is, and explain the techniques the paper uses to tackle the problem in an intuitive way.
+                h4 Examples of paper distillations (though you don't have to worry about writing an intro; jump straight into the papers): 
+                  a(href="https://rajpurkar.github.io/mlx/chemo-cardiotoxicity/")
+                    | (1) 
+                  a(href="https://rajpurkar.github.io/mlx/visualizing-cnns/")
+                    | (2)
+                h4 Due: Thursday 10/12 at 1p
+            li
+              h3 Research Talk: Thursday 1p!
+              h4 Talk on 
+                a(href="https://arxiv.org/abs/1610.03467")
+                  | Deep Learning Assessment of Tumor Proliferation in Breast Cancer Histological Images
+                |  by Manan Shah
+            li
+              h3 Assignment: Deep Learning For Radiology
+              h4
+                | Stay Tuned -- Releasing Sunday 10/8
+              h4 Due: Thursday 10/14 at 11:59p
+                    
   section.features
     .container
       .row
