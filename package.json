@@ -18,6 +18,7 @@
   "homepage": "https://github.com/stanfordmlgroup/stanfordmlgroup.github.io#readme",
   "dependencies": {
     "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
     "gulp-pug": "^3.3.0",
     "gulp-watch": "^4.3.11"
   }
