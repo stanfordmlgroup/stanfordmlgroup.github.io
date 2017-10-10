@@ -117,11 +117,14 @@ block content
                 h4
                   strong Exercise: Paper Distillation 
                   | For 1 paper within each of the 3 subsections above, take notes on what the main contribution of the paper is, and explain the techniques the paper uses to tackle the problem in an intuitive way.
-                h4 Examples of paper distillations (though you don't have to worry about writing an intro; jump straight into the papers): 
+                h4 Examples of paper distillations we've written (though you don't have to worry about writing an intro; jump straight into the papers): 
                   a(href="https://rajpurkar.github.io/mlx/chemo-cardiotoxicity/")
                     | (1) 
                   a(href="https://rajpurkar.github.io/mlx/visualizing-cnns/")
                     | (2)
+                  | . Also useful resource: "Writing papers" section of Andrej Karpathy's 
+                  a(href="http://karpathy.github.io/2016/09/07/phd/") blogpost
+                  | .
                 h4 Due: Thursday 10/12 at 1p
             li
               h3 Research Talk: Thursday 1p!
@@ -130,14 +133,12 @@ block content
                   | Deep Learning Assessment of Tumor Proliferation in Breast Cancer Histological Images
                 |  by Manan Shah
             li
-              h3 Assignment: Deep Learning For Radiology
               h4
-                | Stay Tuned -- Releasing Sunday 10/8
-              h4 Read through the "Writing papers" section of Andrej Karpathy's 
-                a(href="http://karpathy.github.io/2016/09/07/phd/")
-                  | blog post.
-              h4 Due: Thursday 10/14 at 11:59p
-                    
+                strong Assignment: Deep Learning For Radiology
+                |  In this assignment, you're going to build a neural network that can classify common thoracic diseases. We're going to use a dataset of 100,000+ images released by the NIH 2 weeks ago! As a result, we'll be one of the first teams in the world building models on this, and have a fantastic opportunity to explore and push the cutting edge. You'll be responsible for replicating and extending ideas from the readings for the week on building convolutional neural networks, and employing transfer learning techniques, as explored in the transfer learning exercise.
+              h4 Your task is to build: 
+                | (1) A neural network architecture that doesn't use any transfer learning. You're not restricted in terms of the architectural choices, and
+                | (2) A neural network architecture that uses transfer learning. Make sure to try out both fine-tuning, and freezing layers for a variety of pretrained models. For fine tuning, you're not restricted to changing only the final layer -- you can add extra layers, or cut out internal layers of the pretrained models.
   section.features
     .container
       .row
