@@ -1,16 +1,32 @@
+img {
+    padding: 10px 0px;
+    max-width: 100%;
+    text-align: center;
+    margin: 0px auto;
+    display: block;
+}
+
+svg {
+    margin: 10px 0px;
+}
+
 .crossfade {
     position: relative;
 }
 
-.crossfade img {
+.crossfade img.bottom {
     position: absolute;
+}
+
+.crossfade img {
+	width: 100%;
 }
 
 .top {
 	animation-name: fade;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: infinite;
-	animation-duration: 1s;
+	animation-duration: 2s;
 	animation-direction: alternate;
 }
 
