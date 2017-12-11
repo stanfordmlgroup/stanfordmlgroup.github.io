@@ -32,12 +32,12 @@ block content
               a.btn.btn-lg.btn-default(href="") Download the data
           p.small Instructions to submit your model on the hidden test set coming soon.
         .col-md-6
-            img(src='/projects/mura/img/msk-dataset.svg')
+            img(src='/projects/mura/img/dataset.svg')
   section.gray
     .container-fluid
       .row
         .col-md-4
-            img(src='/projects/mura/img/msk-pipeline.svg', style='max-height:700px;')
+            img(src='/projects/mura/img/pipeline.svg', style='max-height:700px;')
         .col-md-5
           h2 On MURA, we develop a model that uses a 169-layer convolutional neural network to detect and localize abnormalities. 
           p The model takes as input one or more views for a study of an upper extremity. On each view, our 169-layer convolutional neural network predicts the probability of abnormality. We compute the overall probability of abnormality for the study by taking the arithmetic mean of the abnormality probabilities output by the network for each image. The model makes the binary prediction of abnormal if the probability of abnormality for the study is greater than 0.5.
