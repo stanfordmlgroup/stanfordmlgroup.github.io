@@ -1,0 +1,72 @@
+extends ../../layout
+
+block title
+    title MURA Dataset: Towards Radiologist-Level Abnormality Detection in Musculoskeletal Radiographs
+
+block description
+  meta(name='description', content='We introduce MURA, a large dataset of musculoskeletal radiographs containing 40,895 images from 14,982 studies, where each study is manually labeled by radiologists as either normal or abnormal.')
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/mura/css/index.css')
+
+block extrascripts
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-8
+          h1#page-title MURA Dataset: Towards Radiologist-Level Abnormality Detection in Musculoskeletal Radiographs
+          h2 Pranav Rajpurkar*, Jeremy Irvin*, Aarti Bagul, Daisy Ding, Tony Duan, Hershel Mehta, Brandon Yang, Kaylie Zhu, Dillon Laird, Robyn L. Ball, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Ng
+  section
+    .container
+      .row
+        .col-md-6
+          h2 We introduce MURA, a large dataset of musculoskeletal radiographs containing 40,895 images from 14,982 studies, where each study is manually labeled by radiologists as either normal or abnormal.
+          p Large, high-quality datasets have played a critical role in driving progress of fields with deep learning methods. To this end, we introduce one of the largest public radiographic image datasets.
+          p The MURA abnormality detection task is a binary classification task, where the input is an upper exremity radiograph study --- with each study containing one or more views (images) --- and the expected output is a binary label indicating whether the study is normal or abnormal respectively.
+          ul.list-unstyled
+            li
+              a.btn.btn-lg.btn-default(href="") Read our paper
+            li
+              a.btn.btn-lg.btn-default(href="") Download the data
+          p.small Instructions to submit your model on the hidden test set coming soon.
+        .col-md-6
+            img(src='/projects/mura/img/msk-dataset.svg')
+  section.gray
+    .container-fluid
+      .row
+        .col-md-4
+            img(src='/projects/mura/img/msk-pipeline.svg', style='max-height:700px;')
+        .col-md-5
+          h2 On MURA, we develop a model that uses a 169-layer convolutional neural network to detect and localize abnormalities. 
+          p The model takes as input one or more views for a study of an upper extremity. On each view, our 169-layer convolutional neural network predicts the probability of abnormality. We compute the overall probability of abnormality for the study by taking the arithmetic mean of the abnormality probabilities output by the network for each image. The model makes the binary prediction of abnormal if the probability of abnormality for the study is greater than 0.5.
+          p The network uses a Dense Convolutional Network architecture, which connects each layer to every other layer in a feed-forward fashion to make the optimization of deep networks tractable. We replace the final fully connected layer with one that has a single output, after which we apply a sigmoid nonlinearity. We use Class Activation Maps to visualize the parts of the radiograph which contribute most to the model's prediction of abnormality.
+        .col-md-3
+          img.center(src='/projects/mura/img/MSK-local2.svg')
+  section
+    .container
+      .row
+        .col-md-offset-2.col-md-8
+          img.center(src='/projects/mura/img/results.png')
+          h2 We find that our model achieves performance comparable to that of radiologists.
+          p To evaluate models robustly and to get an estimate of radiologist performance, we collected additional labels from board-certified Stanford radiologists on the test set, consisting of 209 musculoskeletal studies. To evaluate radiologists, we compute the F1 score of individual radiologist labels using the majority vote of the labels provided by the other 5 radiologists as ground truth. We similarly evaluate models, by computing the F1 score of the model predictions against each group of 5 radiologists, using the group's majority vote as the ground truth. We report the mean of the resulting 6 F1 scores of the radiologists and the model.
+          p On finger, hand, and wrist studies, our model's F1 scores are slightly higher than those of radiologists, but not statistically significantly so; on elbow, forearm, humerus, and shoulder studies our model's F1 scores are slightly lower than those of radiologists, but also not statistically significantly so.
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h3 
+            | Musculoskeletal conditions affect more than 1.7 billion people worldwide, and are the most common cause of severe, long-term pain and disability, with 30 million emergency department visits annually and increasing.
+            | We hope that our dataset can lead to significant advances in medical imaging technologies which can diagnose at the level of experts, towards improving healthcare access in parts of the world where access to skilled radiologists is limited.
+  section.bg-primary
+    .container
+      .row
+        .col-md-12
+          h3
+            | If you have questions about our work,
+            | contact us at:
+          h4
+            code pranavsr@cs.stanford.edu
+            |  and 
+            code jirvin16@cs.stanford.edu
