@@ -18,6 +18,19 @@
   height: 20em;
 }
 
+img {
+  padding: 10px 0px;
+  max-width: 100%;
+  text-align: center;
+  margin: 0px auto;
+  display: block;
+}
+
+svg {
+    margin: 10px 0px;
+}
+
+
 /*!
  * Start Bootstrap - New Age v3.3.7 (http://startbootstrap.com/template-overviews/new-age)
  * Copyright 2013-2016 Start Bootstrap
