@@ -10,12 +10,12 @@
 
 .feature-item img {
   width: 100%;
-  max-width: 200px;
+  max-width: 150px;
   margin: 0px auto;
 }
 
 .item-wrap {
-  height: 22em;
+  height: 20em;
 }
 
 /*!
@@ -179,11 +179,11 @@ p, ul > li {
 }
 
 section {
-  padding: 60px 0;
+  padding: 30px 0;
 }
 
 .section-heading {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .section-heading p {
@@ -197,7 +197,7 @@ section.features .feature-item {
 
 section.features .feature-item {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 section.features .feature-item i {
