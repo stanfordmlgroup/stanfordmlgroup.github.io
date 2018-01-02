@@ -9,13 +9,17 @@ gulp.task('index', function buildHTML () {
   .pipe(gulp.dest('.'))
 })
 
-gulp.task('projects', function buildHTML () {
-  return gulp.src('views/projects/**/*.pug')
-  .pipe(pug({}))
-  .pipe(gulp.dest('./projects/'))
+var folders = ['projects', 'programs']
+
+folders.forEach(function (folder) {
+  gulp.task(folder, function buildHTML () {
+    return gulp.src('views/' + folder + '/**/*.pug')
+    .pipe(pug({}))
+    .pipe(gulp.dest('./' + folder))
+  })
 })
 
-gulp.task('build', ['index', 'projects'])
+gulp.task('build', ['index', 'projects', 'programs'])
 
 gulp.task('watch_build', ['build'], function () {
   return gulp.watch('./views/**/*.pug', ['build', browserSync.reload])

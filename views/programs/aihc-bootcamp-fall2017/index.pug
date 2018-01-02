@@ -1,0 +1,59 @@
+extends ../../layout
+
+block title
+  title AIHC Bootcamp 2017
+
+block description
+  meta(name='description', content='Accelerated learning at the intersection of AI and healthcare.')
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/ecg/css/ecg.css')
+
+block extrascripts
+include ../../includes/profile
+
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-9
+          h1#page-title AIHC Bootcamp Fall 2017
+          h2 Artificial Intelligence and Healthcare Bootcamp
+          p Anand Avati, Pranav Rajpurkar, Jeremy Irvin, Nigam Shah and Andrew Ng
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h2 Description
+          p Over the course of Fall Quarter 2017, our bootcamp covers a large breadth of topics at the intersection of artificial intelligence and healthcare. Students take a dive into cutting-edge research with medical imaging and Electronic Health Record data, working closely with Ph.D. students and each other.
+  section.features
+    .container
+      .row
+        .col-lg-12.text-center
+          .section-heading
+            h1 Organizers
+            p.text-muted Bootcamp Led By
+      .row
+        +dp('Anand Avati', 'phd')
+        +dp('Pranav Rajpurkar', 'phd')
+        +dp('Jeremy Irvin', 'ms')
+        .col-md-2
+        +dp('Andrew Ng', 'prof')
+        +dp('Nigam Shah', 'prof')
+      .row
+        .col-lg-12.text-center
+          .section-heading
+            h1 Students
+      .row
+        +dp('Aarti Bagul', 'ms')
+        +dp('Brandon Yang', 'bs')
+        +dp('Daisy Ding', 'ms')
+        +dp('Hershel Mehta', 'ms')
+        +dp('Kaylie Zhu', 'bs')
+        +dp('Tony Duan', 'ms')
+  section.bg-primary
+    .container
+      .row
+        .col-md-12
+          

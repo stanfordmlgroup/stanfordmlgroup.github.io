@@ -6,6 +6,8 @@ block title
 block description
   meta(name='description', content='Our mission is to significantly improve people\'s lives through our work in Artificial Intelligence')
 
+include includes/profile
+
 block content
   section#header
     .container
@@ -72,111 +74,30 @@ block content
             h1 People
             p.text-muted Current Members
       .row
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/AndrewNg.jpg')
-            h3 Andrew Ng
-            h4 Professor
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/SwatiDube.jpg')
-            h3 Swati Dube Batra
-            h4 Program Manager
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/AnandAvati.jpg')
-            h3 Anand Avati
-            h4 PhD student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/AwniHannun.jpg')
-            h3 Awni Hannun
-            h4 PhD student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/PranavRajpurkar.jpg')
-            h3 Pranav Rajpurkar
-            h4 PhD student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/ZiangXie.jpg')
-            h3 Ziang Xie
-            h4 PhD student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/HaoSheng.jpg')
-            h3 Hao Sheng
-            h4 PhD student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/DillonLaird.jpg')
-            h3 Dillon Laird
-            h4 Masters student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/JeremyIrvin.jpg')
-            h3 Jeremy Irvin
-            h4 Masters student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/DaisyDing.jpg')
-            h3 Daisy Ding
-            h4 Masters student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/HershelMehta.jpg')
-            h3 Hershel Mehta
-            h4 Masters student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/AartiBagul.jpg')
-            h3 Aarti Bagul
-            h4 Masters student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/TonyDuan.jpg')
-            h3 Tony Duan
-            h4 Masters student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/GuillaumeGenthial.jpg')
-            h3 Guillaume Genthial
-            h4 Masters student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/BrandonYang.jpg')
-            h3 Brandon Yang
-            h4 Undergraduate student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/KaylieZhu.jpg')
-            h3 Kaylie Zhu
-            h4 Undergraduate student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/MananShah.jpg')
-            h3 Manan Shah
-            h4 Undergraduate student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/PrathikNaidu.jpg')
-            h3 Prathik Naidu
-            h4 Undergraduate student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/StanleyXie.jpg')
-            h3 Stanley Xie
-            h4 Undergraduate student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/MasonSwofford.jpg')
-            h3 Mason Swofford
-            h4 Undergraduate student
-        .col-sm-2.col-xs-6.item-wrap
-          .feature-item
-            img.img-circle(src='/img/headshots/WillHang.jpg')
-            h3 Will Hang
-            h4 Undergraduate student
+        +dp('Andrew Ng', 'prof')
+        +dp('Swati Dube Batra', 'Program Manager')
+        //- PhD students, alphabetical order  
+        +dp('Anand Avati', 'phd')
+        +dp('Awni Hannun', 'phd')
+        +dp('Hao Sheng', 'phd')
+        +dp('Pranav Rajpurkar', 'phd')
+        +dp('Ziang Xie', 'phd')
+        //- Masters students, alphabetical order
+        +dp('Aarti Bagul', 'ms')
+        +dp('Daisy Ding', 'ms')
+        +dp('Dillon Laird', 'ms')
+        +dp('Guillaume Genthial', 'ms')
+        +dp('Hershel Mehta', 'ms')
+        +dp('Jeremy Irvin', 'ms')
+        +dp('Tony Duan', 'ms')
+        //- Bachelors students, alphabetical order
+        +dp('Brandon Yang', 'bs')
+        +dp('Kaylie Zhu', 'bs')
+        +dp('Manan Shah', 'bs')
+        +dp('Mason Swofford', 'bs')
+        +dp('Prathik Naidu', 'bs')
+        +dp('Stanley Xie', 'bs')
+        +dp('Will Hang', 'bs')
       .row
         .col-lg-offset-2.col-lg-8.text-center
             .section-heading
