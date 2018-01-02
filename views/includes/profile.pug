@@ -1,0 +1,17 @@
+mixin dp(name, position)
+  - if (position == 'phd') {
+  -   pos = 'PhD Student'
+  - } else if (position == 'ms') {
+  -   pos = 'Masters Student'
+  - } else if (position == 'bs') {
+  -   pos = 'Undegraduate Student'
+  - } else if (position == 'prof') {
+  -   pos = 'Professor'
+  - } else {
+  -   pos = position
+  - }
+  .col-sm-2.col-xs-6.item-wrap
+    .feature-item
+      img.img-circle(src='/img/headshots/' + name.replace(/ /g, '') + '.jpg')
+      h3 #{name}
+      h4 #{pos}
