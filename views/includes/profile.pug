@@ -1,8 +1,8 @@
-mixin dp(name, position)
+mixin dp(name, position, use_placeholder, use_compact)
   - if (position == 'phd') {
   -   pos = 'PhD Student'
   - } else if (position == 'ms') {
-  -   pos = 'Masters Student'
+  -   pos = 'MS Student'
   - } else if (position == 'bs') {
   -   pos = 'Undegraduate Student'
   - } else if (position == 'prof') {
@@ -10,8 +10,18 @@ mixin dp(name, position)
   - } else {
   -   pos = position
   - }
-  .col-sm-2.col-xs-6.item-wrap
+  div(class=use_compact ? "col-xs-4 item-wrap-compact": "col-xs-6 item-wrap col-sm-2")
     .feature-item
-      img.img-circle(src='/img/headshots/' + name.replace(/ /g, '') + '.jpg')
-      h3 #{name}
-      h4 #{pos}
+      - if (use_placeholder == true) {
+      -   img_link = "Placeholder"
+      - } else {
+      -   img_link = name.replace(/ /g, '')
+      - }
+      - 
+      img.img-circle(src='/img/headshots/' + img_link + '.jpg')
+      if use_compact
+        h4.compact-title #{name}
+        p.compact-subtitle #{pos}
+      else
+        h3 #{name}
+        h4 #{pos}

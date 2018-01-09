@@ -10,12 +10,16 @@
 
 .feature-item img {
   width: 100%;
-  max-width: 150px;
+  max-width: 100px;
   margin: 0px auto;
 }
 
 .item-wrap {
   height: 20em;
+}
+
+.item-wrap-compact {
+  height: 12em;
 }
 
 img {
@@ -30,6 +34,14 @@ svg {
     margin: 10px 0px;
 }
 
+.compact-title {
+  margin: 2px 0px;
+}
+
+.compact-subtitle {
+  font-size: 0.8em;
+  line-height: 1em;
+}
 
 /*!
  * Start Bootstrap - New Age v3.3.7 (http://startbootstrap.com/template-overviews/new-age)
@@ -189,10 +201,19 @@ p, ul > li {
   background: url("../img/bg-pattern.png"), linear-gradient(to left, #c50c3e, #a90531);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: white;
+  padding: 30px 0px;
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 767px){
+  #header{
+    margin-top: 50px;
+    padding-top: 30px;
+  }
 }
 
 section {
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .section-heading {
