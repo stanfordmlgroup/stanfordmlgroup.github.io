@@ -1,0 +1,164 @@
+{
+    "config": {
+        "allow_multiple_models": true,
+        "allow_orphans": true,
+        "count_failed_submissions": true,
+        "evaluate": {
+            "command": "python evaluate.py test.csv predictions.csv",
+            "dependencies": [
+                {
+                    "child_path": "evaluate.py",
+                    "parent_path": "",
+                    "parent_uuid": "0xb6fe6da471944cd7bc00d724cedd5620"
+                },
+                {
+                    "child_path": "test.csv",
+                    "parent_path": "",
+                    "parent_uuid": "0x1d47d0cefd8b48acb3b756548d0b903f"
+                },
+                {
+                    "child_path": "predictions.csv",
+                    "parent_path": "",
+                    "parent_uuid": "{predict}"
+                }
+            ],
+            "metadata": {},
+            "tag": "mura-test-eval"
+        },
+        "host": "https://worksheets.codalab.org",
+        "log_worksheet_uuid": "0x74175edfff3848e999f3e2c7700b1893",
+        "make_predictions_public": false,
+        "max_leaderboard_size": 10000,
+        "max_submissions_per_period": 5,
+        "max_submissions_total": 20,
+        "metadata": {
+            "name": "MURA Competition Leaderboard"
+        },
+        "quota_period_seconds": 86400,
+        "refresh_period_seconds": 60,
+        "score_specs": [
+            {
+                "key": "/stdout:Overall",
+                "name": "overall"
+            },
+            {
+                "key": "/stdout:Elbow",
+                "name": "elbow"
+            },
+            {
+                "key": "/stdout:Finger",
+                "name": "finger"
+            },
+            {
+                "key": "/stdout:Forearm",
+                "name": "forearm"
+            },
+            {
+                "key": "/stdout:Hand",
+                "name": "hand"
+            },
+            {
+                "key": "/stdout:Humerus",
+                "name": "humerus"
+            },
+            {
+                "key": "/stdout:Shoulder",
+                "name": "shoulder"
+            },
+            {
+                "key": "/stdout:Wrist",
+                "name": "wrist"
+            }
+        ],
+        "submission_tag": "mura-submit"
+    },
+    "leaderboard": [
+        {
+            "bundle": {
+                "args": "run evaluate.py:0xb6fe6da471944cd7bc00d724cedd5620 test.csv:0x1d47d0cefd8b48acb3b756548d0b903f predictions.csv:0x1b0327bde39d4f24bc00328940320319 \"python evaluate.py test.csv predictions.csv\"",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x7f629ef8dd864fa0bc3a2da342b4011a",
+                        "parent_name": "mura-eval-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0xb6fe6da471944cd7bc00d724cedd5620"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x7f629ef8dd864fa0bc3a2da342b4011a",
+                        "parent_name": "test.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x1d47d0cefd8b48acb3b756548d0b903f"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x7f629ef8dd864fa0bc3a2da342b4011a",
+                        "parent_name": "test_preds.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x1b0327bde39d4f24bc00328940320319"
+                    }
+                ],
+                "id": "0x7f629ef8dd864fa0bc3a2da342b4011a",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1515621473,
+                    "data_size": 4096,
+                    "description": "{\"submit_id\": \"0x1b0327bde39d4f24bc00328940320319\", \"submitter_id\": \"0x05e6e2885967491c8a6d3b7c24d02796\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "last_updated": 1515621474,
+                    "memory_max": 0.0,
+                    "name": "jirvin16-test_preds.csv-results",
+                    "remote": "vm-clws-prod-surgegpuworker-4",
+                    "request_cpus": 0,
+                    "request_disk": "",
+                    "request_docker_image": "",
+                    "request_gpus": 0,
+                    "request_memory": "",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Running",
+                    "started": 1515621474,
+                    "tags": [
+                        "mura-test-eval"
+                    ],
+                    "time": 0.710275173187
+                },
+                "owner": {
+                    "id": "21705",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "running",
+                "uuid": "0x7f629ef8dd864fa0bc3a2da342b4011a"
+            },
+            "scores": {
+                "elbow": null,
+                "finger": null,
+                "forearm": null,
+                "hand": null,
+                "humerus": null,
+                "overall": null,
+                "shoulder": null,
+                "wrist": null
+            },
+            "submission": {
+                "created": 1515620342,
+                "description": "",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "jirvin16"
+            }
+        }
+    ],
+    "updated": 1515621476.358285
+}
