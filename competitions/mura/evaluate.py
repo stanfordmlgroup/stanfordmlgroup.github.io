@@ -12,7 +12,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-from sklearn.metrics import cohen_kappa_score, confusion_matrix
+from sklearn.metrics import confusion_matrix
 
 
 def get_majority_weighted(gt_annotations, tie_index):
@@ -21,7 +21,7 @@ def get_majority_weighted(gt_annotations, tie_index):
     majority_vote[majority_vote < tie_index] = 0
     majority_vote[majority_vote > tie_index] = 1
 
-    agreements = annotations_no_ties.apply(lambda x: cohen_kappa_score(x, majority_vote))
+    agreements = annotations_no_ties.apply(lambda x: kappa_score(x, majority_vote)[0])
     agreements /= agreements.sum()
 
     weighted_annotations = gt_annotations * agreements
@@ -100,9 +100,13 @@ def evaluate(annotations_path, predictions_path):
         
         klu = get_scores_exact(combined_of_type, "Model")
 
-        results_dict[body_part] = klu[0]
+        results_dict[body_part + "_Mean"] = klu[0]
+        results_dict[body_part + "_Lower"] = klu[1]
+        results_dict[body_part + "_Upper"] = klu[2]
 
-    results_dict["Overall"] = results_dict.pop("/")
+    results_dict["Overall_Mean"] = results_dict.pop("/_Mean")
+    results_dict["Overall_Lower"] = results_dict.pop("/_Lower")
+    results_dict["Overall_Upper"] = results_dict.pop("/_Upper")
     
     return results_dict
 

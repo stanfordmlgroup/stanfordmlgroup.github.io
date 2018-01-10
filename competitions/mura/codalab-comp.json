@@ -8,7 +8,7 @@
     "evaluate": {
         "dependencies": [
             {
-                "parent_uuid": "0xb6fe6da471944cd7bc00d724cedd5620",
+                "parent_uuid": "0xa079b9fa1e2c48ecbfcccdeabd85ebfe",
                 "child_path": "evaluate.py"
             },
             {
@@ -26,36 +26,100 @@
     },
     "score_specs": [
         {
-            "name": "overall",
-            "key": "/stdout:Overall"
+            "name": "overall_mean",
+            "key": "/stdout:Overall_Mean"
         },
         {
-            "name": "elbow",
-            "key": "/stdout:Elbow"
+            "name": "overall_lower",
+            "key": "/stdout:Overall_Lower"
         },
         {
-            "name": "finger",
-            "key": "/stdout:Finger"
+            "name": "overall_upper",
+            "key": "/stdout:Overall_Upper"
         },
         {
-            "name": "forearm",
-            "key": "/stdout:Forearm"
+            "name": "elbow_mean",
+            "key": "/stdout:Elbow_Mean"
         },
         {
-            "name": "hand",
-            "key": "/stdout:Hand"
+            "name": "elbow_lower",
+            "key": "/stdout:Elbow_Lower"
         },
         {
-            "name": "humerus",
-            "key": "/stdout:Humerus"
+            "name": "elbow_upper",
+            "key": "/stdout:Elbow_Upper"
         },
         {
-            "name": "shoulder",
-            "key": "/stdout:Shoulder"
+            "name": "finger_mean",
+            "key": "/stdout:Finger_Mean"
         },
         {
-            "name": "wrist",
-            "key": "/stdout:Wrist"
+            "name": "finger_lower",
+            "key": "/stdout:Finger_Lower"
+        },
+        {
+            "name": "finger_upper",
+            "key": "/stdout:Finger_Upper"
+        },
+        {
+            "name": "forearm_mean",
+            "key": "/stdout:Forearm_Mean"
+        },
+        {
+            "name": "forearm_lower",
+            "key": "/stdout:Forearm_Lower"
+        },
+        {
+            "name": "forearm_upper",
+            "key": "/stdout:Forearm_Upper"
+        },
+        {
+            "name": "hand_mean",
+            "key": "/stdout:Hand_Mean"
+        },
+        {
+            "name": "hand_lower",
+            "key": "/stdout:Hand_Lower"
+        },
+        {
+            "name": "hand_upper",
+            "key": "/stdout:Hand_Upper"
+        },
+        {
+            "name": "humerus_mean",
+            "key": "/stdout:Humerus_Mean"
+        },
+        {
+            "name": "humerus_lower",
+            "key": "/stdout:Humerus_Lower"
+        },
+        {
+            "name": "humerus_upper",
+            "key": "/stdout:Humerus_Upper"
+        },
+        {
+            "name": "shoulder_mean",
+            "key": "/stdout:Shoulder_Mean"
+        },
+        {
+            "name": "shoulder_lower",
+            "key": "/stdout:Shoulder_Lower"
+        },
+        {
+            "name": "shoulder_upper",
+            "key": "/stdout:Shoulder_Upper"
+        },
+        {
+            "name": "wrist_mean",
+            "key": "/stdout:Wrist_Mean"
+        },
+        {
+            "name": "wrist_lower",
+            "key": "/stdout:Wrist_Lower"
+        },
+        {
+            "name": "wrist_upper",
+            "key": "/stdout:Wrist_Upper"
         }
     ],
     "metadata": {

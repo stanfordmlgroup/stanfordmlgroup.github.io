@@ -9,7 +9,7 @@
                 {
                     "child_path": "evaluate.py",
                     "parent_path": "",
-                    "parent_uuid": "0xb6fe6da471944cd7bc00d724cedd5620"
+                    "parent_uuid": "0xa079b9fa1e2c48ecbfcccdeabd85ebfe"
                 },
                 {
                     "child_path": "test.csv",
@@ -38,36 +38,100 @@
         "refresh_period_seconds": 60,
         "score_specs": [
             {
-                "key": "/stdout:Overall",
-                "name": "overall"
+                "key": "/stdout:Overall_Mean",
+                "name": "overall_mean"
             },
             {
-                "key": "/stdout:Elbow",
-                "name": "elbow"
+                "key": "/stdout:Overall_Lower",
+                "name": "overall_lower"
             },
             {
-                "key": "/stdout:Finger",
-                "name": "finger"
+                "key": "/stdout:Overall_Upper",
+                "name": "overall_upper"
             },
             {
-                "key": "/stdout:Forearm",
-                "name": "forearm"
+                "key": "/stdout:Elbow_Mean",
+                "name": "elbow_mean"
             },
             {
-                "key": "/stdout:Hand",
-                "name": "hand"
+                "key": "/stdout:Elbow_Lower",
+                "name": "elbow_lower"
             },
             {
-                "key": "/stdout:Humerus",
-                "name": "humerus"
+                "key": "/stdout:Elbow_Upper",
+                "name": "elbow_upper"
             },
             {
-                "key": "/stdout:Shoulder",
-                "name": "shoulder"
+                "key": "/stdout:Finger_Mean",
+                "name": "finger_mean"
             },
             {
-                "key": "/stdout:Wrist",
-                "name": "wrist"
+                "key": "/stdout:Finger_Lower",
+                "name": "finger_lower"
+            },
+            {
+                "key": "/stdout:Finger_Upper",
+                "name": "finger_upper"
+            },
+            {
+                "key": "/stdout:Forearm_Mean",
+                "name": "forearm_mean"
+            },
+            {
+                "key": "/stdout:Forearm_Lower",
+                "name": "forearm_lower"
+            },
+            {
+                "key": "/stdout:Forearm_Upper",
+                "name": "forearm_upper"
+            },
+            {
+                "key": "/stdout:Hand_Mean",
+                "name": "hand_mean"
+            },
+            {
+                "key": "/stdout:Hand_Lower",
+                "name": "hand_lower"
+            },
+            {
+                "key": "/stdout:Hand_Upper",
+                "name": "hand_upper"
+            },
+            {
+                "key": "/stdout:Humerus_Mean",
+                "name": "humerus_mean"
+            },
+            {
+                "key": "/stdout:Humerus_Lower",
+                "name": "humerus_lower"
+            },
+            {
+                "key": "/stdout:Humerus_Upper",
+                "name": "humerus_upper"
+            },
+            {
+                "key": "/stdout:Shoulder_Mean",
+                "name": "shoulder_mean"
+            },
+            {
+                "key": "/stdout:Shoulder_Lower",
+                "name": "shoulder_lower"
+            },
+            {
+                "key": "/stdout:Shoulder_Upper",
+                "name": "shoulder_upper"
+            },
+            {
+                "key": "/stdout:Wrist_Mean",
+                "name": "wrist_mean"
+            },
+            {
+                "key": "/stdout:Wrist_Lower",
+                "name": "wrist_lower"
+            },
+            {
+                "key": "/stdout:Wrist_Upper",
+                "name": "wrist_upper"
             }
         ],
         "submission_tag": "mura-submit"
@@ -75,43 +139,44 @@
     "leaderboard": [
         {
             "bundle": {
-                "args": "run evaluate.py:0xb6fe6da471944cd7bc00d724cedd5620 test.csv:0x1d47d0cefd8b48acb3b756548d0b903f predictions.csv:0x1b0327bde39d4f24bc00328940320319 \"python evaluate.py test.csv predictions.csv\"",
+                "args": "run evaluate.py:0xa079b9fa1e2c48ecbfcccdeabd85ebfe test.csv:0x1d47d0cefd8b48acb3b756548d0b903f predictions.csv:0xef9a4930c648458ea19de01da4300efa \"python evaluate.py test.csv predictions.csv\"",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
-                "data_hash": null,
+                "data_hash": "0x30789f28f4ca84146efd8830c10f20e401ca627b",
                 "dependencies": [
                     {
                         "child_path": "evaluate.py",
-                        "child_uuid": "0x7f629ef8dd864fa0bc3a2da342b4011a",
+                        "child_uuid": "0xa0c9aa9d732e49649dc0d6d29935d29b",
                         "parent_name": "mura-eval-v1.0.py",
                         "parent_path": "",
-                        "parent_uuid": "0xb6fe6da471944cd7bc00d724cedd5620"
+                        "parent_uuid": "0xa079b9fa1e2c48ecbfcccdeabd85ebfe"
                     },
                     {
                         "child_path": "test.csv",
-                        "child_uuid": "0x7f629ef8dd864fa0bc3a2da342b4011a",
+                        "child_uuid": "0xa0c9aa9d732e49649dc0d6d29935d29b",
                         "parent_name": "test.csv",
                         "parent_path": "",
                         "parent_uuid": "0x1d47d0cefd8b48acb3b756548d0b903f"
                     },
                     {
                         "child_path": "predictions.csv",
-                        "child_uuid": "0x7f629ef8dd864fa0bc3a2da342b4011a",
+                        "child_uuid": "0xa0c9aa9d732e49649dc0d6d29935d29b",
                         "parent_name": "test_preds.csv",
                         "parent_path": "",
-                        "parent_uuid": "0x1b0327bde39d4f24bc00328940320319"
+                        "parent_uuid": "0xef9a4930c648458ea19de01da4300efa"
                     }
                 ],
-                "id": "0x7f629ef8dd864fa0bc3a2da342b4011a",
+                "id": "0xa0c9aa9d732e49649dc0d6d29935d29b",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1515621473,
-                    "data_size": 4096,
-                    "description": "{\"submit_id\": \"0x1b0327bde39d4f24bc00328940320319\", \"submitter_id\": \"0x05e6e2885967491c8a6d3b7c24d02796\"}",
+                    "created": 1515627870,
+                    "data_size": 4978,
+                    "description": "{\"submit_id\": \"0xef9a4930c648458ea19de01da4300efa\", \"submitter_id\": \"0x05e6e2885967491c8a6d3b7c24d02796\"}",
                     "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
-                    "last_updated": 1515621474,
+                    "exitcode": 0,
+                    "last_updated": 1515627872,
                     "memory_max": 0.0,
                     "name": "jirvin16-test_preds.csv-results",
                     "remote": "vm-clws-prod-surgegpuworker-4",
@@ -124,35 +189,51 @@
                     "request_priority": 0,
                     "request_queue": "",
                     "request_time": "",
-                    "run_status": "Running",
-                    "started": 1515621474,
+                    "run_status": "Finished",
+                    "started": 1515627871,
                     "tags": [
                         "mura-test-eval"
                     ],
-                    "time": 0.710275173187
+                    "time": 1.80851411819
                 },
                 "owner": {
-                    "id": "21705",
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
                     "type": "users"
                 },
                 "permission": 2,
                 "permission_spec": "all",
-                "state": "running",
-                "uuid": "0x7f629ef8dd864fa0bc3a2da342b4011a"
+                "state": "ready",
+                "uuid": "0xa0c9aa9d732e49649dc0d6d29935d29b"
             },
             "scores": {
-                "elbow": null,
-                "finger": null,
-                "forearm": null,
-                "hand": null,
-                "humerus": null,
-                "overall": null,
-                "shoulder": null,
-                "wrist": null
+                "elbow_lower": 0.7031348148148149,
+                "elbow_mean": 0.7333333333333334,
+                "elbow_upper": 0.7635318518518519,
+                "finger_lower": 0.47642963903277985,
+                "finger_mean": 0.5248868778280543,
+                "finger_upper": 0.5733441166233288,
+                "forearm_lower": 0.6339439927031381,
+                "forearm_mean": 0.6696035242290749,
+                "forearm_upper": 0.7052630557550117,
+                "hand_lower": 0.7521546698393814,
+                "hand_mean": 0.7804878048780488,
+                "hand_upper": 0.8088209399167162,
+                "humerus_lower": 0.7764800000000001,
+                "humerus_mean": 0.8,
+                "humerus_upper": 0.82352,
+                "overall_lower": 0.74448884756551,
+                "overall_mean": 0.7486586493987049,
+                "overall_upper": 0.7528284512318997,
+                "shoulder_lower": 0.7696941264777633,
+                "shoulder_mean": 0.7945205479452055,
+                "shoulder_upper": 0.8193469694126478,
+                "wrist_lower": 0.9217222503859059,
+                "wrist_mean": 0.9307875894988068,
+                "wrist_upper": 0.9398529286117077
             },
             "submission": {
-                "created": 1515620342,
-                "description": "",
+                "created": 1515627415,
+                "description": "mura-baseline",
                 "num_period_submissions": 1,
                 "num_total_submissions": 1,
                 "public": true,
@@ -160,5 +241,5 @@
             }
         }
     ],
-    "updated": 1515621476.358285
+    "updated": 1515627895.823763
 }
