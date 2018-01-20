@@ -19,9 +19,5 @@ mixin dp(name, position, use_placeholder, use_compact)
       - }
       - 
       img.img-circle(src='/img/headshots/' + img_link + '.jpg')
-      if use_compact
-        h4.compact-title #{name}
-        p.compact-subtitle #{pos}
-      else
-        h3 #{name}
-        h4 #{pos}
+      h4.compact-title #{name}
+      p.compact-subtitle #{pos}
