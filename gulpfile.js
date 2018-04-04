@@ -9,7 +9,7 @@ gulp.task('index', function buildHTML () {
   .pipe(gulp.dest('.'))
 })
 
-var folders = ['projects', 'programs']
+var folders = ['projects', 'programs', 'competitions']
 
 folders.forEach(function (folder) {
   gulp.task(folder, function buildHTML () {
@@ -19,7 +19,7 @@ folders.forEach(function (folder) {
   })
 })
 
-gulp.task('build', ['index', 'projects', 'programs'])
+gulp.task('build', ['index', 'projects', 'programs', 'competitions'])
 
 gulp.task('watch_build', ['build'], function () {
   return gulp.watch('./views/**/*.pug', ['build', browserSync.reload])
