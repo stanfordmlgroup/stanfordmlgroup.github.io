@@ -23,76 +23,16 @@ block content
     .container
       .row
         .col-md-12
-          h2 This data is licensed to the public under #[a(href="https://creativecommons.org/licenses/by/4.0/legalcode") Creative Commons Attribution 3.0 License.] 
+          h2 By downloading this dataset, You accept and agree to be bound by the terms and conditions of the Creative Commons Attribution 4.0 International Public License ("Public License"). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.
+
 
           form#test-form
-            div
+            div#form-group
               label Email Address
               input(type="text" name="Email Address" placeholder="Email Address")
-            div
+            //- This doesn't work
+            //- div#checkbox
+            //-   label Wat
+            //-     input(type="checkbox") Check me.
+            div#form-group
               button(type="submit" id="submit-form") Submit
-          //- h2 We introduce MURA, a large dataset of musculoskeletal radiographs, where each study is manually labeled by radiologists as either normal or abnormal.
-          //- p Large, high-quality datasets have played a critical role in driving progress of fields with deep learning methods. To this end, we introduce one of the largest public radiographic image datasets.
-          //- p The MURA abnormality detection task is a binary classification task, where the input is an upper exremity radiograph study --- with each study containing one or more views (images) --- and the expected output is a binary label indicating whether the study is normal or abnormal respectively.
-          //- ul.list-unstyled
-          //-   li
-          //-     a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1712.06957") Read our paper
-          //-   //-li
-          //-     a.btn.btn-lg.btn-default(href="https://cs.stanford.edu/group/mlgroup/mura-v1.0.zip" download) Download the data
-          //- p.small Instructions to download the data and submit your model on the hidden test set coming soon.
-  //- section
-  //-   .container
-  //-     .row
-  //-       .col-md-7
-  //-         h2 We assemble a dataset of musculoskeletal radiographs consisting of 14,982 studies from 12,251 patients, with a total of 40,895 multi-view radiographic images.
-  //-         p Each belongs to one of seven standard upper extremity radiographic study types: elbow, finger, forearm, hand, humerus, shoulder, and wrist.
-  //-         h3 Test Set
-  //-         p To evaluate models and get a robust estimate of radiologist performance, we collected additional labels from six board-certified Stanford radiologists on the test set, consisting of 209 musculoskeletal studies. The radiologists individually retrospectively reviewed and labeled each study in the test set as a DICOM file as normal or abnormal in the clinical reading room environment using the PACS system. The radiologists have 8.83 years of experience on average ranging from 2 to 25 years.
-  //-       .col-md-5
-  //-           img(src='/projects/mura/img/data.png')
-  //- section.gray
-  //-   .container
-  //-     .row
-  //-       .col-md-5
-  //-           img(src='/projects/mura/img/pipeline.svg')
-  //-           //-img.center(src='/projects/mura/img/MSK-local2.svg')
-  //-       .col-md-7
-  //-         h2 On MURA, we develop a model that uses a 169-layer convolutional neural network to detect and localize abnormalities. 
-  //-         p The model takes as input one or more views for a study of an upper extremity. On each view, our 169-layer convolutional neural network predicts the probability of abnormality. We compute the overall probability of abnormality for the study by taking the arithmetic mean of the abnormality probabilities output by the network for each image. The model makes the binary prediction of abnormal if the probability of abnormality for the study is greater than 0.5.
-  //-         p The network uses a Dense Convolutional Network architecture, which connects each layer to every other layer in a feed-forward fashion to make the optimization of deep networks tractable. We replace the final fully connected layer with one that has a single output, after which we apply a sigmoid nonlinearity. We use Class Activation Maps to visualize the parts of the radiograph which contribute most to the model's prediction of abnormality.
-  //- section
-  //-   .container
-  //-     .row
-  //-       .col-md-4
-  //-         h2 We find that our model achieves performance comparable to that of radiologists.
-  //-         p Model performance is higher than the best radiologist performance in detecting abnormalities on finger studies and equivalent on wrist studies. However, model performance is lower than best radiologist performance in detecting abnormalities on elbow, forearm, hand, humerus, and shoulder studies, indicating that the task is a good challenge for future research.
-  //-       .col-md-8
-  //-         img.center(src='/projects/mura/img/results.png')
-  //-         p Recall that for each study in the test set, we collected additional normal/abnormal labels from 6 board-certified radiologists. We randomly chose 3 of these radiologists to create a gold standard, defined as the majority vote of labels of the radiologists. We used the other 3 radiologists to get estimates of radiologist performance on the task.
-  //-         p We compared radiologists and our model on the Cohen’s kappa statistic, which expresses the agreement of each radiologist / model with the gold standard, defined as the majority vote of a disjoint group of radiologists. Here, we highlight the best (green) and worst (red) performances on each of the study types and in aggregate.
-  //-     .row
-  //-       .col-md-8
-  //- section.gray
-  //-   .container
-  //-     .row
-  //-       .col-md-7
-  //-         h3 
-  //-           | Musculoskeletal conditions affect more than 1.7 billion people worldwide, and are the most common cause of severe, long-term pain and disability, with 30 million emergency department visits annually and increasing.
-  //-           | We hope that our dataset can lead to significant advances in medical imaging technologies which can diagnose at the level of experts, towards improving healthcare access in parts of the world where access to skilled radiologists is limited.
-  //-         a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1712.06957") Read our paper
-  //- section.bg-primary
-  //-   .container
-  //-     .row
-  //-       .col-md-12
-  //-         h2 Will your model close the gap to radiologist-level performance? 
-  //-         p MURA Dataset, Leaderboard and Instructions coming soon!
-  //-     .row
-  //-       .col-md-12
-  //-         h3
-  //-           | If you have questions about our work,
-  //-           | contact us at:
-  //-         h4
-  //-           code pranavsr@cs.stanford.edu
-  //-           |  and 
-  //-           code jirvin16@cs.stanford.edu
-  //-         p We will be making our code public by February 2018.
