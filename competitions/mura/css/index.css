@@ -1,0 +1,8 @@
+#page-title, #page-subtitle {
+  text-align: center;
+}
+
+#page-title {
+  font-size: 7em;
+  margin-bottom: -20px;
+}
