@@ -6,3 +6,13 @@
   font-size: 7em;
   margin-bottom: -20px;
 }
+
+#agreement > p {
+	font-size: 1em;
+	line-height: 1.2em;
+	text-align: justify;
+}
+
+#mc-embedded-subscribe-form {
+	padding: 0px !important;
+}
