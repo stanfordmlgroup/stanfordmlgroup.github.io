@@ -4,7 +4,7 @@ block title
   title MURA: Leaderboard and Competition
 
 block description
-  meta(name='description', content='We introduce MURA, a large dataset of musculoskeletal radiographs containing 40,895 images from 14,982 studies, where each study is manually labeled by radiologists as either normal or abnormal.')
+  meta(name='description', content='MURA is a large dataset of bone x-rays. Algorithms are tasked with determining whether an x-ray study is normal or abnormal.')
 
 block extralinks
   link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
@@ -19,18 +19,26 @@ mixin model_display(group)
       th Rank
       th Model
       th Kappa
-    - var rad_kappa_1 = 0.731
-    - var rad_kappa_2= 0.763
-    - var rad_kappa_3 = 0.778
     - var largest_kappa = Math.max.apply(null, group.map(function (model) { return model.kappa; }))
-    each model in group
       tr.human-row
+        td 1
         td
-        td
-          | Radiologist Performance
+          | Best Radiologist Performance
           p.institution Stanford University
           a(href="https://arxiv.org/abs/1712.06957") Rajpurkar & Irvin et al., 17
-        td #{rad_kappa_1}
+        td 0.778 (0.774, 0.782)
+      tr.baseline-row
+        td 2
+        td
+          | Stanford Baseline
+          p.institution Stanford University
+          a(href="https://arxiv.org/abs/1712.06957") Rajpurkar & Irvin et al., 17
+        td 0.705 (0.700, 0.710)
+      tr
+        td
+        td
+        td
+    each model in group
       tr
         td 
           p #{model.rank}
@@ -51,8 +59,9 @@ block content
     .container
       .row
         .col-lg-12
-          h1#page-title MURA
-          h2#page-subtitle Bone XRay Competition
+          img#title-image(src="/competitions/mura/img/logo.svg")
+          //-h1#page-title MURA
+          h2#page-subtitle Bone X-Ray Competition
   section
     .container
       .row
@@ -60,6 +69,8 @@ block content
           h1 What is MURA?
           p MURA is a large dataset of bone x-rays. Algorithms are tasked with determining whether an x-ray study is normal or abnormal.
           p Musculoskeletal conditions affect more than 1.7 billion people worldwide, and are the most common cause of severe, long-term pain and disability, with 30 million emergency department visits annually and increasing. We hope that our dataset can lead to significant advances in medical imaging technologies which can diagnose at the level of experts, towards improving healthcare access in parts of the world where access to skilled radiologists is limited.
+          h2 How can I participate?
+          p MURA uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
         .col-md-6
           h1 Leaderboard
           p 
@@ -71,7 +82,7 @@ block content
       .row
         .col-lg-8
           h1 Downloading the Dataset
-          p Please read the Stanford University School of Medicine MURA Dataset Research Use Agreement. Once you register to download the MURA dataset, you will receive the link to the download over email.
+          p Please read the Stanford University School of Medicine MURA Dataset Research Use Agreement. Once you register to download the MURA dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
           #agreement.well
             include agreement
           include mailchimp

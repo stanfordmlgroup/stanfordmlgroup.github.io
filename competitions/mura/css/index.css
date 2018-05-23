@@ -2,9 +2,14 @@
   text-align: center;
 }
 
-#page-title {
-  font-size: 7em;
-  margin-bottom: -20px;
+#page-subtitle {
+  margin-bottom: -10px;
+	color: black;
+	font-weight: 500;
+}
+
+#title-image {
+	max-width: 200px;
 }
 
 #agreement > p {
@@ -15,4 +20,8 @@
 
 #mc-embedded-subscribe-form {
 	padding: 0px !important;
+}
+
+.human-row {
+	background-color: whitesmoke;
 }
