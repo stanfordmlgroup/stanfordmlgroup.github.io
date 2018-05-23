@@ -97,7 +97,13 @@ block content
           p The network uses a Dense Convolutional Network architecture, which connects each layer to every other layer in a feed-forward fashion to make the optimization of deep networks tractable. We replace the final fully connected layer with one that has a single output, after which we apply a sigmoid nonlinearity. We use Class Activation Maps to visualize the parts of the radiograph which contribute most to the model's prediction of abnormality.
           img(src='/competitions/mura/img/pipeline.svg')
           h2 How does our baseline do?
-          p We evaluated our baseline on the Cohen’s kappa statistic, which expresses the agreement of the model with the gold standard. 
+          p We evaluated our baseline on the Cohen’s kappa statistic, which expresses the agreement of the model with the gold standard. Baseline performance is comparable to radiologist performance in detecting abnormalities on finger studies and equivalent on wrist studies. However, baseline performance is lower than best radiologist performance in detecting abnormalities on elbow, forearm, hand, humerus, shoulder studies, and overall, indicating that the task is a good challenge for future research.
+          img(src='/competitions/mura/img/kappa.png')
+        .col-md-5
+          img(src='/competitions/mura/img/mura-cam1.svg')
+          img(src='/competitions/mura/img/mura-cam2.svg')
+          img(src='/competitions/mura/img/mura-cam3.svg')
+          img(src='/competitions/mura/img/mura-cam4.svg')
   section.gray
     .container
       .row
