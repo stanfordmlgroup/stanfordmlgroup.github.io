@@ -5,14 +5,28 @@
     "submission_tag": "mura-submit",
     "log_worksheet_uuid": "0x74175edfff3848e999f3e2c7700b1893",
     "allow_multiple_models": true,
+    "predict": {
+        "mimic": [
+            {
+                "old": "0xd4a771ccd5f84240a6d58f789f4f136f",
+                "new": "0x1d047bcd9560474499671e3b22f05d24"
+            },
+            {
+                "old": "0xbc017e36be2746628cc1a0c64bbf031a", 
+                "new": "0x8b2a3178b1874fd58939a48de84209e6"
+            }
+        ],
+        "depth": 10,
+        "tag": "mura-test-predict"
+    },
     "evaluate": {
         "dependencies": [
             {
-                "parent_uuid": "0xa079b9fa1e2c48ecbfcccdeabd85ebfe",
+                "parent_uuid": "0x68157053d5eb47acad921737ed91d5b3",
                 "child_path": "evaluate.py"
             },
             {
-                "parent_uuid": "0x1d47d0cefd8b48acb3b756548d0b903f",
+                "parent_uuid": "0x36a219ac220346429f0b748e77267f8b",
                 "child_path": "test.csv"
             },
             {
@@ -22,6 +36,9 @@
             }
         ],
         "command": "python evaluate.py test.csv predictions.csv",
+        "metadata": {
+          "request_docker_image": "codalab/ubuntu:1.9"
+        },
         "tag": "mura-test-eval"
     },
     "score_specs": [
