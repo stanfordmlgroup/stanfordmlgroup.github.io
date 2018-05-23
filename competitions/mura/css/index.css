@@ -3,13 +3,13 @@
 }
 
 #page-subtitle {
-  margin-bottom: -10px;
-	color: black;
-	font-weight: 500;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 #title-image {
 	max-width: 200px;
+	opacity: 0.9;
 }
 
 #agreement > p {

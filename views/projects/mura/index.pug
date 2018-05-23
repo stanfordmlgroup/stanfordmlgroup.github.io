@@ -61,8 +61,7 @@ block content
           p Model performance is higher than the best radiologist performance in detecting abnormalities on finger studies and equivalent on wrist studies. However, model performance is lower than best radiologist performance in detecting abnormalities on elbow, forearm, hand, humerus, and shoulder studies, indicating that the task is a good challenge for future research.
         .col-md-8
           img.center(src='/projects/mura/img/results.png')
-          p Recall that for each study in the test set, we collected additional normal/abnormal labels from 6 board-certified radiologists. We randomly chose 3 of these radiologists to create a gold standard, defined as the majority vote of labels of the radiologists. We used the other 3 radiologists to get estimates of radiologist performance on the task.
-          p We compared radiologists and our model on the Cohen’s kappa statistic, which expresses the agreement of each radiologist / model with the gold standard, defined as the majority vote of a disjoint group of radiologists. Here, we highlight the best (green) and worst (red) performances on each of the study types and in aggregate.
+          p We evaluated our model on the Cohen’s kappa statistic, which expresses the agreement of the model with the gold standard. Here, we highlight the best (green) and worst (red) performances on each of the study types and in aggregate.
       .row
         .col-md-8
   section.gray

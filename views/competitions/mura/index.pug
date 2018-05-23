@@ -4,7 +4,7 @@ block title
   title MURA: Leaderboard and Competition
 
 block description
-  meta(name='description', content='MURA is a large dataset of bone x-rays. Algorithms are tasked with determining whether an x-ray study is normal or abnormal.')
+  meta(name='description', content='MURA is a large dataset of bone X-rays. Algorithms are tasked with determining whether an X-ray study is normal or abnormal.')
 
 block extralinks
   link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
@@ -65,22 +65,42 @@ block content
   section
     .container
       .row
-        .col-md-6
+        .col-md-7
           h1 What is MURA?
-          p MURA is a large dataset of bone x-rays. Algorithms are tasked with determining whether an x-ray study is normal or abnormal.
+          p MURA (musculoskeletal radiographs) is a large dataset of bone X-rays. Algorithms are tasked with determining whether an X-ray study is normal or abnormal.
           p Musculoskeletal conditions affect more than 1.7 billion people worldwide, and are the most common cause of severe, long-term pain and disability, with 30 million emergency department visits annually and increasing. We hope that our dataset can lead to significant advances in medical imaging technologies which can diagnose at the level of experts, towards improving healthcare access in parts of the world where access to skilled radiologists is limited.
           h2 How can I participate?
           p MURA uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
-        .col-md-6
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1712.06957") Read our paper
+        .col-md-5
           h1 Leaderboard
           p 
             | Will your model perform as well as radiologists in detecting abnormality in musculoskeletal X-rays?
           +model_display([])
- 
   section.gray
     .container
       .row
-        .col-lg-8
+        .col-md-7
+          h2 How did we collect MURA?
+          p MURA is a dataset of musculoskeletal radiographs consisting of 14,982 studies from 12,251 patients, with a total of 40,895 multi-view radiographic images. Each belongs to one of seven standard upper extremity radiographic study types: elbow, finger, forearm, hand, humerus, shoulder, and wrist. Each study was manually labeled as normal or abnormal by board-certified radiologists from the Stanford Hospital at the time of clinical radiographic interpretation in the diagnostic radiology environment between 2001 and 2012.
+          h3 Test Set Collection
+          p To evaluate models and get a robust estimate of radiologist performance, we collected additional labels from six board-certified Stanford radiologists on the test set, consisting of 209 musculoskeletal studies. The radiologists individually retrospectively reviewed and labeled each study in the test set as a DICOM file as normal or abnormal in the clinical reading room environment using the PACS system. The radiologists have 8.83 years of experience on average ranging from 2 to 25 years. We randomly chose 3 of these radiologists to create a gold standard, defined as the majority vote of labels of the radiologists.
+        .col-md-5
+            img(src='/competitions/mura/img/data.svg')
+  section
+    .container
+      .row
+        .col-md-7
+          h2 What is our baseline?
+          p Our baseline uses a 169-layer convolutional neural network to detect and localize abnormalities. The model takes as input one or more views for a study of an upper extremity. On each view, our 169-layer convolutional neural network predicts the probability of abnormality. We compute the overall probability of abnormality for the study by taking the arithmetic mean of the abnormality probabilities output by the network for each image. The model makes the binary prediction of abnormal if the probability of abnormality for the study is greater than 0.5.
+          p The network uses a Dense Convolutional Network architecture, which connects each layer to every other layer in a feed-forward fashion to make the optimization of deep networks tractable. We replace the final fully connected layer with one that has a single output, after which we apply a sigmoid nonlinearity. We use Class Activation Maps to visualize the parts of the radiograph which contribute most to the model's prediction of abnormality.
+          img(src='/competitions/mura/img/pipeline.svg')
+          h2 How does our baseline do?
+          p We evaluated our baseline on the Cohen’s kappa statistic, which expresses the agreement of the model with the gold standard. 
+  section.gray
+    .container
+      .row
+        .col-md-7
           h1 Downloading the Dataset
           p Please read the Stanford University School of Medicine MURA Dataset Research Use Agreement. Once you register to download the MURA dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
           #agreement.well
