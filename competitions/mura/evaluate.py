@@ -15,22 +15,9 @@ import pandas as pd
 from sklearn.metrics import confusion_matrix
 
 
-def get_majority_weighted(gt_annotations, tie_index):
-    annotations_no_ties = gt_annotations[gt_annotations.sum(axis=1) != tie_index] #remove ties, if existing
-    majority_vote = annotations_no_ties.sum(axis = 1)
-    majority_vote[majority_vote < tie_index] = 0
-    majority_vote[majority_vote > tie_index] = 1
+def get_majority(gt_annotations):
 
-    agreements = annotations_no_ties.apply(lambda x: kappa_score(x, majority_vote)[0])
-    agreements /= agreements.sum()
-
-    weighted_annotations = gt_annotations * agreements
-    majority_weighted = weighted_annotations.sum(axis=1)
-    majority_weighted[majority_weighted < 0.5] = 0
-    majority_weighted[majority_weighted >= 0.5] = 1
-    majority_weighted = majority_weighted.astype('int')
-
-    return majority_weighted
+    return gt_annotations.mode(axis=1)
 
 
 def kappa_score(preds1, preds2):
@@ -50,7 +37,7 @@ def kappa_score(preds1, preds2):
 
 
 def get_scores_exact(combined, rad):
-    maj_preds = combined["Majority"].as_matrix()
+    maj_preds = combined["Label"].as_matrix()
     rad_preds = combined[rad].as_matrix()
     return kappa_score(maj_preds, rad_preds)
 
@@ -82,13 +69,17 @@ def evaluate(annotations_path, predictions_path):
     predictions = pd.read_csv(predictions_path,
                               header=None,
                               names=["Study", "Model"])
+    predictions["Study"] = predictions["Study"].apply(lambda x: x + "/" if not x.endswith("/") else x)
 
     gt_annotations = annotations[col_headers]
-    tie_index = len(col_headers) / 2
 
-    annotations['Majority'] = get_majority_weighted(gt_annotations, tie_index)
+    if len(col_headers) == 3:
+
+        annotations['Label'] = get_majority(gt_annotations)
 
     combined = annotations.merge(predictions, on="Study", how="inner")
+
+    assert combined.shape[0] == predictions.shape[0]
 
     body_parts = ["Elbow", "Finger", "Forearm", "Hand", "Humerus", "Shoulder", "Wrist", "/"]
 
@@ -96,6 +87,7 @@ def evaluate(annotations_path, predictions_path):
 
     for body_part in body_parts:
         row = [body_part]
+
         combined_of_type = combined[combined["Study"].str.contains(body_part.upper())]
         
         klu = get_scores_exact(combined_of_type, "Model")
