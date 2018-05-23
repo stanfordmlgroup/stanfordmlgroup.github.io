@@ -61,7 +61,7 @@ block content
         .col-lg-12
           img#title-image(src="/competitions/mura/img/logo.svg")
           //-h1#page-title MURA
-          h2#page-subtitle Bone X-Ray Competition
+          h2#page-subtitle Bone X-Ray Deep Learning Competition
   section
     .container
       .row
@@ -69,6 +69,7 @@ block content
           h1 What is MURA?
           p MURA (<b>mu</b>sculoskeletal <b>ra</b>diographs) is a large dataset of bone X-rays. Algorithms are tasked with determining whether an X-ray study is normal or abnormal.
           p Musculoskeletal conditions affect more than 1.7 billion people worldwide, and are the most common cause of severe, long-term pain and disability, with 30 million emergency department visits annually and increasing. We hope that our dataset can lead to significant advances in medical imaging technologies which can diagnose at the level of experts, towards improving healthcare access in parts of the world where access to skilled radiologists is limited.
+          p MURA is one of the largest public radiographic image datasets. We're making this dataset available to the community and hosting a competition to see if your models can perform as well as radiologists on the task.
           h2 How can I participate?
           p MURA uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
           p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
@@ -83,9 +84,9 @@ block content
       .row
         .col-md-7
           h2 How did we collect MURA?
-          p MURA is a dataset of musculoskeletal radiographs consisting of 14,982 studies from 12,251 patients, with a total of 40,895 multi-view radiographic images. Each belongs to one of seven standard upper extremity radiographic study types: elbow, finger, forearm, hand, humerus, shoulder, and wrist. Each study was manually labeled as normal or abnormal by board-certified radiologists from the Stanford Hospital at the time of clinical radiographic interpretation in the diagnostic radiology environment between 2001 and 2012.
+          p MURA is a dataset of musculoskeletal radiographs consisting of 14,863 studies from 12,173 patients, with a total of 40,561 multi-view radiographic images. Each belongs to one of seven standard upper extremity radiographic study types: elbow, finger, forearm, hand, humerus, shoulder, and wrist. Each study was manually labeled as normal or abnormal by board-certified radiologists from the Stanford Hospital at the time of clinical radiographic interpretation in the diagnostic radiology environment between 2001 and 2012.
           h3 Test Set Collection
-          p To evaluate models and get a robust estimate of radiologist performance, we collected additional labels from six board-certified Stanford radiologists on the test set, consisting of 209 musculoskeletal studies. The radiologists individually retrospectively reviewed and labeled each study in the test set as a DICOM file as normal or abnormal in the clinical reading room environment using the PACS system. The radiologists have 8.83 years of experience on average ranging from 2 to 25 years. We randomly chose 3 of these radiologists to create a gold standard, defined as the majority vote of labels of the radiologists.
+          p To evaluate models and get a robust estimate of radiologist performance, we collected additional labels from six board-certified Stanford radiologists on the test set, consisting of 207 musculoskeletal studies. The radiologists individually retrospectively reviewed and labeled each study in the test set as a DICOM file as normal or abnormal in the clinical reading room environment using the PACS system. The radiologists have 8.83 years of experience on average ranging from 2 to 25 years. We randomly chose 3 of these radiologists to create a gold standard, defined as the majority vote of labels of the radiologists.
         .col-md-5
             img(src='/competitions/mura/img/dataset.png')
   section
@@ -108,7 +109,7 @@ block content
     .container
       .row
         .col-md-7
-          h1 Downloading the Dataset
+          h1 Downloading the Dataset (v1.1)
           p Please read the Stanford University School of Medicine MURA Dataset Research Use Agreement. Once you register to download the MURA dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
           #agreement.well
             include agreement
