@@ -1,0 +1,67 @@
+extends ../../layout
+
+block title
+  title AI For Healthcare Bootcamp Fall 2018
+
+block description
+  meta(name='description', content='Accelerated learning at the intersection of AI and healthcare.')
+
+block extrascripts
+include ../../includes/profile
+
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-9
+          img(src="/programs/aihc-bootcamp-fall2018/img/headline.svg", style="max-width: 600px; margin: 0px; padding: 0px;")
+  section.gray
+    .container
+      .row
+        .col-sm-4
+          h3 Teaching Team
+          +dp('Pranav Rajpurkar', 'phd', false, true)
+          +dp('Anand Avati', 'phd', false, true)
+          +dp('Jeremy Irvin', 'ms', false, true)
+          +dp('Tony Duan', 'ms', false, true)
+          +dp('Andrew Ng', 'prof', false, true)
+          +dp('Nigam Shah', 'prof', false, true)
+          +dp('Matt Lungren', 'prof', false, true)
+          +dp('Curt Langlotz', 'prof', false, true)
+          +dp('Jeanne Shen', 'prof', false, true)
+          +dp('Sanjay Basu', 'prof', false, true)
+          +dp('Robyn Ball', 'Senior Biostatistician', false, true)
+          +dp('Bhavik Patel', 'prof', false, true)
+          +dp('Adam Miner', 'Instructor', false, true)
+          +dp('Kristen Yeom', 'prof', false, true)
+        .col-sm-8
+          h2 Description
+          p Over the course of Fall Quarter 2018, our bootcamp will cover a large breadth of topics at the intersection of artificial intelligence and healthcare. Students will take a dive into cutting-edge research in radiology, pathology, electronic health records, mental health, and public health, working closely with Ph.D. students and each other.
+          h2 Timeline
+          ul
+            li Applications due TBD.
+            li Interviews and selections TBD. 
+            li Bootcamp starts first day of Fall Quarter.
+          h2 Requirements
+          ul
+            li Must be a full-time Stanford student.
+            li Should have taken CS229/CS230/CS224N/CS231N or equivalent.
+            li Proficiency in Python.
+          h2 Commitment
+          ul
+            li
+              | Be able to register for 6 or more independent research units for this bootcamp. 
+              | This level of commitment is not consistent with working as an RA or on other research projects simultaneously. However, we promise you will learn a lot from this experience.
+            li
+              | Be present at the bootcamp venue 5+ hours per day every day.
+            li
+              | Continue AI Research in the lab in Winter 2018.
+  section.bg-primary
+    .container
+      .row
+        .col-md-8.col-md-offset-4
+          h2 We invite you to join the AI revolution in healthcare
+          p Through your work in this program, we hope that you will improve human health, and perhaps even save countless lives.
+          a.btn.btn-lg.btn-default(href="https://goo.gl/forms/4xpEQgCa2dskUakH3") Apply To Bootcamp
+
