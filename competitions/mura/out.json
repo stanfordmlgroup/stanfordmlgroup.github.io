@@ -362,6 +362,109 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0x2c0f4a37c2fe44d8bddad8d42fcd7fad \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x5d64a9777fadbc8dcf539470bfea7f35a497c655",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x33f1018ab1f44575b71ee7fbc3e473a0",
+                        "parent_name": "evaluate-v1.1.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x68157053d5eb47acad921737ed91d5b3"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x33f1018ab1f44575b71ee7fbc3e473a0",
+                        "parent_name": "test_labeled_studies.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x36a219ac220346429f0b748e77267f8b"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x33f1018ab1f44575b71ee7fbc3e473a0",
+                        "parent_name": "hyan90-predictions-ResNet-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x2c0f4a37c2fe44d8bddad8d42fcd7fad"
+                    }
+                ],
+                "id": "0x33f1018ab1f44575b71ee7fbc3e473a0",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1528660264,
+                    "data_size": 4978,
+                    "description": "{\"submit_id\": \"0xfe43a5af12a94d5d9a0990b86364bcda\", \"predict_id\": \"0x2c0f4a37c2fe44d8bddad8d42fcd7fad\", \"submitter_id\": \"0xb7305a931e8b424092bd2d6391a52c94\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1528660993,
+                    "memory_max": 0.0,
+                    "name": "hyan90-predictions-ResNet-results",
+                    "remote": "vm-clws-prod-surgeworker-1",
+                    "request_cpus": 0,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1528660990,
+                    "tags": [
+                        "mura-test-eval"
+                    ],
+                    "time": 3.18495798111
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x33f1018ab1f44575b71ee7fbc3e473a0"
+            },
+            "scores": {
+                "elbow_lower": 0.6628693986101974,
+                "elbow_mean": 0.7005347593582887,
+                "elbow_upper": 0.7382001201063799,
+                "finger_lower": 0.4548766779078226,
+                "finger_mean": 0.5070422535211269,
+                "finger_upper": 0.5592078291344311,
+                "forearm_lower": 0.6339439927031381,
+                "forearm_mean": 0.6696035242290749,
+                "forearm_upper": 0.7052630557550117,
+                "hand_lower": 0.6779194615507887,
+                "hand_mean": 0.7129186602870814,
+                "hand_upper": 0.747917859023374,
+                "humerus_lower": 0.5581866666666667,
+                "humerus_mean": 0.6000000000000001,
+                "humerus_upper": 0.6418133333333335,
+                "overall_lower": 0.6694156520362127,
+                "overall_mean": 0.6746987951807227,
+                "overall_upper": 0.6799819383252328,
+                "shoulder_lower": 0.7696941264777633,
+                "shoulder_mean": 0.7945205479452055,
+                "shoulder_upper": 0.8193469694126478,
+                "wrist_lower": 0.6915873015873014,
+                "wrist_mean": 0.7238095238095237,
+                "wrist_upper": 0.7560317460317459
+            },
+            "submission": {
+                "created": 1528656018,
+                "description": "ResNet (single model) (UCSC CE graduate student huimin yan)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "hyan90"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0xce25e0d326044fcba21a65ce1568d9c7 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -457,7 +560,7 @@
             "submission": {
                 "created": 1527665552,
                 "description": "",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "pyaf"
@@ -560,7 +663,7 @@
             "submission": {
                 "created": 1527386561,
                 "description": "test_output(single)(P University)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "pkusjh"
@@ -655,12 +758,12 @@
             "submission": {
                 "created": 1527659851,
                 "description": "",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "pyaf"
             }
         }
     ],
-    "updated": 1527701446.746233
+    "updated": 1528661165.526823
 }
