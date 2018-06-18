@@ -156,6 +156,109 @@
     "leaderboard": [
         {
             "bundle": {
+                "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0x98013f39b2af4c4f91bd14d5d31c5563 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0xdd9f8a6efa582b0b16f7edf2cd03702afc6f6980",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xb8c16f32bd8c4f8897e0b5378779e844",
+                        "parent_name": "evaluate-v1.1.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x68157053d5eb47acad921737ed91d5b3"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xb8c16f32bd8c4f8897e0b5378779e844",
+                        "parent_name": "test_labeled_studies.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x36a219ac220346429f0b748e77267f8b"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xb8c16f32bd8c4f8897e0b5378779e844",
+                        "parent_name": "gonglinyuan-predictions-gcm-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x98013f39b2af4c4f91bd14d5d31c5563"
+                    }
+                ],
+                "id": "0xb8c16f32bd8c4f8897e0b5378779e844",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1529297062,
+                    "data_size": 4976,
+                    "description": "{\"submit_id\": \"0x191feaf9e5df4117a49a72d7f394803b\", \"predict_id\": \"0x98013f39b2af4c4f91bd14d5d31c5563\", \"submitter_id\": \"0x368f0b632dc94bb1b529712a63d84085\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1529297592,
+                    "memory_max": 0.0,
+                    "name": "gonglinyuan-predictions-gcm-results",
+                    "remote": "vm-clws-prod-surgeworker-1",
+                    "request_cpus": 0,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1529297589,
+                    "tags": [
+                        "mura-test-eval"
+                    ],
+                    "time": 2.97381401062
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xb8c16f32bd8c4f8897e0b5378779e844"
+            },
+            "scores": {
+                "elbow_lower": 0.7413456994328923,
+                "elbow_mean": 0.7717391304347827,
+                "elbow_upper": 0.8021325614366731,
+                "finger_lower": 0.4548766779078226,
+                "finger_mean": 0.5070422535211269,
+                "finger_upper": 0.5592078291344311,
+                "forearm_lower": 0.7074330563250233,
+                "forearm_mean": 0.7368421052631581,
+                "forearm_upper": 0.7662511542012929,
+                "hand_lower": 0.8303705353827876,
+                "hand_mean": 0.8507462686567164,
+                "hand_upper": 0.8711220019306453,
+                "humerus_lower": 0.7764800000000001,
+                "humerus_mean": 0.8,
+                "humerus_upper": 0.82352,
+                "overall_lower": 0.7693811070229338,
+                "overall_mean": 0.773274917853231,
+                "overall_upper": 0.7771687286835282,
+                "shoulder_lower": 0.7696941264777633,
+                "shoulder_mean": 0.7945205479452055,
+                "shoulder_upper": 0.8193469694126478,
+                "wrist_lower": 0.9217222503859059,
+                "wrist_mean": 0.9307875894988068,
+                "wrist_upper": 0.9398529286117077
+            },
+            "submission": {
+                "created": 1529287644,
+                "description": "gcm (ensemble) (Peking University)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "gonglinyuan"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0x32e91db9f8c244a8853c4b620173ff2f \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -457,7 +560,7 @@
             "submission": {
                 "created": 1528656018,
                 "description": "ResNet (single model) (UCSC CE graduate student huimin yan)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "hyan90"
@@ -765,5 +868,5 @@
             }
         }
     ],
-    "updated": 1528661165.526823
+    "updated": 1529298172.250344
 }
