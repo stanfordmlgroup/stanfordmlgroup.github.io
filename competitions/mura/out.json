@@ -259,6 +259,109 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0xe3a9cbe9915944c092498861f13d3ec1 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x3330a20dd6b4784785d549c4e73bbc0f155147f5",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xfe00e178df064c60bf6fa146b91950b6",
+                        "parent_name": "evaluate-v1.1.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x68157053d5eb47acad921737ed91d5b3"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xfe00e178df064c60bf6fa146b91950b6",
+                        "parent_name": "test_labeled_studies.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x36a219ac220346429f0b748e77267f8b"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xfe00e178df064c60bf6fa146b91950b6",
+                        "parent_name": "Mohammadreza-predictions-VGG-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xe3a9cbe9915944c092498861f13d3ec1"
+                    }
+                ],
+                "id": "0xfe00e178df064c60bf6fa146b91950b6",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1529345116,
+                    "data_size": 4977,
+                    "description": "{\"submit_id\": \"0xb38678e24cde430f9c52b236e7bb7bcc\", \"predict_id\": \"0xe3a9cbe9915944c092498861f13d3ec1\", \"submitter_id\": \"0xf623d5fc00534df9af73cd57337ffccc\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1529345139,
+                    "memory_max": 0.0,
+                    "name": "Mohammadreza-predictions-VGG-results",
+                    "remote": "vm-clws-prod-surgeworker-1",
+                    "request_cpus": 0,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1529345137,
+                    "tags": [
+                        "mura-test-eval"
+                    ],
+                    "time": 2.68449902534
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xfe00e178df064c60bf6fa146b91950b6"
+            },
+            "scores": {
+                "elbow_lower": 0.8298653092739284,
+                "elbow_mean": 0.8502673796791445,
+                "elbow_upper": 0.8706694500843605,
+                "finger_lower": 0.47642963903277985,
+                "finger_mean": 0.5248868778280543,
+                "finger_upper": 0.5733441166233288,
+                "forearm_lower": 0.7074330563250233,
+                "forearm_mean": 0.7368421052631581,
+                "forearm_upper": 0.7662511542012929,
+                "hand_lower": 0.8303705353827876,
+                "hand_mean": 0.8507462686567164,
+                "hand_upper": 0.8711220019306453,
+                "humerus_lower": 0.5581866666666667,
+                "humerus_mean": 0.6000000000000001,
+                "humerus_upper": 0.6418133333333335,
+                "overall_lower": 0.7396620316696461,
+                "overall_mean": 0.7439824945295405,
+                "overall_upper": 0.7483029573894349,
+                "shoulder_lower": 0.8473987019102803,
+                "shoulder_mean": 0.8642533936651584,
+                "shoulder_upper": 0.8811080854200365,
+                "wrist_lower": 0.7683350917677062,
+                "wrist_mean": 0.7933491686460808,
+                "wrist_upper": 0.8183632455244555
+            },
+            "submission": {
+                "created": 1529310388,
+                "description": "{VGG19} (single model) (ZHAW)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "Mohammadreza"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0x32e91db9f8c244a8853c4b620173ff2f \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -868,5 +971,5 @@
             }
         }
     ],
-    "updated": 1529298172.250344
+    "updated": 1529345204.474004
 }
