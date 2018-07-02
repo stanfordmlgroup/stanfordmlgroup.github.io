@@ -1,0 +1,66 @@
+extends ../../layout
+
+block title
+    title Countdown Regression
+
+
+block description
+  meta(name='description', content='Countdown Regression: Sharp and Calibrated Survival Predictions.')
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/chexnet/css/chexnet.css')
+
+block extrascripts
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-8
+          h1#page-title Countdown Regression: Sharp and Calibrated Survival Predictions.
+          h2 Anand Avati, Tony Duan, Ken Jung, Nigam Shah, Andrew Ng
+  section
+    .container
+      .row
+        .col-md-7
+          h2 We build a program using Deep Learning to automatically identify hospitalized patients having palliative needs
+          p Personalized probabilistic forecasts of time to event (such as mortality) can be crucial in decision making, especially in the clinical setting. Inspired by ideas from the meteorology literature, we approach this problem through the paradigm of maximizing sharpness of prediction distributions, subject to calibration. In regression problems, it has been shown that optimizing the continuous ranked probability score (CRPS) instead of maximum likelihood leads to sharper prediction distributions while maintaining calibration. We introduce the Survival-CRPS, a generalization of the CRPS to the time to event setting, and present right-censored and interval-censored variants.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1806.08324") Read our paper
+        .col-md-5
+          h2 Find our paper at the Uncertainty in Deep Learning Workshop at UAI 2018.
+
+  section.gray
+    .container
+      .row
+        .col-md-5
+          h2 Sharpness subject to Calibration
+          p Our approach (crps) produces sharper prediction distributions compared to standard machine learning approaches (maximum likelihood).
+        .col-md-7
+          img(src='/projects/countdown-regression/img/cdr-sharpness.png')
+  section
+    .container
+      .row
+        .col-md-7
+          img(src='/projects/countdown-regression/img/cdr-crps.png')
+        .col-md-5
+          h2 Graphical Intuition for Survival-CRPS
+          p Explain how CRPS works
+  section
+    .container
+      .row
+        .col-md-7
+          img(src='/projects/countdown-regression/img/cdr-countdown.png')
+        .col-md-5
+          .h2 Predictions over time with RNN
+          p Predictions for patients over time
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.06402") Read our paper
+
+  section.bg-primary
+    .container
+      .row
+        .col-md-12
+          h3
+            | If you have questions about our work,
+            | contact us at:
+          h4
+            code avati@cs.stanford.edu
