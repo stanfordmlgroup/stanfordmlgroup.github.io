@@ -22,44 +22,43 @@ block content
   section
     .container
       .row
-        h2 A new machine learning approach to make confident and calibrated forecasts of time-to-event (such as mortality).
+        h2 A new machine learning approach to make forecasts of time to event.
         .col-lg-12
-          p Calibrated probabilistic forecasts of time-to-event (such as mortality) can be crucial in healthcare. Calibration means that predicted probabilities match real world frequencies (e.g among all the days that had a rain forecast of 80%, approximately 8 of 10 times it actually rained). Probabilistic forecasts are useful only when they are calibrated, and their usefulness increases with the forecast's confidence (e.g it is less useful to always predict the long term average of rain, though it would be calibrated). The field of meteorology has developed mathematical tools (called CRPS) to increase confidence in weather forecasts while maintaining calibration. We extend these tools to handle partial observations (a.k.a censoring), thus making them suitable for use with time-to-event forecasting. We call this Survival-CRPS, and apply it with a Recurrent Neural Network (RNN) to predict time-to-mortality of millions of patients using their Electronic Health Record (EHR) data.
+          p Probabilistic forecasts of time to event (such as mortality) can be crucial in healthcare. A forecast is only useful if it is calibrated, meaning that predicted probabilities match real world frequencies (for example, among all the days that had a rain forecast of 80%, approximately 8 of 10 times it actually rained). If calibrated, a forecast's usefulness increases with its confidence (it is useless to always predict the long term average of rain, even though such a forecast would be well-calibrated). The field of meteorology has developed mathematical tools (such as the CRPS) to increase confidence in weather forecasts while maintaining calibration. We extend these tools to handle partial observations (a.k.a. censoring), thus making them suitable for use with time to event forecasting. We call this Survival-CRPS, and apply by training a Recurrent Neural Network (RNN) to predict time to mortality for millions of patients using their Electronic Health Record (EHR) data.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1806.08324") Read our paper
 
   section.gray
     .container
       .row
-        h2 Two techniques for confident forecasts
+        h2 We introduce two techniques for more confident forecasts.
       .row
-        .col-md-5
-          p Maximum Likelihood Estimation (MLE), the most common approach in machine learning, fails to work well for forecasting time to all-cause mortality with EHR data. This is because, in real world EHRs, majority of the patients are alive. In such low prevalence conditions, the mathematical properties of MLE (i.e log-loss) tends to make survival forecasts that can be wildly unreasonable (e.g predicting the expected age-of-death to be many hundreds of years), though technically calibrated. This makes naive MLE based survival predictions practically unusable.
         .col-md-7
-          img(src='/projects/countdown-regression/img/cdr-sharpness.png')
-      .row
-        .col-md-12
-          p We present two independent techniques to improve the confidence of predictions in this scenario. First, we use Survival-CRPS in place of MLE. Second, based on the fact that humans generally do not live past 120 years of age, we create Interval Censored variants of both Survival-CRPS and MLE. The two techniques independently, and jointly, improve the quality of survival predictions.
-
+          p Maximum Likelihood Estimation (MLE), the most common approach in machine learning, fails to work well for forecasting time to all-cause mortality with EHR data. This is because, in real world EHRs, the vast majority of the patients are alive. In low prevalence conditions, the mathematical properties of MLE tend to make survival forecasts that can be wildly unreasonable (for example, predicting the expected age-of-death to be many hundreds of years). Even though such forecasts are technically calibrated, this makes naive MLE based survival predictions practically unusable.
+          p We present two independent techniques to improve the confidence of predictions in this scenario. First, we use our Survival-CRPS objective in place of MLE. Second, based on the fact that humans generally do not live past 120 years of age, we create Interval Censored variants of both Survival-CRPS and MLE. The two techniques independently, and jointly, improve the quality of survival predictions.
+          p In this figure, we show examples of a patient's predicted distributions for age of death under different models. Repeated interactions (indicated by darker color) between the patient and the EHR yield more conﬁdent predictions of time of death.
+        .col-md-5
+          img(src='/projects/countdown-regression/img/cdr-sharpness-1.png')
+          img(src='/projects/countdown-regression/img/cdr-sharpness-2.png')
   section
     .container
       .row
-        h2 Survival-CRPS: Graphical Intuition
+        h2 The Survival-CRPS score: graphical intuition.
       .row
-        .col-md-7
+        .col-md-8
           img(src='/projects/countdown-regression/img/cdr-crps.png')
-        .col-md-5
-          p Survival-CRPS is best understood with the visualization of the Cumulative Distribution Function (CDF) of the forecast. As illustrated in the first picture, the CRPS objective optimizes the forecast distribution to minimize the shaded area around Y, the actual outcome.
+        .col-md-4
+          p Our proposed Survival-CRPS score is best understood with a visualization of the Cumulative Distribution Function (CDF) of the forecast. As illustrated in the first figure, the original CRPS objective optimizes the forecast distribution to minimize the shaded area around <i>Y</i>, the actual outcome.
       .row
         .col-md-12
-          p The Survival-CRPS is a generalization of this approach, as shown in the next two pictures. It optimizes the forecast distribution to minimize the shaded regions only over those time periods where we are certain that the event (e.g death) has either not yet occured, or has already occurred (e.g the age of the person turns 120 years).
+          p The Survival-CRPS is a generalization of this approach, as shown in the next two figures. It optimizes the forecast distribution to minimize the shaded regions only over those time periods where we are certain that the event (e.g death) has either not yet occured, or has already occurred (e.g the age at which the person turns 120 years).
 
   section.gray
     .container
       .row
-        .h2 Predictions over time with Recurrent Neural Networks
+        .h2 Sequential predictions over hospital interactions with Recurrent Neural Networks.
       .row
         .col-md-5
-          p The RNN architecture is a natural fit for modeling data over time (such as patients making several visits to a hospital). We show that the model learns to make more confident predictions for the same patient given more history. This is illustrated in these pictures of six random patients, where the X-axis is the visit number of the patient, and in the Y-axis we plot the actual time-to-event (red line) and the corresponding forecasts (mean, upper and lower bounds of the 95% prediction interval). The sequential and monotonically decreasing time-to-event in such an RNN model inspires the name Countdown Regression.
+          p The RNN architecture is a natural fit for modeling data over time (such as patients making several visits to a hospital). We show that the model learns to make more confident predictions for the same patient given more history. This is illustrated in these pictures of six random patients, where the X-axis is the visit number of the patient, and in the Y-axis we plot the actual time to death (red line) and the corresponding forecasts (mean, upper and lower bounds of the 95% prediction interval). The sequential and monotonically decreasing set of time to event predictions in such an RNN model inspires the name <i>Countdown Regression</i>.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.06402") Read our paper
         .col-md-7
           img(src='/projects/countdown-regression/img/cdr-countdown.png')
