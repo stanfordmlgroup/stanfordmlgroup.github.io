@@ -16,34 +16,37 @@ block content
   section#header
     .container
       .row
-        .col-lg-10
+        .col-lg-7
           h1#page-title Countdown Regression: Sharp and Calibrated Survival Predictions.
-          h2 Anand Avati, Tony Duan, Ken Jung, Nigam Shah, Andrew Ng
+          h2 Anand Avati, Tony Duan, Kenneth Jung, Nigam H. Shah, and Andrew Y. Ng
   section
     .container
       .row
-        .col-md-12
-          h2 A new machine learning approach to make confident and calibrated forecasts of time-to-event (such as mortality).
-          p Calibrated probabilistic forecasts of time-to-event (such as mortality) can be crucial in healthcare. Calibration means that predicted probabilities match real world frequencies (e.g among all the days that had a rain forecast of 80%, approximately 8 of 10 times it actually rained). Probabilistic forecasts are useful only when they are calibrated, and their usefulness increases with the forecast's confidence (e.g it is less useful to always predict the long term average of rain, though it would be calibrated). The field of meteorology has developed mathematical tools (called CRPS) to increase confidence in weather forecasts while maintaining calibration. We extend these tools to handle partial observations (a.k.a censoring), thus making them suitable for use with time-to-event forecasting. We call this Survival-CRPS, and apply it with a Recurrent Neural Network (RNN) to predict time-to-mortality of millions of patients using their Electronic Health Record (EHR) data.
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1806.08324") Read our paper
+        h2 A new machine learning approach to make confident and calibrated forecasts of time-to-event (such as mortality).
+        p Calibrated probabilistic forecasts of time-to-event (such as mortality) can be crucial in healthcare. Calibration means that predicted probabilities match real world frequencies (e.g among all the days that had a rain forecast of 80%, approximately 8 of 10 times it actually rained). Probabilistic forecasts are useful only when they are calibrated, and their usefulness increases with the forecast's confidence (e.g it is less useful to always predict the long term average of rain, though it would be calibrated). The field of meteorology has developed mathematical tools (called CRPS) to increase confidence in weather forecasts while maintaining calibration. We extend these tools to handle partial observations (a.k.a censoring), thus making them suitable for use with time-to-event forecasting. We call this Survival-CRPS, and apply it with a Recurrent Neural Network (RNN) to predict time-to-mortality of millions of patients using their Electronic Health Record (EHR) data.
+        a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1806.08324") Read our paper
 
   section.gray
     .container
       .row
+        h2 Two techniques for confident forecasts
+      .row
         .col-md-5
-          h2 Two techniques for confident forecasts
           p Maximum Likelihood Estimation (MLE), the most common approach in machine learning, fails to work well for forecasting time to all-cause mortality with EHR data. This is because, in real world EHRs, majority of the patients are alive. In such low prevalence conditions, the mathematical properties of MLE (i.e log-loss) tends to make survival forecasts that can be wildly unreasonable (e.g predicting the expected age-of-death to be many hundreds of years), though technically calibrated. This makes naive MLE based survival predictions practically unusable.
-          p We present two independent techniques to improve the confidence of predictions in this scenario. First, we use Survival-CRPS in place of MLE. Second, based on the fact that humans generally do not live past 120 years of age, we create Interval Censored variants of both Survival-CRPS and MLE. The two techniques independently, and jointly, improve the quality of survival predictions.
         .col-md-7
           img(src='/projects/countdown-regression/img/cdr-sharpness.png')
+      .row
+        p We present two independent techniques to improve the confidence of predictions in this scenario. First, we use Survival-CRPS in place of MLE. Second, based on the fact that humans generally do not live past 120 years of age, we create Interval Censored variants of both Survival-CRPS and MLE. The two techniques independently, and jointly, improve the quality of survival predictions.
+
   section
     .container
+      .row
+        h2 Survival-CRPS: Graphical Intuition
       .row
         .col-md-7
           img(src='/projects/countdown-regression/img/cdr-crps.png')
         .col-md-5
-          h2 Survival-CRPS: Technical Intuition
-          p Explain how CRPS works
+          p Survival-CRPS is best understood with the visualization of the Cumulative Distribution Function (CDF) of the forecast.
   section
     .container
       .row
