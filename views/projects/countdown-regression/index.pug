@@ -52,13 +52,14 @@ block content
       .row
         .col-md-12
           p The Survival-CRPS is a generalization of this approach, as shown in the next two pictures. It optimizes the forecast distribution to minimize the shaded regions only over those time periods where we are certain that the event (e.g death) has either not yet occured, or has already occurred (e.g the age of the person turns 120 years).
-  section
+
+  section.gray
     .container
       .row
         .h2 Predictions over time with Recurrent Neural Networks
       .row
         .col-md-5
-          p The RNN architecture is a natural fit for modeling data over time (such as patients making several visits to a hospital over time). We show that the model learns to make more confident predictions for the same patient given more history. This is illustrated in these pictures of six random patients, where we compare the true time to event (red line) with the corresponding forecasts (mean, and upper and lower bounds of the 95% prediction interval). The sequential and monotonically decreasing time-to-event in such an RNN model inspires the name Countdown Regression.
+          p The RNN architecture is a natural fit for modeling data over time (such as patients making several visits to a hospital). We show that the model learns to make more confident predictions for the same patient given more history. This is illustrated in these pictures of six random patients, where the X-axis is the visit number of the patient, and in the Y-axis we plot the actual time-to-event (red line) and the corresponding forecasts (mean, upper and lower bounds of the 95% prediction interval). The sequential and monotonically decreasing time-to-event in such an RNN model inspires the name Countdown Regression.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.06402") Read our paper
         .col-md-7
           img(src='/projects/countdown-regression/img/cdr-countdown.png')
