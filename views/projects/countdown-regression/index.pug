@@ -16,9 +16,9 @@ block content
   section#header
     .container
       .row
-        .col-lg-7
+        .col-lg-12
           h1#page-title Countdown Regression: Sharp and Calibrated Survival Predictions.
-          h2 Anand Avati, Tony Duan, Kenneth Jung, Nigam H. Shah, and Andrew Y. Ng
+          h2 Anand Avati, Tony Duan, Kenneth Jung, Nigam H. Shah, Andrew Ng
   section
     .container
       .row
@@ -59,7 +59,7 @@ block content
       .row
         .col-md-5
           p The RNN architecture is a natural fit for modeling data over time (such as patients making several visits to a hospital). We show that the model learns to make more confident predictions for the same patient given more history. This is illustrated in these pictures of six random patients, where the X-axis is the visit number of the patient, and in the Y-axis we plot the actual time to death (red line) and the corresponding forecasts (mean, upper and lower bounds of the 95% prediction interval). The sequential and monotonically decreasing set of time to event predictions in such an RNN model inspires the name <i>Countdown Regression</i>.
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.06402") Read our paper
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1806.08324") Read our paper
         .col-md-7
           img(src='/projects/countdown-regression/img/cdr-countdown.png')
 
