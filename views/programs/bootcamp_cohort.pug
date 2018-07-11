@@ -1,0 +1,31 @@
+extends ../layout
+
+block description
+  meta(name='description', content='Accelerated learning at the intersection of AI and healthcare.')
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-9
+          img#aihc_headline(src="/programs/AIForHealthcareHeadline.svg")
+  section
+    .container
+      .row
+        .col-lg-9
+          block cohort_block
+          .clearfix
+  section.gray
+    .container
+      .row
+        .col-sm-4
+          h3 Teaching Team
+          block teaching_team
+          .clearfix
+        .col-sm-8
+          h2 Description
+          p Over the course of the quarter, our bootcamp covered a large breadth of topics at the intersection of artificial intelligence and healthcare. Students took a dive into cutting-edge research at the intersection of artificial intelligence and healthcare, working closely with Ph.D. students and each other.
+          h2 Students
+          .row
+            .col-sm-10.col-sm-offset-1
+              block students

@@ -1,44 +1,28 @@
-extends ../../layout
+extends ../bootcamp_cohort
 
 block title
   title AI For Healthcare Bootcamp Fall 2017
 
-block description
-  meta(name='description', content='Accelerated learning at the intersection of AI and healthcare.')
-
-block extrascripts
 include ../../includes/profile
 
-block content
-  section#header
-    .container
-      .row
-        .col-lg-9
-          img(src="/programs/aihc-bootcamp-fall2017/img/headline.svg", style="max-width: 600px; margin: 0px; padding: 0px;")
-  section.gray
-    .container
-      .row
-        .col-sm-4
-          h3 Teaching Team
-          +dp('Anand Avati', 'phd', false, true)
-          +dp('Pranav Rajpurkar', 'phd', false, true)
-          +dp('Jeremy Irvin', 'ms', false, true)
-          +dp('Andrew Ng', 'prof', false, true)
-          +dp('Nigam Shah', 'prof', false, true)
-          +dp('Matt Lungren', 'prof', false, true)
-          +dp('Curt Langlotz', 'prof', false, true)
-          .clearfix
-        .col-sm-8
-          h2 Description
-          p Over the course of Fall Quarter 2017, our bootcamp covered a large breadth of topics at the intersection of artificial intelligence and healthcare. Students took a dive into cutting-edge research with medical imaging and Electronic Health Record data, working closely with Ph.D. students and each other.
-          h2 Students
-          .row
-            .col-sm-10.col-sm-offset-1
-              //- Masters students, alphabetical order
-              +dp('Aarti Bagul', 'ms')
-              +dp('Daisy Ding', 'ms')
-              +dp('Hershel Mehta', 'ms')
-              +dp('Tony Duan', 'ms')
-              //- Bachelors students, alphabetical order
-              +dp('Brandon Yang', 'bs')
-              +dp('Kaylie Zhu', 'bs')
+block cohort_block
+  h1 Fall 2017 Cohort
+
+block teaching_team
+  +dp('Anand Avati', 'phd', false, true)
+  +dp('Pranav Rajpurkar', 'phd', false, true)
+  +dp('Jeremy Irvin', 'ms', false, true)
+  +dp('Andrew Ng', 'prof', false, true)
+  +dp('Nigam Shah', 'prof', false, true)
+  +dp('Matt Lungren', 'prof', false, true)
+  +dp('Curt Langlotz', 'prof', false, true)
+
+block students
+  //- Masters students, alphabetical order
+  +dp('Aarti Bagul', 'ms')
+  +dp('Daisy Ding', 'ms')
+  +dp('Hershel Mehta', 'ms')
+  +dp('Tony Duan', 'ms')
+  //- Bachelors students, alphabetical order
+  +dp('Brandon Yang', 'bs')
+  +dp('Kaylie Zhu', 'bs')
