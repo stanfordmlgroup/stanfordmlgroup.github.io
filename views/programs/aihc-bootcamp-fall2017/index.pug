@@ -9,37 +9,36 @@ block description
 block extrascripts
 include ../../includes/profile
 
-
 block content
   section#header
     .container
       .row
         .col-lg-9
           img(src="/programs/aihc-bootcamp-fall2017/img/headline.svg", style="max-width: 600px; margin: 0px; padding: 0px;")
-  section.gray.features
+  section.gray
     .container
       .row
-        .col-md-7
+        .col-sm-4
+          h3 Teaching Team
+          +dp('Anand Avati', 'phd', false, true)
+          +dp('Pranav Rajpurkar', 'phd', false, true)
+          +dp('Jeremy Irvin', 'ms', false, true)
+          +dp('Andrew Ng', 'prof', false, true)
+          +dp('Nigam Shah', 'prof', false, true)
+          +dp('Matt Lungren', 'prof', false, true)
+          +dp('Curt Langlotz', 'prof', false, true)
+          .clearfix
+        .col-sm-8
           h2 Description
           p Over the course of Fall Quarter 2017, our bootcamp covered a large breadth of topics at the intersection of artificial intelligence and healthcare. Students took a dive into cutting-edge research with medical imaging and Electronic Health Record data, working closely with Ph.D. students and each other.
-          h1 Organizers
-          +dp('Anand Avati', 'phd')
-          +dp('Pranav Rajpurkar', 'phd')
-          +dp('Jeremy Irvin', 'ms')
-          +dp('Andrew Ng', 'prof')
-          +dp('Nigam Shah', 'prof')
-        .col-md-5
-          img(src="/programs/aihc-bootcamp-fall2017/img/team.jpg")
-  section.features
-    .container
-      .row
-        .col-lg-12.text-center
-          .section-heading
-            h1 Students
-      .row
-        +dp('Aarti Bagul', 'ms')
-        +dp('Brandon Yang', 'bs')
-        +dp('Daisy Ding', 'ms')
-        +dp('Hershel Mehta', 'ms')
-        +dp('Kaylie Zhu', 'bs')
-        +dp('Tony Duan', 'ms')
+          h2 Students
+          .row
+            .col-sm-10.col-sm-offset-1
+              //- Masters students, alphabetical order
+              +dp('Aarti Bagul', 'ms')
+              +dp('Daisy Ding', 'ms')
+              +dp('Hershel Mehta', 'ms')
+              +dp('Tony Duan', 'ms')
+              //- Bachelors students, alphabetical order
+              +dp('Brandon Yang', 'bs')
+              +dp('Kaylie Zhu', 'bs')
