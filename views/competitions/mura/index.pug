@@ -17,24 +17,28 @@ mixin model_display(group)
   table.table.performanceTable
     tr
       th Rank
+      th Date
       th Model
       th Kappa
     - var largest_kappa = Math.max.apply(null, group.map(function (model) { return model.kappa; }))
     tr.human-row
       td
       td
-        | Best Radiologist Performance
-        p.institution Stanford University
+      td
+        | Best Radiologist Performance 
+        em Stanford University 
         a(href="https://arxiv.org/abs/1712.06957") Rajpurkar & Irvin et al., 17
       td 0.778
     each model in group
       tr
         td.rank
           | #{model.rank} <br>
+        td
           span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
         td(style="word-break:break-word;")
           | #{model.model_name}
-          p.institution #{model.institution}
+          if model.institution != ''
+              em  #{model.institution} 
           if model.link
             a.link(href=model.link) #{model.link}
         td
@@ -54,7 +58,7 @@ block content
   section
     .container
       .row
-        .col-md-7
+        .col-md-6
           h1 What is MURA?
           p MURA (<b>mu</b>sculoskeletal <b>ra</b>diographs) is a large dataset of bone X-rays. Algorithms are tasked with determining whether an X-ray study is normal or abnormal.
           p Musculoskeletal conditions affect more than 1.7 billion people worldwide, and are the most common cause of severe, long-term pain and disability, with 30 million emergency department visits annually and increasing. We hope that our dataset can lead to significant advances in medical imaging technologies which can diagnose at the level of experts, towards improving healthcare access in parts of the world where access to skilled radiologists is limited.
@@ -62,8 +66,12 @@ block content
           h2 How can I participate?
           p MURA uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
           p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
-          a.btn.btn-lg.btn-default(href="https://worksheets.codalab.org/worksheets/0x42dda565716a4ee08d61f0a23656d8c0/") Submission Tutorial
-        .col-md-5
+          ul.list-inline
+            li
+              a.btn.btn-lg.btn-default(href="https://worksheets.codalab.org/worksheets/0x42dda565716a4ee08d61f0a23656d8c0/") Submission Tutorial
+            li
+              a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1712.06957") Read the Paper
+        .col-md-6
           h1 Leaderboard
           p 
             | Will your model perform as well as radiologists in detecting abnormalities in musculoskeletal X-rays?
