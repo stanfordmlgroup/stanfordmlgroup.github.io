@@ -51,7 +51,7 @@ var parseCompEntries = function (comp_file) {
       if (!(entry.kappa >= 0)) throw 'Score invalid'
       if (entry.kappa < 0.5) throw 'Score too low'
       if (entry.model_name === '') {
-        entry.model_name = 'Unnamed submission by ' + entry.user
+        entry.model_name = '' + entry.user
       }
       entries.push(entry)
     } catch (err) {
