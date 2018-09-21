@@ -1,10 +1,10 @@
 extends ../../layout
 
 block title
-  title AI For Healthcare Bootcamp Fall 2018
+  title AI For Healthcare Bootcamp 
 
 block description
-  meta(name='description', content='Accelerated learning at the intersection of AI and healthcare.')
+  meta(name='description', content='Cutting-edge research at the intersection of AI and healthcare.')
 
 block extrascripts
 include ../../includes/profile
@@ -18,12 +18,18 @@ block content
   section.gray
     .container
       .row
+        .col-sm-8
+          h3 The AI for Healthcare Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and healthcare. Students receive training from PhD students and bootcamp faculty to work on high impact work.
+          p The applications for the fall bootcamp are now open and due on October 3rd, 2018.
+          a.btn.btn-lg.btn-default(href="https://goo.gl/forms/4xpEQgCa2dskUakH3") Apply Now
+  section
+    .container
+      .row
         .col-sm-4
           h3 Teaching Team
           +dp('Pranav Rajpurkar', 'phd', false, true)
           +dp('Anand Avati', 'phd', false, true)
           +dp('Jeremy Irvin', 'ms', false, true)
-          +dp('Tony Duan', 'ms', false, true)
           +dp('Andrew Ng', 'prof', false, true)
           +dp('Nigam Shah', 'prof', false, true)
           +dp('Matt Lungren', 'prof', false, true)
@@ -33,29 +39,33 @@ block content
           +dp('Bhavik Patel', 'prof', false, true)
           +dp('Kristen Yeom', 'prof', false, true)
         .col-sm-8
-          h2 Description
-          p Over the course of Fall Quarter 2018, our bootcamp will cover a large breadth of topics at the intersection of artificial intelligence and healthcare. Students will take a dive into cutting-edge research in radiology, pathology, electronic health records, mental health, and public health, working closely with Ph.D. students and each other.
-          h2 Timeline
-          ul
-            li Applications due TBD.
-            li Interviews and selections TBD. 
-            li Bootcamp starts first day of Fall Quarter.
-          h2 Requirements
-          ul
-            li Must be a full-time Stanford student.
-            li Should have taken CS229/CS230/CS224N/CS231N or equivalent.
-            li Proficiency in Python.
-          h2 Commitment
-          ul
-            li
-              | Be able to register for 6 or more independent research units for this bootcamp. 
-              | This level of commitment is not consistent with working as an RA or on other research projects simultaneously. However, we promise you will learn a lot from this experience.
-            li
-              | Be present at the bootcamp venue 5+ hours per day every day.
-            li
-              | Continue AI Research in the lab in Winter 2018-2019.
-          h2 Previous Cohorts
-          ul
+          h2 Program
+          p The AIHC bootcamp is an intense two-quarter program where students work on high-impact research problems at the intersection of AI and healthcare (radiology, pathology and public health). Students work closely with PhD students in Professor Andrew Ng's lab and with faculty in the medical school. 
+          .applications
+            h2 Applications
+            p Students with a background in artificial intelligence or healthcare are encouraged to apply. The applications for the fall bootcamp are now open.
+            ul
+              li Applications due October 3rd at 11:59p PST.
+              li Rolling interviews and selections until October 7th, 2018.
+              li Bootcamp duration is October 8th, 2018 to March 14th, 2019.
+            h3 AI Specialization
+            p This role is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with medical school faculty. Students have the opportunity to take a deep dive into healthcare and co-author a research paper. We expect students to have:
+            ul
+              li Taken machine learning courses (CS229/CS230/CS224N/CS231N or equivalent).
+              li Proficiency in software engineering (CS107 or equivalent), and have done Python programming.
+              li The bootcamp as their primary academic engagement (20-30 hours per week) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399 etc).
+            h3 Healthcare Specialization
+            p  This role is suited for students in the medical school or with a background in healthcare. Students will work to define and iterate the focus of projects guided by explorations into clinical utility and opportunities for novel AI solutions. Students have the opportunity work closely with the medical school faculty, take a deep dive into AI, and co-author a research paper. We expect students to have:
+            ul
+              li An ability to identify clinical opportunities and risks for machine learning solutions. We look for demonstrations of innovation in a candidate's experience Knowledge of machine learning is required to the level of being able to communicate technical ideas at a high level, and specialized knowledge in a medical area is a plus.
+              li Proficiency in writing.
+              li Students are expected to be able to dedicate 10 hours per week. Students can sign up for research credits (MED 199, MED 399 etc).
+  section.gray
+    .container
+      .row
+        .col-md-8.col-md-offset-4
+          h3 Bootcamp Alumni
+          ul.list-inline
             li
               a(href="/programs/aihc-bootcamp-spring2018") Spring 2017-2018
             li
@@ -67,5 +77,4 @@ block content
       .row
         .col-md-8.col-md-offset-4
           h2 We invite you to join the AI revolution in healthcare
-          p Through your work in this program, we hope that you will improve human health, and perhaps even save countless lives.
-          a.btn.btn-lg.btn-default(href="https://goo.gl/forms/4xpEQgCa2dskUakH3") Apply To Bootcamp
+          a.btn.btn-lg.btn-default(href="https://goo.gl/forms/4xpEQgCa2dskUakH3") Apply Now
