@@ -21,7 +21,7 @@
 
 #page-title {
   font-size: 3.2em;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 2px;
 }
 
@@ -62,8 +62,8 @@ svg {
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 .heading-font {
-  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
-  font-weight: 200;
+  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
   letter-spacing: 1px;
 }
 .body-font {
@@ -101,16 +101,21 @@ hr {
 hr.light {
   border-color: white;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
-  font-weight: 200;
-  letter-spacing: 1px;
+  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
 }
+
+h2, h3 {
+  line-height: 3rem;
+}
+
 p, ul > li {
   font-size: 1.2em;
   line-height: 2.4rem;
@@ -123,13 +128,13 @@ p, ul > li {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
-  font-weight: 200;
+  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
   letter-spacing: 1px;
 }
 .navbar-default .navbar-header .navbar-brand {
-  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
-  font-weight: 200;
+  font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 400;
   letter-spacing: 1px;
   color: #a90531;
 }
