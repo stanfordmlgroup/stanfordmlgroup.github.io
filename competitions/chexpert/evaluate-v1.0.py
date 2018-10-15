@@ -3,7 +3,6 @@
 CheXpert Competition evaluation script.
 """
 import argparse
-import json
 import sys
 
 import numpy as np
@@ -37,9 +36,9 @@ def evaluate(annotations_path, predictions_path):
 
         auc = roc_auc_score(annotations[task+"_GT"], predictions[task+"_P"])
 
-        results_dict[task + "_AUROC"] = auc
+        results_dict[task.split()[-1] + "_AUROC"] = auc
 
-    results_dict["Average_AUROC"] = np.mean([results_dict[task+"_AUROC"] for task in competition_tasks])
+    results_dict["Average_AUROC"] = np.mean([results_dict[task.split()[-1]+"_AUROC"] for task in competition_tasks])
     
     return results_dict
 
@@ -54,7 +53,8 @@ def main():
 
     scores = evaluate(args.annotations_path, args.predictions_path)
 
-    json.dump(scores, sys.stdout)
+    print(scores)
+    sys.stdout.flush()
 
 if __name__ == '__main__':
     main()
