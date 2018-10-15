@@ -55,7 +55,6 @@ def main():
     scores = evaluate(args.annotations_path, args.predictions_path)
 
     json.dump(scores, sys.stdout)
-    print()
 
 if __name__ == '__main__':
     main()
