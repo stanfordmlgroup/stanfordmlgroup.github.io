@@ -156,6 +156,108 @@
     "leaderboard": [
         {
             "bundle": {
+                "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0x36ad83b1b2f94d2eaecfeaa498d487fd \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0xdc111bee63b2837ad1ebecd04d2bb95a513e055b",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x8211620d54ef4f6e9635e0328a80bdaa",
+                        "parent_name": "evaluate-v1.1.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x68157053d5eb47acad921737ed91d5b3"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x8211620d54ef4f6e9635e0328a80bdaa",
+                        "parent_name": "test_labeled_studies.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x36a219ac220346429f0b748e77267f8b"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x8211620d54ef4f6e9635e0328a80bdaa",
+                        "parent_name": "maxentropy-predictions-tftorch-pk-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x36ad83b1b2f94d2eaecfeaa498d487fd"
+                    }
+                ],
+                "id": "0x8211620d54ef4f6e9635e0328a80bdaa",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1541545643,
+                    "data_size": 4977,
+                    "description": "{\"submit_id\": \"0x012b9e2f5d6d4c7cacca5915da7e3dea\", \"predict_id\": \"0x36ad83b1b2f94d2eaecfeaa498d487fd\", \"submitter_id\": \"0x8481bfc34aca4c0a927dde03ddd7a8c9\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1541545974,
+                    "name": "maxentropy-predictions-tftorch-pk-results",
+                    "remote": "vm-clws-prod-worker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1541545940,
+                    "tags": [
+                        "mura-test-eval"
+                    ],
+                    "time": 14.6372718811
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x8211620d54ef4f6e9635e0328a80bdaa"
+            },
+            "scores": {
+                "elbow_lower": 0.8235267543725773,
+                "elbow_mean": 0.845303867403315,
+                "elbow_upper": 0.8670809804340527,
+                "finger_lower": 0.5581866666666667,
+                "finger_mean": 0.6000000000000001,
+                "finger_upper": 0.6418133333333335,
+                "forearm_lower": 0.7786547381086377,
+                "forearm_mean": 0.8017621145374448,
+                "forearm_upper": 0.824869490966252,
+                "hand_lower": 0.8303705353827876,
+                "hand_mean": 0.8507462686567164,
+                "hand_upper": 0.8711220019306453,
+                "humerus_lower": 0.850405925925926,
+                "humerus_mean": 0.8666666666666667,
+                "humerus_upper": 0.8829274074074074,
+                "overall_lower": 0.8305814860439714,
+                "overall_mean": 0.8335146898803046,
+                "overall_upper": 0.8364478937166379,
+                "shoulder_lower": 0.924162963260874,
+                "shoulder_mean": 0.9327354260089686,
+                "shoulder_upper": 0.9413078887570633,
+                "wrist_lower": 0.9217222503859059,
+                "wrist_mean": 0.9307875894988068,
+                "wrist_upper": 0.9398529286117077
+            },
+            "submission": {
+                "created": 1541538509,
+                "description": "base-comb2-xuan(ensemble)(jzhang Availink)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 5,
+                "public": true,
+                "user_name": "maxentropy"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0xa042129784b344dc9dddb2fbb3e48a38 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -249,8 +351,8 @@
             },
             "submission": {
                 "created": 1538854474,
-                "description": "muti_type (ensemble model) SCU_MILAB",
-                "num_period_submissions": 1,
+                "description": "muti_type (ensemble model) (SCU_MILAB)",
+                "num_period_submissions": 0,
                 "num_total_submissions": 7,
                 "public": true,
                 "user_name": "milab_sx"
@@ -353,7 +455,7 @@
                 "created": 1538506139,
                 "description": "base-comb4(ensemble)(jzhang Availink)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 4,
+                "num_total_submissions": 5,
                 "public": true,
                 "user_name": "maxentropy"
             }
@@ -455,7 +557,7 @@
                 "created": 1534962828,
                 "description": "base-comb3(ensemble)(jtz Availink)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 4,
+                "num_total_submissions": 5,
                 "public": true,
                 "user_name": "maxentropy"
             }
@@ -556,7 +658,7 @@
             "submission": {
                 "created": 1536929447,
                 "description": "double_res(ensemble model)(SCU_MILAB)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 7,
                 "public": true,
                 "user_name": "milab_sx"
@@ -657,9 +759,9 @@
             },
             "submission": {
                 "created": 1535122129,
-                "description": "double-dense-Axy-Axyf512(ensemble)(jtz Availink)",
+                "description": "double-dense-Axy-Axyf512(ensemble)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 4,
+                "num_total_submissions": 5,
                 "public": true,
                 "user_name": "maxentropy"
             }
@@ -1578,7 +1680,7 @@
             "submission": {
                 "created": 1531563807,
                 "description": "Trs (single model) (SCU_MILAB)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 7,
                 "public": true,
                 "user_name": "milab_sx"
@@ -1987,7 +2089,7 @@
             "submission": {
                 "created": 1535168941,
                 "description": "dense-sep-xyz(ensemble)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "alibabaai"
@@ -2295,7 +2397,7 @@
             "submission": {
                 "created": 1531573004,
                 "description": "type_resnet (single model) (CCLab)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 7,
                 "public": true,
                 "user_name": "milab_sx"
@@ -2603,7 +2705,7 @@
             "submission": {
                 "created": 1538664723,
                 "description": "ExtremityModel (ensemble) Radiobotics www.radiobotics.com",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "Radiobotics"
@@ -3422,7 +3524,7 @@
             "submission": {
                 "created": 1531762285,
                 "description": "type_inception2(single model) (CCLab)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 7,
                 "public": true,
                 "user_name": "milab_sx"
@@ -3730,7 +3832,7 @@
                 "created": 1540601211,
                 "description": "Joint-tv(single)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 4,
+                "num_total_submissions": 5,
                 "public": true,
                 "user_name": "maxentropy"
             }
@@ -4343,7 +4445,7 @@
             "submission": {
                 "created": 1540672998,
                 "description": "xception(single model)(bimal)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "bigrewal"
@@ -4548,7 +4650,7 @@
             "submission": {
                 "created": 1534649088,
                 "description": "{monica_v1}(single model)(Zzmonica)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 4,
                 "public": false,
                 "user_name": "Monica"
@@ -4757,6 +4859,108 @@
                 "num_total_submissions": 7,
                 "public": true,
                 "user_name": "zhy"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x68157053d5eb47acad921737ed91d5b3 test.csv:0x36a219ac220346429f0b748e77267f8b predictions.csv:0x49e40af1d806499bb786256f9f083a62 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x2a0e6a7ef95f5003199d3abee5ec668d29017b81",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x3b3e9af2696d4b19aa749a565164cd68",
+                        "parent_name": "evaluate-v1.1.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x68157053d5eb47acad921737ed91d5b3"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x3b3e9af2696d4b19aa749a565164cd68",
+                        "parent_name": "test_labeled_studies.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x36a219ac220346429f0b748e77267f8b"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x3b3e9af2696d4b19aa749a565164cd68",
+                        "parent_name": "rology_mura-predictions-DenseNet-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x49e40af1d806499bb786256f9f083a62"
+                    }
+                ],
+                "id": "0x3b3e9af2696d4b19aa749a565164cd68",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1541545661,
+                    "data_size": 4979,
+                    "description": "{\"submit_id\": \"0x714adee539cd46979e32e39c61b31244\", \"predict_id\": \"0x49e40af1d806499bb786256f9f083a62\", \"submitter_id\": \"0x39ae2dff44db44e0928498ae60170af7\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1541546813,
+                    "name": "rology_mura-predictions-DenseNet-results",
+                    "remote": "vm-clws-prod-worker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1541546794,
+                    "tags": [
+                        "mura-test-eval"
+                    ],
+                    "time": 14.6875009537
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x3b3e9af2696d4b19aa749a565164cd68"
+            },
+            "scores": {
+                "elbow_lower": 0.6504038338268061,
+                "elbow_mean": 0.6906077348066297,
+                "elbow_upper": 0.7308116357864534,
+                "finger_lower": 0.18096086730526462,
+                "finger_mean": 0.253731343283582,
+                "finger_upper": 0.32650181926189936,
+                "forearm_lower": 0.7105338606030648,
+                "forearm_mean": 0.7394957983193278,
+                "forearm_upper": 0.7684577360355908,
+                "hand_lower": 0.6480764584284142,
+                "hand_mean": 0.689119170984456,
+                "hand_upper": 0.7301618835404977,
+                "humerus_lower": 0.4865837037037038,
+                "humerus_mean": 0.5333333333333334,
+                "humerus_upper": 0.580082962962963,
+                "overall_lower": 0.6533414601909008,
+                "overall_mean": 0.6589506172839507,
+                "overall_upper": 0.6645597743770005,
+                "shoulder_lower": 0.8434670781893004,
+                "shoulder_mean": 0.8611111111111112,
+                "shoulder_upper": 0.8787551440329219,
+                "wrist_lower": 0.7695481447948628,
+                "wrist_mean": 0.7943262411347518,
+                "wrist_upper": 0.8191043374746408
+            },
+            "submission": {
+                "created": 1541440343,
+                "description": "DenseNet (single model) (Rology) http://www.rology.net/",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "rology_mura"
             }
         },
         {
@@ -5267,7 +5471,7 @@
             "submission": {
                 "created": 1540588936,
                 "description": "baseJoint-tvsq(single)(ali)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "alibabaai"
@@ -7602,7 +7806,7 @@
             "submission": {
                 "created": 1540436423,
                 "description": "monica_v2.2 (single model) (Zzmonica)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 4,
                 "public": false,
                 "user_name": "Monica"
@@ -7697,7 +7901,7 @@
             "submission": {
                 "created": 1534990657,
                 "description": "monica_v2(single model) (Zzmonica)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 4,
                 "public": false,
                 "user_name": "Monica"
@@ -8082,7 +8286,7 @@
             "submission": {
                 "created": 1537965115,
                 "description": "ty_re (ensemble model) SCU_MILAB",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 7,
                 "public": true,
                 "user_name": "milab_sx"
@@ -8666,7 +8870,7 @@
             "submission": {
                 "created": 1537966393,
                 "description": "ty2_re (ensemble model) SCU_MILAB",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 7,
                 "public": true,
                 "user_name": "milab_sx"
@@ -8856,7 +9060,7 @@
             "submission": {
                 "created": 1534993417,
                 "description": "monica_v2.1 (single model) (Zzmonica)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 4,
                 "public": false,
                 "user_name": "Monica"
@@ -10003,5 +10207,5 @@
             }
         }
     ],
-    "updated": 1540956594.314853
+    "updated": 1541556184.851414
 }
