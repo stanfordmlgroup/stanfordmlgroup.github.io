@@ -1,0 +1,29 @@
+extends ../../layout
+
+block title
+  title MRNet
+
+block description
+  meta(name='description', content='')
+  meta(property="og:image", content="")
+  meta(name="twitter:image",content="")
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/mrnet/css/index.css')
+
+block extrascripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js")
+  script(src='/projects/mrnet/js/index.js')
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-10
+            h1 MRNet: Deep-learning-assisted diagnosis for knee magnetic resonance imaging
+            p Nicholas Bien *, Pranav Rajpurkar *, Robyn L. Ball, Jeremy Irvin, Allison Park, Erik Jones, Michael Bereket, Bhavik N. Patel, Kristen W. Yeom, Katie Shpanskaya, Safwan Halabi, Evan Zucker, Gary Fanton, Derek F. Amanatullah, Christopher F. Beaulieu, Geoffrey M. Riley, Russell J. Stewart, Francis G. Blankenberg, David B. Larson, Ricky H. Jones, Curtis P. Langlotz, Andrew Y. Ng<sup>&#8224;</sup>, Matthew P. Lungren<sup>&#8224;</sup>
+  section
+    .container
+      .row
+        .col-md-6.col-md-push-6
+          .mrnet-vis
