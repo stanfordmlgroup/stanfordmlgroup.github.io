@@ -27,14 +27,14 @@
         return anim
     }
 
-    function setSpriteAttrs(anim, width, height, x, y, anchor) {
+    function setSpriteAttrs(anim, width, height, x, y, anchor, speed) {
         anim.anchor.set(anchor);
         anim.width = width;
         anim.height = height;
         anim.x = x;
         anim.y = y;
 
-        anim.animationSpeed = 0.15;
+        anim.animationSpeed = speed;
         anim.play();
         anim.interactive = true;
 
@@ -71,21 +71,24 @@
         var anim_index = []
         var container = new PIXI.Container();
         app.stage.addChild(container);
-        var views = ['Sagittal', 'Coronal', 'Axial']
+        var views = ['Sagittal T2', 'Coronal T1', 'Axial PD']
 
         var padding = 10
         var image_size = (app.screen.width / 3) - padding
         var names = ['sa', 'co', 'ax', 'sac', 'coc', 'axc']
+        var frames = [35, 36, 41]
+        var speeds = [0.08, 0.15, 0.16]
 
         for (var i = 0; i < 6; i++) {
-            var anim = getAnimatedSprite(names[i], 36);
+            var anim = getAnimatedSprite(names[i], frames[i % 3]);
             setSpriteAttrs(
                 anim,
                 image_size,
                 image_size,
                 (i % 3)*(image_size + padding),
                 Math.floor(i / 3)*(image_size + padding) + padding,
-                0);
+                0,
+                speeds[i % 3]);
             anim.on('pointerdown', onClick);
             anim_index.push({
                 obj: anim,

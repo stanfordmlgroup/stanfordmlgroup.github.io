@@ -13,7 +13,7 @@
 			"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
 			"sourceSize": {"w":256,"h":256}
 		},
-		"coc19.png":
+		"coc18.png":
 		{
 			"frame": {"x":0,"y":0,"w":256,"h":256},
 			"rotated": false,
@@ -149,17 +149,17 @@
 			"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
 			"sourceSize": {"w":256,"h":256}
 		},
-		"coc18.png":
+		"coc36.png":
 		{
-			"frame": {"x":1024,"y":512,"w":256,"h":256},
+			"frame": {"x":1536,"y":0,"w":256,"h":256},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
 			"sourceSize": {"w":256,"h":256}
 		},
-		"coc37.png":
+		"coc19.png":
 		{
-			"frame": {"x":1536,"y":256,"w":256,"h":256},
+			"frame": {"x":1024,"y":768,"w":256,"h":256},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
@@ -293,17 +293,9 @@
 			"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
 			"sourceSize": {"w":256,"h":256}
 		},
-		"coc36.png":
-		{
-			"frame": {"x":1536,"y":0,"w":256,"h":256},
-			"rotated": false,
-			"trimmed": false,
-			"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
-			"sourceSize": {"w":256,"h":256}
-		},
 		"coc01.png":
 		{
-			"frame": {"x":1024,"y":768,"w":256,"h":256},
+			"frame": {"x":1024,"y":512,"w":256,"h":256},
 			"rotated": false,
 			"trimmed": false,
 			"spriteSourceSize": {"x":0,"y":0,"w":256,"h":256},
