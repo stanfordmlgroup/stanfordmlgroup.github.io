@@ -31,7 +31,10 @@ block content
           .mrnet-vis
         .col-md-6.col-md-pull-6
           h2 We developed an algorithm to predict abnormalities in knee MRI exams, and measured the effect of providing the model’s predictions to radiologists and surgeons during interpretation.
-          p Magnetic resonance (MR) imaging of the knee is the standard of care imaging modality to evaluate knee disorders, and more musculoskeletal MR examinations are performed on the knee than on any other region of the body. In this study we developed a deep learning model for detecting general abnormalities and specific diagnoses (anterior cruciate ligament [ACL] tears and meniscal tears) on knee MRI exams. We then measured the effect of providing the model’s predictions to clinical experts during interpretation.
+          p
+            | Magnetic resonance (MR) imaging of the knee is the standard of care imaging modality to evaluate knee disorders, and more musculoskeletal MR examinations are performed on the knee than on any other region of the body. In 
+            a(href="#") a study published in PLOS medicine
+            | , we developed a deep learning model for detecting general abnormalities and specific diagnoses (anterior cruciate ligament [ACL] tears and meniscal tears) on knee MRI exams. We then measured the effect of providing the model’s predictions to clinical experts during interpretation.
           p 
             i Consider the adjacent knee MR exam, shown (top row) in the three series typically visible to radiologists -- can you find the abnormality? The deep learning algorithm is able to identify the ACL tear, and localize the abnormalities (bottom row) with bright glows where there is most evidence of abnormalities. 
   section
@@ -82,18 +85,40 @@ block content
           h2 We validated MRNet on a dataset from a different institution, and found that the model picked up ACL tears with high discriminative ability.
         .col-md-6
           p We obtained a public dataset of 917 exams with sagittal T1-weighted series and labels for ACL injury from Clinical Hospital Centre Rijeka, Croatia. On the external validation set of 183 exams, the MRNet trained on Stanford sagittal T2-weighted series achieved an AUC of 0.824 (95% CI 0.757, 0.892) in the detection of ACL injuries with no additional training; an MRNet trained on the rest of the external data achieved an AUC of 0.911 (95% CI 0.864, 0.958).
-  //- We are currently looking for research partnerships with healthcare providers that are interested in working with us to validate the technology.
-  //-
-  //-section
+
+  section
     .container
       .row
-        .col-md-6
-          img(src='/projects/mrnet/img/fig4.jpg')
+        .col-md-5
+          h2 We are excited to partner with healthcare providers that are interested in working with us to further validate AI technologies in medical imaging.
+          p Automated abnormality prediction and localization could help general radiologists or even non-radiologist clinicians (such as orthopedic surgeons) interpret medical imaging for patients at the point of care rather than waiting for specialized radiologist interpretation, which could aid in efficient interpretation, reduce errors, and help standardize quality of diagnoses when specialist radiologists are not readily available.
+          p Ultimately, more studies are necessary to evaluate the optimal integration of this model and other deep learning models in the clinical setting. We hope to partner with healthcare providers to research and validate automatic AI models in medical imaging.
+          a.btn.btn-lg.btn-default(href="https://goo.gl/forms/KS4b2h37i0vTRLRN2") Partner with us
+        .col-md-7
+          .row
+            .col-md-12
+              img(src='/projects/mrnet/img/team.jpg')
+  section.bg-primary
+    .container
       .row
-        .col-md-6
-          img(src='/projects/mrnet/img/team.jpg')
+        .col-md-4
           img(src='/projects/mrnet/img/matt_and_nick.png')
-        .col-md-6
+        .col-md-4
           img(src='/projects/mrnet/img/nick.png')
+        .col-md-4
           img(src='/projects/mrnet/img/pranav_and_andrew.png')
-
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h3
+            | To learn more, 
+            a(href="#") read our publication
+            |  in PLOS Medicine.
+          p
+            | For enquiries,
+            | contact us at:
+          h4
+            code nbien@cs.stanford.edu
+            |  and 
+            code pranavsr@cs.stanford.edu

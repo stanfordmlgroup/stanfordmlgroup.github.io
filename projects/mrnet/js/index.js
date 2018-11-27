@@ -96,12 +96,12 @@
             })
             container.addChild(anim);
 
-            if (i < 3) {
-                var text = createText(views[i],
-                    (i % 3)*(image_size + padding) + padding/2,
-                    padding*2);
-                container.addChild(text)
-            }
+            // if (i < 3) {
+            //     var text = createText(views[i],
+            //         (i % 3)*(image_size + padding) + padding/2,
+            //         padding*2);
+            //     container.addChild(text)
+            // }
         }
         container.x = (app.screen.width - container.width) / 2;
         container.y = (app.screen.height - container.height) / 2;
