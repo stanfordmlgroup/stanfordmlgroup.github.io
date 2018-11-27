@@ -5,17 +5,20 @@
     // document.body.appendChild(app.view);
 
     PIXI.loader
-        .add('cor', './img/ex1.json')
-        .add('sag', './img/ex2.json')
-        .add('axi', './img/ex3.json')
+        .add('sa', './sprites/sa.json')
+        .add('ax', './sprites/ax.json')
+        .add('co', './sprites/co.json')
+        .add('sac', './sprites/sac.json')
+        .add('axc', './sprites/axc.json')
+        .add('coc', './sprites/coc.json')
         .load(onAssetsLoaded);
 
-    function getAnimatedSprite(index, numFrames) {
+    function getAnimatedSprite(prefix, numFrames) {
         // create an array of textures from an image path
         var frames = [];
         for (var i = 0; i < numFrames; i++) {
             var val = i < 10 ? '0' + i : i;
-            val = 'i' + index + val
+            val = prefix + val
             // magically works since the spritesheet was loaded with the pixi loader
             frames.push(PIXI.Texture.fromFrame(val + '.png'));
         }
@@ -72,9 +75,10 @@
 
         var padding = 10
         var image_size = (app.screen.width / 3) - padding
+        var names = ['sa', 'co', 'ax', 'sac', 'coc', 'axc']
 
         for (var i = 0; i < 6; i++) {
-            var anim = getAnimatedSprite(i%3 + 1, 38);
+            var anim = getAnimatedSprite(names[i], 36);
             setSpriteAttrs(
                 anim,
                 image_size,
