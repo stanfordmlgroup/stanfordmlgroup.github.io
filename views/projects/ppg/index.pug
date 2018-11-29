@@ -1,0 +1,98 @@
+extends ../../layout
+
+block title
+  title Ambulatory Atrial Fibrillation Monitoring Using Wearable Photoplethysmography with Deep Learning
+
+block description
+  meta(name='description', content='Diagnosing AF arrhythmias from PPG signals.')
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/ecg/css/ecg.css')
+
+block extrascripts
+  script(src='/projects/ecg/js/jquery-ui-widget.min.js')
+  script(src='/projects/ecg/js/d3.min.js')
+  script(src='/projects/ecg/js/data.js')
+  script(src='/projects/ecg/js/ecgChart.js')
+  script(src='/projects/ecg/js/draw.js')
+  script(src="/projects/ecg/js/gchart.js")
+  script(src='/projects/ecg/js/resultsChart.js')
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-8
+          h1#page-title Ambulatory Atrial Fibrillation Monitoring Using Wearable Photoplethysmography with Deep Learning
+          h2 Maxime Voisin*, Yichen Shen*, Alireza Aliamiri, Anand Avati, Awni Hannun, and Andrew Ng
+          p A collaboration between Stanford University and Samsung
+  section
+    .container
+      .row
+        .col-md-7
+          h2 We develop an algorithm which accurately detects Atrial Fibrillation (AF) episodes from photoplethysmograms (PPG) recorded in ambulatory free-living conditions, with 95% AUC.
+          p Atrial fibrillation (AF) is the most common cardiac arrhythmia and a leading risk factor for stroke, affecting at least 2.7 million adults in the United States. The diagnosis is usually performed by observing electrocardiograms (ECG) typically measured with a cardiac event recorder, a Holter monitor or a chest patch. However, these ECG devices tend to be used in a reactive manner. Many occurrences of subclinical or silent AF are thus undetected.
+          p Photoplethysmography (PPG) is an emerging technology that enables non-invasive heart rhythm measurement through optical sensing. A PPG sensor detects blood volume changes in the microvascular bed of tissue using a low intensity light. Nowadays, many existing wearable devices on the market have built-in PPG sensors. Continuous and accurate detection of AF from PPG has the potential to transform low-cost consumer wearable devices into clinically useful medical monitoring tools in mass scale. 
+          p In this work, we present the first model to continuously and accurately detect AF episodes in PPG collected in an ambulatory free-living setting.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1811.07774") Read our paper
+        .col-md-5
+          img(src='/projects/ppg/img/leadfigurev3.png') 
+          // , style='position: absolute;top: 50%;transform: translate(0%, 50%);')
+  section.gray
+    .container
+      .row
+        .col-md-7
+          img(src='/projects/ppg/img/architecture_v4.png', style='max-height:900px;')
+        .col-md-5
+          h2 We train a 50-layer convolutional neural network to detect AF on more than 4000 hours of PPG signals collected from 81 patients.
+          p The network takes as input a raw 30-second PPG record sampled at 20 Hz, and a binary label indicating the absence or presence of AF in the input record. We arrive at an architecture which is 49 layers of convolution followed by a global pooling layer, a fully-connected layer and a sigmoid.           
+          p To make the optimization of such a deep model tractable, we use shortcut connections and batch normalization. The shortcut connections between neural network layers optimize training by allowing information to propagate well in very deep neural networks.          
+  section
+    .container
+      .row
+        .col-md-7
+          h2 We collect and annotate a dataset of 510,566 PPG records from 81 patients.
+          p All PPGs are recorded using a Samsung wrist-wearable device with a sampling frequency of 20 Hz. We used two datasets to train the model: the clinician-annotated and the NSR datasets. 
+          p The clinician-annotated dataset consists of 402 continuous PPG recordings collected from 29 free-living subjects. Each continuous PPG recording is 8 hours long on average. We simultaneously collected a reference ECG using an ECG patch. A clinical expert highlights segments of the ECG and marks it as corresponding to one of the 13 rhythm classes. The NSR dataset consists of 341 continuous PPG recordings collected from 53 healthy free-living subjects who self-reported as not having any symptoms of an arrhythmia. Each continuous PPG recording is 3 hours long on average. The two datasets are broken down into 510,566 PPG records of 30 seconds. Each record is assigned with a binary label indicating whether it contains AF.
+          p  The patients enrolled in the study present a variety of cardiac morphologies: 13 have persistent AF throughout their recordings, 54 have persistent normal sinus rhythm, and the remaining 14 display rhythms that change over time – including 8 arrhythmias other than AF and normal sinus rhythm. The test set contains 30 subjects in total, representing 38% of the PPG records. Test subjects with persistent AF, persistent normal sinus rhythm and rhythms that change over time represent respectively 45%, 33% and 22% of the test records. 50.2% of the test records are labeled AF.
+        .col-md-5
+          // img(src='/projects/ppg/img/data_table.png')
+  section.gray
+    .container
+      .row
+        .col-md-7
+          img(src='/projects/ppg/img/auc_coverage.png')
+        .col-md-5
+          h2 The model achieves an AUC of 95% on the test set and is robust to motion artifacts inherent to PPG signals
+          p The network largely outperforms the feature-based baseline on the test set. The performance of the deep learning model does not degrade when predicting on test records with higher motion intensity, unlike the baseline. This suggests that our model is robust to motion artifacts typically encountered in free-living conditions.
+  section
+    .container
+      .row
+        .col-md-7
+          img(src='/projects/ppg/img/featuremap_oo.png')
+          p 15-second excerpt from a 30-second input PPG record
+          img(src='/projects/ppg/img/featuremap33.png')
+          p Feature map identifying systolic and diastolic peaks
+          img(src='/projects/ppg/img/featuremap11.png')
+          p Feature map learning the first order derivative of the input signal
+          img(src='/projects/ppg/img/featuremap22.png')
+          p Feature map learning the second order derivative of the input signal
+        .col-md-5
+          h2 The model learns low-level feature maps consistent with previous works in the medical field
+          p Some feature maps identify systolic and diastolic peaks in the PPG, whose irregularity is a symptom of AF.  Other feature maps seem to approximate the first and second order derivatives of the PPG signal. Previous works suggest that these quantities contain information about the cardiovascular system such as hypertension and arterial stiffness. Previous works suggest the latter is an important predictor of AF in hypertensive patients.
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h3 
+            | With the prevalence of inexpensive wearable devices, high-accuracy continuous arrhythmia monitoring from PPG can not only lower the risk of undiagnosed AF in general but also save precious time and resources from expert clinicians and cardiologists in resource intensive tasks like measuring AF burden. Furthermore, we hope that this technology can eventually provide accurate diagnostic information in places with constrained access to cardiologists and other medical resources.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1707.01836#") Read our paper
+  section.bg-primary
+    .container
+      .row
+        .col-md-12
+          h3
+            | If you have questions about our work,
+            | contact us at:
+          h4
+            code maximev@stanford.edu
