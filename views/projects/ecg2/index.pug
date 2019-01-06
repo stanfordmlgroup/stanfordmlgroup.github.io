@@ -1,0 +1,47 @@
+extends ../../layout
+
+block title
+    title Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network
+
+block description
+    meta(name='description', content='We develop a deep neural network (DNN) to classify 12 rhythm classes using 91,232 single-lead ECGs from 53,877 patients who used a single-lead ambulatory ECG monitoring device.')
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/ecg2/css/ecg.css')
+
+block extrascripts
+  script(src='/projects/ecg2/js/jquery-ui-widget.min.js')
+  script(src='/projects/ecg2/js/d3.min.js')
+  script(src='/projects/ecg2/js/data.js')
+  script(src='/projects/ecg2/js/ecgChart.js')
+  script(src='/projects/ecg2/js/draw.js')
+  script(src="/projects/ecg2/js/gchart.js")
+  script(src='/projects/ecg2/js/resultsChart.js')
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-10
+          h1 Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network
+          h3 Awni Y. Hannun *, Pranav Rajpurkar *, Masoumeh Haghpanahi *, Geoffrey H. Tison *, Codie Bourn, Mintu P. Turakhia, Andrew Y. Ng
+  section
+    .container
+      .row
+        .col-md-7
+          h2 We developed a deep neural network which can diagnose irregular heart rhythms, also known as arrhythmias, from single-lead ECG signals at a level exceeding cardiologists.
+          p 
+            | The electrocardiogram (ECG) is a fundamental tool in the everyday practice of clinical medicine, with more than 300 million ECGs obtained annually worldwide, and is pivotal for diagnosing a wide spectrum of arrhythmias. In 
+            a(href="#") a study published in Nature Medicine
+            | , we developed an algorithm to detect 12 rhythm classes from raw single-lead ECG inputs using a training dataset consisting of 91,232 ECG records from 53,549 patients.
+        .col-md-5
+          .ecgChart#ecg0
+          p
+            i Can you identify the heart arrhythmia in the above example? The neural network is able to correctly detect AVB_TYPE2. Below, you can see other abnormalities which the neural network is successfully able to detect.
+      .row
+        .col-md-4
+          .ecgChart#ecg1
+        .col-md-4
+          .ecgChart#ecg2
+        .col-md-4
+          .ecgChart#ecg3

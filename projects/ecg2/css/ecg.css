@@ -1,0 +1,45 @@
+.ecgChart{
+    text-align: center;
+    width: 100%;
+}
+
+.ecgChart-background {
+    fill: #fff;
+    shape-rendering: crispEdges
+}
+
+.ecgChart-axis-x line,
+.ecgChart-axis-x path {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: #ddd;
+    stroke-width: 1px
+}
+
+.ecgChart-axis-y line,
+.ecgChart-axis-y path {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: #ddd;
+    stroke-width: 1px
+}
+
+.ecgChart-grid-x line,
+.ecgChart-grid-x path {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: #ddd;
+    stroke-width: 1px
+}
+
+.ecgChart-grid-y line,
+.ecgChart-grid-y path {
+    fill: none;
+    shape-rendering: crispEdges;
+    stroke: #ddd;
+    stroke-width: 1px
+}
+
+.ecgChart-line {
+    fill: none;
+}
