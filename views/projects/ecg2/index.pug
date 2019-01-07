@@ -1,10 +1,15 @@
 extends ../../layout
 
 block title
-    title Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network
+  title Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network
 
 block description
-    meta(name='description', content='We develop a deep neural network (DNN) to classify 12 rhythm classes using 91,232 single-lead ECGs from 53,877 patients who used a single-lead ambulatory ECG monitoring device.')
+  meta(name='description', content='We developed a deep neural network which can diagnose irregular heart rhythms, also known as arrhythmias, from single-lead ECG signals at a high diagnostic performance similar to that of cardiologists.')
+  meta(property="og:image", content="https://stanfordmlgroup.github.io/projects/ecg2/img/cover.jpg")
+  meta(property="og:title", content="Deep learning to automatically detect several arrhythmias from ECG signals.")
+  meta(name='twitter:card', content='summary_large_image')
+  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/projects/ecg2/img/cover.jpg")
+
 
 block extralinks
   link(rel='stylesheet', type='text/css', href='/projects/ecg2/css/index.css')
