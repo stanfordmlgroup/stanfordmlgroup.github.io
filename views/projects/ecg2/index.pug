@@ -110,12 +110,12 @@ block content
   section
     .container
       .row
-        .col-md-6
+        .col-sm-12.col-md-6.col-md-push-6
+          iframe(width="100%", height='300px', src="https://www.youtube.com/embed/XVDDEsmbjuE?ecver=1&rel=0&modestbranding=1",frameborder="0",allow="autoplay; encrypted-media",allowfullscreen)
+        .col-md-6.col-md-pull-6
           p These findings demonstrate that an end-to-end deep learning approach can classify a broad range of distinct arrhythmias from single-lead ECGs with high diagnostic performance similar to that of cardiologists. If confirmed in clinical settings, this approach could reduce the rate of misdiagnosed computerized ECG interpretations and improve the efficiency of expert human ECG interpretation by accurately triaging or prioritizing the most urgent conditions.
           a.btn.btn-lg.btn-default(href="#") Read the paper
           .pad
-        .col-sm-12.col-md-6
-          iframe(width="100%", height='300px', src="https://www.youtube.com/embed/XVDDEsmbjuE?ecver=1&rel=0&modestbranding=1",frameborder="0",allow="autoplay; encrypted-media",allowfullscreen)
   section.gray
     .container
       .row
