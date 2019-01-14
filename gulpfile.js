@@ -94,7 +94,7 @@ folders.forEach(function (folder) {
       gulp.task(folder + '-' + comp, ['process_' + comp + '_comp_output'], function () {
         var test = require(dir + '/results-v1.1.json')
         var moment = require('moment')
-        return gulp.src('views/' + dir + '/index.pug')
+        return gulp.src('views/' + dir + '/*.pug')
         .pipe(data(function () {
           return {
             'test': test,
