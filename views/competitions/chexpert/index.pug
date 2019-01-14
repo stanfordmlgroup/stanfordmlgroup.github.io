@@ -1,0 +1,149 @@
+extends ../../layout
+
+block title
+  title CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison
+
+block description
+  meta(name='description', content='CheXpert is a large dataset of chest X-rays. Algorithms are tasked with determining whether an X-ray contains up to five pathologies.')
+
+block extralinks
+  link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
+  link(rel='stylesheet', type='text/css', href='/competitions/chexpert/css/index.css')
+
+block extrascripts
+  script(src='/competitions/chexpert/js/form.js')
+
+mixin model_display(group)
+  table.table.performanceTable
+    tr
+      th Rank
+      th Date
+      th Model
+      th AUC
+    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.kappa; }))
+    tr.human-row
+      td
+      td
+      td
+        | Best Radiologist Performance 
+        em Stanford University 
+        a(href="https://arxiv.org/abs/FIXME") Irvin & Rajpurkar et al., 19
+      td 0.778
+    each model in group
+      tr
+        td.rank
+          | #{model.rank} <br>
+        td
+          span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
+        td(style="word-break:break-word;")
+          | #{model.model_name}
+          if model.institution != ''
+              em  #{model.institution} 
+          if model.link
+            a.link(href=model.link) #{model.link}
+        td
+          if model.kappa == largest_auc
+            b #{model.kappa.toPrecision(3)}
+          else
+            | #{model.kappa.toPrecision(3)}
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-12
+          img#title-image(src="/competitions/chexpert/img/logo.svg")
+          h2#page-subtitle Chest X-Ray Deep Learning Competition
+  section
+    .container
+      .row
+        .col-md-6
+          h1 What is CheXpert?
+          p CheXpert is a large dataset of chest X-rays. Algorithms are tasked with determining whether an X-ray contains up to five pathologies.
+          p Chest radiography is the most common imaging examination globally, critical for screening, diagnosis, and management of many life threatening diseases. Automated chest radiograph interpretation at the level of practicing radiologists could provide substantial benefit in many medical settings, from improved workflow prioritization and clinical decision support to large-scale screening and global population health initiatives.
+          p CheXpert is one of the largest public radiographic image datasets. We're making this dataset available to the community and hosting a competition to see if your models can perform as well as radiologists on the task.
+          h2 How can I participate?
+          p CheXpert uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
+          p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
+          ul.list-inline
+            li
+              a.btn.btn-lg.btn-default(href="https://worksheets.codalab.org/worksheets/0x693b0063ee504702b21f94ffb2d99c6d/") Submission Tutorial
+            li
+              a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/FIXME") Read the Paper
+        .col-md-6
+          h1 Leaderboard
+          p 
+            | Will your model perform as well as radiologists in detecting pathology in chest X-rays?
+          +model_display(test)
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h2 How did we collect and label CheXpert?
+          p CheXpert is a large public dataset for chest radiograph interpretation, consisting of 224,316 chest radiographs of 65,240 patients. We retrospectively collected the chest radiographic examinations from Stanford Hospital, performed between October 2002 and July 2017 in both inpatient and outpatient centers, along with their associated radiology reports.
+          h3 Label Extraction from Radiology Reports
+          p
+            | Each report was labeled for the presence of 14 observations as positive, negative, or uncertain. We decided on the 14 observations based on the prevalence in the reports and clinical relevance, conforming to 
+            a(href="https://pubs.rsna.org/doi/10.1148/radiol.2462070712") the Fleischner Society’s recommended glossary 
+            | whenever applicable. We then developed an automated rule-based labeler to extract observations from the free text radiology reports to be used as structured labels for the images.
+          p Our labeler is set up in three distinct stages: mention extraction, mention classification, and mention aggregation. In the mention extraction stage, the labeler extracts mentions from a list of observations from the <i>Impression</i> section of radiology reports, which summarizes the key findings in the radiographic study. In the mention classification stage, mentions of observations are classified as negative, uncertain, or positive. In the mention aggregation stage, we use the classification for each mention of observations to arrive at a final label for the 14 observations.
+          a.btn.btn-lg.btn-default(href="https://github.com/stanfordmlgroup/chexpert-labeler") Use the labeling tool
+        .col-md-5
+            img(src='/competitions/chexpert/img/table1.png')
+            img(src='/competitions/chexpert/img/figure2.png')
+  section
+    .container
+      .row
+        .col-md-7
+          h2 What is our baseline model?
+          p We train models that take as input a single-view chest radiograph and output the probability of each of the 14 observations. When more than one view is available, the models output the maximum probability of the observations across the views.
+          h3 Leveraging Uncertainty Labels
+          p We explore different approaches to using the uncertainty labels during the model training.
+          p <b>U-Ignore</b>: We ignore the uncertain labels during training.
+          p <b>U-Zeroes</b>: We map all instances of the uncertain label to 0.
+          p <b>U-Ones</b>: We map all instances of the uncertain label to 1.
+          p <b>U-SelfTrained</b>: We first train a model using the U-Ignore approach to convergence, and then use the model to make predictions that re-label each of the uncertainty labels with the probability prediction outputted by the model.
+          p <b>U-MultiClass</b>: We treat the uncertainty label as its own class.
+        .col-md-5
+            img(src='/competitions/chexpert/img/figure1.png')
+  section.gray
+    .container
+      .row
+        .col-md-12
+          h2 How do the modeling approaches compare?
+          p We compare the performance of the different uncertainty approaches on a validation set of 200 studies on which the consensus of three radiologist annotations serves as ground truth. We evaluate the approaches using the area under the receiver operating characteristic curve (AUC) metric. We focus on the evaluation of 5 observations which we call the <i>competition tasks</i>, selected based of clinical importance and prevalence in the validation set.
+          img(src='/competitions/chexpert/img/table3.png')
+  section
+    .container
+      .row
+        .col-md-6
+          h2 How does our baseline do?
+          p We compare the performance of our final model to radiologists on a test set of 500 studies on which the consensus of five radiologist annotations serves as ground truth. Three separate radiologist annotations were used to benchmark radiologist performance. We selected the final model based on the best performing ensemble on each competition task on the validation set: <i>U-Ones</i> for Atelectasis and Edema, <i>U-MultiClass</i> for Cardiomegaly and Pleural Effusion, and <i>U-SelfTrained</i> for Consolidation. We visualize the areas of the radiograph which the model predicts to be most indicative of each observation using Gradient-weighted Class Activation Mappings.
+        .col-md-offset-1.col-md-4
+          img(src='/competitions/chexpert/img/figure4a.png')
+        //- .col-md-4
+        //-   img(src='/competitions/chexpert/img/figure4b.png')
+        .col-md-12
+          img(src='/competitions/chexpert/img/figure3.png')
+        
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h1 Downloading the Dataset (v1.0)
+          p Please read the Stanford University School of Medicine CheXpert Dataset Research Use Agreement. Once you register to download the CheXpert dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
+          #agreement.well
+            include agreement
+          include mailchimp
+  section
+    .container
+      .row
+        .col-md-7
+          h2 CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison.
+          h3 Jeremy Irvin*, Pranav Rajpurkar*, Michael Ko, Yifan Yu, Silviana Ciurea-Ilcus, Chris Chute, Henrik Marklund, Behzad Haghgoo, Robyn Ball, Katie Shpanskaya, Jayne Seekins, David A. Mong, Safwan S. Halabi, Jesse K. Sandberg, Ricky Jones, David B. Larson, Curtis P. Langlotz, Bhavik N. Patel, Matthew P. Lungren, Andrew Y. Ng
+          p
+            | If you have questions about our work,
+            | contact us at our 
+            a(href="https://groups.google.com/forum/#!forum/FIXME") google group
+            |.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/FIXME") Read the Paper
