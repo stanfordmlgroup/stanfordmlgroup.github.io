@@ -12,6 +12,8 @@ block extralinks
 
 block extrascripts
 
+include ../../includes/profile
+
 mixin model_display(group)
   table.table.performanceTable
     tr
@@ -119,15 +121,37 @@ block content
             | The test set consists of 500 studies from 500 unseen patients. Eight board-certified radiologists individually annotated each of the studies in the test set, classifying each observation into one of present, uncertain likely, uncertain unlikely, and absent. Their annotations were binarized such that all present and uncertain likely cases are treated as positive and all absent and uncertain unlikely cases are treated as negative.  
             | The majority vote of 5 radiologist annotations serves as a strong ground truth; the remaining 3 radiologist annotations were used to benchmark radiologist performance.
             p For each of the 3 individual radiologists and for their majority vote, we compute sensitivity (recall), specificity, and precision against the test set ground truth. To compare the model to radiologists, we plot the radiologist operating points with the model on both the ROC and Precision-Recall (PR) space. We examine whether the radiologist operating points lie below the curves to determine if the model is superior to the radiologists.
-  .section
+  section
     .container
       .row
-        h2 How well does the baseline model do on the test set?
         .col-md-8
+          h2 How well does the baseline model do on the test set?
           p The model achieves the best AUC on Pleural Effusion (0.97), and the worst on Atelectasis (0.85). The AUC of all other observations are at least 0.9. On Cardiomegaly, Edema, and Pleural Effusion, the model achieves higher performance than all 3 radiologists but not their majority vote. On Consolidation, model performance exceeds 2 of the 3 radiologists, and on Atelectasis, all 3 radiologists perform better than the model.
           img(src='/competitions/chexpert/img/figure3.png')
         .col-md-4
           img(src='/competitions/chexpert/img/cams.png')
+  // section.gray
+    .container
+      .row
+        .col-md-7
+          h3 Bonus: Extra Dataset From MIT
+          p 
+  // section
+    .container
+      .row
+        .col-md-7
+          .media
+            .media-left
+              +dp_inner('Curt Langlotz', 'Professor', false, true)
+            .media-body
+              blockquote
+                | In the U.S., about half of all radiology studies are x-rays, mostly of the chest.  Chest x-ray studies are even more common around the world.  Chest x-ray interpretation is a “bread and butter” problem for radiologists with vital public health implications.  Chest x-rays can stop the spread of tuberculosis, detect lung cancer early, and support the responsible use of antibiotics. 
+          .media
+            .media-left
+              +dp_inner('Matt Lungren', 'Assistant Professor', false, true)
+            .media-body
+              blockquote
+                | Ground truth is critical in evaluating deep learning models in medical imaging and provide the foundation for clinical relevance when interpreting results in this field - this is why we focus a lot of our effort on considering the best available ground truth via a panel of medical sub specialist experts to best understand the clinical implication of our model results.
   section.gray
     .container
       .row
@@ -141,7 +165,6 @@ block content
     .container
       .row
         .col-md-7
-          // blockquote In the U.S., about half of all radiology studies are x-rays, mostly of the chest.  Chest x-ray studies are even more common around the world.  Chest x-ray interpretation is a “bread and butter” problem for radiologists with vital public health implications.  Chest x-rays can stop the spread of tuberculosis, detect lung cancer early, and support the responsible use of antibiotics. 
           h2 CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison.
           h3 Jeremy Irvin *, Pranav Rajpurkar *, Michael Ko, Yifan Yu, Silviana Ciurea-Ilcus, Chris Chute, Henrik Marklund, Behzad Haghgoo, Robyn Ball, Katie Shpanskaya, Jayne Seekins, David A. Mong, Safwan S. Halabi, Jesse K. Sandberg, Ricky Jones, David B. Larson, Curtis P. Langlotz, Bhavik N. Patel, Matthew P. Lungren, Andrew Y. Ng
           //-p
