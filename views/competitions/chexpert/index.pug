@@ -4,14 +4,13 @@ block title
   title CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison
 
 block description
-  meta(name='description', content='CheXpert is a large dataset of chest X-rays. Algorithms are tasked with determining whether an X-ray contains up to five pathologies.')
+  meta(name='description', content='CheXpert is a large dataset of chest X-rays and competition for automated chest-xray interpretation, which features uncertainty labels and radiologist-labeled reference standard evaluation sets. ')
 
 block extralinks
   link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
   link(rel='stylesheet', type='text/css', href='/competitions/chexpert/css/index.css')
 
 block extrascripts
-  script(src='/competitions/chexpert/js/form.js')
 
 mixin model_display(group)
   table.table.performanceTable
@@ -55,18 +54,20 @@ block content
   section
     .container
       .row
-        .col-md-6
+        .col-md-7
           h1 What is CheXpert?
-          p CheXpert is a large dataset of chest X-rays and competition for automated chest-xray interpretation. Algorithms are tasked with determining whether a chest radiograph study contains one or more pathologies.
+          p CheXpert is a large dataset of chest X-rays and competition for automated chest-xray interpretation, which features uncertainty labels and radiologist-labeled reference standard evaluation sets. 
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1901.07031") Read the Paper
           h2 Why CheXpert?
-          p Chest radiography is the most common imaging examination globally, critical for screening, diagnosis, and management of many life threatening diseases. Automated chest radiograph interpretation at the level of practicing radiologists could provide substantial benefit in many medical settings, from improved workflow prioritization and clinical decision support to large-scale screening and global population health initiatives. For progress in both development and validation of automated algorithms, we realized there was a need for labeled datasets that (1) were large, (2) had strong reference standards, and (3) provided expert human performance metrics for comparison.
-        .col-md-6
-          h1 Leaderboard
+          p 
+            | Chest radiography is the most common imaging examination globally, critical for screening, diagnosis, and management of many life threatening diseases. Automated chest radiograph interpretation at the level of practicing radiologists could provide substantial benefit in many medical settings, from improved workflow prioritization and clinical decision support to large-scale screening and global population health initiatives.
+            | For progress in both development and validation of automated algorithms, we realized there was a need for a labeled dataset that (1) was large, (2) had strong reference standards, and (3) provided expert human performance metrics for comparison.
+        .col-md-5
+          h2 Leaderboard
           p 
             | Will your model perform as well as radiologists in detecting different pathologies in chest X-rays?
           +model_display(test)
-          h2 How can I participate?
+          h3 How can I participate?
           p CheXpert uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
           p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
           ul.list-inline
@@ -96,35 +97,38 @@ block content
           h2 What is our baseline model?
           p We train models that take as input a single-view chest radiograph and output the probability of each of the 14 observations. When more than one view is available, the models output the maximum probability of the observations across the views.
           h3 Leveraging Uncertainty Labels
-          p We explore different approaches to using the uncertainty labels during the model training.
-          p <b>U-Ignore</b>: We ignore the uncertain labels during training.
-          p <b>U-Zeroes</b>: We map all instances of the uncertain label to 0.
-          p <b>U-Ones</b>: We map all instances of the uncertain label to 1.
-          p <b>U-SelfTrained</b>: We first train a model using the U-Ignore approach to convergence, and then use the model to make predictions that re-label each of the uncertainty labels with the probability prediction outputted by the model.
-          p <b>U-MultiClass</b>: We treat the uncertainty label as its own class.
+          p 
+            | The training labels in the dataset for each observation are either 0 (negative), 1 (positive), or u (uncertain). We explore different approaches to using the uncertainty labels during the model training.
+          ul
+            li <b>U-Ignore</b>: We ignore the uncertain labels during training.
+            li <b>U-Zeroes</b>: We map all instances of the uncertain label to 0.
+            li <b>U-Ones</b>: We map all instances of the uncertain label to 1.
+            li <b>U-SelfTrained</b>: We first train a model using the U-Ignore approach to convergence, and then use the model to make predictions that re-label each of the uncertainty labels with the probability prediction outputted by the model.
+            li <b>U-MultiClass</b>: We treat the uncertainty label as its own class.
+          p
+            | We focus on the evaluation of 5 observations which we call the competition tasks, selected based of clinical importance and prevalence: (a) Atelectasis, (b) Cardiomegaly, (c) Consolidation, (d) Edema, and (e) Pleural Effusion.
+            |  We compare the performance of the different uncertainty approaches on a validation set of 200 studies on which the consensus of three radiologist annotations serves as ground truth. Our baseline model is selected based on the best performing approach on each competition tasks on the validation set: U-Ones for Atelectasis and Edema, U-MultiClass for Cardiomegaly and Pleural Effusion, and U-SelfTrained for Consolidation.
         .col-md-5
             img(src='/competitions/chexpert/img/figure1.png')
   section.gray
     .container
       .row
-        .col-md-12
-          h2 How do the modeling approaches compare?
-          p We compare the performance of the different uncertainty approaches on a validation set of 200 studies on which the consensus of three radiologist annotations serves as ground truth. We evaluate the approaches using the area under the receiver operating characteristic curve (AUC) metric. We focus on the evaluation of 5 observations which we call the <i>competition tasks</i>, selected based of clinical importance and prevalence in the validation set.
-          img(src='/competitions/chexpert/img/table3.png')
-  section
+        .col-md-8
+          h2 How is the test designed?
+          p 
+            | The test set consists of 500 studies from 500 unseen patients. Eight board-certified radiologists individually annotated each of the studies in the test set, classifying each observation into one of present, uncertain likely, uncertain unlikely, and absent. Their annotations were binarized such that all present and uncertain likely cases are treated as positive and all absent and uncertain unlikely cases are treated as negative.  
+            | The majority vote of 5 radiologist annotations serves as a strong ground truth; the remaining 3 radiologist annotations were used to benchmark radiologist performance.
+            p For each of the 3 individual radiologists and for their majority vote, we compute sensitivity (recall), specificity, and precision against the test set ground truth. To compare the model to radiologists, we plot the radiologist operating points with the model on both the ROC and Precision-Recall (PR) space. We examine whether the radiologist operating points lie below the curves to determine if the model is superior to the radiologists.
+  .section
     .container
       .row
-        .col-md-6
-          h2 How does our baseline do?
-          p We compare the performance of our final model to radiologists on a test set of 500 studies on which the consensus of five radiologist annotations serves as ground truth. Three separate radiologist annotations were used to benchmark radiologist performance. We selected the final model based on the best performing ensemble on each competition task on the validation set: <i>U-Ones</i> for Atelectasis and Edema, <i>U-MultiClass</i> for Cardiomegaly and Pleural Effusion, and <i>U-SelfTrained</i> for Consolidation. We visualize the areas of the radiograph which the model predicts to be most indicative of each observation using Gradient-weighted Class Activation Mappings.
-        .col-md-offset-1.col-md-4
-          img(src='/competitions/chexpert/img/figure4a.png')
-        //- .col-md-4
-        //-   img(src='/competitions/chexpert/img/figure4b.png')
-        .col-md-12
+        h2 How well does the baseline model do on the test set?
+        .col-md-8
+          p The model achieves the best AUC on Pleural Effusion (0.97), and the worst on Atelectasis (0.85). The AUC of all other observations are at least 0.9. On Cardiomegaly, Edema, and Pleural Effusion, the model achieves higher performance than all 3 radiologists but not their majority vote. On Consolidation, model performance exceeds 2 of the 3 radiologists, and on Atelectasis, all 3 radiologists perform better than the model.
           img(src='/competitions/chexpert/img/figure3.png')
-        
-  // section.gray
+        .col-md-4
+          img(src='/competitions/chexpert/img/cams.png')
+  section.gray
     .container
       .row
         .col-md-7
@@ -133,15 +137,16 @@ block content
           #agreement.well
             include agreement
           include mailchimp
-  // section
+  section
     .container
       .row
         .col-md-7
+          // blockquote In the U.S., about half of all radiology studies are x-rays, mostly of the chest.  Chest x-ray studies are even more common around the world.  Chest x-ray interpretation is a “bread and butter” problem for radiologists with vital public health implications.  Chest x-rays can stop the spread of tuberculosis, detect lung cancer early, and support the responsible use of antibiotics. 
           h2 CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison.
-          h3 Jeremy Irvin*, Pranav Rajpurkar*, Michael Ko, Yifan Yu, Silviana Ciurea-Ilcus, Chris Chute, Henrik Marklund, Behzad Haghgoo, Robyn Ball, Katie Shpanskaya, Jayne Seekins, David A. Mong, Safwan S. Halabi, Jesse K. Sandberg, Ricky Jones, David B. Larson, Curtis P. Langlotz, Bhavik N. Patel, Matthew P. Lungren, Andrew Y. Ng
-          p
+          h3 Jeremy Irvin *, Pranav Rajpurkar *, Michael Ko, Yifan Yu, Silviana Ciurea-Ilcus, Chris Chute, Henrik Marklund, Behzad Haghgoo, Robyn Ball, Katie Shpanskaya, Jayne Seekins, David A. Mong, Safwan S. Halabi, Jesse K. Sandberg, Ricky Jones, David B. Larson, Curtis P. Langlotz, Bhavik N. Patel, Matthew P. Lungren, Andrew Y. Ng
+          //-p
             | If you have questions about our work,
             | contact us at our 
             a(href="https://groups.google.com/forum/#!forum/FIXME") google group
             |.
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/FIXME") Read the Paper
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1901.07031") Read the Paper
