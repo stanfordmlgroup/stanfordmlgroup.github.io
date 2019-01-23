@@ -63,11 +63,20 @@ var parseCompEntries = function (comp_file) {
   return entries
 }
 
-var dir = "./competitions/mura"
-gulp.task('process_comp_output', function (cb) {
-  var jsonfile = require('jsonfile')
-  var entries = parseCompEntries(dir + '/out-v1.1.json')
-  jsonfile.writeFile(dir + '/results-v1.1.json', entries, cb)
+// var dir = "./competitions/mura"
+// gulp.task('process_comp_output', function (cb) {
+//   var jsonfile = require('jsonfile')
+//   var entries = parseCompEntries(dir + '/out-v1.1.json')
+//   jsonfile.writeFile(dir + '/results-v1.1.json', entries, cb)
+// })
+var comps = ["mura", "chexpert"]
+comps.forEach(function (comp) {
+  var dir = './competitions/' + comp
+  gulp.task('process_' + comp + '_comp_output', function (cb) {
+    var jsonfile = require('jsonfile')
+    var entries = parseCompEntries(dir + '/out-v1.1.json')
+    jsonfile.writeFile(dir + '/results-v1.1.json', entries, cb)
+  })
 })
 
 gulp.task('index', function () {
@@ -80,17 +89,20 @@ var folders = ['projects', 'programs', 'competitions']
 
 folders.forEach(function (folder) {
   if(folder === ('competitions')){
-    gulp.task(folder, ['process_comp_output'], function () {
-      var test = require(dir + '/results-v1.1.json')
-      var moment = require('moment')
-      return gulp.src('views/' + dir + '/index.pug')
-      .pipe(data(function () {
-        return {
-          'test': test,
-          'moment': moment}
-      }))
-      .pipe(pug())
-      .pipe(gulp.dest(dir))
+    comps.forEach(function (comp) {
+      var dir = './competitions/' + comp
+      gulp.task(folder + '-' + comp, ['process_' + comp + '_comp_output'], function () {
+        var test = require(dir + '/results-v1.1.json')
+        var moment = require('moment')
+        return gulp.src('views/' + dir + '/*.pug')
+        .pipe(data(function () {
+          return {
+            'test': test,
+            'moment': moment}
+        }))
+        .pipe(pug())
+        .pipe(gulp.dest(dir))
+      })
     })
   } else {
     gulp.task(folder, function buildHTML () {
@@ -101,7 +113,7 @@ folders.forEach(function (folder) {
   }
 })
 
-gulp.task('build', ['index', 'projects', 'programs', 'competitions'])
+gulp.task('build', ['index', 'projects', 'programs', 'competitions-mura', 'competitions-chexpert'])
 
 gulp.task('watch_build', ['build'], function () {
   return gulp.watch('./views/**/*.pug', ['build', browserSync.reload])
