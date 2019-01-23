@@ -130,28 +130,35 @@ block content
           img(src='/competitions/chexpert/img/figure3.png')
         .col-md-4
           img(src='/competitions/chexpert/img/cams.png')
-  // section.gray
+  section.gray
     .container
       .row
         .col-md-7
-          h3 Bonus: Extra Dataset From MIT
-          p 
-  // section
+          h2 Bonus: Extra Dataset From MIT
+          p We're co-releasing our dataset with MIMIC-CXR, a large dataset of 371,920 chest x-rays associated with 227,943 imaging studies sourced from the Beth Israel Deaconess Medical Center between 2011 - 2016. Each imaging study can pertain to one or more images, but most often are associated with two images: a frontal view and a lateral view. Images are provided with 14 labels derived from a natural language processing tool applied to the corresponding free-text radiology reports.
+          p Both our dataset and MIMIC-CXR share a common labeler, the CheXpert labeler, for deriving the same set of labels from free-text radiology reports.
+          p
+            a(href="https://arxiv.org/abs/1901.07042") Read MIMIC-CXR paper by Alistair E. W. Johnson, Tom J. Pollard, Seth Berkowitz, Nathaniel R. Greenbaum, Matthew P. Lungren, Chih-ying Deng, Roger G. Mark, Steven Horng 
+  section
     .container
       .row
         .col-md-7
+          h2 Author Notes
+          p One of the main obstacles in the development of chest radiograph interpretation models has been the lack of datasets with strong radiologist-annotated groundtruth and expert scores against which researchers can compare their models. We hope that CheXpert will address that gap, making it easy to track the progress of models over time on a clinically important task.
+          p Furthermore, we have developed and open-sourced the CheXpert labeler, an automated rule-based labeler to extract observations from the free text radiology reports to be used as structured labels for the images. We hope that this makes it easy to help other institutions extract structured labels from their reports and release other large repositories of data that will allow for cross-institutional testing of medical imaging models.
+          p Finally, we hope that the dataset will help development and validation of chest radiograph interpretation models towards improving healthcare access and delivery worldwide.
+          p - Jeremy Irvin, Pranav Rajpurkar, and Andrew Ng
+        .col-md-5
           .media
             .media-left
-              +dp_inner('Curt Langlotz', 'Professor', false, true)
+              +dp_inner('Curt Langlotz', 'Professor of Radiology', false, true)
             .media-body
-              blockquote
-                | In the U.S., about half of all radiology studies are x-rays, mostly of the chest.  Chest x-ray studies are even more common around the world.  Chest x-ray interpretation is a “bread and butter” problem for radiologists with vital public health implications.  Chest x-rays can stop the spread of tuberculosis, detect lung cancer early, and support the responsible use of antibiotics. 
+              p In the U.S., about half of all radiology studies are x-rays, mostly of the chest.  Chest x-ray studies are even more common around the world.  Chest x-ray interpretation is a “bread and butter” problem for radiologists with vital public health implications.  Chest x-rays can stop the spread of tuberculosis, detect lung cancer early, and support the responsible use of antibiotics. 
           .media
             .media-left
-              +dp_inner('Matt Lungren', 'Assistant Professor', false, true)
+              +dp_inner('Matt Lungren', 'Assistant Professor of Radiology', false, true)
             .media-body
-              blockquote
-                | Ground truth is critical in evaluating deep learning models in medical imaging and provide the foundation for clinical relevance when interpreting results in this field - this is why we focus a lot of our effort on considering the best available ground truth via a panel of medical sub specialist experts to best understand the clinical implication of our model results.
+              p Ground truth is critical in evaluating deep learning models in medical imaging and provide the foundation for clinical relevance when interpreting results in this field - this is why we focus a lot of our effort on considering the best available ground truth via a panel of medical sub specialist experts to best understand the clinical implication of our model results.
   section.gray
     .container
       .row
