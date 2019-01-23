@@ -25,11 +25,9 @@ mixin model_display(group)
       td
       td
       td
-        | Best Radiologist Performance 
-        em Stanford University 
-        a(href="https://arxiv.org/abs/FIXME") Irvin & Rajpurkar et al., 19
-      td 0.778
-    each model in group
+        | Leaderboard Activating February 2019
+      td 
+    //-each model in group
       tr
         td.rank
           | #{model.rank} <br>
@@ -59,9 +57,16 @@ block content
       .row
         .col-md-6
           h1 What is CheXpert?
-          p CheXpert is a large dataset of chest X-rays. Algorithms are tasked with determining whether an X-ray contains up to five pathologies.
+          p CheXpert is a large dataset of chest X-rays and competition for automated chest-xray interpretation. Algorithms are tasked with determining whether a chest radiograph study contains one or more pathologies.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1901.07031") Read the Paper
+          h2 Why CheXpert?
           p Chest radiography is the most common imaging examination globally, critical for screening, diagnosis, and management of many life threatening diseases. Automated chest radiograph interpretation at the level of practicing radiologists could provide substantial benefit in many medical settings, from improved workflow prioritization and clinical decision support to large-scale screening and global population health initiatives.
-          p CheXpert is one of the largest public radiographic image datasets. We're making this dataset available to the community and hosting a competition to see if your models can perform as well as radiologists on the task.
+          p  For progress, there is a need for labeled datasets that (1) are large, (2) have strong reference standards, and (3) provide expert human performance metrics for comparison.
+        .col-md-6
+          h1 Leaderboard
+          p 
+            | Will your model perform as well as radiologists in detecting different pathologies in chest X-rays?
+          +model_display(test)
           h2 How can I participate?
           p CheXpert uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
           p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
@@ -69,12 +74,6 @@ block content
             li
               a.btn.btn-lg.btn-default(href="https://worksheets.codalab.org/worksheets/0x693b0063ee504702b21f94ffb2d99c6d/") Submission Tutorial
             li
-              a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/FIXME") Read the Paper
-        .col-md-6
-          h1 Leaderboard
-          p 
-            | Will your model perform as well as radiologists in detecting pathology in chest X-rays?
-          +model_display(test)
   section.gray
     .container
       .row
