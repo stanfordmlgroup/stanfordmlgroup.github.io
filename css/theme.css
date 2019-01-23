@@ -326,6 +326,7 @@ footer ul li a.active {
   text-transform: uppercase;
   letter-spacing: 2px;
   border-radius: 300px;
+  white-space: normal;
 }
 .btn-xl {
   padding: 15px 45px;
