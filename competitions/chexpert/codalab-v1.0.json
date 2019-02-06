@@ -22,7 +22,7 @@
     "evaluate": {
         "dependencies": [
             {
-                "parent_uuid": "0x38bb91b1b8a940189d87129ddd17cf07",
+                "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b",
                 "child_path": "evaluate.py"
             },
             {
