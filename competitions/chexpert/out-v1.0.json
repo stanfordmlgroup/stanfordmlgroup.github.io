@@ -1,0 +1,201 @@
+{
+    "config": {
+        "allow_multiple_models": true,
+        "allow_orphans": true,
+        "count_failed_submissions": true,
+        "evaluate": {
+            "command": "python evaluate.py test.csv predictions.csv",
+            "dependencies": [
+                {
+                    "child_path": "evaluate.py",
+                    "parent_path": "",
+                    "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                },
+                {
+                    "child_path": "test.csv",
+                    "parent_path": "",
+                    "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                },
+                {
+                    "child_path": "predictions.csv",
+                    "parent_path": "",
+                    "parent_uuid": "{predict}"
+                }
+            ],
+            "metadata": {
+                "request_docker_image": "codalab/ubuntu:1.9"
+            },
+            "tag": "chexpert-test-eval"
+        },
+        "host": "https://worksheets.codalab.org",
+        "log_worksheet_uuid": "0x7e4850e815d64d998381411d7b134e2e",
+        "make_predictions_public": false,
+        "max_leaderboard_size": 10000,
+        "max_submissions_per_period": 5,
+        "max_submissions_total": 20,
+        "metadata": {
+            "name": "CheXpert Competition Leaderboard"
+        },
+        "predict": {
+            "depth": 10,
+            "metadata": {},
+            "mimic": [
+                {
+                    "new": "0x48e3f2da46254c138fc319ec381b2bc4",
+                    "old": "0x766817d1d0a44d0a8355f0eb65f79032"
+                },
+                {
+                    "new": "0xb120e6564ba74a488e5936dbae3009b2",
+                    "old": "0x9ea657766f594a3c92899256bdf569b0"
+                }
+            ],
+            "tag": "chexpert-test-predict"
+        },
+        "quota_period_seconds": 86400,
+        "refresh_period_seconds": 60,
+        "score_specs": [
+            {
+                "key": "/stdout:Average_AUROC",
+                "name": "average_auroc"
+            },
+            {
+                "key": "/stdout:Average_NumRadsUnderROC",
+                "name": "average_num_rads_under_roc"
+            },
+            {
+                "key": "/stdout:Atelectasis_AUROC",
+                "name": "atelectasis_auroc"
+            },
+            {
+                "key": "/stdout:Atelectasis_NumRadsUnderROC",
+                "name": "atelectasis_num_rads_under_roc"
+            },
+            {
+                "key": "/stdout:Cardiomegaly_AUROC",
+                "name": "cardiomegaly_auroc"
+            },
+            {
+                "key": "/stdout:Cardiomegaly_NumRadsUnderROC",
+                "name": "cardiomegaly_num_rads_under_roc"
+            },
+            {
+                "key": "/stdout:Consolidation_AUROC",
+                "name": "consolidation_auroc"
+            },
+            {
+                "key": "/stdout:Consolidation_NumRadsUnderROC",
+                "name": "consolidation_num_rads_under_roc"
+            },
+            {
+                "key": "/stdout:Edema_AUROC",
+                "name": "edema_auroc"
+            },
+            {
+                "key": "/stdout:Edema_NumRadsUnderROC",
+                "name": "edema_num_rads_under_roc"
+            },
+            {
+                "key": "/stdout:Effusion_AUROC",
+                "name": "effusion_auroc"
+            },
+            {
+                "key": "/stdout:Effusion_NumRadsUnderROC",
+                "name": "effusion_num_rads_under_roc"
+            }
+        ],
+        "submission_tag": "chexpert-submit"
+    },
+    "leaderboard": [
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb2519e0fc97942b4931ad50f83e5049c \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x45cd5ef39f9d0c028aa065ca199e70e926acd24d",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x080d199acdaa40d88a42422ae9c8ce09",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x080d199acdaa40d88a42422ae9c8ce09",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x080d199acdaa40d88a42422ae9c8ce09",
+                        "parent_name": "jirvin16-predictions-BASELINE-ensemble-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xb2519e0fc97942b4931ad50f83e5049c"
+                    }
+                ],
+                "id": "0x080d199acdaa40d88a42422ae9c8ce09",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1549415034,
+                    "data_size": 12726,
+                    "description": "{\"submit_id\": \"0xfdd77cda62e2407eaae2df7e2517aa88\", \"predict_id\": \"0xb2519e0fc97942b4931ad50f83e5049c\", \"submitter_id\": \"0x05e6e2885967491c8a6d3b7c24d02796\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1549416834,
+                    "name": "jirvin16-predictions-BASELINE-ensemble-results",
+                    "remote": "vm-clws-prod-worker-3",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1549416815,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 14.5959239006
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x080d199acdaa40d88a42422ae9c8ce09"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8550225085231018,
+                "atelectasis_num_rads_under_roc": 1,
+                "average_auroc": 0.9065207127699655,
+                "average_num_rads_under_roc": 1.8,
+                "cardiomegaly_auroc": 0.8977210193741816,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.8975766893623253,
+                "consolidation_num_rads_under_roc": 1,
+                "edema_auroc": 0.9155729736298456,
+                "edema_num_rads_under_roc": 2,
+                "effusion_auroc": 0.966710372960373,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1548311288,
+                "description": "",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "jirvin16"
+            }
+        }
+    ],
+    "updated": 1549681014.738577
+}

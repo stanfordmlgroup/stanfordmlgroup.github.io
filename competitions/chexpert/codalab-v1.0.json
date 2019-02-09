@@ -47,24 +47,48 @@
             "key": "/stdout:Average_AUROC"
         },
         {
+            "name": "average_num_rads_under_roc",
+            "key": "/stdout:Average_NumRadsUnderROC"
+        },
+        {
             "name": "atelectasis_auroc",
             "key": "/stdout:Atelectasis_AUROC"
+        },
+        {
+            "name": "atelectasis_num_rads_under_roc",
+            "key": "/stdout:Atelectasis_NumRadsUnderROC"
         },
         {
             "name": "cardiomegaly_auroc",
             "key": "/stdout:Cardiomegaly_AUROC"
         },
         {
+            "name": "cardiomegaly_num_rads_under_roc",
+            "key": "/stdout:Cardiomegaly_NumRadsUnderROC"
+        },
+        {
             "name": "consolidation_auroc",
             "key": "/stdout:Consolidation_AUROC"
+        },
+        {
+            "name": "consolidation_num_rads_under_roc",
+            "key": "/stdout:Consolidation_NumRadsUnderROC"
         },
         {
             "name": "edema_auroc",
             "key": "/stdout:Edema_AUROC"
         },
         {
+            "name": "edema_num_rads_under_roc",
+            "key": "/stdout:Edema_NumRadsUnderROC"
+        },
+        {
             "name": "effusion_auroc",
             "key": "/stdout:Effusion_AUROC"
+        },
+        {
+            "name": "effusion_num_rads_under_roc",
+            "key": "/stdout:Effusion_NumRadsUnderROC"
         }
     ],
     "metadata": {
