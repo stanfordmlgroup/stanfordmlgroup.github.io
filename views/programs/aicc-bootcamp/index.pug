@@ -1,0 +1,58 @@
+extends ../../layout
+
+block title
+  title AI For Climate Change Bootcamp 
+
+block description
+  meta(name='description', content='The AI for Climate Change Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and climate change.')
+
+block extrascripts
+include ../../includes/profile
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-9
+          img#aihc_headline(src="/programs/aicc-bootcamp.svg")
+  section.gray
+    .container
+      .row
+        .col-sm-12
+          h3 The AI for Climate Change Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and climate change. Students receive training from PhD students and bootcamp faculty to do high impact work.
+          p The applications for the spring bootcamp are now open.
+          a.btn.btn-lg.btn-default(href="https://docs.google.com/forms/d/e/1FAIpQLSdyrKQhMTa9n2UON01DCGvwV3eKzJ0Hyfepz8DE3_F07gLerw/viewform") Apply Now
+  section
+    .container
+      .row
+        .col-sm-4
+          h3 Teaching Team
+          +dp('Jeremy Irvin', 'phd', false, true)
+          +dp('Sharon Zhou', 'phd', false, true)
+          +dp('Pranav Rajpurkar', 'phd', false, true)
+          +dp('Andrew Ng', 'prof', false, true)
+          +dp('Rob Jackson', 'prof', false, true)
+        .col-sm-8
+          h2 Program
+          p The AICC bootcamp is an intense two-quarter program where students work on high-impact research problems at the intersection of AI and climate change (earth system science). Students work closely with PhD students in Professor Andrew Ng's lab and with faculty in the Department of Earth System Science.
+          .applications
+            h2 Applications
+            p Students with a background in artificial intelligence are encouraged to apply. The applications for the spring+summer bootcamp are now open.
+            ul
+              li Early Applications due Mar 18th, 2019 at 11:59p PST.
+              li Regular Applications due Apr 1st, 2019 at 11:59p PST.
+              li Late Applications due Apr 10th, 2019 at 11:59p PST.
+              li Rolling interviews and selections until Apr 12th, 2019.
+              li Bootcamp starts Apr 15th, 2019. Students can choose to pursue their second quarter of the bootcamp over the summer or over the fall.
+            h3 Prerequisites and Commitment
+            p This bootcamp is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with earth system science faculty. Students have the opportunity to take a deep dive into climate change and co-author a research paper. We expect students to have:
+            ul
+              li Taken machine learning courses (CS229/CS230/CS224N/CS231N or equivalent).
+              li Proficiency in software engineering (CS107 or equivalent), and have done Python programming.
+              li The bootcamp as their primary academic engagement (20-30 hours per week in lab) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399 etc).
+  section.bg-primary
+    .container
+      .row
+        .col-md-8.col-md-offset-4
+          h2 We invite you to join the AI revolution in climate change
+          a.btn.btn-lg.btn-default(href="https://docs.google.com/forms/d/e/1FAIpQLSdyrKQhMTa9n2UON01DCGvwV3eKzJ0Hyfepz8DE3_F07gLerw/viewform") Apply Now
