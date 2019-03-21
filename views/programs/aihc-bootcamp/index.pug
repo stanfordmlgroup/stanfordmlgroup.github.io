@@ -75,32 +75,84 @@ block content
   section.gray
     .container
       .row
-        .col-md-4.col-md-offset-4
-          h4 Past Bootcamp Cohorts
+        .col-sm-8.col-sm-offset-4
+          .row
+            .col-sm-10
+              h2 Past Bootcamp Cohorts
+              .cohort.clearfix
+                h3 Winter 2018-2019
+                //- Alphabetical order
+                +dp('Anuj Pareek', 'md')
+                +dp('Chris Wang', 'bs')
+                +dp('Jingbo Yang', 'bs')
+                +dp('Mark Sabini', 'bs')
+                +dp('Minh Phu', 'bs')
+                +dp('Nathan Dass', 'ms')
+              .cohort.clearfix
+                h3 Fall 2018-2019
+                +dp('Alex Wang', 'bs')
+                +dp('Amirhossein Kiani', 'ms')
+                +dp('Amit Schechter', 'bs')
+                +dp('Andrew Kondrich', 'bs')
+                +dp('Bora Uyumazturk', 'bs')
+                +dp('Chloe O\'Connell', 'md')
+                +dp('Jason Li', 'bs')
+                +dp('Nishit Asnani', 'ms')
+                +dp('Rebecca Gao', 'md')
+                +dp('Soumya Patro', 'ms')
+              .cohort.clearfix
+                h3 Spring 2017-2018
+                +dp('Behzad Haghgoo', 'bs')
+                +dp('Ben Cohen-Wang', 'bs')
+                +dp('Chris Chute', 'ms')
+                +dp('Joe Lou', 'bs')
+                +dp('Kelly Shen', 'ms')
+                +dp('Meng Zhang', 'ms')
+                +dp('Michael Ko', 'bs')
+                +dp('Nidhi Manoj', 'bs')
+                +dp('Philip Hwang', 'bs')
+                +dp('Robin Cheong', 'bs')
+                +dp('Silviana Ciurea Ilcus', 'ms')
+                +dp('Yifan Yu', 'ms')
+              .cohort.clearfix
+                h3 Winter 2017-2018
+                +dp('Allison Park', 'ms')
+                +dp('Andrew Huang', 'bs')
+                +dp('Atli Kosson', 'ms')
+                +dp('Chris Lin', 'ms')
+                +dp('Erik Jones', 'bs')
+                +dp('Henrik Marklund', 'ms')
+                +dp('Jessica Wetstone', 'ms')
+                +dp('Matthew Sun', 'bs')
+                +dp('Michael Bereket', 'bs')
+                +dp('Nicholas Bien', 'bs')
+                +dp('Norah Borus', 'bs')
+                +dp('Shubhang Desai', 'bs')
+                +dp('Suvadip Paul', 'ms')
+                +dp('Thao Nguyen', 'bs')
+                +dp('Tanay Kothari', 'bs')
+              .cohort.clearfix
+                h3 Fall 2017-2018
+                +dp('Aarti Bagul', 'ms')
+                +dp('Brandon Yang', 'bs')
+                +dp('Daisy Ding', 'ms')
+                +dp('Hershel Mehta', 'ms')
+                +dp('Kaylie Zhu', 'bs')
+                +dp('Tony Duan', 'ms')
+      .row
+        .col-md-8.col-md-offset-4
+          h2 Past Bootcamp Projects
           ul.list-inline
             li
-              a(href="/programs/aihc-bootcamp-fall2018") Winter 2018-2019
+              a.btn.btn-lg.btn-default(href="/competitions/chexpert") CheXpert
             li
-              a(href="/programs/aihc-bootcamp-fall2018") Fall 2018-2019
+              a.btn.btn-lg.btn-default(href="/projects/chexnext") CheXNeXt
             li
-              a(href="/programs/aihc-bootcamp-spring2018") Spring 2017-2018
+              a.btn.btn-lg.btn-default(href="/projects/mrnet") MRNet
             li
-              a(href="/programs/aihc-bootcamp-winter2018") Winter 2017-2018
+              a.btn.btn-lg.btn-default(href="/projects/chexnet") CheXNet
             li
-              a(href="/programs/aihc-bootcamp-fall2017") Fall 2017-2018
-        .col-md-4
-          h4 Past Bootcamp Projects
-          ul.list-inline
-            li
-              a(href="/projects/chexnet") CheXpert
-            li
-              a(href="/projects/chexnext") CheXNeXt
-            li
-              a(href="/projects/mrnet") MRNet
-            li
-              a(href="/projects/chexnet") CheXNet
-            li
-              a(href="/projects/mura") MURA
+              a.btn.btn-lg.btn-default(href="/projects/mura") MURA
   section.bg-primary
     .container
       .row
