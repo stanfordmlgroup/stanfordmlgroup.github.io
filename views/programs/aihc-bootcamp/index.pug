@@ -75,9 +75,22 @@ block content
   section.gray
     .container
       .row
-        .col-sm-8.col-sm-offset-4
+        .col-sm-1.col-sm-push-11
+          h4 Past Bootcamp Projects
+          ul.list-unstyled
+            li
+              a.btn(href="/competitions/chexpert") CheXpert
+            li
+              a.btn(href="/projects/chexnext") CheXNeXt
+            li
+              a.btn(href="/projects/mrnet") MRNet
+            li
+              a.btn(href="/projects/chexnet") CheXNet
+            li
+              a.btn(href="/projects/mura") MURA
+        .col-sm-7.col-sm-pull-1.col-sm-offset-4
           .row
-            .col-sm-10
+            .col-sm-12
               h2 Past Bootcamp Cohorts
               .cohort.clearfix
                 h3 Winter 2018-2019
@@ -139,20 +152,6 @@ block content
                 +dp('Hershel Mehta', 'ms')
                 +dp('Kaylie Zhu', 'bs')
                 +dp('Tony Duan', 'ms')
-      .row
-        .col-md-8.col-md-offset-4
-          h2 Past Bootcamp Projects
-          ul.list-inline
-            li
-              a.btn.btn-lg.btn-default(href="/competitions/chexpert") CheXpert
-            li
-              a.btn.btn-lg.btn-default(href="/projects/chexnext") CheXNeXt
-            li
-              a.btn.btn-lg.btn-default(href="/projects/mrnet") MRNet
-            li
-              a.btn.btn-lg.btn-default(href="/projects/chexnet") CheXNet
-            li
-              a.btn.btn-lg.btn-default(href="/projects/mura") MURA
   section.bg-primary
     .container
       .row

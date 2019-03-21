@@ -1,28 +1,13 @@
-extends ../bootcamp_cohort
-
-block title
-  title AI For Healthcare Bootcamp Fall 2017
-
-include ../../includes/profile
-
-block cohort_block
-  h1 Fall 2017 Cohort
-
-block teaching_team
-  +dp('Anand Avati', 'phd', false, true)
-  +dp('Pranav Rajpurkar', 'phd', false, true)
-  +dp('Jeremy Irvin', 'ms', false, true)
-  +dp('Andrew Ng', 'prof', false, true)
-  +dp('Nigam Shah', 'prof', false, true)
-  +dp('Matt Lungren', 'prof', false, true)
-  +dp('Curt Langlotz', 'prof', false, true)
-
-block students
-  //- Masters students, alphabetical order
-  +dp('Aarti Bagul', 'ms')
-  +dp('Daisy Ding', 'ms')
-  +dp('Hershel Mehta', 'ms')
-  +dp('Tony Duan', 'ms')
-  //- Bachelors students, alphabetical order
-  +dp('Brandon Yang', 'bs')
-  +dp('Kaylie Zhu', 'bs')
+doctype html
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='refresh', content='0; url=/programs/aihc-bootcamp/')
+    script(type='text/javascript').
+      window.location.href = "/programs/aihc-bootcamp/"
+    title Page Redirection
+  body
+    // Note: don't tell people to `click` the link, just tell them that it is a link.
+    | If you are not redirected automatically, follow this 
+    a(href="/programs/aihc-bootcamp/") link to example
+    | .

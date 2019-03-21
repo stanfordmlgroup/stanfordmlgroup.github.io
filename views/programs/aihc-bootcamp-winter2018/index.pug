@@ -1,41 +1,13 @@
-extends ../bootcamp_cohort
-
-block title
-  title AI For Healthcare Bootcamp Winter 2018
-
-include ../../includes/profile
-
-block cohort_block
-  h1 Winter 2018 Cohort
-
-block teaching_team
-  +dp('Pranav Rajpurkar', 'phd', false, true)
-  +dp('Anand Avati', 'phd', false, true)
-  +dp('Jeremy Irvin', 'ms', false, true)
-  +dp('Ken Jung', 'Research Scientist', false, true)
-  +dp('Andrew Ng', 'prof', false, true)
-  +dp('Nigam Shah', 'prof', false, true)
-  +dp('Matt Lungren', 'prof', false, true)
-  +dp('Curt Langlotz', 'prof', false, true)
-  +dp('Jeanne Shen', 'prof', false, true)
-
-block students
-  //- Masters students, alphabetical order
-  +dp('Allison Park', 'ms')
-  +dp('Atli Kosson', 'ms')
-  +dp('Chris Lin', 'ms')
-  +dp('Henrik Marklund', 'ms')
-  +dp('Jessica Wetstone', 'ms')
-  +dp('Suvadip Paul', 'ms')
-  //- Bachelors students, alphabetical order
-  +dp('Andrew Huang', 'bs')
-  +dp('Erik Jones', 'bs')
-  +dp('Matthew Sun', 'bs')
-  +dp('Michael Bereket', 'bs')
-  +dp('Norah Borus', 'bs')
-  +dp('Thao Nguyen', 'bs')
-  p Team Leads
-  //- Bachelors students, alphabetical order
-  +dp('Nicholas Bien', 'bs')
-  +dp('Shubhang Desai', 'bs')
-  +dp('Tanay Kothari', 'bs')
+doctype html
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='refresh', content='0; url=/programs/aihc-bootcamp/')
+    script(type='text/javascript').
+      window.location.href = "/programs/aihc-bootcamp/"
+    title Page Redirection
+  body
+    // Note: don't tell people to `click` the link, just tell them that it is a link.
+    | If you are not redirected automatically, follow this 
+    a(href="/programs/aihc-bootcamp/") link to example
+    | .

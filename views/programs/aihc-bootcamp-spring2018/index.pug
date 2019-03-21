@@ -1,56 +1,13 @@
-extends ../bootcamp_cohort
-
-block title
-  title AI For Healthcare Bootcamp Spring 2018
-
-include ../../includes/profile
-
-block cohort_block
-  h1 Spring 2018 Cohort
-
-block teaching_team
-  +dp('Pranav Rajpurkar', 'phd', false, true)
-  +dp('Anand Avati', 'phd', false, true)
-  +dp('Jeremy Irvin', 'ms', false, true)
-  +dp('Tony Duan', 'ms', false, true)
-  +dp('Andrew Ng', 'prof', false, true)
-  +dp('Nigam Shah', 'prof', false, true)
-  +dp('Matt Lungren', 'prof', false, true)
-  +dp('Curt Langlotz', 'prof', false, true)
-  +dp('Jeanne Shen', 'prof', false, true)
-  +dp('Sanjay Basu', 'prof', false, true)
-  +dp('Robyn Ball', 'Senior Biostatistician', false, true)
-  +dp('Bhavik Patel', 'prof', false, true)
-  +dp('Adam Miner', 'Instructor', false, true)
-  +dp('Kristen Yeom', 'prof', false, true)
-
-block students
-  //- Masters students, alphabetical order
-  +dp('Chris Chute', 'ms')
-  +dp('Chris Lin', 'ms')
-  +dp('Meng Zhang', 'ms')
-  +dp('Kelly Shen', 'ms')
-  +dp('Silviana Ciurea Ilcus', 'ms')
-  +dp('Yifan Yu', 'ms')
-  //- Bachelors students, alphabetical order
-  +dp('Andrew Huang', 'bs')
-  +dp('Behzad Haghgoo', 'bs')
-  +dp('Ben Cohen-Wang', 'bs')
-  +dp('Joe Lou', 'bs')
-  +dp('Matthew Sun', 'bs')
-  +dp('Michael Ko', 'bs')
-  +dp('Nidhi Manoj', 'bs')
-  +dp('Philip Hwang', 'bs')
-  +dp('Robin Cheong', 'bs')
-  +dp('Thao Nguyen', 'bs')
-  .clearfix
-  p Team Leads
-  //- Masters students, alphabetical order
-  +dp('Allison Park', 'ms')
-  +dp('Henrik Marklund', 'ms')
-  +dp('Jessica Wetstone', 'ms')
-  +dp('Suvadip Paul', 'ms')
-  //- Bachelors students, alphabetical order
-  +dp('Erik Jones', 'bs')
-  +dp('Michael Bereket', 'bs')
-
+doctype html
+html(lang='en-US')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='refresh', content='0; url=/programs/aihc-bootcamp/')
+    script(type='text/javascript').
+      window.location.href = "/programs/aihc-bootcamp/"
+    title Page Redirection
+  body
+    // Note: don't tell people to `click` the link, just tell them that it is a link.
+    | If you are not redirected automatically, follow this 
+    a(href="/programs/aihc-bootcamp/") link to example
+    | .
