@@ -195,7 +195,180 @@
                 "public": true,
                 "user_name": "jirvin16"
             }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0dfc81f7f5d34c7db5c12bcde2a12060 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xd167c1bd2ce044e19f013da417299f29",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xd167c1bd2ce044e19f013da417299f29",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xd167c1bd2ce044e19f013da417299f29",
+                        "parent_name": "sgrest-predictions-naivedensenet-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x0dfc81f7f5d34c7db5c12bcde2a12060"
+                    }
+                ],
+                "id": "0xd167c1bd2ce044e19f013da417299f29",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1553534942,
+                    "description": "{\"submit_id\": \"0x194bb2aa81be4a859b94d28101dac5c4\", \"predict_id\": \"0x0dfc81f7f5d34c7db5c12bcde2a12060\", \"submitter_id\": \"0xde74924d7a574ca5a7092e8c2bf013dc\"}",
+                    "name": "sgrest-predictions-naivedensenet-results",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "tags": [
+                        "chexpert-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "created",
+                "uuid": "0xd167c1bd2ce044e19f013da417299f29"
+            },
+            "scores": {
+                "atelectasis_auroc": null,
+                "atelectasis_num_rads_under_roc": null,
+                "average_auroc": null,
+                "average_num_rads_under_roc": null,
+                "cardiomegaly_auroc": null,
+                "cardiomegaly_num_rads_under_roc": null,
+                "consolidation_auroc": null,
+                "consolidation_num_rads_under_roc": null,
+                "edema_auroc": null,
+                "edema_num_rads_under_roc": null,
+                "effusion_auroc": null,
+                "effusion_num_rads_under_roc": null
+            },
+            "submission": {
+                "created": 1553466371,
+                "description": "Naive Densenet (single model) (Independent)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 3,
+                "public": true,
+                "user_name": "sgrest"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x959c54a451d74a0c873c076b0bfefd9d \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0xae2c4fd06c3c8808d37dd7bf42e2324cc57f8e0f",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xc7b60ba6e6d742d19cb0c76c471ea7d5",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xc7b60ba6e6d742d19cb0c76c471ea7d5",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xc7b60ba6e6d742d19cb0c76c471ea7d5",
+                        "parent_name": "sgrest-run-predictions-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x959c54a451d74a0c873c076b0bfefd9d"
+                    }
+                ],
+                "id": "0xc7b60ba6e6d742d19cb0c76c471ea7d5",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1553406656,
+                    "data_size": 13592,
+                    "description": "",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 1,
+                    "failure_message": "Exit code 1",
+                    "last_updated": 1553407159,
+                    "name": "sgrest-run-predictions-results",
+                    "remote": "vm-clws-prod-worker-1",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1553407138,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 14.7278709412
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0xc7b60ba6e6d742d19cb0c76c471ea7d5"
+            },
+            "scores": {
+                "atelectasis_auroc": null,
+                "atelectasis_num_rads_under_roc": null,
+                "average_auroc": null,
+                "average_num_rads_under_roc": null,
+                "cardiomegaly_auroc": null,
+                "cardiomegaly_num_rads_under_roc": null,
+                "consolidation_auroc": null,
+                "consolidation_num_rads_under_roc": null,
+                "edema_auroc": null,
+                "edema_num_rads_under_roc": null,
+                "effusion_auroc": null,
+                "effusion_num_rads_under_roc": null
+            },
+            "submission": {
+                "created": 1553406656,
+                "description": "",
+                "num_period_submissions": 0,
+                "num_total_submissions": 0,
+                "public": null,
+                "user_name": null
+            }
         }
     ],
-    "updated": 1549681014.738577
+    "updated": 1553534947.459044
 }
