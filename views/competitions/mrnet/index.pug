@@ -1,0 +1,83 @@
+extends ../../layout
+
+block title
+  title Deep learning to assist clinicians in reading knee MRI
+
+block description
+  meta(name='description', content='We developed an algorithm to predict abnormalities in knee MRI exams, and measured the clinical utility of providing the algorithm’s predictions to radiologists and surgeons during interpretation.')
+  meta(property="og:image", content="https://stanfordmlgroup.github.io/projects/mrnet/img/team_fb.jpg")
+  meta(property="og:title", content="Deep learning to assist clinicians in reading knee MRI")
+  meta(name='twitter:card', content='summary_large_image')
+  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/projects/mrnet/img/team_twitter.jpg")
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/mrnet/css/index.css')
+  link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
+
+block extrascripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js")
+  script(src='/projects/mrnet/js/index.js')
+  script(src='/competitions/mrnet/js/form.js')
+
+mixin model_display(group)
+  table.table.performanceTable
+    tr
+      th Rank
+      th Date
+      th Model
+      th AUC
+    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.average; }))
+    each model in group
+      tr
+        td.rank
+          | #{model.rank} <br>
+        td
+          span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
+        td(style="word-break:break-word;")
+          | #{model.model_name}
+          if model.institution != ''
+              em  #{model.institution} 
+          if model.link
+            a.link(href=model.link) #{model.link}
+        td
+          if model.average == largest_auc
+            b #{model.average.toPrecision(3)}
+          else
+            | #{model.average.toPrecision(3)}
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-10
+            h1 MRNet: Deep-learning-assisted diagnosis for knee magnetic resonance imaging
+            p Nicholas Bien *, Pranav Rajpurkar *, Robyn L. Ball, Jeremy Irvin, Allison Park, Erik Jones, Michael Bereket, Bhavik N. Patel, Kristen W. Yeom, Katie Shpanskaya, Safwan Halabi, Evan Zucker, Gary Fanton, Derek F. Amanatullah, Christopher F. Beaulieu, Geoffrey M. Riley, Russell J. Stewart, Francis G. Blankenberg, David B. Larson, Ricky H. Jones, Curtis P. Langlotz, Andrew Y. Ng<sup>&#8224;</sup>, Matthew P. Lungren<sup>&#8224;</sup>
+
+  section
+    .container
+      .row
+        .col-md-6.col-md-push-6
+          h1 Leaderboard
+          +model_display(test)
+        .col-md-6.col-md-pull-6
+          h1 Downloading the Dataset (v1.0)
+          p Please read the Stanford University School of Medicine MRNet Dataset Research Use Agreement. Once you register to download the MRNet dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
+          #agreement.well
+            include agreement
+          include mailchimp
+
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h3
+            | To learn more, 
+            a(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002699") read our publication
+            |  in PLOS Medicine.
+          p
+            | For enquiries,
+            | contact us at:
+          h4
+            code nbien@cs.stanford.edu
+            |  and 
+            code pranavsr@cs.stanford.edu

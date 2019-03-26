@@ -30,7 +30,7 @@ function assert (condition, message) {
   }
 }
 
-var parseCompEntries = function (comp_file) {
+var parseCompEntries = function (comp_file, comp_name) {
   var leaderboard = require(comp_file).leaderboard
   var entries = []
 
@@ -47,9 +47,18 @@ var parseCompEntries = function (comp_file) {
         entry.link = description.substr(description.lastIndexOf('http')).trim()
       }
       entry.date = o_entry.submission.created
-      entry.kappa = parseFloat(o_entry.scores.overall_mean)
-      if (!(entry.kappa >= 0)) throw 'Score invalid'
-      if (entry.kappa < 0.5) throw 'Score too low'
+      if (comp_name === 'mrnet') {
+        entry.average = parseFloat(o_entry.scores.average_auroc)
+        if (!(entry.average >= 0)) throw 'Score invalid'
+        if (entry.average < 0.5) throw 'Score too low'
+        entry.abnormal = parseFloat(o_entry.scores.abnormal_auroc)
+        entry.acl = parseFloat(o_entry.scores.acl_auroc)
+        entry.meniscus = parseFloat(o_entry.scores.meniscus_auroc)
+      } else {
+        entry.kappa = parseFloat(o_entry.scores.overall_mean)
+        if (!(entry.kappa >= 0)) throw 'Score invalid'
+        if (entry.kappa < 0.5) throw 'Score too low'
+      }
       if (entry.model_name === '') {
         entry.model_name = '' + entry.user
       }
@@ -69,12 +78,12 @@ var parseCompEntries = function (comp_file) {
 //   var entries = parseCompEntries(dir + '/out-v1.1.json')
 //   jsonfile.writeFile(dir + '/results-v1.1.json', entries, cb)
 // })
-var comps = ["mura", "chexpert"]
+var comps = ["mura", "chexpert", "mrnet"]
 comps.forEach(function (comp) {
   var dir = './competitions/' + comp
-  gulp.task('process_' + comp + '_comp_output', function (cb) {
+  gulp.task('process_' + comp + '_comp_output', function (cb) { //'competitions-'+comp, function(cb) {
     var jsonfile = require('jsonfile')
-    var entries = parseCompEntries(dir + '/out-v1.1.json')
+    var entries = parseCompEntries(dir + '/out-v1.1.json', comp)
     jsonfile.writeFile(dir + '/results-v1.1.json', entries, cb)
   })
 })
@@ -113,7 +122,7 @@ folders.forEach(function (folder) {
   }
 })
 
-gulp.task('build', ['index', 'projects', 'programs', 'competitions-mura', 'competitions-chexpert'])
+gulp.task('build', ['index', 'projects', 'programs', 'competitions-mura', 'competitions-chexpert', 'competitions-mrnet'])
 
 gulp.task('watch_build', ['build'], function () {
   return gulp.watch('./views/**/*.pug', ['build', browserSync.reload])
