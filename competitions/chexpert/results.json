@@ -1,1 +1,1 @@
-[{"user":"jirvin16","model_name":"jirvin16","institution":"","date":1548311288,"auc":0.9065207127699655,"average_num_rads_under_roc":1.8,"rank":1}]
+[{"user":"jirvin16","model_name":"Stanford Baseline (ensemble)","institution":"Stanford University","link":"https://arxiv.org/abs/1901.07031","date":1548311288,"auc":0.9065207127699655,"average_num_rads_under_roc":1.8,"rank":1},{"user":"sgrest","model_name":"Naive Densenet (single model)","institution":"Independent","date":1553466371,"auc":0.8833417506220304,"average_num_rads_under_roc":1.2,"rank":1}]

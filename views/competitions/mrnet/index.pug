@@ -1,7 +1,7 @@
 extends ../../layout
 
 block title
-  title MRNet: A Dataset of Knee MRs and Competition for Automated Knee MR Interpretation.
+  title MRNet: A Dataset of Knee MRIs and Competition for Automated Knee MRI Interpretation.
 
 block description
   meta(name='description', content='The MRNet dataset consists of 1,370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports.')
@@ -50,7 +50,7 @@ block content
       .row
         .col-lg-12
           img#title-image(src="/competitions/mrnet/img/logo.svg")
-          h3#page-subtitle A Knee MR Dataset And Competition
+          h3#page-subtitle A Knee MRI Dataset And Competition
   section
     .container
       .row
@@ -72,6 +72,7 @@ block content
 
         .col-md-6
           h1 Leaderboard
+          p The leaderboard reports the average AUC of the abnormality detection, ACL tear, and Meniscal tear tasks.
           +model_display(test)
           h2 Competition
           p We are hosting a competition to encourage others to develop models for automated interpretation of knee MRs. Our test set (called internal validation set in the paper) has its ground truth set using the majority vote of 3 practicing board-certified MSK radiologists (years in practice 6–19 years, average 12 years). The MSK radiologists had access to all DICOM series, the original report and clinical history, and follow-up exams during interpretation. 
