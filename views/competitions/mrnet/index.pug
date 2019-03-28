@@ -1,21 +1,20 @@
 extends ../../layout
 
 block title
-  title Deep learning to assist clinicians in reading knee MRI
+  title MRNet: A Dataset of KneeMRs and Competition for Automated Knee MR Interpretation.
 
 block description
-  meta(name='description', content='We developed an algorithm to predict abnormalities in knee MRI exams, and measured the clinical utility of providing the algorithm’s predictions to radiologists and surgeons during interpretation.')
-  meta(property="og:image", content="https://stanfordmlgroup.github.io/projects/mrnet/img/team_fb.jpg")
-  meta(property="og:title", content="Deep learning to assist clinicians in reading knee MRI")
-  meta(name='twitter:card', content='summary_large_image')
-  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/projects/mrnet/img/team_twitter.jpg")
+  meta(name='description', content='The MRNet dataset consists of 1,370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports.')
 
 block extralinks
-  link(rel='stylesheet', type='text/css', href='/projects/mrnet/css/index.css')
   link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
+  link(rel='stylesheet', type='text/css', href='/competitions/mrnet/css/index.css')
+  meta(property="og:image", content="https://stanfordmlgroup.github.io/competitions/mrnet/img/logo.jpg")
+  meta(property="og:title", content="MRNet: A Dataset of KneeMRs and Competition for Automated Knee MR Interpretation.")
+  meta(name='twitter:card', content='summary_large_image')
+  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/competitions/mrnet/img/logo.jpg")
 
 block extrascripts
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.7.1/pixi.min.js")
   script(src='/projects/mrnet/js/index.js')
   script(src='/competitions/mrnet/js/form.js')
 
@@ -49,16 +48,33 @@ block content
   section#header
     .container
       .row
-        .col-lg-10
-            h1 MRNet: Deep-learning-assisted diagnosis for knee magnetic resonance imaging
-            p Nicholas Bien *, Pranav Rajpurkar *, Robyn L. Ball, Jeremy Irvin, Allison Park, Erik Jones, Michael Bereket, Bhavik N. Patel, Kristen W. Yeom, Katie Shpanskaya, Safwan Halabi, Evan Zucker, Gary Fanton, Derek F. Amanatullah, Christopher F. Beaulieu, Geoffrey M. Riley, Russell J. Stewart, Francis G. Blankenberg, David B. Larson, Ricky H. Jones, Curtis P. Langlotz, Andrew Y. Ng<sup>&#8224;</sup>, Matthew P. Lungren<sup>&#8224;</sup>
-
+        .col-lg-12
+          img#title-image(src="/competitions/mrnet/img/logo.svg")
+          h3#page-subtitle A Knee MR Dataset And Competition
   section
     .container
       .row
-        .col-md-6.col-md-push-6
+        .col-md-6
+          h1 What is the MRNet Dataset?
+          p
+            | The MRNet dataset consists of 1,370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports. The dataset accompanies 
+            a(href="/projects/mrnet") the publication of the MRNet work here
+            | .
+          
+          h3 Dataset Details
+          p 
+            | The most common indications for the knee MRI examinations in this study included acute and chronic pain, follow-up or preoperative evaluation, injury/trauma. Examinations were performed with GE scanners (GE Discovery, GE Healthcare, Waukesha, WI) with standard knee MRI coil and a routine non-contrast knee MRI protocol that included the following sequences: coronal T1 weighted, coronal T2 with fat saturation, sagittal proton density (PD) weighted, sagittal T2 with fat saturation, and axial PD weighted with fat saturation. A total of 775 (56.6%) examinations used a 3.0-T magnetic field; the remaining used a 1.5-T magnetic field.
+            | See 
+            a(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002699") our paper
+            |  for more details.
+          h3 Splits
+          p The exams have been split into a training set (1,130 exams, 1,088 patients), a validation set (called tuning set in the paper) (120 exams, 111 patients), and a hidden test set (called validation set in the paper) (120 exams, 113 patients). To form the validation and tuning sets, stratified random sampling was used to ensure that at least 50 positive examples of each label (abnormal, ACL tear, and meniscal tear) were present in each set. All exams from each patient were put in the same split.
+
+        .col-md-6
           h1 Leaderboard
           +model_display(test)
+          h2 Competition
+          p We are hosting a competition to encourage others to develop models for automated interpretation of knee MRs. Our test set (called internal validation set in the paper) has its ground truth set using the majority vote of 3 practicing board-certified MSK radiologists (years in practice 6–19 years, average 12 years). The MSK radiologists had access to all DICOM series, the original report and clinical history, and follow-up exams during interpretation. 
           h3 How can I participate?
           p MRNet uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
           p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
@@ -66,20 +82,23 @@ block content
             li
               a.btn.btn-lg.btn-default(href="https://worksheets.codalab.org/worksheets/0xcaf785cb84564239b240400fbea93ec5/") Submission Tutorial
             li
-        .col-md-6.col-md-pull-6
+  section.gray
+    .container
+      .row
+        .col-md-7
           h1 Downloading the Dataset (v1.0)
           p Please read the Stanford University School of Medicine MRNet Dataset Research Use Agreement. Once you register to download the MRNet dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
           #agreement.well
             include agreement
           include mailchimp
-
-  section.gray
+  section.bg-primary
     .container
       .row
         .col-md-7
           h3
             | To learn more, 
-            a(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002699") read our publication
+            code
+              a(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002699") read our publication
             |  in PLOS Medicine.
           p
             | For enquiries,
