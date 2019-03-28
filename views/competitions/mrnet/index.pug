@@ -1,0 +1,109 @@
+extends ../../layout
+
+block title
+  title MRNet: A Dataset of KneeMRs and Competition for Automated Knee MR Interpretation.
+
+block description
+  meta(name='description', content='The MRNet dataset consists of 1,370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports.')
+
+block extralinks
+  link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
+  link(rel='stylesheet', type='text/css', href='/competitions/mrnet/css/index.css')
+  meta(property="og:image", content="https://stanfordmlgroup.github.io/competitions/mrnet/img/logo.jpg")
+  meta(property="og:title", content="MRNet: A Dataset of KneeMRs and Competition for Automated Knee MR Interpretation.")
+  meta(name='twitter:card', content='summary_large_image')
+  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/competitions/mrnet/img/logo.jpg")
+
+block extrascripts
+  script(src='/projects/mrnet/js/index.js')
+  script(src='/competitions/mrnet/js/form.js')
+
+mixin model_display(group)
+  table.table.performanceTable
+    tr
+      th Rank
+      th Date
+      th Model
+      th AUC
+    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.average; }))
+    each model in group
+      tr
+        td.rank
+          | #{model.rank} <br>
+        td
+          span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
+        td(style="word-break:break-word;")
+          | #{model.model_name}
+          if model.institution != ''
+              em  #{model.institution} 
+          if model.link
+            a.link(href=model.link) #{model.link}
+        td
+          if model.average == largest_auc
+            b #{model.average.toPrecision(3)}
+          else
+            | #{model.average.toPrecision(3)}
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-12
+          img#title-image(src="/competitions/mrnet/img/logo.svg")
+          h3#page-subtitle A Knee MR Dataset And Competition
+  section
+    .container
+      .row
+        .col-md-6
+          h1 What is the MRNet Dataset?
+          p
+            | The MRNet dataset consists of 1,370 knee MRI exams performed at Stanford University Medical Center. The dataset contains 1,104 (80.6%) abnormal exams, with 319 (23.3%) ACL tears and 508 (37.1%) meniscal tears; labels were obtained through manual extraction from clinical reports. The dataset accompanies 
+            a(href="/projects/mrnet") the publication of the MRNet work here
+            | .
+          
+          h3 Dataset Details
+          p 
+            | The most common indications for the knee MRI examinations in this study included acute and chronic pain, follow-up or preoperative evaluation, injury/trauma. Examinations were performed with GE scanners (GE Discovery, GE Healthcare, Waukesha, WI) with standard knee MRI coil and a routine non-contrast knee MRI protocol that included the following sequences: coronal T1 weighted, coronal T2 with fat saturation, sagittal proton density (PD) weighted, sagittal T2 with fat saturation, and axial PD weighted with fat saturation. A total of 775 (56.6%) examinations used a 3.0-T magnetic field; the remaining used a 1.5-T magnetic field.
+            | See 
+            a(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002699") our paper
+            |  for more details.
+          h3 Splits
+          p The exams have been split into a training set (1,130 exams, 1,088 patients), a validation set (called tuning set in the paper) (120 exams, 111 patients), and a hidden test set (called validation set in the paper) (120 exams, 113 patients). To form the validation and tuning sets, stratified random sampling was used to ensure that at least 50 positive examples of each label (abnormal, ACL tear, and meniscal tear) were present in each set. All exams from each patient were put in the same split.
+
+        .col-md-6
+          h1 Leaderboard
+          +model_display(test)
+          h2 Competition
+          p We are hosting a competition to encourage others to develop models for automated interpretation of knee MRs. Our test set (called internal validation set in the paper) has its ground truth set using the majority vote of 3 practicing board-certified MSK radiologists (years in practice 6–19 years, average 12 years). The MSK radiologists had access to all DICOM series, the original report and clinical history, and follow-up exams during interpretation. 
+          h3 How can I participate?
+          p MRNet uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
+          p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
+          ul.list-inline
+            li
+              a.btn.btn-lg.btn-default(href="https://worksheets.codalab.org/worksheets/0xcaf785cb84564239b240400fbea93ec5/") Submission Tutorial
+            li
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h1 Downloading the Dataset (v1.0)
+          p Please read the Stanford University School of Medicine MRNet Dataset Research Use Agreement. Once you register to download the MRNet dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
+          #agreement.well
+            include agreement
+          include mailchimp
+  section.bg-primary
+    .container
+      .row
+        .col-md-7
+          h3
+            | To learn more, 
+            code
+              a(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002699") read our publication
+            |  in PLOS Medicine.
+          p
+            | For enquiries,
+            | contact us at:
+          h4
+            code nbien@cs.stanford.edu
+            |  and 
+            code pranavsr@cs.stanford.edu

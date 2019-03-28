@@ -1,0 +1,65 @@
+{
+    "max_submissions_per_period": 5,
+    "max_submissions_total": 20,
+    "host": "https://worksheets.codalab.org",
+    "submission_tag": "mrnet-submit",
+    "log_worksheet_uuid": "0xae2940e4b4b948dd994519941f3517d0",
+    "allow_multiple_models": true,
+    "predict": {
+        "mimic": [
+            {
+                "old": "0x2ccbea10d7114bf28142d73a5fc8d398",
+                "new": "0x81089c9e3dae4eb48bf2680c18d9d794"
+            },
+            {
+                "old": "0xbdbb1d4b0655429c9d5afaab1b5c86ec",
+                "new": "0xcd032b322d624b7d8465abfc48e65d1e"
+            }
+        ],
+        "depth": 10,
+        "tag": "mrnet-test-predict"
+    },
+    "evaluate": {
+        "dependencies": [
+            {
+                "parent_uuid": "0x64251554c3804ccdb5c87a8545b607b0",
+                "child_path": "evaluate.py"
+            },
+            {
+                "parent_uuid": "0xe2b748c379fc4af29bf25b96ecd4bfa9",
+                "child_path": "test-annotations.csv"
+            },
+            {
+                "parent_uuid": "{predict}",
+                "parent_path": "",
+                "child_path": "predictions.csv"
+            }
+        ],
+        "command": "python evaluate.py test-annotations.csv predictions.csv",
+        "metadata": {
+          "request_docker_image": "codalab/ubuntu:1.9"
+        },
+        "tag": "mrnet-test-eval"
+    },
+    "score_specs": [
+        {
+            "name": "average_auroc",
+            "key": "/stdout:Average_AUROC"
+        },
+        {
+            "name": "abnormal_auroc",
+            "key": "/stdout:Abnormal_AUROC"
+        },
+        {
+            "name": "acl_auroc",
+            "key": "/stdout:ACL_AUROC"
+        },
+        {
+            "name": "meniscus_auroc",
+            "key": "/stdout:Meniscus_AUROC"
+        },
+    ],
+    "metadata": {
+        "name": "MRNet Competition Leaderboard"
+    }
+}
