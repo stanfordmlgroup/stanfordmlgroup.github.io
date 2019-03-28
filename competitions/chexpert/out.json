@@ -189,7 +189,7 @@
             },
             "submission": {
                 "created": 1548311288,
-                "description": "",
+                "description": "Stanford Baseline (ensemble) (Stanford University) https://arxiv.org/abs/1901.07031",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
@@ -198,10 +198,10 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0dfc81f7f5d34c7db5c12bcde2a12060 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0dfc81f7f5d34c7db5c12bcde2a12060 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
-                "data_hash": null,
+                "data_hash": "0xcb472f0a898423c769c03452785232e059ef225f",
                 "dependencies": [
                     {
                         "child_path": "evaluate.py",
@@ -231,8 +231,13 @@
                     "actions": [],
                     "allow_failed_dependencies": false,
                     "created": 1553534942,
+                    "data_size": 12727,
                     "description": "{\"submit_id\": \"0x194bb2aa81be4a859b94d28101dac5c4\", \"predict_id\": \"0x0dfc81f7f5d34c7db5c12bcde2a12060\", \"submitter_id\": \"0xde74924d7a574ca5a7092e8c2bf013dc\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1553535354,
                     "name": "sgrest-predictions-naivedensenet-results",
+                    "remote": "vm-clws-prod-worker-1",
                     "request_cpus": 1,
                     "request_disk": "4g",
                     "request_docker_image": "codalab/ubuntu:1.9",
@@ -242,9 +247,12 @@
                     "request_priority": 0,
                     "request_queue": "",
                     "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1553535333,
                     "tags": [
                         "chexpert-test-eval"
-                    ]
+                    ],
+                    "time": 14.7421710491
                 },
                 "owner": {
                     "id": "0x05e6e2885967491c8a6d3b7c24d02796",
@@ -252,28 +260,28 @@
                 },
                 "permission": 2,
                 "permission_spec": "all",
-                "state": "created",
+                "state": "ready",
                 "uuid": "0xd167c1bd2ce044e19f013da417299f29"
             },
             "scores": {
-                "atelectasis_auroc": null,
-                "atelectasis_num_rads_under_roc": null,
-                "average_auroc": null,
-                "average_num_rads_under_roc": null,
-                "cardiomegaly_auroc": null,
-                "cardiomegaly_num_rads_under_roc": null,
-                "consolidation_auroc": null,
-                "consolidation_num_rads_under_roc": null,
-                "edema_auroc": null,
-                "edema_num_rads_under_roc": null,
-                "effusion_auroc": null,
-                "effusion_num_rads_under_roc": null
+                "atelectasis_auroc": 0.8075568363752801,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.8833417506220304,
+                "average_num_rads_under_roc": 1.2,
+                "cardiomegaly_auroc": 0.8781570807795215,
+                "cardiomegaly_num_rads_under_roc": 1,
+                "consolidation_auroc": 0.8783219855040634,
+                "consolidation_num_rads_under_roc": 1,
+                "edema_auroc": 0.9097095637379997,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9429632867132868,
+                "effusion_num_rads_under_roc": 1
             },
             "submission": {
                 "created": 1553466371,
                 "description": "Naive Densenet (single model) (Independent)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 3,
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
                 "public": true,
                 "user_name": "sgrest"
             }
@@ -370,5 +378,5 @@
             }
         }
     ],
-    "updated": 1553534947.459044
+    "updated": 1553742034.813594
 }
