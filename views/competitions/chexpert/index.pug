@@ -25,14 +25,9 @@ mixin model_display(group)
       th Date
       th Model
       th AUC
-    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.kappa; }))
-    tr.human-row
-      td
-      td
-      td
-        | Leaderboard Activating March 2019
-      td 
-    //-each model in group
+      th Num Rads Below Curve
+    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.auc; }))
+    each model in group
       tr
         td.rank
           | #{model.rank} <br>
@@ -45,10 +40,12 @@ mixin model_display(group)
           if model.link
             a.link(href=model.link) #{model.link}
         td
-          if model.kappa == largest_auc
-            b #{model.kappa.toPrecision(3)}
+          if model.auc == largest_auc
+            b #{model.auc.toPrecision(3)}
           else
-            | #{model.kappa.toPrecision(3)}
+            | #{model.auc.toPrecision(3)}
+        td
+          | #{model.average_num_rads_under_roc.toPrecision(2)}
 
 block content
   section#header

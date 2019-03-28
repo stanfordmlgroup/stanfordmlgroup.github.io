@@ -54,10 +54,15 @@ var parseCompEntries = function (comp_file, comp_name) {
         entry.abnormal = parseFloat(o_entry.scores.abnormal_auroc)
         entry.acl = parseFloat(o_entry.scores.acl_auroc)
         entry.meniscus = parseFloat(o_entry.scores.meniscus_auroc)
-      } else {
+      } else if (comp_name === 'mura'){
         entry.kappa = parseFloat(o_entry.scores.overall_mean)
         if (!(entry.kappa >= 0)) throw 'Score invalid'
         if (entry.kappa < 0.5) throw 'Score too low'
+      } else if (comp_name === 'chexpert'){
+        entry.auc = parseFloat(o_entry.scores.average_auroc)
+        entry.average_num_rads_under_roc = parseFloat(o_entry.scores.average_num_rads_under_roc)
+        if (!(entry.auc >= 0)) throw 'Score invalid'
+        if (entry.auc < 0.7) throw 'Score too low'
       }
       if (entry.model_name === '') {
         entry.model_name = '' + entry.user
@@ -72,19 +77,13 @@ var parseCompEntries = function (comp_file, comp_name) {
   return entries
 }
 
-// var dir = "./competitions/mura"
-// gulp.task('process_comp_output', function (cb) {
-//   var jsonfile = require('jsonfile')
-//   var entries = parseCompEntries(dir + '/out-v1.1.json')
-//   jsonfile.writeFile(dir + '/results-v1.1.json', entries, cb)
-// })
 var comps = ["mura", "chexpert", "mrnet"]
 comps.forEach(function (comp) {
   var dir = './competitions/' + comp
   gulp.task('process_' + comp + '_comp_output', function (cb) { //'competitions-'+comp, function(cb) {
     var jsonfile = require('jsonfile')
-    var entries = parseCompEntries(dir + '/out-v1.1.json', comp)
-    jsonfile.writeFile(dir + '/results-v1.1.json', entries, cb)
+    var entries = parseCompEntries(dir + '/out.json', comp)
+    jsonfile.writeFile(dir + '/results.json', entries, cb)
   })
 })
 
@@ -101,7 +100,7 @@ folders.forEach(function (folder) {
     comps.forEach(function (comp) {
       var dir = './competitions/' + comp
       gulp.task(folder + '-' + comp, ['process_' + comp + '_comp_output'], function () {
-        var test = require(dir + '/results-v1.1.json')
+        var test = require(dir + '/results.json')
         var moment = require('moment')
         return gulp.src('views/' + dir + '/*.pug')
         .pipe(data(function () {
