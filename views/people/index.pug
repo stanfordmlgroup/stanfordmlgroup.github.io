@@ -1,0 +1,74 @@
+extends ../layout
+
+block title
+  title Stanford Machine Learning Group: People
+
+block description
+  meta(name='description', content='Our mission is to significantly improve people\'s lives through our work in Artificial Intelligence')
+
+include ../includes/profile
+include ../includes/bootcamp_alumni
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-9
+          h1#page-title Stanford Machine Learning Group
+  section
+    .container
+      .row
+        .col-md-2
+          .cohort.clearfix
+            h3 Faculty
+            +dp_inner('Andrew Ng', 'prof')
+        .col-md-10
+          .cohort.clearfix
+            h3 Current PhD Students
+            +dp('Swati Dube Batra', 'Program Manager')
+            //- PhD students, alphabetical order
+            +dp('Anand Avati', 'phd')
+            +dp('Hao Sheng', 'phd')
+            +dp('Jeremy Irvin', 'pphd')
+            +dp('Pranav Rajpurkar', 'phd')
+            +dp('Sharon Zhou', 'phd')
+  section.gray
+    .container
+      .row
+        .col-md-9
+          .row
+            .col-md-12
+              .cohort.clearfix
+                h3 PhD Alumni
+                +dp('Adam Coates', '', true)
+                +dp('Alan Asbeck', '', true)
+                +dp('Andrew Maas', '', true)
+                +dp('Andrew Saxe', '', true)
+                +dp('Ashutosh Saxena', '', true)
+                +dp('Awni Hannun', '')
+                +dp('Brody Huval', '', true)
+                +dp('Honglak Lee', '', true)
+                +dp('Ilya Sutskever', '', true)
+                +dp('Jiquan Ngiam', '', true)
+                +dp('Morgan Quigley', '', true)
+                +dp('Pieter Abbeel', '', true)
+                +dp('Quoc Le', '', true)
+                +dp('Rajat Raina', '', true)
+                +dp('Richard Socher', '', true)
+                +dp('Rion Snow', '', true)
+                +dp('Sameep Tandon', '', true)
+                +dp('Tao Wang', '', true)
+                +dp('Ziang Xie', '')
+                +dp('Zico Kolter', '', true)
+  section
+    .container
+      .row
+        .col-md-9
+          .row
+            .col-sm-12
+              +alumni('winter2019')
+              +alumni('fall2018')
+              +alumni('summer2018')
+              +alumni('spring2018')
+              +alumni('winter2018')
+              +alumni('fall2017')

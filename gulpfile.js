@@ -93,7 +93,7 @@ gulp.task('index', function () {
     .pipe(gulp.dest('.'))
 })
 
-var folders = ['projects', 'programs', 'competitions']
+var folders = ['projects', 'programs', 'people', 'competitions']
 
 folders.forEach(function (folder) {
   if(folder === ('competitions')){
@@ -121,7 +121,7 @@ folders.forEach(function (folder) {
   }
 })
 
-gulp.task('build', ['index', 'projects', 'programs', 'competitions-mura', 'competitions-chexpert', 'competitions-mrnet'])
+gulp.task('build', ['index', 'projects', 'programs', 'people', 'competitions-mura', 'competitions-chexpert', 'competitions-mrnet'])
 
 gulp.task('watch_build', ['build'], function () {
   return gulp.watch('./views/**/*.pug', ['build', browserSync.reload])
