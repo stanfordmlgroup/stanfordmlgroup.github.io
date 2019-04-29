@@ -4,10 +4,10 @@ var watch = require('gulp-watch')
 var data = require('gulp-data')
 var browserSync = require('browser-sync').create()
 
-var rankEntries = function (entries) {
+var rankEntries = function (entries, metric) {
   entries.sort(function (a, b) {
-    var kappaDiff = Math.sign(b.kappa - a.kappa)
-    return kappaDiff
+    var diff = Math.sign(b[metric] - a[metric])
+    return diff
   })
 
   for (var i = 0; i < entries.length; i++) {
@@ -17,7 +17,7 @@ var rankEntries = function (entries) {
     } else {
       var prevEntry = entries[i - 1]
       var rank = prevEntry.rank
-      if (entry.kappa < prevEntry.kappa) rank++
+      if (entry[metric] < prevEntry[metric]) rank++
       entry.rank = rank
     }
   }
@@ -73,7 +73,13 @@ var parseCompEntries = function (comp_file, comp_name) {
       console.error(entry)
     }
   }
-  entries = rankEntries(entries)
+  if (comp_name === 'mrnet') {
+    entries = rankEntries(entries, 'average')
+  } else if (comp_name === 'mura') {
+    entries = rankEntries(entries, 'kappa')
+  } else if (comp_name === 'chexpert') {
+    entries = rankEntries(entries, 'auc')
+  }
   return entries
 }
 
