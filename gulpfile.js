@@ -6,8 +6,8 @@ var browserSync = require('browser-sync').create()
 
 var rankEntries = function (entries) {
   entries.sort(function (a, b) {
-    var kappaDiff = Math.sign(b.kappa - a.kappa)
-    return kappaDiff
+    var diff = Math.sign(b.score - a.score)
+    return diff
   })
 
   for (var i = 0; i < entries.length; i++) {
@@ -17,7 +17,7 @@ var rankEntries = function (entries) {
     } else {
       var prevEntry = entries[i - 1]
       var rank = prevEntry.rank
-      if (entry.kappa < prevEntry.kappa) rank++
+      if (entry.score < prevEntry.score) rank++
       entry.rank = rank
     }
   }
@@ -54,19 +54,23 @@ var parseCompEntries = function (comp_file, comp_name) {
         entry.abnormal = parseFloat(o_entry.scores.abnormal_auroc)
         entry.acl = parseFloat(o_entry.scores.acl_auroc)
         entry.meniscus = parseFloat(o_entry.scores.meniscus_auroc)
+        entry.score = entry.average
       } else if (comp_name === 'mura'){
         entry.kappa = parseFloat(o_entry.scores.overall_mean)
         if (!(entry.kappa >= 0)) throw 'Score invalid'
         if (entry.kappa < 0.5) throw 'Score too low'
+        entry.score = entry.kappa
       } else if (comp_name === 'chexpert'){
         entry.auc = parseFloat(o_entry.scores.average_auroc)
         entry.average_num_rads_under_roc = parseFloat(o_entry.scores.average_num_rads_under_roc)
         if (!(entry.auc >= 0)) throw 'Score invalid'
         if (entry.auc < 0.7) throw 'Score too low'
+        entry.score = entry.auc + (entry.average_num_rads_under_roc * .001)
       }
       if (entry.model_name === '') {
         entry.model_name = '' + entry.user
       }
+
       entries.push(entry)
     } catch (err) {
       console.error(err)
