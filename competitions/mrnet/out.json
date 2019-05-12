@@ -155,7 +155,89 @@
                 "public": true,
                 "user_name": "nicholasbien"
             }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x64251554c3804ccdb5c87a8545b607b0 test-annotations.csv:0xe2b748c379fc4af29bf25b96ecd4bfa9 predictions.csv:0xba0c6b3bbd234d7d85857592bac8f9d6 \"python evaluate.py test-annotations.csv predictions.csv\" --request-cpus 1 --request-memory 2g --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test-annotations.csv predictions.csv",
+                "data_hash": "0x369365ce59a5665d696a1eec75c4d4a4d2cf5949",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x0fcf5cec80ed4bb8999a720a897809b1",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x64251554c3804ccdb5c87a8545b607b0"
+                    },
+                    {
+                        "child_path": "test-annotations.csv",
+                        "child_uuid": "0x0fcf5cec80ed4bb8999a720a897809b1",
+                        "parent_name": "test-annotations.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe2b748c379fc4af29bf25b96ecd4bfa9"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x0fcf5cec80ed4bb8999a720a897809b1",
+                        "parent_name": "ivanleung2015-predictions-IL_baseline-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xba0c6b3bbd234d7d85857592bac8f9d6"
+                    }
+                ],
+                "id": "0x0fcf5cec80ed4bb8999a720a897809b1",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1556483731,
+                    "data_size": 4245,
+                    "description": "{\"submit_id\": \"0x423878da5cc84085a14dc633bdcd20e7\", \"predict_id\": \"0xba0c6b3bbd234d7d85857592bac8f9d6\", \"submitter_id\": \"0x8811115caca549bbadd967ed96eda2b4\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1556499002,
+                    "name": "ivanleung2015-predictions-IL_baseline-results",
+                    "remote": "vm-clws-prod-gpuworker-12",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1556498981,
+                    "tags": [
+                        "mrnet-test-eval"
+                    ],
+                    "time": 14.6920249462
+                },
+                "owner": {
+                    "id": "0x0437ecd567a149e89f89ace640598434",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x0fcf5cec80ed4bb8999a720a897809b1"
+            },
+            "scores": {
+                "abnormal_auroc": 0.9316979316979317,
+                "acl_auroc": 0.9146273637374861,
+                "average_auroc": 0.8996464370027587,
+                "meniscus_auroc": 0.8526140155728587
+            },
+            "submission": {
+                "created": 1556353408,
+                "description": "IL_baseline (single model) (Stanford Alum)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "ivanleung2015"
+            }
         }
     ],
-    "updated": 1553569292.807382
+    "updated": 1556507108.314287
 }
