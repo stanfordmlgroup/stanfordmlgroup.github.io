@@ -8,6 +8,7 @@ block description
 
 block extrascripts
 include ../../includes/profile
+include ../../includes/bootcamp_alumni
 
 block content
   section#header
@@ -18,33 +19,22 @@ block content
   section.gray
     .container
       .row
-        .col-sm-8
+        .col-sm-7.col-sm-push-4
           h3 The AI for Healthcare Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and healthcare. Over two quarters, students receive training from PhD students and faculty in the medical school to work on high-impact research problems in small interdisciplinary teams.
           p 
             | Projects out of the bootcamp have included work in (1) radiology on automated diagnosis of diseases from x-rays, ultrasound, CT and MR, (2) pathology on automated detection of rare tumor subtypes and on time-consuming pathology tasks, (3) public health on prediction of patient costs and heterogeneous treatment effect estimation, and (4) mental health on prediction of treatment outcomes in depression.  
           a.btn.btn-lg.btn-default(href="https://forms.gle/hEBWfpMagRpfycTWA") Apply Now
-        .col-sm-4
-          img(src="/programs/aihc-bootcamp-fall2018/bootcamp_cover_img.png")
+        .col-sm-4.col-sm-pull-7
+          +alumni_inside('bootcamp_alumni', true)
+          +alumni_inside('phd_healthcare', true)
   section
     .container
       .row
         .col-sm-4
           h3 Teaching Team
-          +dp('Pranav Rajpurkar', 'phd', false, true)
-          +dp('Anand Avati', 'phd', false, true)
-          +dp('Jeremy Irvin', 'ms', false, true)
-          +dp('Sharon Zhou', 'phd', false, true)
-          +dp('Andrew Ng', 'prof', false, true)
-          +dp('Nigam Shah', 'prof', false, true)
-          +dp('Matt Lungren', 'prof', false, true)
-          +dp('Curt Langlotz', 'prof', false, true)
-          +dp('Jeanne Shen', 'prof', false, true)
-          +dp('Sanjay Basu', 'prof', false, true)
-          +dp('Bhavik Patel', 'prof', false, true)
-          +dp('Kristen Yeom', 'prof', false, true)
-          +dp('Leanne Williams', 'prof', false, true)
-          +dp('Utkan Demirci', 'prof', false, true)
-          +dp('Gozde Durmus', 'prof', false, true)
+          +alumni_inside('phd_healthcare', 'big')
+          +dp('Andrew Ng', 'prof', false, 'big')
+          +alumni_inside('medical_faculty', 'big')
         .col-sm-8
           .applications
             h2 Applications
@@ -96,71 +86,22 @@ block content
           .row
             .col-sm-12
               h2 Past Bootcamp Cohorts
-              //-.cohort.clearfix
-                h3 Spring 2018-2019
-                +dp('Ashwin Agrawal', 'phd')
-                +dp('Kaushik Ram Sadagopan', 'ms')
-                +dp('Rui Aguiar', 'ms')
-              .cohort.clearfix
-                h3 Winter 2018-2019
-                //- Alphabetical order
-                +dp('Anuj Pareek', 'md')
-                +dp('Chris Wang', 'bs')
-                +dp('Jingbo Yang', 'bs')
-                +dp('Mark Sabini', 'bs')
-                +dp('Minh Phu', 'bs')
-                +dp('Nathan Dass', 'ms')
-              .cohort.clearfix
-                h3 Fall 2018-2019
-                +dp('Alex Wang', 'bs')
-                +dp('Amirhossein Kiani', 'ms')
-                +dp('Amit Schechter', 'bs')
-                +dp('Andrew Kondrich', 'bs')
-                +dp('Bora Uyumazturk', 'bs')
-                +dp('Chloe O\'Connell', 'md')
-                +dp('Jason Li', 'bs')
-                +dp('Nishit Asnani', 'ms')
-                +dp('Rebecca Gao', 'md')
-                +dp('Soumya Patro', 'ms')
-              .cohort.clearfix
-                h3 Spring 2017-2018
-                +dp('Behzad Haghgoo', 'bs')
-                +dp('Ben Cohen-Wang', 'bs')
-                +dp('Chris Chute', 'ms')
-                +dp('Joe Lou', 'bs')
-                +dp('Kelly Shen', 'ms')
-                +dp('Meng Zhang', 'ms')
-                +dp('Michael Ko', 'bs')
-                +dp('Nidhi Manoj', 'bs')
-                +dp('Philip Hwang', 'bs')
-                +dp('Robin Cheong', 'bs')
-                +dp('Silviana Ciurea Ilcus', 'ms')
-                +dp('Yifan Yu', 'ms')
-              .cohort.clearfix
-                h3 Winter 2017-2018
-                +dp('Allison Park', 'ms')
-                +dp('Andrew Huang', 'bs')
-                +dp('Atli Kosson', 'ms')
-                +dp('Chris Lin', 'ms')
-                +dp('Erik Jones', 'bs')
-                +dp('Henrik Marklund', 'ms')
-                +dp('Jessica Wetstone', 'ms')
-                +dp('Matthew Sun', 'bs')
-                +dp('Michael Bereket', 'bs')
-                +dp('Nicholas Bien', 'bs')
-                +dp('Norah Borus', 'bs')
-                +dp('Shubhang Desai', 'bs')
-                +dp('Suvadip Paul', 'ms')
-                +dp('Thao Nguyen', 'bs')
-                +dp('Tanay Kothari', 'bs')
-              .cohort.clearfix
-                h3 Fall 2017-2018
-                +dp('Aarti Bagul', 'ms')
-                +dp('Brandon Yang', 'bs')
-                +dp('Daisy Ding', 'ms')
-                +dp('Hershel Mehta', 'ms')
-                +dp('Kaylie Zhu', 'bs')
-                +dp('Tony Duan', 'ms')
+              // .clearfix
+              //   +alumni_inside('spring2019', true)
+              //   +dp('Amir Kiani', 'ms', false, true)
+              //   +dp('Bora Uyumazturk', 'bs', false, true)
+              //   +dp('Michael Ko', 'bs', false, true)
+              //   +alumni_inside('winter2019', true)
+              //   +alumni_inside('phd_healthcare', true)
+              //   +alumni_inside('medical_faculty', true)
+              //   +dp('Andrew Ng', 'prof', false, true)
+              +alumni('spring2019', false)
+              +alumni('winter2019', false)
+              +alumni('fall2018', false)
+              +alumni('summer2018', false)
+              +alumni('spring2018', false)
+              +alumni('winter2018', false)
+              +alumni('fall2017', false)
   section.bg-primary
     .container
       .row
