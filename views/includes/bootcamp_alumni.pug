@@ -23,6 +23,13 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Leanne Williams', 'prof', false, use_compact)
       +dp('Utkan Demirci', 'prof', false, use_compact)
       +dp('Gozde Durmus', 'prof', false, use_compact)
+  if cohort == 'ccspring2019'
+      +dp('Fred Lu', 'ms', false, use_compact)
+      +dp('Andrew Kondrich', 'bs', false, use_compact)
+      +dp('Vincent Liu', 'bs', false, use_compact)
+      +dp('Jabs Aljubran', 'ms', false, use_compact)
+      +dp('Eva Zhang', 'bs', false, use_compact)
+      +dp('Will Deaderick', 'ms', false, use_compact)
   if cohort == 'spring2019'
       +dp('Ashwin Agrawal', 'phd', false, use_compact)
       +dp('Christian Rose', 'MD', false, use_compact)
@@ -94,6 +101,10 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Zach Harned', 'jd', false, use_compact)
 
 mixin alumni(cohort, use_compact)
+  if cohort == 'ccspring2019'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Spring 2019
+      +alumni_inside(cohort, use_compact)
   if cohort == 'spring2019'
     .cohort.clearfix
       h3 Healthcare Bootcamp Spring 2018-2019
