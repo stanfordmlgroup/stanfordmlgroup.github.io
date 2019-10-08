@@ -1,0 +1,97 @@
+extends ../../layout
+
+block title
+    title NGBoost
+
+
+block description
+  meta(name='description', content='NGBoost: Natural Gradient Boosting for Probabilistic Prediction.')
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/chexnet/css/chexnet.css')
+
+block extrascripts
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-12
+          h1#page-title NGBoost: Natural Gradient Boosting for Probabilistic Prediction.
+          h2 Tony Duan*, Anand Avati*, Daisy Yi Ding, Sanjay Basu, Andrew Ng, Alejandro Schuler
+  section
+    .container
+      .row
+        h2 NGBoost brings probabilistic prediction capabilities to Gradient Boosting.
+        .col-lg-5
+          img(src='/projects/ngboost/img/toy_single.png')
+        .col-lg-7
+          p Predictive uncertainty estimation is crucial in several applications, such as healthcare and weather forecasting. Probabilistic predictions are a natural way to quantify those uncertainties. Gradient Boosting has been a strong predictive model on structured inputs, even with relatively small training datasets. NGBoost enables predictive uncertainty estimation with Gradient Boosting through probabilistic predictions, in a generic way (including real valued outputs). With the use of Natural Gradients, NGBoost overcomes technical challenges that make generic probabilistic prediction hard with gradient boosting.
+          p We release an open source package of our implementation on GitHub.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1910.03225") Read our paper
+          | 
+          a.btn.btn-lg.btn-default(href="https://github.com/stanfordmlgroup/ngboost") GitHub
+
+
+  section.gray
+    .container
+      .row
+        h2 Simple and modular approach.
+      .row
+        .col-md-5
+          p The NGBoost algorithm is simple to use. It has three abstract modular components that are chosen as configuration:
+        .col-md-7
+          img(src='/projects/ngboost/img/blocks.png')
+      .row
+        .col-md-12
+          p <strong>Base Learner</strong>
+          | The most common choice is Decision Trees, which tend to work well on structured inputs.
+          p
+          p <strong>Probability Distribution</strong>
+          | The distribution needs to be compatible with the output type. For e.g. Normal distribution for real valued outputs, Bernoulli for binary outputs.
+          p
+          p <strong> Scoring rule </strong>
+          |  Maximum Likelihood Estimation is an obvious choice. More robust rules such as Continuous Ranked Probability Score are also suitable.
+          p
+          p The above choices can be mixed and matched to be customized for the specific prediction problem at hand.
+
+
+  section
+    .container
+      .row
+        h2 The natural gradient makes learning efficient and effective.
+      .row
+        .col-md-4
+          img(src='/projects/ngboost/img/toy_naive.gif')
+        .col-md-4
+          img(src='/projects/ngboost/img/toy_natural.gif')
+        .col-md-4
+          p
+          p
+          p Our key innovation is in employing the natural gradient to perform gradient boosting by casting it as a problem of determining the parameters of a probability distribution.
+      .row
+        .col-md-12
+          p Ordinary gradients can be highly unsuitable for learning multi-parameter probability distributions (such as the Normal distribution). The training dynamics with the use of natural gradients tends to be much more stable as seen in the toy probabilistic regression example above.
+
+  section.gray
+    .container
+      .row
+        .h2 Competitive performance in both uncertainty estimates and traditional metrics.
+      .row
+        .col-md-5
+          p The model is competitive relative to other similar models in its performance on common benchmarks, and particularly strong on smaller data sets.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1910.03225") Read our paper
+          |  
+          a.btn.btn-lg.btn-default(href="https://github.com/stanfordmlgroup/ngboost") GitHub
+        .col-md-7
+          img(src='/projects/ngboost/img/results.png')
+
+  section.bg-primary
+    .container
+      .row
+        .col-md-12
+          h3
+            | If you have questions about our work,
+            | contact us at:
+          h4
+            code avati@cs.stanford.edu
