@@ -38,6 +38,7 @@ block content
         .col-lg-7
           p
           |
+          p Gradient Boosting methods have generally been among the top performers in predictive accuracy over structured or tabular input data.
           p NGBoost enables predictive uncertainty estimation with Gradient Boosting through probabilistic predictions (including real valued outputs). With the use of Natural Gradients, NGBoost overcomes technical challenges that make generic probabilistic prediction hard with gradient boosting.
           p We release an open source package of our implementation on GitHub.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1910.03225") Read our paper
@@ -83,7 +84,7 @@ block content
           p Our key innovation is in employing the natural gradient to perform gradient boosting by casting it as a problem of determining the parameters of a probability distribution.
       .row
         .col-md-12
-          p Ordinary gradients can be highly unsuitable for learning multi-parameter probability distributions (such as the Normal distribution). The training dynamics with the use of natural gradients tends to be much more stable as seen in the toy probabilistic regression example above.
+          p Ordinary gradients can be highly unsuitable for learning multi-parameter probability distributions (such as the Normal distribution). The training dynamics with the use of natural gradients tends to be much more stable and result in a better fit, as seen in the probabilistic regression example above.
 
   section.gray
     .container
