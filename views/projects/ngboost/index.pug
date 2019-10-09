@@ -19,14 +19,26 @@ block content
         .col-lg-12
           h1#page-title NGBoost: Natural Gradient Boosting for Probabilistic Prediction.
           h2 Tony Duan*, Anand Avati*, Daisy Yi Ding, Sanjay Basu, Andrew Ng, Alejandro Schuler
+
+  section.gray
+    .container
+      .row
+        h2 Predictive Uncertainty Estimation in the real world.
+        .col-lg-12
+         p Estimating the uncertainty in the predictions of a machine learning model is crucial for production deployments in the real world. Not only do we want our models to make accurate predictions, but we also want a correct estimate of uncertainty along with each prediction. When model predictions are part of an automated decision-making workflow or production line, predictive uncertainty estimates are important for determining manual fallback alternatives or for human inspection and intervenion.
+         p Probabilistic prediction (or probabilistic forecasting), which is the approach where the model outputs a full probability distribution over the entire outcome space, is a natural way to quantify those uncertainties.
+
+
   section
     .container
       .row
-        h2 NGBoost brings probabilistic prediction capabilities to Gradient Boosting.
+        h2 NGBoost brings predictive uncertainty estimation to Gradient Boosting.
         .col-lg-5
           img(src='/projects/ngboost/img/toy_single.png')
         .col-lg-7
-          p Predictive uncertainty estimation is crucial in several applications, such as healthcare and weather forecasting. Probabilistic predictions are a natural way to quantify those uncertainties. Gradient Boosting has been a strong predictive model on structured inputs, even with relatively small training datasets. NGBoost enables predictive uncertainty estimation with Gradient Boosting through probabilistic predictions, in a generic way (including real valued outputs). With the use of Natural Gradients, NGBoost overcomes technical challenges that make generic probabilistic prediction hard with gradient boosting.
+          p
+          |
+          p NGBoost enables predictive uncertainty estimation with Gradient Boosting through probabilistic predictions (including real valued outputs). With the use of Natural Gradients, NGBoost overcomes technical challenges that make generic probabilistic prediction hard with gradient boosting.
           p We release an open source package of our implementation on GitHub.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1910.03225") Read our paper
           | 
