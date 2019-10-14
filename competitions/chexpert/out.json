@@ -108,7 +108,367 @@
     "leaderboard": [
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1a11c821ebe743058a87d3cc67c33ce3 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x56e501e526a247fe9049de52ac9fec7f \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x616af814e941f8917406c045da977218ae3056bf",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
+                        "parent_name": "hieupham-predictions-Deep-CNN-Ensemble-V3-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x56e501e526a247fe9049de52ac9fec7f"
+                    }
+                ],
+                "id": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1567643337,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0x95fcba00cdfc48f58d7e8283817f07ab\", \"predict_id\": \"0x56e501e526a247fe9049de52ac9fec7f\", \"submitter_id\": \"0x11bac19b3eaf47c981eba40f61d0e79f\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1567730460,
+                    "name": "hieupham-predictions-Deep-CNN-Ensemble-V3-results",
+                    "remote": "vm-clws-prod-worker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1567730439,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 14.7388808727
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.9013203744514136,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.929981092124379,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9318203381468338,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9210776777216487,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.9288795722445011,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9668074980574981,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1567345731,
+                "description": "Deep-CNNs-V3 (ensemble)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
+                "public": true,
+                "user_name": "hieupham"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x9c328830195a4e6b8e70b3f245bd75a0 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0xfddcc034ed98db18493763b1abb594a4518c94d9",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x8e6bab5f3a40416ea3739e3adc385182",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x8e6bab5f3a40416ea3739e3adc385182",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x8e6bab5f3a40416ea3739e3adc385182",
+                        "parent_name": "NgaNgo-predictions-Multi-Stage-Learning-CNN-V3-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x9c328830195a4e6b8e70b3f245bd75a0"
+                    }
+                ],
+                "id": "0x8e6bab5f3a40416ea3739e3adc385182",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1568740525,
+                    "data_size": 12739,
+                    "description": "{\"submit_id\": \"0x6405b4c833d24cb6ac8a42dff3e95efc\", \"predict_id\": \"0x9c328830195a4e6b8e70b3f245bd75a0\", \"submitter_id\": \"0x06757443276f49239cfc4d6701878a5b\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1568781662,
+                    "name": "NgaNgo-predictions-Multi-Stage-Learning-CNN-V3-results",
+                    "remote": "vm-clws-prod-gpuworker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1568781635,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 21.2153470516
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x8e6bab5f3a40416ea3739e3adc385182"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8986645570812378,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.9281325747033391,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9382151463974648,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.921956219342558,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.914388139506623,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9674388111888113,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1568054120,
+                "description": "Multi-Stage-Learning-CNN-V3 (ensemble) (VINBDI Medical Imaging Team)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 4,
+                "public": true,
+                "user_name": "NgaNgo"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x32deb604c1a3459dabe1ef800b92e623 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0xeb5d68ba6aefad604c71a8eea935cd8c2edfd820",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x486dc65eae9f4b9fb4039fca6375aafa",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x486dc65eae9f4b9fb4039fca6375aafa",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x486dc65eae9f4b9fb4039fca6375aafa",
+                        "parent_name": "SenseXDR-predictions-sensexdr-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x32deb604c1a3459dabe1ef800b92e623"
+                    }
+                ],
+                "id": "0x486dc65eae9f4b9fb4039fca6375aafa",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1569092836,
+                    "data_size": 12740,
+                    "description": "{\"submit_id\": \"0x4224b055fba345fda56b4c573c7a4324\", \"predict_id\": \"0x32deb604c1a3459dabe1ef800b92e623\", \"submitter_id\": \"0xf131d8b5b98b4547b4f10fe1db7f2e12\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1569095226,
+                    "name": "SenseXDR-predictions-sensexdr-results",
+                    "remote": "vm-clws-prod-gpuworker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1569095196,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 18.8725428581
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x486dc65eae9f4b9fb4039fca6375aafa"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.884283588555499,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.9266433881128764,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9425605798971517,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9160992752031627,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.9300947867298578,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9601787101787103,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1568888727,
+                "description": "SenseXDR (ensemble)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "SenseXDR"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2b8086701a7949478a85367a787f918e \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x513d087bcc634f41557ef5f98ad810e6fb1000df",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xf2635abe94de45139bce89f49e3986df",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xf2635abe94de45139bce89f49e3986df",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xf2635abe94de45139bce89f49e3986df",
+                        "parent_name": "ihil-predictions-ihil-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x2b8086701a7949478a85367a787f918e"
+                    }
+                ],
+                "id": "0xf2635abe94de45139bce89f49e3986df",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1569092825,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0x7ee78ca3621e4d88a8ce1d15eee43bd5\", \"predict_id\": \"0x2b8086701a7949478a85367a787f918e\", \"submitter_id\": \"0xffbdbcb386a84c10950c8af97657852c\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1569095253,
+                    "name": "ihil-predictions-ihil-results",
+                    "remote": "vm-clws-prod-worker-1",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1569095226,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 21.2020769119
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xf2635abe94de45139bce89f49e3986df"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.884283588555499,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.9266282075591656,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9424846771285982,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9160992752031627,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.9300947867298578,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9601787101787103,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1568795811,
+                "description": "ihil (ensemble) (UESTC)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "ihil"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1a11c821ebe743058a87d3cc67c33ce3 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x0de7d545799ba735314cd0a5f3f8c0b66f7391b6",
@@ -190,7 +550,7 @@
             "submission": {
                 "created": 1567401865,
                 "description": "",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 4,
                 "public": true,
                 "user_name": "yww"
@@ -198,7 +558,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x7a4d200a9f974b36ad74ba2769fa083b \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x7a4d200a9f974b36ad74ba2769fa083b \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x9d71b4a5eb6a9716282d2a4d570106cf01bf9508",
@@ -288,7 +648,97 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x50df0c64d85f4da9b37ebf3e76fbacd4 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb192c0b7773d488b98feb7dd2857dd4d \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x417c92643b5ed8c0d7185691494cfa5a513c9920",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xf3265ffc144041bf84a29cf99f39628e",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xf3265ffc144041bf84a29cf99f39628e",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xf3265ffc144041bf84a29cf99f39628e",
+                        "parent_name": "xdluo-uestc-predictions-xdluo-ensemble-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xb192c0b7773d488b98feb7dd2857dd4d"
+                    }
+                ],
+                "id": "0xf3265ffc144041bf84a29cf99f39628e",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1568740551,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0xb5819d2762664364bbf1bc6439af496b\", \"predict_id\": \"0xb192c0b7773d488b98feb7dd2857dd4d\", \"submitter_id\": \"0x7f173d5f130447b0a54373db858fd500\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1568768645,
+                    "name": "xdluo-uestc-predictions-xdluo-ensemble-results",
+                    "remote": "vm-clws-prod-gpuworker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1568768612,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 27.9809389114
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xf3265ffc144041bf84a29cf99f39628e"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.884283588555499,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.9255276174151401,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9369817264084708,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9160992752031627,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.9300947867298578,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9601787101787103,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1568689951,
+                "description": "DRNet (ensemble) (UESTC and SenseTime)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "xdluo-uestc"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x50df0c64d85f4da9b37ebf3e76fbacd4 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x9482097e8ad63be91810ba53738e6e7e30ec6e1a",
@@ -370,7 +820,7 @@
             "submission": {
                 "created": 1567661663,
                 "description": "",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "uestc"
@@ -378,7 +828,187 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2a47985539914781bcb4fdaf76d087e6 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x74889726139640508dba085b6afd3109 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x3d8dbc8a5c7a84b92d9984b1c85fb55b9826110f",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xb6e12ed495d94d45b115188f8caae973",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xb6e12ed495d94d45b115188f8caae973",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xb6e12ed495d94d45b115188f8caae973",
+                        "parent_name": "hieupham-predictions-Hierarchical-CNN-Ensemble-V1-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x74889726139640508dba085b6afd3109"
+                    }
+                ],
+                "id": "0xb6e12ed495d94d45b115188f8caae973",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1568740540,
+                    "data_size": 12742,
+                    "description": "{\"submit_id\": \"0x7b35e28be1524befb15bea5e6d1f95e8\", \"predict_id\": \"0x74889726139640508dba085b6afd3109\", \"submitter_id\": \"0x11bac19b3eaf47c981eba40f61d0e79f\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1568766449,
+                    "name": "hieupham-predictions-Hierarchical-CNN-Ensemble-V1-results",
+                    "remote": "vm-clws-prod-gpuworker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1568766421,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 21.5143470764
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xb6e12ed495d94d45b115188f8caae973"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8915070350906933,
+                "atelectasis_num_rads_under_roc": 2,
+                "average_auroc": 0.9236535377851904,
+                "average_num_rads_under_roc": 2.4,
+                "cardiomegaly_auroc": 0.940530180838346,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.8983088073797496,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.920919917365415,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9670017482517483,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1568499686,
+                "description": "Hierarchical-CNN-Ensemble-V1 (ensemble) (Vingroup Big Data Institute)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
+                "public": true,
+                "user_name": "hieupham"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x48a2edb8fbdc4f90873a71dee2aab23a \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x5fdde859d72fc8c3c9a9e1c6edb95465600f8c7a",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x9e3535e8283141528e1378ba7778fa5a",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x9e3535e8283141528e1378ba7778fa5a",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x9e3535e8283141528e1378ba7778fa5a",
+                        "parent_name": "inisis-predictions-desmond-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x48a2edb8fbdc4f90873a71dee2aab23a"
+                    }
+                ],
+                "id": "0x9e3535e8283141528e1378ba7778fa5a",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1568740505,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0x0fa9971f721b46a29c1da459debc8442\", \"predict_id\": \"0x48a2edb8fbdc4f90873a71dee2aab23a\", \"submitter_id\": \"0x923704635be34828933f9ab82c18fce7\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1568746842,
+                    "name": "inisis-predictions-desmond-results",
+                    "remote": "vm-clws-prod-gpuworker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1568746804,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 30.0927250385
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x9e3535e8283141528e1378ba7778fa5a"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8744890847789645,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.9231984374220842,
+                "average_num_rads_under_roc": 2.8,
+                "cardiomegaly_auroc": 0.9330347824436895,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9305220001464236,
+                "consolidation_num_rads_under_roc": 3,
+                "edema_auroc": 0.9254162109612347,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9525301087801088,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1568263689,
+                "description": "desmond(https://github.com/inisis/chexpert)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "inisis"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2a47985539914781bcb4fdaf76d087e6 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x92422695371fe470871a1ae448c7d34875aacaf2",
@@ -468,7 +1098,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1834785859d84f66b66b80003e5317e6 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1834785859d84f66b66b80003e5317e6 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x55460f1ad21b5af27dd351de94c7775f7e1b08f1",
@@ -549,106 +1179,16 @@
             },
             "submission": {
                 "created": 1566473984,
-                "description": "Multi-Stage-Learning-CNN-V2 (ensemble)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 3,
+                "description": "Multi-Stage-Learning-CNN-V2 (ensemble) (VINBDI Medical Imaging Team)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 4,
                 "public": true,
                 "user_name": "NgaNgo"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x8178ab71b8ea448da66ab53b11463a19 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
-                "bundle_type": "run",
-                "command": "python evaluate.py test.csv predictions.csv",
-                "data_hash": "0xadf0808179cca2524ddb32de541486504db63a61",
-                "dependencies": [
-                    {
-                        "child_path": "evaluate.py",
-                        "child_uuid": "0x2f228c2ae04f4936a847198f33d58914",
-                        "parent_name": "evaluate-v1.0.py",
-                        "parent_path": "",
-                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
-                    },
-                    {
-                        "child_path": "test.csv",
-                        "child_uuid": "0x2f228c2ae04f4936a847198f33d58914",
-                        "parent_name": "test_groundtruth.csv",
-                        "parent_path": "",
-                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
-                    },
-                    {
-                        "child_path": "predictions.csv",
-                        "child_uuid": "0x2f228c2ae04f4936a847198f33d58914",
-                        "parent_name": "inisis-predictions-desmond-predict",
-                        "parent_path": "",
-                        "parent_uuid": "0x8178ab71b8ea448da66ab53b11463a19"
-                    }
-                ],
-                "id": "0x2f228c2ae04f4936a847198f33d58914",
-                "is_anonymous": false,
-                "metadata": {
-                    "actions": [],
-                    "allow_failed_dependencies": false,
-                    "created": 1567643347,
-                    "data_size": 12742,
-                    "description": "{\"submit_id\": \"0x512d7c3ed5c14a9797627d44a7584f61\", \"predict_id\": \"0x8178ab71b8ea448da66ab53b11463a19\", \"submitter_id\": \"0x923704635be34828933f9ab82c18fce7\"}",
-                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
-                    "exitcode": 0,
-                    "last_updated": 1567652098,
-                    "name": "inisis-predictions-desmond-results",
-                    "remote": "vm-clws-prod-worker-0",
-                    "request_cpus": 1,
-                    "request_disk": "4g",
-                    "request_docker_image": "codalab/ubuntu:1.9",
-                    "request_gpus": 0,
-                    "request_memory": "2g",
-                    "request_network": false,
-                    "request_priority": 0,
-                    "request_queue": "",
-                    "request_time": "1d",
-                    "run_status": "Finished",
-                    "started": 1567652055,
-                    "tags": [
-                        "chexpert-test-eval"
-                    ],
-                    "time": 36.8436169624
-                },
-                "owner": {
-                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
-                    "type": "users"
-                },
-                "permission": 2,
-                "permission_spec": "all",
-                "state": "ready",
-                "uuid": "0x2f228c2ae04f4936a847198f33d58914"
-            },
-            "scores": {
-                "atelectasis_auroc": 0.8640259177638395,
-                "atelectasis_num_rads_under_roc": 0,
-                "average_auroc": 0.9217715733939038,
-                "average_num_rads_under_roc": 2.2,
-                "cardiomegaly_auroc": 0.9301884286229339,
-                "cardiomegaly_num_rads_under_roc": 3,
-                "consolidation_auroc": 0.9240061497913464,
-                "consolidation_num_rads_under_roc": 3,
-                "edema_auroc": 0.9297302223842508,
-                "edema_num_rads_under_roc": 3,
-                "effusion_auroc": 0.9609071484071484,
-                "effusion_num_rads_under_roc": 2
-            },
-            "submission": {
-                "created": 1566575508,
-                "description": "desmond(https://github.com/inisis/chexpert)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 1,
-                "public": true,
-                "user_name": "inisis"
-            }
-        },
-        {
-            "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xbdf6778c2f4a40f1acbd4ab869661dc8 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xbdf6778c2f4a40f1acbd4ab869661dc8 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x1c79ffc01e025afb20d0f550e1b95264fb347a04",
@@ -682,7 +1222,7 @@
                     "allow_failed_dependencies": false,
                     "created": 1567643308,
                     "data_size": 12741,
-                    "description": "{\"submit_id\": \"0xdcaf0c47d5864b3e979c6540fda3650b\", \"predict_id\": \"0xbdf6778c2f4a40f1acbd4ab869661dc8\", \"submitter_id\": \"0xa48dc20cddbe4964a8504b56a4b76f40\"}",
+                    "description": "",
                     "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
                     "exitcode": 0,
                     "last_updated": 1567648690,
@@ -728,17 +1268,17 @@
                 "effusion_num_rads_under_roc": 2
             },
             "submission": {
-                "created": 1567405549,
+                "created": 1567643308,
                 "description": "",
-                "num_period_submissions": 1,
-                "num_total_submissions": 1,
-                "public": true,
-                "user_name": "xdluo"
+                "num_period_submissions": 0,
+                "num_total_submissions": 0,
+                "public": null,
+                "user_name": null
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xa6e7797cba3c459a99f1f796b6bda54b \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xa6e7797cba3c459a99f1f796b6bda54b \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x901e4149e5b7c1141d4c185138f584ddba560332",
@@ -772,7 +1312,7 @@
                     "allow_failed_dependencies": false,
                     "created": 1565759492,
                     "data_size": 12741,
-                    "description": "{\"submit_id\": \"0xd074cd85dcc341aab7a145c591d97f8c\", \"predict_id\": \"0xa6e7797cba3c459a99f1f796b6bda54b\", \"submitter_id\": \"0xef66ac1f772e42da86269755a2502b8f\"}",
+                    "description": "",
                     "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
                     "exitcode": 0,
                     "last_updated": 1565767809,
@@ -818,17 +1358,17 @@
                 "effusion_num_rads_under_roc": 2
             },
             "submission": {
-                "created": 1565674754,
-                "description": "zzq(ensemble)(CSU)",
+                "created": 1565759492,
+                "description": "",
                 "num_period_submissions": 0,
-                "num_total_submissions": 2,
-                "public": true,
-                "user_name": "xiangdeluo"
+                "num_total_submissions": 0,
+                "public": null,
+                "user_name": null
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x9710674bb0044e7299335fd026da70ae \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x9710674bb0044e7299335fd026da70ae \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x50b26f5ba0695c3b758e7b62002958c0cbe37576",
@@ -918,7 +1458,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xdcec9cb6c6614588970c5154a58ca6f5 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xdcec9cb6c6614588970c5154a58ca6f5 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x444d037cff4186f3d1a7d64ab8387cd3f31bba69",
@@ -1008,7 +1548,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb43d85f26aca4721873dbf1ac1ff39e6 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb43d85f26aca4721873dbf1ac1ff39e6 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xdef2028b248a2ef949c2de4a5e93523e364875be",
@@ -1098,7 +1638,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x89f58d5721dc4545b1dfd6af85ec2b27 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x89f58d5721dc4545b1dfd6af85ec2b27 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xb3078135e151590e8d57fc716597cc1cb6e7de40",
@@ -1188,7 +1728,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x3db27db54ae74a00bbc9359be692acce \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x3db27db54ae74a00bbc9359be692acce \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x2053c03a91e13002104fc60f9519030bbd1e78d7",
@@ -1278,7 +1818,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1a908b04dcf74a5bbcc3d07a8234fac4 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1a908b04dcf74a5bbcc3d07a8234fac4 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x6c1ee83611547fc2635121668fe78b4ea877e0ca",
@@ -1359,16 +1899,16 @@
             },
             "submission": {
                 "created": 1565903699,
-                "description": "Deep-CNNs-V1 (ensemble) (Vingroup Big Data Institute)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "description": "Deep-CNNs-V1 (ensemble)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "hieupham"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x362444a2f48048c6a30f30e9e5f9b30a \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x362444a2f48048c6a30f30e9e5f9b30a \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x3fcb3885ac1bd30d601e2301d2eb069974c9be77",
@@ -1458,7 +1998,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x450ab8d456664cadb1b429c826316048 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x450ab8d456664cadb1b429c826316048 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x49e269d1d848abbf2ca496fb0d25554ca761150a",
@@ -1540,15 +2080,15 @@
             "submission": {
                 "created": 1566738376,
                 "description": "Multi-Stage-Learning-CNN-V0 (ensemble)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 3,
+                "num_period_submissions": 0,
+                "num_total_submissions": 4,
                 "public": true,
                 "user_name": "NgaNgo"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x7ccdf5e019cb4a5687f37abc653efd52 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x7ccdf5e019cb4a5687f37abc653efd52 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x1213c1172178bf6d9cd156b62a515ddb7e074cc0",
@@ -1638,7 +2178,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0ab994df504e4f79ab65426013db15ce \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0ab994df504e4f79ab65426013db15ce \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x051013505df1153c55185c24d9565bb16dd54dd7",
@@ -1728,7 +2268,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x91f6632204ba4c5b8296562038d12b51 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x91f6632204ba4c5b8296562038d12b51 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xbbe6604eec6718219abaf21a6a06cd1a5431832a",
@@ -1818,7 +2358,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe0bd9e4aeb0c46d8b51ec7b8d2f23d6f \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe0bd9e4aeb0c46d8b51ec7b8d2f23d6f \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x9dfa8355a60f286893a73c79a46d4126f53beae1",
@@ -1900,15 +2440,15 @@
             "submission": {
                 "created": 1564576994,
                 "description": "Deep-CNNs (ensemble) (Vingroup Big Data Institute)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "hieupham"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x34fd86f520dd4e419983adeed76c0ba0 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x34fd86f520dd4e419983adeed76c0ba0 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x522c6857e80bb060550d658168491ed696a57a0c",
@@ -1998,7 +2538,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x5fac13005b194fdfae11505f2682e43b \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x5fac13005b194fdfae11505f2682e43b \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xdec1bb4bc0faa8c3d596d55d93e711ce05b738a2",
@@ -2088,7 +2628,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb42d63e707c74f278fbe2cb5efb40f15 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb42d63e707c74f278fbe2cb5efb40f15 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x1345f01c163d43271cbfdc4d0d2045b61fe5dac3",
@@ -2170,7 +2710,7 @@
             "submission": {
                 "created": 1565835448,
                 "description": "YWW-YJ:https://github.com/inisis/chexpert",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 4,
                 "public": true,
                 "user_name": "yww"
@@ -2178,7 +2718,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xf02362634533442eb714166f21e7f8cc \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xf02362634533442eb714166f21e7f8cc \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x7423cf73c394920fa01bc0e9cad3a635c73ebc4e",
@@ -2268,7 +2808,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x729cad942e204b2a8bc905b26cf75f54 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x729cad942e204b2a8bc905b26cf75f54 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xcb6a4e1863a36d54609731ceb08fbad57cd09c1d",
@@ -2358,7 +2898,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb8c2615ba6dc405ba24125257db038c3 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb8c2615ba6dc405ba24125257db038c3 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x617a7dd7202f557585b1f02f7008bee1a5542d05",
@@ -2448,7 +2988,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xfa3a7951b8564aff8076c0f9c83be810 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xfa3a7951b8564aff8076c0f9c83be810 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x71bd5a90a92301a143cc479fcdd78e40fffeb72e",
@@ -2538,7 +3078,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb2519e0fc97942b4931ad50f83e5049c \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb2519e0fc97942b4931ad50f83e5049c \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x45cd5ef39f9d0c028aa065ca199e70e926acd24d",
@@ -2628,7 +3168,97 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xa307058e07d94da9914a40d8835999d6 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1b9cfd9c3099461e8866f48396053845 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x68eae13373dd0d585dd69b84b832a13e4b2954fb",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xb1da45e8b6f4403fa40bdf67e1c2d946",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xb1da45e8b6f4403fa40bdf67e1c2d946",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xb1da45e8b6f4403fa40bdf67e1c2d946",
+                        "parent_name": "mcclow12-predictions-ForwardModelEnsembleFixed-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x1b9cfd9c3099461e8866f48396053845"
+                    }
+                ],
+                "id": "0xb1da45e8b6f4403fa40bdf67e1c2d946",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1568740561,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0x7b7d78e973e34d7a961603ddb73e7003\", \"predict_id\": \"0x1b9cfd9c3099461e8866f48396053845\", \"submitter_id\": \"0x9f827b94e1ad41728217504db9a22004\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1568766495,
+                    "name": "mcclow12-predictions-ForwardModelEnsembleFixed-results",
+                    "remote": "vm-clws-prod-gpuworker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1568766466,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 21.4636409283
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xb1da45e8b6f4403fa40bdf67e1c2d946"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8460944416191067,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.9059299736075781,
+                "average_num_rads_under_roc": 1.6,
+                "cardiomegaly_auroc": 0.9065826676028008,
+                "cardiomegaly_num_rads_under_roc": 2,
+                "consolidation_auroc": 0.8953803353100522,
+                "consolidation_num_rads_under_roc": 1,
+                "edema_auroc": 0.9167274273909345,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9648649961149962,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1568257934,
+                "description": "{ForwardModelEnsembleCorrected} (ensemble) (Stanford)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "mcclow12"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xa307058e07d94da9914a40d8835999d6 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xb562d654be037dfa7c44277366440d3eba1859ff",
@@ -2718,7 +3348,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x648d636c267547b898af16346a87a4d3 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x648d636c267547b898af16346a87a4d3 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xe7de2c73612a98dadc9d6cf29b9c2736af237348",
@@ -2799,16 +3429,16 @@
             },
             "submission": {
                 "created": 1560562667,
-                "description": "Multi-CNN (ensemble) (Vingroup Big Data Institute)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "description": "Multi-CNN (ensemble)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "hieupham"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x3441577d5a1249dd9fbe8329544abdec \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x3441577d5a1249dd9fbe8329544abdec \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xc4847d3da968c502def717ecd293cb7233a48b2e",
@@ -2889,16 +3519,16 @@
             },
             "submission": {
                 "created": 1563770767,
-                "description": "Multi-CNN (ensemble) Vingroup Big Data Institute",
-                "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "description": "Multi-CNN (ensemble)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "hieupham"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe782162ad8f4460496a9a2cf51679340 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe782162ad8f4460496a9a2cf51679340 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xd3c4a9cd08d0618c714f223b43b805eaf21135e8",
@@ -2988,7 +3618,97 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x3a555ce0e94b44b78c3711167dbe418f \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x709baef2075d4972a35ee32b4f294f93 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x75fe7ebfd9d25e13a2b7ae7efa3acd01594e043b",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x55c9ad7701fc409888a40a14ce192e72",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x55c9ad7701fc409888a40a14ce192e72",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x55c9ad7701fc409888a40a14ce192e72",
+                        "parent_name": "Nakajima_ayase-DenseNet-ensemble-UCA-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x709baef2075d4972a35ee32b4f294f93"
+                    }
+                ],
+                "id": "0x55c9ad7701fc409888a40a14ce192e72",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1569814254,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0xdcc7154cf2dc471ea8217988605b7450\", \"predict_id\": \"0x709baef2075d4972a35ee32b4f294f93\", \"submitter_id\": \"0x2d7981e80ad24853b8d73ce1a065dd01\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1569821684,
+                    "name": "Nakajima_ayase-DenseNet-ensemble-UCA-results",
+                    "remote": "vm-clws-prod-worker-1",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1569821478,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 201.0080223083496
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x55c9ad7701fc409888a40a14ce192e72"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8747433651654706,
+                "atelectasis_num_rads_under_roc": 1,
+                "average_auroc": 0.9014598906388942,
+                "average_num_rads_under_roc": 1.4,
+                "cardiomegaly_auroc": 0.9160325622877094,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.8575298338092101,
+                "consolidation_num_rads_under_roc": 1,
+                "edema_auroc": 0.9050309879693766,
+                "edema_num_rads_under_roc": 1,
+                "effusion_auroc": 0.9539627039627041,
+                "effusion_num_rads_under_roc": 1
+            },
+            "submission": {
+                "created": 1569809043,
+                "description": "",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": false,
+                "user_name": "Nakajima_ayase"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x3a555ce0e94b44b78c3711167dbe418f \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x447c8ac6118f2429674167b3bbef28d8b8b6b5ff",
@@ -3078,7 +3798,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xeaedab98b5a64adf981b066252a7f79b \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xeaedab98b5a64adf981b066252a7f79b \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x180f7bd525993f31b8a11bade46580d44a79846c",
@@ -3168,7 +3888,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0e511e52031b48f1803f4285925222be \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0e511e52031b48f1803f4285925222be \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x7224b0f5665ddc9f0185ad00823e06254f7ca7e3",
@@ -3258,7 +3978,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xee448d34ad674cf191ffb8ed1fcf62d9 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xee448d34ad674cf191ffb8ed1fcf62d9 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xc1c0624b2fef5d08f61f63f97faba5f1d0872b7a",
@@ -3340,7 +4060,7 @@
             "submission": {
                 "created": 1563781403,
                 "description": "{AVG_MAX}(ensemble)(NNU)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 4,
                 "public": true,
                 "user_name": "yww"
@@ -3348,7 +4068,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xa8aa5869ee914268a42b7313f7a4b3af \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xa8aa5869ee914268a42b7313f7a4b3af \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xb52a956633d8dc3148f9f399a39876a006a549ff",
@@ -3382,7 +4102,7 @@
                     "allow_failed_dependencies": false,
                     "created": 1564683821,
                     "data_size": 12741,
-                    "description": "{\"submit_id\": \"0xaf6e11bb60ec48f2904bd48d519d488f\", \"predict_id\": \"0xa8aa5869ee914268a42b7313f7a4b3af\", \"submitter_id\": \"0xef66ac1f772e42da86269755a2502b8f\"}",
+                    "description": "",
                     "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
                     "exitcode": 0,
                     "last_updated": 1564684258,
@@ -3428,17 +4148,17 @@
                 "effusion_num_rads_under_roc": 2
             },
             "submission": {
-                "created": 1564623606,
+                "created": 1564683821,
                 "description": "",
                 "num_period_submissions": 0,
-                "num_total_submissions": 2,
-                "public": true,
-                "user_name": "xiangdeluo"
+                "num_total_submissions": 0,
+                "public": null,
+                "user_name": null
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xd5601021d8ba48e698e18c3534d49530 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xd5601021d8ba48e698e18c3534d49530 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x26d022f36e7a5b665ffb44afd0d2058377946dc9",
@@ -3528,7 +4248,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xcb12385ca45448ceb5f01237c892e935 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xcb12385ca45448ceb5f01237c892e935 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x91b800761f66ba35adafa401614388fbf154f266",
@@ -3618,7 +4338,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xdf6db6bf119f497dac3625906f60a627 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xdf6db6bf119f497dac3625906f60a627 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x93b57fa480c94f60ba3087ae205bbed597c8a8d7",
@@ -3708,7 +4428,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x4af72b7ef57b4234b727ce69a8f91e23 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x4af72b7ef57b4234b727ce69a8f91e23 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x0fb95154b88c25973f679d863a2fca26dfbe6281",
@@ -3798,7 +4518,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x47f613bcdef34ac0b949e958dc51519a \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x47f613bcdef34ac0b949e958dc51519a \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x797d8f7db186ea02339aeed5242932dd8cf38cd8",
@@ -3888,7 +4608,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6f73e5332c6a463599d0e30b8ac3754e \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6f73e5332c6a463599d0e30b8ac3754e \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x803a5f5e728b10b5c2cc118f7f986b37cddb81f3",
@@ -3978,7 +4698,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2b3e954a5ed94b90b6f1e5885dea3325 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2b3e954a5ed94b90b6f1e5885dea3325 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xcd7523282ba0dd219aa7c3d572a6bf2156bdd323",
@@ -4068,7 +4788,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x4796599589a84f94865782ff6b99f744 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x4796599589a84f94865782ff6b99f744 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xc0913e9b361cbaa4a312f84aa76e31be02e2a402",
@@ -4158,7 +4878,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x738cd633c4534227b06b31ff0e124d25 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x738cd633c4534227b06b31ff0e124d25 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xc0913e9b361cbaa4a312f84aa76e31be02e2a402",
@@ -4248,7 +4968,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xf05c29336cb24618a12a069814c1732b \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xf05c29336cb24618a12a069814c1732b \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x572560819cceb0b173e3bd9f4fdec1b947850556",
@@ -4338,7 +5058,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x26f25735fa7c42f7b763a6225dcc51dd \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x26f25735fa7c42f7b763a6225dcc51dd \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xd95d421f53456c528579bf5c6d8aae7c58c5978d",
@@ -4420,7 +5140,7 @@
             "submission": {
                 "created": 1563796609,
                 "description": "",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": false,
                 "user_name": "Haruka_Hamasaki"
@@ -4428,7 +5148,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x78ede0d3df3b497193172fdf222a60c5 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x78ede0d3df3b497193172fdf222a60c5 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xd95d421f53456c528579bf5c6d8aae7c58c5978d",
@@ -4510,7 +5230,7 @@
             "submission": {
                 "created": 1566973419,
                 "description": "",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": false,
                 "user_name": "Haruka_Hamasaki"
@@ -4518,7 +5238,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6e6510819d794e9e9b5ffe5f5bb5054e \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6e6510819d794e9e9b5ffe5f5bb5054e \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x0b3c68b23342c86920fc4ac1515fa52c483d5005",
@@ -4608,7 +5328,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xd89908724b8b4784ab4a556f9c74d6eb \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xd89908724b8b4784ab4a556f9c74d6eb \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xe9901c20e76bd1bbb2e74df7fae1f5ab52ce160c",
@@ -4698,7 +5418,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x38e63fcb72f04066b4f9d30eee8018fa \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x38e63fcb72f04066b4f9d30eee8018fa \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xfe3fc539fe517c92de4f1c5d4c33364c8fc2a974",
@@ -4788,7 +5508,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6322a3a52ced44c6b6f1b51c21fe1ae7 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6322a3a52ced44c6b6f1b51c21fe1ae7 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xdd6792fd44bab423609c88d80c99e8eb01718dd9",
@@ -4878,7 +5598,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0dfc81f7f5d34c7db5c12bcde2a12060 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0dfc81f7f5d34c7db5c12bcde2a12060 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xcb472f0a898423c769c03452785232e059ef225f",
@@ -4968,7 +5688,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x93643dd6960a41f080a3d74daf7923d4 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x93643dd6960a41f080a3d74daf7923d4 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x756bfc379d1515e482066b0308c16b026e693365",
@@ -5058,7 +5778,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xae237543360243279cb37ac5c2c96c70 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xae237543360243279cb37ac5c2c96c70 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xc4e2b8a54543e566a947882c3a14e071b6151ca1",
@@ -5148,7 +5868,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x98ee244a1a124ff0a864caf15b11a961 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x98ee244a1a124ff0a864caf15b11a961 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xe5672a1b28c80bd82887d499c3b9b0de9544b8be",
@@ -5238,7 +5958,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x7aa7bf5d05bc43a897a771f32f67f73d \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x7aa7bf5d05bc43a897a771f32f67f73d \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xa1d13860ae04b0a1a28f7c5ce31df23eb94ac36e",
@@ -5328,7 +6048,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0d4d3f7dc2c145c0aba1dbfb0f11748e \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0d4d3f7dc2c145c0aba1dbfb0f11748e \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x83c1142ca710f5abdd9f29a64fa5507f7486cbcc",
@@ -5418,7 +6138,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xaaa4a09e344246898e086b942ed80703 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xaaa4a09e344246898e086b942ed80703 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xf215cbd3e480eed403f650ec972c2f8ea700de38",
@@ -5500,15 +6220,15 @@
             "submission": {
                 "created": 1559607080,
                 "description": "Multi-CNN (ensemble) (VinGroup Big Data Institute) ",
-                "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "hieupham"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1e35290e49f74efd8c2625c8adfbe963 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1e35290e49f74efd8c2625c8adfbe963 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x3622c28b9c4b7130e19b7e5df15ad91a6b803d86",
@@ -5598,7 +6318,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x04e7d2a0a0a74e579dc8229508ce2359 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x04e7d2a0a0a74e579dc8229508ce2359 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xe6e93c764ebac499f96ae286a9bf425e58ebd4e5",
@@ -5688,7 +6408,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb4c73ef2a1894cef93b75c78cc93cc5d \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb4c73ef2a1894cef93b75c78cc93cc5d \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x9ba28a8f14da6a6fb377f0015e104f88309f0fc7",
@@ -5778,7 +6498,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xac5d0f8b4c2b437d80f15261313a8a0c \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xac5d0f8b4c2b437d80f15261313a8a0c \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x3db87965152f48399880dd058670b39b5ffe3da9",
@@ -5860,7 +6580,7 @@
             "submission": {
                 "created": 1558062116,
                 "description": "inceptionv3_single_NNU",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 4,
                 "public": true,
                 "user_name": "yww"
@@ -5868,7 +6588,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe1c7e8d7cf00416f8e04ccc950a87a7e \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe1c7e8d7cf00416f8e04ccc950a87a7e \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x0b5b0ed3f9f75a613f9c5cebe15ae706753189d3",
@@ -5958,7 +6678,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x18377a1a5c1d4e9ca01e3446019ecf93 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x18377a1a5c1d4e9ca01e3446019ecf93 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xb0e232de733d509d10bc53d6a12cebbea3916b65",
@@ -6048,7 +6768,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xd9e8f8d05f834531825f6ba646b1aab5 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xd9e8f8d05f834531825f6ba646b1aab5 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x1242c9100d41500e867e1d6b0837686450c84213",
@@ -6138,7 +6858,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe7116a7388194350b07633465f44c207 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe7116a7388194350b07633465f44c207 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x086ce6a7304d91657f681165097e88ca0d3687f3",
@@ -6228,7 +6948,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2d4349c4276c4fdcb6f21cbd09d4be87 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2d4349c4276c4fdcb6f21cbd09d4be87 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x8bf94f1a15c8d2c28878f032e7ed3d22a5b602c2",
@@ -6318,7 +7038,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6104bc6de2524d908b3293534e8cc35d \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6104bc6de2524d908b3293534e8cc35d \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x7d9b1886c20cae35dd92d9196c1a78aac1717eaf",
@@ -6408,7 +7128,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x8a0cb4507de34fdb92fcdabaf1ec3a37 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x8a0cb4507de34fdb92fcdabaf1ec3a37 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xf4a282b009e2af9e79335cb1701708fe9ec1e8c5",
@@ -6498,7 +7218,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xedf4a1521f894409ba9360386e78ea41 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xedf4a1521f894409ba9360386e78ea41 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x199eda641a4bc2dc55a59e646c5101b3116372ae",
@@ -6588,7 +7308,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xc57804fee97a4365bff4933cd7d5cdfe \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xc57804fee97a4365bff4933cd7d5cdfe \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xa4c839eeae774c04821425bfc6fe3d13c66a33a0",
@@ -6678,7 +7398,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xd3a8e8f30eb64c0cbe4d8699136767bb \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xd3a8e8f30eb64c0cbe4d8699136767bb \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xfd1ff1eaa28d7ad5749870f71d29a0fd9512dcd3",
@@ -6768,7 +7488,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xfd5ca733960340e0aadf52e9ffe898ca \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xfd5ca733960340e0aadf52e9ffe898ca \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x976d0e4c4e6f360ca7eb49de8c0a75c788deb88d",
@@ -6858,7 +7578,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x24af40a2ed3a42188b71f026b51d665b \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x24af40a2ed3a42188b71f026b51d665b \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x78918f902acd27b58f5a658bd34f868aeb375262",
@@ -6948,7 +7668,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x92f76fad48e94842bf956c45aef29f69 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x92f76fad48e94842bf956c45aef29f69 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x64465a6de50576d998b40af5977ece31a1cba504",
@@ -7038,7 +7758,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xde00b018d07a4dbfb848746ff2fdeba2 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xde00b018d07a4dbfb848746ff2fdeba2 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -7121,7 +7841,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xc2b84f00e9934c1abdf018ea56f9d77a \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xc2b84f00e9934c1abdf018ea56f9d77a \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -7204,7 +7924,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x959c54a451d74a0c873c076b0bfefd9d \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x959c54a451d74a0c873c076b0bfefd9d \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xae2c4fd06c3c8808d37dd7bf42e2324cc57f8e0f",
@@ -7295,7 +8015,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6f69e6f8e6d3406b93f2e07c021d6a21 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6f69e6f8e6d3406b93f2e07c021d6a21 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -7370,15 +8090,15 @@
             "submission": {
                 "created": 1565577183,
                 "description": "Multi-Stage-Learning-CNN (ensemble)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 3,
+                "num_period_submissions": 0,
+                "num_total_submissions": 4,
                 "public": true,
                 "user_name": "NgaNgo"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x25601a48da6e4a99823bbae6bba39f36 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x25601a48da6e4a99823bbae6bba39f36 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -7461,7 +8181,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x9876c5a0de2c47d9bff8b9a8ea4cbc63 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x9876c5a0de2c47d9bff8b9a8ea4cbc63 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x236ea2f09420b34e55af987dc040c8cf58cdac8c",
@@ -7552,7 +8272,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0159b85e494749ffb809ca796daeed5a \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0159b85e494749ffb809ca796daeed5a \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -7635,7 +8355,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x5453fb3168af4ed984b5628e0f773777 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x5453fb3168af4ed984b5628e0f773777 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -7718,7 +8438,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe32172c8411e4df78d52915c859bfabe \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe32172c8411e4df78d52915c859bfabe \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x236ea2f09420b34e55af987dc040c8cf58cdac8c",
@@ -7809,7 +8529,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0e9a3df5f9704607939db248761e43c6 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x0e9a3df5f9704607939db248761e43c6 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -7892,7 +8612,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x9ff25c3e3ff24093be6dc681b4db3b4b \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x9ff25c3e3ff24093be6dc681b4db3b4b \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -7975,7 +8695,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xbf73f73ab77a44c6b0ae3f2b2123de9b \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-time 1d --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xbf73f73ab77a44c6b0ae3f2b2123de9b \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-time 1d --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0x236ea2f09420b34e55af987dc040c8cf58cdac8c",
@@ -8066,7 +8786,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x7701ac690449481c8833c16025235bd4 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x7701ac690449481c8833c16025235bd4 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -8149,40 +8869,40 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x03255cd13c5e4c7496d25b2cd694542d \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xdaf82014b1d14530ab9cee2b7a128fd9 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
                 "dependencies": [
                     {
                         "child_path": "evaluate.py",
-                        "child_uuid": "0x217c74753e814aabb75df41b9630aefa",
+                        "child_uuid": "0x7c194f85f82f4daf8ff01e3bac080813",
                         "parent_name": "evaluate-v1.0.py",
                         "parent_path": "",
                         "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
                     },
                     {
                         "child_path": "test.csv",
-                        "child_uuid": "0x217c74753e814aabb75df41b9630aefa",
+                        "child_uuid": "0x7c194f85f82f4daf8ff01e3bac080813",
                         "parent_name": "test_groundtruth.csv",
                         "parent_path": "",
                         "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
                     },
                     {
                         "child_path": "predictions.csv",
-                        "child_uuid": "0x217c74753e814aabb75df41b9630aefa",
+                        "child_uuid": "0x7c194f85f82f4daf8ff01e3bac080813",
                         "parent_name": "coolver-predictions-JF-Coolver-predict",
                         "parent_path": "",
-                        "parent_uuid": "0x03255cd13c5e4c7496d25b2cd694542d"
+                        "parent_uuid": "0xdaf82014b1d14530ab9cee2b7a128fd9"
                     }
                 ],
-                "id": "0x217c74753e814aabb75df41b9630aefa",
+                "id": "0x7c194f85f82f4daf8ff01e3bac080813",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1567708658,
-                    "description": "{\"submit_id\": \"0xbdc5cf9ead364cb090e9d71138ac2259\", \"predict_id\": \"0x03255cd13c5e4c7496d25b2cd694542d\", \"submitter_id\": \"0xd7bda936463f4a94997e5148f8f6df7c\"}",
+                    "created": 1569830386,
+                    "description": "{\"submit_id\": \"0xbdc5cf9ead364cb090e9d71138ac2259\", \"predict_id\": \"0xdaf82014b1d14530ab9cee2b7a128fd9\", \"submitter_id\": \"0xd7bda936463f4a94997e5148f8f6df7c\"}",
                     "name": "coolver-predictions-JF-Coolver-results",
                     "request_cpus": 1,
                     "request_disk": "4g",
@@ -8204,7 +8924,7 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "created",
-                "uuid": "0x217c74753e814aabb75df41b9630aefa"
+                "uuid": "0x7c194f85f82f4daf8ff01e3bac080813"
             },
             "scores": {
                 "atelectasis_auroc": null,
@@ -8231,7 +8951,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x885d187cb5ca48bab34bab8655ae1cba \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x885d187cb5ca48bab34bab8655ae1cba \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -8305,16 +9025,16 @@
             },
             "submission": {
                 "created": 1566142048,
-                "description": "Deep-CNNs-V2 (ensemble) (Vingroup Big Data Institute)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "description": "Deep-CNNs-V2 (ensemble)",
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "hieupham"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x360123f9c6834912820a4a397f1f4d03 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x360123f9c6834912820a4a397f1f4d03 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -8397,7 +9117,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x00116fed632e4346832771d75401c6f0 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x00116fed632e4346832771d75401c6f0 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -8480,7 +9200,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x3e84afaf03e743b0bc76bc1fb7e6b265 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x3e84afaf03e743b0bc76bc1fb7e6b265 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -8563,89 +9283,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x56e501e526a247fe9049de52ac9fec7f \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
-                "bundle_type": "run",
-                "command": "python evaluate.py test.csv predictions.csv",
-                "data_hash": null,
-                "dependencies": [
-                    {
-                        "child_path": "evaluate.py",
-                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
-                        "parent_name": "evaluate-v1.0.py",
-                        "parent_path": "",
-                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
-                    },
-                    {
-                        "child_path": "test.csv",
-                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
-                        "parent_name": "test_groundtruth.csv",
-                        "parent_path": "",
-                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
-                    },
-                    {
-                        "child_path": "predictions.csv",
-                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
-                        "parent_name": "hieupham-predictions-Deep-CNN-Ensemble-V3-predict",
-                        "parent_path": "",
-                        "parent_uuid": "0x56e501e526a247fe9049de52ac9fec7f"
-                    }
-                ],
-                "id": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
-                "is_anonymous": false,
-                "metadata": {
-                    "actions": [],
-                    "allow_failed_dependencies": false,
-                    "created": 1567643337,
-                    "description": "{\"submit_id\": \"0x95fcba00cdfc48f58d7e8283817f07ab\", \"predict_id\": \"0x56e501e526a247fe9049de52ac9fec7f\", \"submitter_id\": \"0x11bac19b3eaf47c981eba40f61d0e79f\"}",
-                    "name": "hieupham-predictions-Deep-CNN-Ensemble-V3-results",
-                    "request_cpus": 1,
-                    "request_disk": "4g",
-                    "request_docker_image": "codalab/ubuntu:1.9",
-                    "request_gpus": 0,
-                    "request_memory": "2g",
-                    "request_network": false,
-                    "request_priority": 0,
-                    "request_queue": "",
-                    "request_time": "1d",
-                    "tags": [
-                        "chexpert-test-eval"
-                    ]
-                },
-                "owner": {
-                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
-                    "type": "users"
-                },
-                "permission": 2,
-                "permission_spec": "all",
-                "state": "created",
-                "uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab"
-            },
-            "scores": {
-                "atelectasis_auroc": null,
-                "atelectasis_num_rads_under_roc": null,
-                "average_auroc": null,
-                "average_num_rads_under_roc": null,
-                "cardiomegaly_auroc": null,
-                "cardiomegaly_num_rads_under_roc": null,
-                "consolidation_auroc": null,
-                "consolidation_num_rads_under_roc": null,
-                "edema_auroc": null,
-                "edema_num_rads_under_roc": null,
-                "effusion_auroc": null,
-                "effusion_num_rads_under_roc": null
-            },
-            "submission": {
-                "created": 1567345731,
-                "description": "Deep-CNNs-V3 (ensemble) (Vingroup Big Data Institute)",
-                "num_period_submissions": 1,
-                "num_total_submissions": 7,
-                "public": true,
-                "user_name": "hieupham"
-            }
-        },
-        {
-            "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xddc99641dd0a42159a79aa452829ab08 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xddc99641dd0a42159a79aa452829ab08 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -8728,7 +9366,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x8b4cb99d189d43f09ab075a83025c06c \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x8b4cb99d189d43f09ab075a83025c06c \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -8811,7 +9449,7 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xdb40e75d68d74c98944c58b20df437dd \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-cpus 1 --request-disk 4g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xdb40e75d68d74c98944c58b20df437dd \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-time 1d --request-memory 2g --request-disk 4g --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
@@ -8893,5 +9531,5 @@
             }
         }
     ],
-    "updated": 1567708672.055939
+    "updated": 1569830400.386745
 }
