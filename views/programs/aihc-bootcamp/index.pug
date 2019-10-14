@@ -23,7 +23,10 @@ block content
           h3 The AI for Healthcare Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and healthcare. Over two quarters, students receive training from PhD students and faculty in the medical school to work on high-impact research problems in small interdisciplinary teams.
           p 
             | Projects out of the bootcamp have included work in (1) radiology on automated diagnosis of diseases from x-rays, ultrasound, CT and MR, (2) pathology on automated detection of rare tumor subtypes and on time-consuming pathology tasks, (3) public health on prediction of patient costs and heterogeneous treatment effect estimation, and (4) mental health on prediction of treatment outcomes in depression.  
-          a.btn.btn-lg.btn-default(href="https://forms.gle/hEBWfpMagRpfycTWA") Apply Now
+          a.btn.btn-lg.btn-default(href="https://forms.gle/qrZxTr6A2ZeV92aEA") Apply Now
+          hr
+          .clearfix
+          +alumni_inside('medical_faculty', true)
         .col-sm-4.col-sm-pull-7
           +alumni_inside('bootcamp_alumni', true)
           +alumni_inside('phd_healthcare', true)
@@ -38,13 +41,13 @@ block content
         .col-sm-8
           .applications
             h2 Applications
-            p Students with a background in artificial intelligence, software engineering or medicine are encouraged to apply. The applications for the fall+winter 2019 bootcamp are now open.
+            p Students with a background in artificial intelligence, software engineering or medicine are encouraged to apply. The applications for the Winter+Spring 2019 bootcamp are now open.
             ul
-              li Early Applications due June 6th, 2019 at 11:59p PST.
-              li Regular Applications due September 18, 2019 at 11:59p PST.
-              // li Late Applications due September 23, 2019 at 11:59p PST. Apply early to give yourself enough time to prepare for the interview.
-              li Rolling interviews and selections until September 22nd, 2019.
-              li Bootcamp starts Sep 24th, 2019. 
+              li Early Applications due Nov 1st, 2019 at 11:59p PST.
+              li Regular Applications due Dec 27, 2019 at 11:59p PST.
+              li Late Applications due January 5th, 2020 at 11:59p PST. Apply early to give yourself enough time to prepare for the interview.
+              li Rolling interviews and selections until January 10th, 2020.
+              li Bootcamp starts January 10th, 2019. 
             h3 AI Specialization
             p This role is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with medical school faculty. Students have the opportunity to take a deep dive into healthcare and co-author a research paper. We expect students to have:
             ul
@@ -73,6 +76,10 @@ block content
             li
               a.btn(href="/competitions/chexpert") CheXpert
             li
+              a.btn(href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2735471") HeadXNet
+            li
+              a.btn(href="https://www.ahajournals.org/doi/full/10.1161/CIRCOUTCOMES.118.005010") HTE Prediction
+            li
               a.btn(href="/projects/chexnext") CheXNeXt
             li
               a.btn(href="https://xray4all.com") XRay4All
@@ -86,15 +93,7 @@ block content
           .row
             .col-sm-12
               h2 Past Bootcamp Cohorts
-              // .clearfix
-              //   +alumni_inside('spring2019', true)
-              //   +dp('Amir Kiani', 'ms', false, true)
-              //   +dp('Bora Uyumazturk', 'bs', false, true)
-              //   +dp('Michael Ko', 'bs', false, true)
-              //   +alumni_inside('winter2019', true)
-              //   +alumni_inside('phd_healthcare', true)
-              //   +alumni_inside('medical_faculty', true)
-              //   +dp('Andrew Ng', 'prof', false, true)
+              +alumni('fall2019', false)
               +alumni('spring2019', false)
               +alumni('winter2019', false)
               +alumni('fall2018', false)
@@ -107,4 +106,4 @@ block content
       .row
         .col-md-8.col-md-offset-4
           h2 We invite you to join the AI revolution in healthcare
-          a.btn.btn-lg.btn-default(href="https://forms.gle/hEBWfpMagRpfycTWA") Apply Now
+          a.btn.btn-lg.btn-default(href="https://forms.gle/qrZxTr6A2ZeV92aEA") Apply Now

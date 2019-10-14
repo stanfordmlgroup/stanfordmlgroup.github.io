@@ -23,6 +23,19 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Leanne Williams', 'prof', false, use_compact)
       +dp('Utkan Demirci', 'prof', false, use_compact)
       +dp('Gozde Durmus', 'prof', false, use_compact)
+      +dp('Sidhartha Sinha', 'prof', false, use_compact)
+      +dp('Catherine Hogan', 'Instructor', false, use_compact)
+  if cohort == 'fall2019'
+      +dp('Anirudh Joshi', 'ms', false, use_compact)
+      +dp('Cheuk To Tsui', 'ms', true, use_compact)
+      +dp('Ethan Chi', 'bs', true, use_compact)
+      +dp('Gordon Chi', 'bs', true, use_compact)
+      +dp('Hari Sowrirajan', 'ms', false, use_compact)
+      +dp('John Peruzzi', 'bs', true, use_compact)
+      +dp('Keyur Mithawala', 'MSx student', true, use_compact)
+      +dp('Michael Zhang', 'MD', true, use_compact)
+      +dp('Nick Phillips', 'ms', true, use_compact)
+      +dp('Phil Chen', 'ms', false, use_compact)
   if cohort == 'ccspring2019'
       +dp('Fred Lu', 'ms', false, use_compact)
       +dp('Andrew Kondrich', 'bs', false, use_compact)
@@ -101,6 +114,13 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Zach Harned', 'jd', false, use_compact)
 
 mixin alumni(cohort, use_compact)
+  if cohort == 'medical_faculty'
+      h3 Healthcare Bootcamp Faculty Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'fall2019'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Fall 2019-2020
+      +alumni_inside(cohort, use_compact)
   if cohort == 'ccspring2019'
     .cohort.clearfix
       h3 Climate Change Bootcamp Spring 2019
