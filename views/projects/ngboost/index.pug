@@ -20,15 +20,39 @@ block content
           h1 NGBoost: Natural Gradient Boosting for Probabilistic Prediction
           p Tony Duan*, Anand Avati*, Daisy Yi Ding, Sanjay Basu, Andrew Ng, Alejandro Schuler
 
-  section.gray
+  section
     .container
       .row
         h2 Predictive Uncertainty Estimation in the real world.
-        .col-lg-12
-         p Estimating the uncertainty in the predictions of a machine learning model is crucial for production deployments in the real world. Not only do we want our models to make accurate predictions, but we also want a correct estimate of uncertainty along with each prediction. When model predictions are part of an automated decision-making workflow or production line, predictive uncertainty estimates are important for determining manual fallback alternatives or for human inspection and intervenion.
-         p Probabilistic prediction (or probabilistic forecasting), which is the approach where the model outputs a full probability distribution over the entire outcome space, is a natural way to quantify those uncertainties.
-
-
+        .col-lg-6
+          p
+          p Estimating the uncertainty in the predictions of a machine learning model is crucial for production deployments in the real world. Not only do we want our models to make accurate predictions, but we also want a correct estimate of uncertainty along with each prediction. When model predictions are part of an automated decision-making workflow or production line, predictive uncertainty estimates are important for determining manual fallback alternatives or for human inspection and intervenion.
+          p
+          p Probabilistic prediction (or probabilistic forecasting), which is the approach where the model outputs a full probability distribution over the entire outcome space, is a natural way to quantify those uncertainties.
+          p
+          p Compare the point predictions and probabilistic predictions in the examples shown.
+          p
+        .col-lg-6
+           table.ui.celled.table.center.aligned
+            thead
+              tr
+               th
+               th Point Prediction (No uncertainty estimate)
+               th Probabilistic Prediction (Uncertainty is implicit)
+            tbody
+              tr.ui.center.aligned
+               td Tomorrow's Temperature
+               td 73.4 F
+               td
+                 img(align='left', valign='top', style='height:50%; weight:50%;', src='/projects/ngboost/img/temp.png')
+              tr
+               td Patient's Time to mortality
+               td 23.1 months
+               td(align='left')
+                 img.ui.mini.rounded.image(align='left', valign='top', style='height:50%; weight:50%', src='/projects/ngboost/img/time.png')
+            tfoot
+              tr
+               th(colspan=3)
   section
     .container
       .row
@@ -46,7 +70,7 @@ block content
           a.btn.btn-lg.btn-default(href="https://github.com/stanfordmlgroup/ngboost") GitHub
 
 
-  section.gray
+  section
     .container
       .row
         h2 Simple and modular approach.
@@ -86,7 +110,7 @@ block content
         .col-md-12
           p Ordinary gradients can be highly unsuitable for learning multi-parameter probability distributions (such as the Normal distribution). The training dynamics with the use of natural gradients tends to be much more stable and result in a better fit, as seen in the probabilistic regression example above.
 
-  section.gray
+  section
     .container
       .row
         .h2 Competitive performance in both uncertainty estimates and traditional metrics.
