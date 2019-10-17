@@ -30,7 +30,7 @@ block content
           p
           p Probabilistic prediction (or probabilistic forecasting), which is the approach where the model outputs a full probability distribution over the entire outcome space, is a natural way to quantify those uncertainties.
           p
-          p Compare the point predictions and probabilistic predictions in the examples shown.
+          p Compare the point predictions vs probabilistic predictions in the following examples.
           p
         .col-lg-6
            table.ui.celled.table.center.aligned
@@ -40,16 +40,16 @@ block content
                th Point Prediction (No uncertainty estimate)
                th Probabilistic Prediction (Uncertainty is implicit)
             tbody
-              tr.ui.center.aligned
-               td Tomorrow's Temperature
-               td 73.4 F
-               td
-                 img(align='left', valign='top', style='height:50%; weight:50%;', src='/projects/ngboost/img/temp.png')
               tr
-               td Patient's Time to mortality
-               td 23.1 months
+               td Temperature at noon tomorrow
+               td 73.4 Fahrenheit
                td(align='left')
-                 img(align='left', valign='top', style='height:50%; weight:50%', src='/projects/ngboost/img/time.png')
+                 img(align='left', valign='top', src='/projects/ngboost/img/temp.png')
+              tr
+               td Patient's time to mortality
+               td 11.3 months
+               td(align='left')
+                 img(align='left', valign='top', src='/projects/ngboost/img/time.png')
             tfoot
               tr
                th(colspan=3)
