@@ -108,6 +108,96 @@
     "leaderboard": [
         {
             "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x56e501e526a247fe9049de52ac9fec7f \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-memory 2g --request-disk 4g --request-time 1d --request-cpus 1",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x616af814e941f8917406c045da977218ae3056bf",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
+                        "parent_name": "hieupham-predictions-Deep-CNN-Ensemble-V3-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x56e501e526a247fe9049de52ac9fec7f"
+                    }
+                ],
+                "id": "0xa9006b56f7664a20b89ed0a9b4c0b6ab",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1567643337,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0x95fcba00cdfc48f58d7e8283817f07ab\", \"predict_id\": \"0x56e501e526a247fe9049de52ac9fec7f\", \"submitter_id\": \"0x11bac19b3eaf47c981eba40f61d0e79f\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1567730460,
+                    "name": "hieupham-predictions-Deep-CNN-Ensemble-V3-results",
+                    "remote": "vm-clws-prod-worker-0",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "run_status": "Finished",
+                    "started": 1567730439,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 14.7388808727
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xa9006b56f7664a20b89ed0a9b4c0b6ab"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.9013203744514136,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.929981092124379,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9318203381468338,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9210776777216487,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.9288795722445011,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9668074980574981,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1567345731,
+                "description": "Hierarchical-Learning-V1 (ensemble) (Vingroup Big Data Institute) https://arxiv.org/abs/1911.06475",
+                "num_period_submissions": 0,
+                "num_total_submissions": 8,
+                "public": false,
+                "user_name": "hieupham"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xf2567cda3e6b4e97b560c4973748636c \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-memory 2g --request-disk 4g --request-time 1d --request-cpus 1",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -10572,6 +10662,88 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x8dbd2f7986ef49c9995f3ee890529763 \"python evaluate.py test.csv predictions.csv\" --request-time 1d --request-cpus 1 --request-memory 2g --request-disk 4g --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x5d2dc31ae4594713ac91c667fdb057d3",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x5d2dc31ae4594713ac91c667fdb057d3",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x5d2dc31ae4594713ac91c667fdb057d3",
+                        "parent_name": "coolver-predictions-jf-Coolver-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x8dbd2f7986ef49c9995f3ee890529763"
+                    }
+                ],
+                "id": "0x5d2dc31ae4594713ac91c667fdb057d3",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1575312015,
+                    "description": "{\"submit_id\": \"0x335adfd938854915b13efb70f4eb08e7\", \"predict_id\": \"0x8dbd2f7986ef49c9995f3ee890529763\", \"submitter_id\": \"0xd7bda936463f4a94997e5148f8f6df7c\"}",
+                    "name": "coolver-predictions-jf-Coolver-results",
+                    "request_cpus": 1,
+                    "request_disk": "4g",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "1d",
+                    "tags": [
+                        "chexpert-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "created",
+                "uuid": "0x5d2dc31ae4594713ac91c667fdb057d3"
+            },
+            "scores": {
+                "atelectasis_auroc": null,
+                "atelectasis_num_rads_under_roc": null,
+                "average_auroc": null,
+                "average_num_rads_under_roc": null,
+                "cardiomegaly_auroc": null,
+                "cardiomegaly_num_rads_under_roc": null,
+                "consolidation_auroc": null,
+                "consolidation_num_rads_under_roc": null,
+                "edema_auroc": null,
+                "edema_num_rads_under_roc": null,
+                "effusion_auroc": null,
+                "effusion_num_rads_under_roc": null
+            },
+            "submission": {
+                "created": 1563331816,
+                "description": "JF Coolver single (single model )   JF HEALTHCARE",
+                "num_period_submissions": 2,
+                "num_total_submissions": 2,
+                "public": true,
+                "user_name": "coolver"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x6f69e6f8e6d3406b93f2e07c021d6a21 \"python evaluate.py test.csv predictions.csv\" --request-time 1d --request-cpus 1 --request-memory 2g --request-disk 4g --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -11636,6 +11808,7 @@
                     "allow_failed_dependencies": false,
                     "created": 1575277953,
                     "description": "{\"submit_id\": \"0x1d559aa7a27e4b57886862ff3625ef82\", \"predict_id\": \"0x8af4e6b323cb4f9f92a9f49d44cda08c\", \"submitter_id\": \"0x11ec7b6b5cd74e18bf3e092f57cea4e6\"}",
+                    "failure_message": " Parent bundles failed: 0x8af4e6b323cb4f9f92a9f49d44cda08c (Please use the --allow-failed-dependencies flag to depend on results fo failed or killed bundles)",
                     "name": "ncook3-predictions-GTteam76-googlenet5-results",
                     "request_cpus": 1,
                     "request_disk": "4g",
@@ -11656,7 +11829,7 @@
                 },
                 "permission": 2,
                 "permission_spec": "all",
-                "state": "created",
+                "state": "failed",
                 "uuid": "0x46e8927e3d8d451aa22b86c559119e5d"
             },
             "scores": {
@@ -12348,88 +12521,6 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x95b1f07ba0d649a9b1e6c6fd01903e79 \"python evaluate.py test.csv predictions.csv\" --request-time 1d --request-cpus 1 --request-memory 2g --request-disk 4g --request-docker-image codalab/ubuntu:1.9",
-                "bundle_type": "run",
-                "command": "python evaluate.py test.csv predictions.csv",
-                "data_hash": null,
-                "dependencies": [
-                    {
-                        "child_path": "evaluate.py",
-                        "child_uuid": "0x14186bb4bbfa4d64ad041393de96a72f",
-                        "parent_name": "evaluate-v1.0.py",
-                        "parent_path": "",
-                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
-                    },
-                    {
-                        "child_path": "test.csv",
-                        "child_uuid": "0x14186bb4bbfa4d64ad041393de96a72f",
-                        "parent_name": "test_groundtruth.csv",
-                        "parent_path": "",
-                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
-                    },
-                    {
-                        "child_path": "predictions.csv",
-                        "child_uuid": "0x14186bb4bbfa4d64ad041393de96a72f",
-                        "parent_name": "coolver-predictions-JF-Coolver-predict",
-                        "parent_path": "",
-                        "parent_uuid": "0x95b1f07ba0d649a9b1e6c6fd01903e79"
-                    }
-                ],
-                "id": "0x14186bb4bbfa4d64ad041393de96a72f",
-                "is_anonymous": false,
-                "metadata": {
-                    "actions": [],
-                    "allow_failed_dependencies": false,
-                    "created": 1575277941,
-                    "description": "{\"submit_id\": \"0xbdc5cf9ead364cb090e9d71138ac2259\", \"predict_id\": \"0x95b1f07ba0d649a9b1e6c6fd01903e79\", \"submitter_id\": \"0xd7bda936463f4a94997e5148f8f6df7c\"}",
-                    "name": "coolver-predictions-JF-Coolver-results",
-                    "request_cpus": 1,
-                    "request_disk": "4g",
-                    "request_docker_image": "codalab/ubuntu:1.9",
-                    "request_gpus": 0,
-                    "request_memory": "2g",
-                    "request_network": false,
-                    "request_priority": 0,
-                    "request_queue": "",
-                    "request_time": "1d",
-                    "tags": [
-                        "chexpert-test-eval"
-                    ]
-                },
-                "owner": {
-                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
-                    "type": "users"
-                },
-                "permission": 2,
-                "permission_spec": "all",
-                "state": "created",
-                "uuid": "0x14186bb4bbfa4d64ad041393de96a72f"
-            },
-            "scores": {
-                "atelectasis_auroc": null,
-                "atelectasis_num_rads_under_roc": null,
-                "average_auroc": null,
-                "average_num_rads_under_roc": null,
-                "cardiomegaly_auroc": null,
-                "cardiomegaly_num_rads_under_roc": null,
-                "consolidation_auroc": null,
-                "consolidation_num_rads_under_roc": null,
-                "edema_auroc": null,
-                "edema_num_rads_under_roc": null,
-                "effusion_auroc": null,
-                "effusion_num_rads_under_roc": null
-            },
-            "submission": {
-                "created": 1563336452,
-                "description": "JF Coolver ensemble (ensemble model ) JF HEALTHCARE",
-                "num_period_submissions": 1,
-                "num_total_submissions": 2,
-                "public": true,
-                "user_name": "coolver"
-            }
-        },
-        {
-            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x45a4e51dc6224b21b6de47a4275e2bca \"python evaluate.py test.csv predictions.csv\" --request-time 1d --request-cpus 1 --request-memory 2g --request-disk 4g --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -12595,5 +12686,5 @@
             }
         }
     ],
-    "updated": 1575277971.122552
+    "updated": 1575312033.794908
 }
