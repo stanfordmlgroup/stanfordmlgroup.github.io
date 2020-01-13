@@ -29,6 +29,10 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Rob Jackson', 'prof', false, use_compact)
       +dp('Ram Rajagopal', 'prof', false, use_compact)
       +dp('Sara Knox', 'prof', false, use_compact)
+  if cohort == 'ccwinter2019'
+      +dp('Shawn Zhang', 'bs', false, use_compact)
+      +dp('Sasankh Munukutla', 'bs', false, use_compact)
+      +dp('Christopher Cross', 'bs', false, use_compact)
   if cohort == 'fall2019'
       +dp('Anirudh Joshi', 'ms', false, use_compact)
       +dp('Cheuk To Tsui', 'ms', true, use_compact)
@@ -131,6 +135,10 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'climate_faculty'
       h3 Climate Change Bootcamp Faculty Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccwinter2019'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Winter 2019-2020
       +alumni_inside(cohort, use_compact)
   if cohort == 'fall2019'
     .cohort.clearfix
