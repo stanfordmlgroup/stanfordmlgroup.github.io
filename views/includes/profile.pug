@@ -39,7 +39,7 @@ mixin dp_inner(name, position, use_placeholder, use_compact)
   -   img_link = name.replace(/ /g, '')
   - }
   if use_compact === true
-    img(src='//img/headshots/' + img_link + '.jpg', style="padding: 0px;margin: 0px")
+    img(src='/img/headshots/' + img_link + '.jpg', style="padding: 0px;margin: 0px")
   else
     .feature-item
       img.img-circle(src='/img/headshots/' + img_link + '.jpg')
