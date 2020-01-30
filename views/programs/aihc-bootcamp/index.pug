@@ -19,25 +19,22 @@ block content
   section.gray
     .container
       .row
-        .col-sm-7.col-sm-push-4
+        .col-sm-7
           h3 The AI for Healthcare Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and healthcare. Over two quarters, students receive training from PhD students and faculty in the medical school to work on high-impact research problems in small interdisciplinary teams.
           p 
             | Projects out of the bootcamp have included work in (1) radiology on automated diagnosis of diseases from x-rays, ultrasound, CT and MR, (2) pathology on automated detection of rare tumor subtypes and on time-consuming pathology tasks, (3) public health on prediction of patient costs and heterogeneous treatment effect estimation, and (4) mental health on prediction of treatment outcomes in depression.  
           a.btn.btn-lg.btn-default(href="https://forms.gle/qrZxTr6A2ZeV92aEA") Apply Now
-          hr
-          .clearfix
-          h2 Faculty
-          +alumni_inside('medical_faculty', true)
-        .col-sm-4.col-sm-pull-7
+        .col-sm-5.hidden-xs
           +alumni_inside('healthcare_bootcamp_alumni', true)
-          +alumni_inside('phd_healthcare', true)
+          +alumni_inside('healthcare_bootcamp_phd', true)
   section
     .container
       .row
         .col-sm-4
           h3 Teaching Team
-          +alumni_inside('phd_healthcare', 'big')
+          +alumni_inside('healthcare_bootcamp_phd', 'big')
           +dp('Andrew Ng', 'prof', false, 'big')
+          h3 Medical Faculty
           +alumni_inside('medical_faculty', 'big')
         .col-sm-8
           .applications
@@ -76,6 +73,8 @@ block content
           ul.list-unstyled
             li
               a.btn(href="/competitions/chexpert") CheXpert
+            li
+              a.btn(href="https://arxiv.org/abs/1911.07372") Liver Cancer Classification
             li
               a.btn(href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2735471") HeadXNet
             li
