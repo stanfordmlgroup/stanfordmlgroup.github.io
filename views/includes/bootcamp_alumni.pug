@@ -1,5 +1,7 @@
 mixin alumni_inside(cohort, use_compact)
-  if cohort == 'bootcamp_alumni'
+  if cohort == 'healthcarebootcamp_alumni'
+      +alumni_inside('winter2020', use_compact)
+      +alumni_inside('fall2019', use_compact)
       +alumni_inside('spring2019', use_compact)
       +alumni_inside('winter2019', use_compact)
       +alumni_inside('fall2018', use_compact)
@@ -48,8 +50,8 @@ mixin alumni_inside(cohort, use_compact)
   if cohort == 'fall2019'
       +dp('Anirudh Joshi', 'ms', false, use_compact)
       +dp('Cheuk To Tsui', 'ms', true, use_compact)
-      +dp('Ethan Chi', 'bs', true, use_compact)
-      +dp('Gordon Chi', 'bs', true, use_compact)
+      +dp('Ethan Chi', 'bs', false, use_compact)
+      +dp('Gordon Chi', 'bs', false, use_compact)
       +dp('Hari Sowrirajan', 'ms', false, use_compact)
       +dp('John Peruzzi', 'bs', true, use_compact)
       +dp('Keyur Mithawala', 'MSx student', true, use_compact)
