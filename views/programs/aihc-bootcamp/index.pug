@@ -8,7 +8,7 @@ block description
 
 block extrascripts
 include ../../includes/profile
-include ../../includes/bootcamp_alumni
+include ../../includes/people
 
 block content
   section#header
@@ -19,35 +19,35 @@ block content
   section.gray
     .container
       .row
-        .col-sm-7.col-sm-push-4
+        .col-sm-7
           h3 The AI for Healthcare Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and healthcare. Over two quarters, students receive training from PhD students and faculty in the medical school to work on high-impact research problems in small interdisciplinary teams.
           p 
             | Projects out of the bootcamp have included work in (1) radiology on automated diagnosis of diseases from x-rays, ultrasound, CT and MR, (2) pathology on automated detection of rare tumor subtypes and on time-consuming pathology tasks, (3) public health on prediction of patient costs and heterogeneous treatment effect estimation, and (4) mental health on prediction of treatment outcomes in depression.  
-          a.btn.btn-lg.btn-default(href="https://forms.gle/qrZxTr6A2ZeV92aEA") Apply Now
-          hr
-          .clearfix
-          +alumni_inside('medical_faculty', true)
-        .col-sm-4.col-sm-pull-7
-          +alumni_inside('bootcamp_alumni', true)
-          +alumni_inside('phd_healthcare', true)
+          a.btn.btn-lg.btn-default(href="https://forms.gle/c54EdbUP8F5w5qjA9") Apply Now
+        .col-sm-5.hidden-xs
+          +alumni_inside('healthcare_bootcamp_alumni', true)
+          +alumni_inside('healthcare_bootcamp_phd', true)
   section
     .container
       .row
         .col-sm-4
           h3 Teaching Team
-          +alumni_inside('phd_healthcare', 'big')
+          +alumni_inside('healthcare_bootcamp_phd', 'big')
           +dp('Andrew Ng', 'prof', false, 'big')
+          h3 Medical Faculty
           +alumni_inside('medical_faculty', 'big')
         .col-sm-8
           .applications
             h2 Applications
-            p Students with a background in artificial intelligence, software engineering or medicine are encouraged to apply. The applications for the Winter+Spring 2019 bootcamp are now open.
+            p Students with a background in artificial intelligence, software engineering or medicine are encouraged to apply. 
+            p
+              | The applications for the Spring+Summer 2020 bootcamp are now open. Over the summer, students have the option of pursuing the bootcamp whilst pursuing an internship if able to make the required time committment.
             ul
-              li Early Applications due Nov 1st, 2019 at 11:59p PST.
-              li Regular Applications due Dec 27, 2019 at 11:59p PST.
-              li Late Applications due January 10th, 2020 at 11:59p PST. Apply early to give yourself enough time to prepare for the interview.
-              li Rolling interviews and selections until January 10th, 2020.
-              li Bootcamp starts January 10th, 2019. 
+              li Early Applications due Feb 19th, 2020 at 11:59p PST.
+              li Regular Applications due Mar 9th, 2020 at 11:59p PST.
+              li Late Applications due Mar 29th, 2020 at 11:59p PST. Apply early to give yourself enough time to prepare for the interview.
+              li Rolling interviews and selections until Apr 1st, 2020.
+              li Bootcamp starts Apr 2nd, 2020.
             h3 AI Specialization
             p This role is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with medical school faculty. Students have the opportunity to take a deep dive into healthcare and co-author a research paper. We expect students to have:
             ul
@@ -76,6 +76,8 @@ block content
             li
               a.btn(href="/competitions/chexpert") CheXpert
             li
+              a.btn(href="https://arxiv.org/abs/1911.07372") Liver Cancer Classification
+            li
               a.btn(href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2735471") HeadXNet
             li
               a.btn(href="https://www.ahajournals.org/doi/full/10.1161/CIRCOUTCOMES.118.005010") HTE Prediction
@@ -93,6 +95,7 @@ block content
           .row
             .col-sm-12
               h2 Past Bootcamp Cohorts
+              +alumni('winter2020', false)
               +alumni('fall2019', false)
               +alumni('spring2019', false)
               +alumni('winter2019', false)
@@ -106,4 +109,4 @@ block content
       .row
         .col-md-8.col-md-offset-4
           h2 We invite you to join the AI revolution in healthcare
-          a.btn.btn-lg.btn-default(href="https://forms.gle/qrZxTr6A2ZeV92aEA") Apply Now
+          a.btn.btn-lg.btn-default(href="https://forms.gle/c54EdbUP8F5w5qjA9") Apply Now
