@@ -3,6 +3,9 @@ mixin dp(name, position, use_placeholder, use_compact)
   - if(use_compact === true) {
   -   c = "col-md-1 col-xs-1"
   -   s = "margin: 0px; padding: 0px"
+  - } else if(use_compact === 'big_compact') {
+  -   c = "col-md-2 col-xs-1"
+  -   s = "margin: 0px; padding: 0px"
   - } else if(use_compact === 'big') {
   -   c = "col-xs-4 item-wrap"
   - } else {
@@ -38,7 +41,9 @@ mixin dp_inner(name, position, use_placeholder, use_compact)
   - } else {
   -   img_link = name.replace(/ /g, '')
   - }
-  if use_compact === true
+  if (use_compact === true)
+    img(src='/img/headshots/' + img_link + '.jpg', style="padding: 0px;margin: 0px")
+  else if(use_compact === 'big_compact')
     img(src='/img/headshots/' + img_link + '.jpg', style="padding: 0px;margin: 0px")
   else
     .feature-item
