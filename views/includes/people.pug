@@ -34,6 +34,11 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('spring2018', use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
+  if cohort == 'climate_bootcamp_alumni'
+      +alumni_inside('ccwinter2020', use_compact)
+      +alumni_inside('ccfall2019', use_compact)
+      +alumni_inside('ccsummer2019', use_compact)
+      +alumni_inside('ccspring2019', use_compact)
   if cohort == 'bootcamp_faculty'
       +alumni_inside('medical_faculty')
       +alumni_inside('climate_faculty')
@@ -57,10 +62,20 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Rob Jackson', 'prof', false, use_compact)
       +dp('Ram Rajagopal', 'prof', false, use_compact)
       +dp('Sara Knox', 'prof', false, use_compact)
+      +dp('Gavin McNicol', 'postdoc', false, use_compact)
+      +dp('Etienne Fluet-Chouinard', 'postdoc', false, use_compact)
+  if cohort == 'climate_industry'
+      +dp('Kyle Story', 'dl', false, use_compact)
+      +dp('Rose Rustowicz', 'dl', false, use_compact)
+      +dp('Cooper Elsworth', 'dl', false, use_compact)
   if cohort == 'healthcare_bootcamp_phd'
       +dp('Pranav Rajpurkar', 'phd', false, use_compact)
       +dp('Anand Avati', 'phd', false, use_compact)
-  if cohort == 'ccwinter2019'
+  if cohort == 'climate_bootcamp_phd'
+      +dp('Jeremy Irvin', 'phd', false, use_compact)
+      +dp('Sharon Zhou', 'phd', false, use_compact)
+      +dp('Hao Sheng', 'phd', false, use_compact)
+  if cohort == 'ccwinter2020'
       +dp('Shawn Zhang', 'bs', false, use_compact)
       +dp('Sasankh Munukutla', 'bs', false, use_compact)
       +dp('Christopher Cross', 'bs', false, use_compact)
@@ -198,7 +213,10 @@ mixin alumni(cohort, use_compact)
   if cohort == 'climate_faculty'
       h3 Climate Change Bootcamp Faculty Collaborators
       +alumni_inside(cohort, use_compact)
-  if cohort == 'ccwinter2019'
+  if cohort == 'climate_industry'
+      h3 Climate Change Bootcamp Industry Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccwinter2020'
     .cohort.clearfix
       h3 Climate Change Bootcamp Winter 2019-2020
       +alumni_inside(cohort, use_compact)
