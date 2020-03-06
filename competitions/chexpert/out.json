@@ -1658,46 +1658,46 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x95d6992dafec4f88bf3207221a89908c \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x28ba5a6d50a44632a9bc3c558391cac3 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": "0xda3086b28012b33161814c83ba55ec14267ac0fc",
                 "dependencies": [
                     {
                         "child_path": "evaluate.py",
-                        "child_uuid": "0x81eb09d5bdbd4184a08d87a722ecebca",
+                        "child_uuid": "0x6c071a7501a247afa251e8b3a8b6f1d7",
                         "parent_name": "evaluate-v1.0.py",
                         "parent_path": "",
                         "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
                     },
                     {
                         "child_path": "test.csv",
-                        "child_uuid": "0x81eb09d5bdbd4184a08d87a722ecebca",
+                        "child_uuid": "0x6c071a7501a247afa251e8b3a8b6f1d7",
                         "parent_name": "test_groundtruth.csv",
                         "parent_path": "",
                         "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
                     },
                     {
                         "child_path": "predictions.csv",
-                        "child_uuid": "0x81eb09d5bdbd4184a08d87a722ecebca",
+                        "child_uuid": "0x6c071a7501a247afa251e8b3a8b6f1d7",
                         "parent_name": "alimebkovkz-predictions-fucking-test-predict",
                         "parent_path": "",
-                        "parent_uuid": "0x95d6992dafec4f88bf3207221a89908c"
+                        "parent_uuid": "0x28ba5a6d50a44632a9bc3c558391cac3"
                     }
                 ],
-                "id": "0x81eb09d5bdbd4184a08d87a722ecebca",
+                "id": "0x6c071a7501a247afa251e8b3a8b6f1d7",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1583265237,
+                    "created": 1583470337,
                     "data_size": 12740,
-                    "description": "{\"submit_id\": \"0xe17fb98bdfff44e4addcd89e47875cca\", \"submitter_id\": \"0x7bba245b6d1b4e3c9a58d76877ca9f2e\", \"predict_id\": \"0x95d6992dafec4f88bf3207221a89908c\"}",
+                    "description": "{\"submit_id\": \"0xe17fb98bdfff44e4addcd89e47875cca\", \"submitter_id\": \"0x7bba245b6d1b4e3c9a58d76877ca9f2e\", \"predict_id\": \"0x28ba5a6d50a44632a9bc3c558391cac3\"}",
                     "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
                     "exitcode": 0,
-                    "last_updated": 1583269648,
+                    "last_updated": 1583474536,
                     "name": "alimebkovkz-predictions-fucking-test-results",
-                    "remote": "vm-clws-prod-worker-1",
+                    "remote": "vm-clws-prod-gpuworker-2",
                     "request_cpus": 1,
                     "request_disk": "",
                     "request_docker_image": "codalab/ubuntu:1.9",
@@ -1708,11 +1708,11 @@
                     "request_queue": "",
                     "request_time": "",
                     "run_status": "Finished",
-                    "started": 1583269627,
+                    "started": 1583474467,
                     "tags": [
                         "chexpert-test-eval"
                     ],
-                    "time": 0.525787,
+                    "time": 1.08452,
                     "time_system": 0.0,
                     "time_user": 0.0
                 },
@@ -1723,7 +1723,7 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "ready",
-                "uuid": "0x81eb09d5bdbd4184a08d87a722ecebca"
+                "uuid": "0x6c071a7501a247afa251e8b3a8b6f1d7"
             },
             "scores": {
                 "atelectasis_auroc": 0.8942758659659829,
@@ -1742,7 +1742,7 @@
             "submission": {
                 "created": 1581415748,
                 "description": "",
-                "num_period_submissions": 2,
+                "num_period_submissions": 1,
                 "num_total_submissions": 4,
                 "public": true,
                 "user_name": "alimebkovkz"
@@ -7658,7 +7658,7 @@
             "submission": {
                 "created": 1583226927,
                 "description": "DeepLungsEnsemble (Alimbekov R. & Vassilenko I.)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 1,
                 "num_total_submissions": 4,
                 "public": true,
                 "user_name": "alimebkovkz"
@@ -8654,7 +8654,7 @@
             "submission": {
                 "created": 1580914772,
                 "description": "ylz-v01(single model)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "panliang"
@@ -8836,7 +8836,7 @@
             "submission": {
                 "created": 1582011205,
                 "description": "Densenet (single) KBTU ",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "aykhan.py"
@@ -9650,7 +9650,7 @@
             "submission": {
                 "created": 1580915097,
                 "description": "ylz-v02(single model)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "panliang"
@@ -12454,7 +12454,7 @@
             "submission": {
                 "created": 1581855109,
                 "description": "Grp12v2USup2OSamp (ensemble) (AITD)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "pereiraroland26"
@@ -12546,7 +12546,7 @@
             "submission": {
                 "created": 1581834967,
                 "description": "Grp12v2USup2USamp (ensemble) (AITD)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "pereiraroland26"
@@ -12728,7 +12728,7 @@
             "submission": {
                 "created": 1578999385,
                 "description": "Grp12v1UShuff (ensemble) (AITD)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "pereiraroland26"
@@ -13454,7 +13454,7 @@
             "submission": {
                 "created": 1583244448,
                 "description": "Erdem (single) (SPbU)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "Erdem00"
@@ -13546,7 +13546,7 @@
             "submission": {
                 "created": 1581537736,
                 "description": "Adalab Standard (Single Model) (Acibadem Mehmet Ali Aydinlar University)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "batuhaneralp"
@@ -13638,7 +13638,7 @@
             "submission": {
                 "created": 1582567403,
                 "description": "Adalab Standard (single model) (Acibadem Mehmet Ali Aydinlar University ADALAB)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "batuhaneralp"
@@ -16013,7 +16013,7 @@
             "submission": {
                 "created": 1576006478,
                 "description": "imedhubNet single model KazNU https://imedhub.org",
-                "num_period_submissions": 2,
+                "num_period_submissions": 1,
                 "num_total_submissions": 4,
                 "public": true,
                 "user_name": "alimebkovkz"
@@ -16106,7 +16106,7 @@
             "submission": {
                 "created": 1576041884,
                 "description": "DeepLungs single model Alimbekov R & Vassilenko I",
-                "num_period_submissions": 2,
+                "num_period_submissions": 1,
                 "num_total_submissions": 4,
                 "public": true,
                 "user_name": "alimebkovkz"
@@ -16539,40 +16539,40 @@
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xc9eb9366c4fd4608958f679d7545efa3 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-memory 2g --request-docker-image codalab/ubuntu:1.9",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xdc1477364848448d965445c292bbaf0e \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-memory 2g --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
                 "dependencies": [
                     {
                         "child_path": "evaluate.py",
-                        "child_uuid": "0xe475ff8c43c5437291a6da64411adc1d",
+                        "child_uuid": "0x4d94f1f7460b4a5a95773bb2e2006214",
                         "parent_name": "evaluate-v1.0.py",
                         "parent_path": "",
                         "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
                     },
                     {
                         "child_path": "test.csv",
-                        "child_uuid": "0xe475ff8c43c5437291a6da64411adc1d",
+                        "child_uuid": "0x4d94f1f7460b4a5a95773bb2e2006214",
                         "parent_name": "test_groundtruth.csv",
                         "parent_path": "",
                         "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
                     },
                     {
                         "child_path": "predictions.csv",
-                        "child_uuid": "0xe475ff8c43c5437291a6da64411adc1d",
+                        "child_uuid": "0x4d94f1f7460b4a5a95773bb2e2006214",
                         "parent_name": "coolver-predictions-JF-Coolver-predict",
                         "parent_path": "",
-                        "parent_uuid": "0xc9eb9366c4fd4608958f679d7545efa3"
+                        "parent_uuid": "0xdc1477364848448d965445c292bbaf0e"
                     }
                 ],
-                "id": "0xe475ff8c43c5437291a6da64411adc1d",
+                "id": "0x4d94f1f7460b4a5a95773bb2e2006214",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1583297011,
-                    "description": "{\"submit_id\": \"0xbdc5cf9ead364cb090e9d71138ac2259\", \"submitter_id\": \"0xd7bda936463f4a94997e5148f8f6df7c\", \"predict_id\": \"0xc9eb9366c4fd4608958f679d7545efa3\"}",
+                    "created": 1583477878,
+                    "description": "{\"submit_id\": \"0xbdc5cf9ead364cb090e9d71138ac2259\", \"submitter_id\": \"0xd7bda936463f4a94997e5148f8f6df7c\", \"predict_id\": \"0xdc1477364848448d965445c292bbaf0e\"}",
                     "name": "coolver-predictions-JF-Coolver-results",
                     "request_cpus": 1,
                     "request_disk": "",
@@ -16594,7 +16594,7 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "created",
-                "uuid": "0xe475ff8c43c5437291a6da64411adc1d"
+                "uuid": "0x4d94f1f7460b4a5a95773bb2e2006214"
             },
             "scores": {
                 "atelectasis_auroc": null,
@@ -16620,5 +16620,5 @@
             }
         }
     ],
-    "updated": 1583297037.569184
+    "updated": 1583477905.320472
 }
