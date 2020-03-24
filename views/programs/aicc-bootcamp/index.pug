@@ -34,13 +34,16 @@ block content
     .container
       .row
         .col-sm-4
-          h3 PhD Teaching Team
-          +alumni_inside('climate_bootcamp_phd', 'big')
-          h3 Faculty Teaching Team
-          +dp('Andrew Ng', 'prof', false, 'big')
-          +alumni_inside('climate_faculty', 'big')
-          h3 Industry Collaborators
-          +alumni_inside('climate_industry', 'big')
+          div
+            h3 PhD Teaching Team
+            +alumni_inside('climate_bootcamp_phd', 'big')
+          div
+            h3 Faculty Teaching Team
+            +dp('Andrew Ng', 'prof', false, 'big')
+            +alumni_inside('climate_faculty', 'big')
+          div
+            h3 Industry Collaborators
+            +alumni_inside('climate_industry', 'big')
         .col-sm-8
           h2 Program
           p 
