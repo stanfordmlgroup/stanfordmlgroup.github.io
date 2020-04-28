@@ -11,6 +11,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Sharon Zhou', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
+      +alumni_inside('hcspring2020', use_compact)
       +alumni_inside('ccspring2020', use_compact)
       +alumni_inside('ccwinter2020', use_compact)
       +alumni_inside('winter2020', use_compact)
@@ -27,6 +28,7 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'healthcare_bootcamp_alumni'
+      +alumni_inside('hcspring2020', use_compact)
       +alumni_inside('winter2020', use_compact)
       +alumni_inside('fall2019', use_compact)
       +alumni_inside('spring2019', use_compact)
@@ -85,6 +87,13 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Jeremy Irvin', 'phd', false, use_compact)
       +dp('Sharon Zhou', 'phd', false, use_compact)
       +dp('Hao Sheng', 'phd', false, use_compact)
+  if cohort == 'hcspring2020'
+      +dp('Adriel Saporta', 'ms', false, use_compact)
+      +dp('Andy Kim', 'ms', false, use_compact)
+      +dp('Ishaan Malhi', 'ms', false, use_compact)
+      +dp('Rayan Krishnan', 'bs', false, use_compact)
+      +dp('Siyu Shi', 'md', false, use_compact)
+      +dp('William Ellsworth', 'bs', false, use_compact)
   if cohort == 'ccspring2020'
       +dp('Andrew Ying', 'bs', false, use_compact)
       +dp('Heejung Chung', 'bs', false, use_compact)
@@ -232,6 +241,10 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'climate_industry'
       h3 Climate Change Bootcamp Industry Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'hcspring2020'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Spring 2019-2020
       +alumni_inside(cohort, use_compact)
   if cohort == 'ccspring2020'
     .cohort.clearfix

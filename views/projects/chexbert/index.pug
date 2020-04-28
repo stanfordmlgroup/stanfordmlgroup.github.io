@@ -1,0 +1,82 @@
+extends ../../layout
+
+block title
+  title CheXpedition: Investigating Generalization Challenges for Translation of Chest X-Ray Algorithms to the Clinical Setting
+
+block description
+  meta(name='description', content='Investigating Generalization of Chest X-Ray Algorithms.')
+  meta(property="og:image", content="https://stanfordmlgroup.github.io/projects/chexpedition/img/fig1.png")
+  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/projects/chexpedition/img/fig1.png")
+
+block extralinks
+  link(rel='stylesheet', type='text/css', href='/projects/chexnext/css/chexnext.css')
+
+block extrascripts
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-10
+          h1 CheXpedition: Investigating Generalization Challenges for Translation of Chest X-Ray Algorithms to the Clinical Setting
+          p Pranav Rajpurkar *, Anirudh Joshi *, Anuj Pareek, Phil Chen, Amir Kiani, Jeremy Irvin, Andrew Y. Ng<sup>&#8224;</sup>, Matthew P. Lungren<sup>&#8224;</sup>
+  section
+    .container
+      .row
+        .col-md-6
+          h2 We analysed the top CheXpert model submissions on their ability to generalize to challenges seen in real world deployment.
+          p Scaling automated chest radiography interpretation introduces novel challenges to deep learning  models such as out of distribution data, diseases not seen in training, practical deployment strategies that would work in any healthcare system.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Read Paper
+        .col-md-6
+          img(src='/projects/chexpedition/img/fig1.png', style='max-height:700px;')
+
+  section
+    .container
+      .row
+        .col-md-6
+          img(src='/projects/chexpedition/img/fig2.png')
+        .col-md-6
+          h2 CheXpert models generalize to the task of Tuberculosis detection; a task not seen during training.
+          p In global healthcare settings, it is likely for models to see diseases that weren't seen during training time. CheXpert models were evaluated on their generalizability performance on tuberculosis using consolidation labels as a proxy.
+          p 
+            | The average AUC of the models on two public TB test datasets (NIH Shenzhen and Montgomery were 0.815 and 0.893, competitive with results in literature when models are trained directly on those datasets.
+          p We also found that the average performance of a model across tasks was a stronger predictor of performance on the tuberculosis dataset as compared to the performance of the model on any of the individual tasks. This suggests that training models to perform well across tasks may allow them to perform better on unseen images than models that optimize for a single task.
+  section
+    .container
+      .row
+        .col-md-7.col-md-push-5
+          img(src='/projects/chexpedition/img/fig3_new.png')
+        .col-md-5.col-md-pull-7
+          h2 CheXpert models maintain high performance on photos of chest radiographs.
+          p
+            | Scaled deployment demands a solution that can navigate an endless array of medical imaging and IT infrastructures. Leveraging smartphones as the tool for automated chest radiograph analysis allows for maximal accessibility.
+            | While prior literature indicated poor generalizability of deep learning models on photos of images, CheXpert trained models achieved a mean AUC of 0.916 on photos of the CheXpert test set, compared with an AUC of 0.924 on the original CheXpert test set. All of the models had mean AUCs higher than 0.9, and were within 0.01 AUC of their performance on the original images. 
+          p Using photos of chest x-rays as input into chest-xray algorithms could enable any physician with a smartphone to get instant AI algorithm assistance.
+  section
+    .container
+      .row
+        .col-md-6
+          img(src='/projects/chexpedition/img/fig4_new.png', style='max-height:900px;')
+        .col-md-6
+          h2 CheXpert models generalize to data from an external institution 
+          p 
+            | We evaluated the performance of the top CheXpert models on a dataset from an external institution (NIH). Chest x-ray algorithms developed from data from one institution have not shown sustained performance when externally validated on data from a different unrelated institution. This is critical for safe deployment of these algorithms across healthcare systems.
+          p The models achieved an average performance of 0.897 AUC across the 5 CheXpert competition tasks on the test set from the external institution. On Atelectasis, Cardiomegaly, Edema, and Pleural Effusion, the mean sensitivities of the models of 0.750, 0.617, 0.712, and 0.806 respectively, are higher than the mean radiologist sensitivities of 0.646, 0.485, 0.710, and 0.761 (at the mean radiologist specificities of 0.806, 0.924, 0.925, and 0.883 respectively). On Consolidation, the mean sensitivity of the models of 0.443 is lower than the mean radiologist sensitivity of 0.456 (at the mean radiologist specificity of 0.935).
+          a.btn.btn-lg.btn-default(href="https://goo.gl/forms/KS4b2h37i0vTRLRN2") Partner with us
+  section
+    .container
+      .row
+        .col-md-7
+          h3
+            | To learn more, 
+            a(href="https://arxiv.org/pdf/2002.11379.pdf") read our publication
+            |.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Read Paper
+          .pad
+          p
+            | We are actively looking for collaborators to work with us to bring this technology to clinical settings. If you have questions about our work,
+            | contact us at:
+          h4
+            code pranavsr@cs.stanford.edu
+            |  and 
+            code anirudhjoshi@stanford.edu
