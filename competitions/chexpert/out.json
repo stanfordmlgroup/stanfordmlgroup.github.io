@@ -2482,6 +2482,98 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x50a5a1a5708d4fee931b6e03da26cdcf \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-cpus 1 --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x3198f9d20c441628fb2b8194fda507cca1c3db09",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x9159c87a103d4ae88576cb079f86ea0c",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x9159c87a103d4ae88576cb079f86ea0c",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x9159c87a103d4ae88576cb079f86ea0c",
+                        "parent_name": "ltts-mumbai-predictions-DE_APR-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x50a5a1a5708d4fee931b6e03da26cdcf"
+                    }
+                ],
+                "id": "0x9159c87a103d4ae88576cb079f86ea0c",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1588562092,
+                    "data_size": 12742,
+                    "description": "{\"submit_id\": \"0x7374c6554b544c98a62c5d2f3677bbd8\", \"submitter_id\": \"0xee422e48aa6f4d88ad181e78eb19ad0c\", \"predict_id\": \"0x50a5a1a5708d4fee931b6e03da26cdcf\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1588634264,
+                    "name": "ltts-mumbai-predictions-DE_APR-results",
+                    "remote": "vm-clws-prod-gpuworker-25",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1588634204,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.519855,
+                    "time_system": 0.0,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x9159c87a103d4ae88576cb079f86ea0c"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.88935977849353,
+                "atelectasis_num_rads_under_roc": 2,
+                "average_auroc": 0.9234197613283641,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9331865879807966,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9036532689069479,
+                "consolidation_num_rads_under_roc": 3,
+                "edema_auroc": 0.9305504921618667,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9603486790986792,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1587830653,
+                "description": "DE_APR ensemble ltts ",
+                "num_period_submissions": 0,
+                "num_total_submissions": 6,
+                "public": true,
+                "user_name": "ltts-mumbai"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2b425073e3244644bbcd846583812ece \"python evaluate.py test.csv predictions.csv\" --request-disk 4g --request-memory 2g --request-time 1d --request-cpus 1 --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -2570,6 +2662,98 @@
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "hoanganhcnu1"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x598d9b4812304b868b8ad342b4760bab \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-cpus 1 --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x2bf5ee633e2c7666e677f13b04151854543ba010",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x7878c31fa67742318e721983f4aa005d",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x7878c31fa67742318e721983f4aa005d",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x7878c31fa67742318e721983f4aa005d",
+                        "parent_name": "CIO_Mumbai-predictions-DE_APR_N-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x598d9b4812304b868b8ad342b4760bab"
+                    }
+                ],
+                "id": "0x7878c31fa67742318e721983f4aa005d",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1588562135,
+                    "data_size": 12742,
+                    "description": "{\"submit_id\": \"0x3e4f44d049ac4d7183993c36cf26a7f0\", \"submitter_id\": \"0x96e861f629ad4bf1bab3ab794995a197\", \"predict_id\": \"0x598d9b4812304b868b8ad342b4760bab\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1588642709,
+                    "name": "CIO_Mumbai-predictions-DE_APR_N-results",
+                    "remote": "vm-clws-prod-gpuworker-11",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1588642670,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.630464,
+                    "time_system": 0.0,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x7878c31fa67742318e721983f4aa005d"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8893974496619013,
+                "atelectasis_num_rads_under_roc": 2,
+                "average_auroc": 0.9232364091565367,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9309095049241921,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9035068453034629,
+                "consolidation_num_rads_under_roc": 3,
+                "edema_auroc": 0.9306112528861343,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.961756993006993,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1587833010,
+                "description": "DE_APR_N ensemble ltts",
+                "num_period_submissions": 0,
+                "num_total_submissions": 6,
+                "public": true,
+                "user_name": "CIO_Mumbai"
             }
         },
         {
@@ -3210,6 +3394,98 @@
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "hoangvubrian6"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x605b40815c244bd0ada7952f0db06388 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-cpus 1 --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0xb47f2f3a46a62f91dce98c56a174b717e24f6521",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x9eab443c691d4d9dab67f61c46dc72db",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x9eab443c691d4d9dab67f61c46dc72db",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x9eab443c691d4d9dab67f61c46dc72db",
+                        "parent_name": "seeleblank-predictions-MaxAUC-ensemble-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x605b40815c244bd0ada7952f0db06388"
+                    }
+                ],
+                "id": "0x9eab443c691d4d9dab67f61c46dc72db",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1588572317,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0x104e7f07b91d408cbad0957b0b527c0b\", \"submitter_id\": \"0x1b84be91e9f74a7282b9e4ac2dcf3b85\", \"predict_id\": \"0x605b40815c244bd0ada7952f0db06388\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1588581319,
+                    "name": "seeleblank-predictions-MaxAUC-ensemble-results",
+                    "remote": "vm-clws-prod-gpuworker-3",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1588581219,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.496275,
+                    "time_system": 0.0,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x9eab443c691d4d9dab67f61c46dc72db"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.88555499048803,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.9215152082359731,
+                "average_num_rads_under_roc": 2.6,
+                "cardiomegaly_auroc": 0.9339645913584698,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.9014569148546746,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.9221958925750395,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.964403651903652,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1588561995,
+                "description": "MaxAUC (ensemble) (University of Iowa)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "seeleblank"
             }
         },
         {
@@ -4571,7 +4847,7 @@
                 "created": 1579610203,
                 "description": "vdn6 ensemble ltts",
                 "num_period_submissions": 0,
-                "num_total_submissions": 4,
+                "num_total_submissions": 6,
                 "public": true,
                 "user_name": "ltts-mumbai"
             }
@@ -6120,6 +6396,190 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x415d240f316543f48d5157da30ddf190 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-cpus 1 --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x23c07eef774aaad8d911cde08095a2b4b6ec0a20",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x6496cb9d9b5b4ebeb2c94e01c7cb96c8",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x6496cb9d9b5b4ebeb2c94e01c7cb96c8",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x6496cb9d9b5b4ebeb2c94e01c7cb96c8",
+                        "parent_name": "CIO_Mumbai-predictions-DS_APR_N-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x415d240f316543f48d5157da30ddf190"
+                    }
+                ],
+                "id": "0x6496cb9d9b5b4ebeb2c94e01c7cb96c8",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1588562112,
+                    "data_size": 12726,
+                    "description": "{\"submit_id\": \"0x5631aa44cab041b4be88ca64e088abc8\", \"submitter_id\": \"0x96e861f629ad4bf1bab3ab794995a197\", \"predict_id\": \"0x415d240f316543f48d5157da30ddf190\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1588611795,
+                    "name": "CIO_Mumbai-predictions-DS_APR_N-results",
+                    "remote": "vm-clws-prod-gpuworker-11",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1588611738,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.651426,
+                    "time_system": 0.0,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x6496cb9d9b5b4ebeb2c94e01c7cb96c8"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.887871767342864,
+                "atelectasis_num_rads_under_roc": 2,
+                "average_auroc": 0.9109401732148632,
+                "average_num_rads_under_roc": 2.0,
+                "cardiomegaly_auroc": 0.9251978215905424,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.8908412036020207,
+                "consolidation_num_rads_under_roc": 1,
+                "edema_auroc": 0.9214971442459594,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9292929292929294,
+                "effusion_num_rads_under_roc": 1
+            },
+            "submission": {
+                "created": 1587831601,
+                "description": "DS_APR_N single model ltts",
+                "num_period_submissions": 0,
+                "num_total_submissions": 6,
+                "public": true,
+                "user_name": "CIO_Mumbai"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x438485a058384901ba2f160799124033 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-cpus 1 --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x17b07867719a1dc85f8d551afe63b2137511c76d",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x93c7efb99d114faa8b4bf5831c6a5fca",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x93c7efb99d114faa8b4bf5831c6a5fca",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x93c7efb99d114faa8b4bf5831c6a5fca",
+                        "parent_name": "ltts-mumbai-predictions-DS_APR-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x438485a058384901ba2f160799124033"
+                    }
+                ],
+                "id": "0x93c7efb99d114faa8b4bf5831c6a5fca",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1588562070,
+                    "data_size": 12727,
+                    "description": "{\"submit_id\": \"0x7d109bd227724d98b474e0099838ee30\", \"submitter_id\": \"0xee422e48aa6f4d88ad181e78eb19ad0c\", \"predict_id\": \"0x438485a058384901ba2f160799124033\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1588603572,
+                    "name": "ltts-mumbai-predictions-DS_APR-results",
+                    "remote": "vm-clws-prod-gpuworker-11",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1588603511,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.634472,
+                    "time_system": 0.0,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x93c7efb99d114faa8b4bf5831c6a5fca"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8878152605903071,
+                "atelectasis_num_rads_under_roc": 2,
+                "average_auroc": 0.9108507732671614,
+                "average_num_rads_under_roc": 2.0,
+                "cardiomegaly_auroc": 0.9248562591320518,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.8907679918002782,
+                "consolidation_num_rads_under_roc": 1,
+                "edema_auroc": 0.9214971442459594,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9293172105672106,
+                "effusion_num_rads_under_roc": 1
+            },
+            "submission": {
+                "created": 1587829403,
+                "description": "DS_APR single model LTTS",
+                "num_period_submissions": 0,
+                "num_total_submissions": 6,
+                "public": true,
+                "user_name": "ltts-mumbai"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xaf1f3ecbeb0f4b7c80eaf8e59f0ede4c \"python evaluate.py test.csv predictions.csv\" --request-disk 4g --request-memory 2g --request-time 1d --request-cpus 1 --request-docker-image codalab/ubuntu:1.9",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -6665,7 +7125,7 @@
                 "created": 1578835390,
                 "description": "vdnnn (ensemble) (LTTS)",
                 "num_period_submissions": 0,
-                "num_total_submissions": 4,
+                "num_total_submissions": 6,
                 "public": true,
                 "user_name": "CIO_Mumbai"
             }
@@ -6847,7 +7307,7 @@
                 "created": 1578831367,
                 "description": "vbn (single model) (LTTS)",
                 "num_period_submissions": 0,
-                "num_total_submissions": 4,
+                "num_total_submissions": 6,
                 "public": true,
                 "user_name": "CIO_Mumbai"
             }
@@ -7931,7 +8391,7 @@
                 "created": 1579783751,
                 "description": "vn_2 single_model ltts",
                 "num_period_submissions": 0,
-                "num_total_submissions": 4,
+                "num_total_submissions": 6,
                 "public": true,
                 "user_name": "ltts-mumbai"
             }
@@ -10101,7 +10561,7 @@
             },
             "submission": {
                 "created": 1586748488,
-                "description": "LR-baseline (ensemble) (VIGIL)",
+                "description": "LR-baseline (ensemble) (IITB)",
                 "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
@@ -11284,6 +11744,98 @@
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "gopalkrizna"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x87ace27b73bb40b4b8af774a4c681c64 \"python evaluate.py test.csv predictions.csv\" --request-memory 2g --request-cpus 1 --request-docker-image codalab/ubuntu:1.9",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x87acdad64eca96023ece09688adeb01db3cf93b3",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x8edfcc6e4cca46469114e3cd11837513",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x8edfcc6e4cca46469114e3cd11837513",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x8edfcc6e4cca46469114e3cd11837513",
+                        "parent_name": "VikramjeetD-predictions-DSENet-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x87ace27b73bb40b4b8af774a4c681c64"
+                    }
+                ],
+                "id": "0x8edfcc6e4cca46469114e3cd11837513",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1588575643,
+                    "data_size": 12743,
+                    "description": "{\"submit_id\": \"0xd9732132532e4035aaa8a2ddfb3390e7\", \"submitter_id\": \"0xbbdf521d3e8b485d813610f7602d97b4\", \"predict_id\": \"0x87ace27b73bb40b4b8af774a4c681c64\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exitcode": 0,
+                    "last_updated": 1588576171,
+                    "name": "VikramjeetD-predictions-DSENet-results",
+                    "remote": "vm-clws-prod-gpuworker-11",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1588575994,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.702293,
+                    "time_system": 0.0,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x8edfcc6e4cca46469114e3cd11837513"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.7384114068297828,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.8651894894499668,
+                "average_num_rads_under_roc": 0.6,
+                "cardiomegaly_auroc": 0.8902635723638019,
+                "cardiomegaly_num_rads_under_roc": 2,
+                "consolidation_auroc": 0.8796397979354272,
+                "consolidation_num_rads_under_roc": 0,
+                "edema_auroc": 0.868817596305748,
+                "edema_num_rads_under_roc": 0,
+                "effusion_auroc": 0.9488150738150739,
+                "effusion_num_rads_under_roc": 1
+            },
+            "submission": {
+                "created": 1588572558,
+                "description": "DSENet (single model)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "VikramjeetD"
             }
         },
         {
@@ -16707,7 +17259,7 @@
                 "created": 1583503769,
                 "description": "{DXE-CIO-MUMBAI} (Ensemble)  (CIO-Mumbai)",
                 "num_period_submissions": 0,
-                "num_total_submissions": 4,
+                "num_total_submissions": 6,
                 "public": true,
                 "user_name": "CIO_Mumbai"
             }
@@ -16790,7 +17342,7 @@
                 "created": 1583505735,
                 "description": "{DS-CIO-MUMBAI} (single) (CIO-Mumbai))",
                 "num_period_submissions": 0,
-                "num_total_submissions": 4,
+                "num_total_submissions": 6,
                 "public": true,
                 "user_name": "CIO_Mumbai"
             }
@@ -16873,7 +17425,7 @@
                 "created": 1583506110,
                 "description": "{DSPH-ltts-mumbai} (single) (ltts-mumbai)",
                 "num_period_submissions": 0,
-                "num_total_submissions": 4,
+                "num_total_submissions": 6,
                 "public": true,
                 "user_name": "ltts-mumbai"
             }
@@ -16956,47 +17508,47 @@
                 "created": 1583506647,
                 "description": "{DXEPH-ltts-mumbai} (ensemble) (ltts-mumbai)",
                 "num_period_submissions": 0,
-                "num_total_submissions": 4,
+                "num_total_submissions": 6,
                 "public": true,
                 "user_name": "ltts-mumbai"
             }
         },
         {
             "bundle": {
-                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xc40c35fcff03447aacf5a891810b6e33 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-cpus 1 --request-memory 2g",
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x1cffbe74613a4a748f03a94040fe7e65 \"python evaluate.py test.csv predictions.csv\" --request-docker-image codalab/ubuntu:1.9 --request-cpus 1 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
                 "data_hash": null,
                 "dependencies": [
                     {
                         "child_path": "evaluate.py",
-                        "child_uuid": "0xdbd6e250d76b4e72945761a1239bc4d0",
+                        "child_uuid": "0x67ca24d75c364f908c8f0fea701d8585",
                         "parent_name": "evaluate-v1.0.py",
                         "parent_path": "",
                         "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
                     },
                     {
                         "child_path": "test.csv",
-                        "child_uuid": "0xdbd6e250d76b4e72945761a1239bc4d0",
+                        "child_uuid": "0x67ca24d75c364f908c8f0fea701d8585",
                         "parent_name": "test_groundtruth.csv",
                         "parent_path": "",
                         "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
                     },
                     {
                         "child_path": "predictions.csv",
-                        "child_uuid": "0xdbd6e250d76b4e72945761a1239bc4d0",
+                        "child_uuid": "0x67ca24d75c364f908c8f0fea701d8585",
                         "parent_name": "coolver-predictions-JF-Coolver-predict",
                         "parent_path": "",
-                        "parent_uuid": "0xc40c35fcff03447aacf5a891810b6e33"
+                        "parent_uuid": "0x1cffbe74613a4a748f03a94040fe7e65"
                     }
                 ],
-                "id": "0xdbd6e250d76b4e72945761a1239bc4d0",
+                "id": "0x67ca24d75c364f908c8f0fea701d8585",
                 "is_anonymous": false,
                 "metadata": {
                     "actions": [],
                     "allow_failed_dependencies": false,
-                    "created": 1587765736,
-                    "description": "{\"submit_id\": \"0xbdc5cf9ead364cb090e9d71138ac2259\", \"submitter_id\": \"0xd7bda936463f4a94997e5148f8f6df7c\", \"predict_id\": \"0xc40c35fcff03447aacf5a891810b6e33\"}",
+                    "created": 1588652319,
+                    "description": "{\"submit_id\": \"0xbdc5cf9ead364cb090e9d71138ac2259\", \"submitter_id\": \"0xd7bda936463f4a94997e5148f8f6df7c\", \"predict_id\": \"0x1cffbe74613a4a748f03a94040fe7e65\"}",
                     "name": "coolver-predictions-JF-Coolver-results",
                     "request_cpus": 1,
                     "request_disk": "",
@@ -17018,7 +17570,7 @@
                 "permission": 2,
                 "permission_spec": "all",
                 "state": "created",
-                "uuid": "0xdbd6e250d76b4e72945761a1239bc4d0"
+                "uuid": "0x67ca24d75c364f908c8f0fea701d8585"
             },
             "scores": {
                 "atelectasis_auroc": null,
@@ -17037,12 +17589,12 @@
             "submission": {
                 "created": 1563336452,
                 "description": "JF Coolver ensemble (ensemble model ) JF HEALTHCARE",
-                "num_period_submissions": 1,
+                "num_period_submissions": 2,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "coolver"
             }
         }
     ],
-    "updated": 1587765764.2535932
+    "updated": 1588652368.413107
 }
