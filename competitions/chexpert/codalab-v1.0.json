@@ -8,11 +8,11 @@
     "predict": {
         "mimic": [
             {
-                "old": "0x766817d1d0a44d0a8355f0eb65f79032",
+                "old": "0xdb799f3b21ac4a8687b339ddd5784291",
                 "new": "0x48e3f2da46254c138fc319ec381b2bc4"
             },
             {
-                "old": "0x9ea657766f594a3c92899256bdf569b0", 
+                "old": "0x6eed34dae0cf4c8f9c076e8d4f5f123b", 
                 "new": "0xb120e6564ba74a488e5936dbae3009b2"
             }
         ],
