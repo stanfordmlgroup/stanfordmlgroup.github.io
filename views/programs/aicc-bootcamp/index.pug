@@ -35,11 +35,11 @@ block content
       .row
         .col-sm-4
           div(class="clearfix")
-            h3 PhD Teaching Team
+            h3 Teaching Team
             +alumni_inside('climate_bootcamp_phd', 'big')
-          div(class="clearfix")
-            h3 Faculty Teaching Team
             +dp('Andrew Ng', 'prof', false, 'big')
+          div(class="clearfix")
+            h3 Climate Change Faculty
             +alumni_inside('climate_faculty', 'big')
           div(class="clearfix")
             h3 Industry Collaborators
@@ -76,6 +76,7 @@ block content
           .row
             .col-sm-12
               h2 Past Bootcamp Cohorts
+              +alumni('ccsummer2020', false)
               +alumni('ccspring2020', false)
               +alumni('ccwinter2020', false)
               +alumni('ccfall2019', false)
