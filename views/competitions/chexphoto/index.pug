@@ -1,0 +1,184 @@
+extends ../../layout
+
+block title
+  title CheXphoto Competition 
+
+block description
+  meta(name='description', content='CheXphoto is a competition for x-ray interpretation based on a new dataset of naturally and synthetically perturbed chest-xrays.')
+  meta(property="og:image", content="https://stanfordmlgroup.github.io/competitions/chexphoto/img/CheXphoto.png")
+  meta(property="og:title", content="CheXphoto: A Large Dataset of Naturally and Syntheticall Perturbed Chest X-Rays and Competition for Automated X-Ray Interpretation.")
+  meta(name='twitter:card', content='summary_large_image')
+  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/competitions/chexphoto/img/CheXphoto.png")
+
+block extralinks
+  link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
+  link(rel='stylesheet', type='text/css', href='/competitions/chexpert/css/index.css')
+
+block extrascripts
+
+include ../../includes/profile
+
+mixin model_display(group)
+  table.table.performanceTable
+    tr
+      th Rank
+      th Date
+      th Model
+      th AUC
+      th Num Rads Below Curve
+    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.auc; }))
+    each model in group
+      tr
+        td.rank
+          | #{model.rank} <br>
+        td
+          span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
+        td(style="word-break:break-word;")
+          | #{model.model_name}
+          if model.institution != ''
+              em  #{model.institution} 
+          if model.link
+            a.link(href=model.link) #{model.link}
+        td
+          if model.auc == largest_auc
+            b #{model.auc.toPrecision(3)}
+          else
+            | #{model.auc.toPrecision(3)}
+        td
+          | #{model.average_num_rads_under_roc.toPrecision(2)}
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-12
+          img#title-image(src="/competitions/chexphoto/img/CheXphoto.svg")
+          h3#page-subtitle A Large Chest X-Ray Dataset And Competition
+  section
+    .container
+      .row
+        .col-md-7
+          h1 What is CheXphoto?
+          p CheXphoto is a competition for x-ray interpretation based on a new dataset of naturally and synthetically perturbed chest-xrays. 
+          a.btn.btn-default(href="https://arxiv.org/abs/1901.07031") Read the Paper (Irvin & Rajpurkar et al.)
+          h2 Why CheXphoto?
+          p 
+            | Chest radiography is the most common imaging examination globally, critical for screening, diagnosis, and management of many life threatening diseases. Most chest x-ray algorithms have been developed and validated on digital x-rays, while the vast majority of developing regions use films.
+            | An appealing solution to scaled deployment is to leverage the ubiquity of smartphones for automated interpretation of film through cellphone photography. Automated interpretation of photos of chest x-rays at the same high-level of performance as with digital chest x-rays is challenging because photographs of x-rays introduce visual artifacts not commonly found in digital x-rays.
+            | To ecourage high model performance for this application,  we developed CheXphoto, a dataset of photos of chest x-rays and synthetic transformations designed to mimic the effects of photography.
+        .col-md-5
+          h2 Leaderboard
+          p 
+            | Will your model perform as well as radiologists in detecting different pathologies in chest X-rays?
+          +model_display(test)
+          h3 How can I participate?
+          p CheXphoto measures model performance in relation to the CheXpert x-ray dataset. CheXphoto uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
+          p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
+          ul.list-inline
+            li
+              a.btn.btn-lg.btn-default(href="https://worksheets.codalab.org/worksheets/0x693b0063ee504702b21f94ffb2d99c6d/") Submission Tutorial
+            li
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h2 How did we produce the CheXphoto dataset?
+          p CheXphoto comprises a training set of natural photos and synthetic transformations of 10,507 x-rays from 3,000 uniquepatients that were sampled at random from the CheXpert training set, and a validation and test set of natural and synthetictransformations to all 234 x-rays from 200 patients and 668 x-rays from 500 patients in the CheXpert validation and test sets,respectively.
+          h3 Label Extraction from Radiology Reports
+          p
+            | Each report was labeled for the presence of 14 observations as positive, negative, or uncertain. We decided on the 14 observations based on the prevalence in the reports and clinical relevance, conforming to 
+            a(href="https://pubs.rsna.org/doi/10.1148/radiol.2462070712") the Fleischner Society’s recommended glossary 
+            | whenever applicable. We then developed an automated rule-based labeler to extract observations from the free text radiology reports to be used as structured labels for the images.
+          p Our labeler is set up in three distinct stages: mention extraction, mention classification, and mention aggregation. In the mention extraction stage, the labeler extracts mentions from a list of observations from the <i>Impression</i> section of radiology reports, which summarizes the key findings in the radiographic study. In the mention classification stage, mentions of observations are classified as negative, uncertain, or positive. In the mention aggregation stage, we use the classification for each mention of observations to arrive at a final label for the 14 observations (<b>blank</b> for unmentioned, <b>0</b> for negative, <b>-1</b> for uncertain, and <b>1</b> for positive).
+          a.btn.btn-lg.btn-default(href="google.com") Generate Synthetic Transformations
+        .col-md-5
+            img(src='/competitions/chexpert/img/table1.png')
+            img(src='/competitions/chexpert/img/figure2.png')
+  section
+    .container
+      .row
+        .col-md-7
+          h2 What is our baseline model?
+          p We train models that take as input a single-view chest radiograph and output the probability of each of the 14 observations. When more than one view is available, the models output the maximum probability of the observations across the views.
+          h3 Leveraging Uncertainty Labels
+          p 
+            | The training labels in the dataset for each observation are either 0 (negative), 1 (positive), or u (uncertain). We explore different approaches to using the uncertainty labels during the model training.
+          ul
+            li <b>U-Ignore</b>: We ignore the uncertain labels during training.
+            li <b>U-Zeroes</b>: We map all instances of the uncertain label to 0.
+            li <b>U-Ones</b>: We map all instances of the uncertain label to 1.
+            li <b>U-SelfTrained</b>: We first train a model using the U-Ignore approach to convergence, and then use the model to make predictions that re-label each of the uncertainty labels with the probability prediction outputted by the model.
+            li <b>U-MultiClass</b>: We treat the uncertainty label as its own class.
+          p
+            | We focus on the evaluation of 5 observations which we call the competition tasks, selected based of clinical importance and prevalence: (a) Atelectasis, (b) Cardiomegaly, (c) Consolidation, (d) Edema, and (e) Pleural Effusion.
+            |  We compare the performance of the different uncertainty approaches on a validation set of 200 studies on which the consensus of three radiologist annotations serves as ground truth. Our baseline model is selected based on the best performing approach on each competition tasks on the validation set: U-Ones for Atelectasis and Edema, U-MultiClass for Cardiomegaly and Pleural Effusion, and U-SelfTrained for Consolidation.
+        .col-md-5
+            img(src='/competitions/chexpert/img/figure1.png')
+  section.gray
+    .container
+      .row
+        .col-md-8
+          h2 How is the test designed?
+          p 
+            | The test set consists of 500 studies from 500 unseen patients. Eight board-certified radiologists individually annotated each of the studies in the test set, classifying each observation into one of present, uncertain likely, uncertain unlikely, and absent. Their annotations were binarized such that all present and uncertain likely cases are treated as positive and all absent and uncertain unlikely cases are treated as negative.  
+            | The majority vote of 5 radiologist annotations serves as a strong ground truth; the remaining 3 radiologist annotations were used to benchmark radiologist performance.
+            p For each of the 3 individual radiologists and for their majority vote, we compute sensitivity (recall), specificity, and precision against the test set ground truth. To compare the model to radiologists, we plot the radiologist operating points with the model on both the ROC and Precision-Recall (PR) space. We examine whether the radiologist operating points lie below the curves to determine if the model is superior to the radiologists.
+  section
+    .container
+      .row
+        .col-md-8
+          h2 How well does the baseline model do on the test set?
+          p The model achieves the best AUC on Pleural Effusion (0.97), and the worst on Atelectasis (0.85). The AUC of all other observations are at least 0.9. On Cardiomegaly, Edema, and Pleural Effusion, the model achieves higher performance than all 3 radiologists but not their majority vote. On Consolidation, model performance exceeds 2 of the 3 radiologists, and on Atelectasis, all 3 radiologists perform better than the model.
+          img(src='/competitions/chexpert/img/figure3.png')
+        .col-md-4
+          img(src='/competitions/chexpert/img/cams.png')
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h2 Bonus: Extra Dataset From MIT
+          p We're co-releasing our dataset with MIMIC-CXR, a large dataset of 371,920 chest x-rays associated with 227,943 imaging studies sourced from the Beth Israel Deaconess Medical Center between 2011 - 2016. Each imaging study can pertain to one or more images, but most often are associated with two images: a frontal view and a lateral view. Images are provided with 14 labels derived from a natural language processing tool applied to the corresponding free-text radiology reports.
+          p Both our dataset and MIMIC-CXR share a common labeler, the CheXpert labeler, for deriving the same set of labels from free-text radiology reports.
+          p
+            a(href="https://arxiv.org/abs/1901.07042") Read MIMIC-CXR paper by Alistair E. W. Johnson, Tom J. Pollard, Seth Berkowitz, Nathaniel R. Greenbaum, Matthew P. Lungren, Chih-ying Deng, Roger G. Mark, Steven Horng 
+  section
+    .container
+      .row
+        .col-md-7
+          h2 Author Notes
+          p One of the main obstacles in the development of chest radiograph interpretation models has been the lack of datasets with strong radiologist-annotated groundtruth and expert scores against which researchers can compare their models. We hope that CheXpert will address that gap, making it easy to track the progress of models over time on a clinically important task.
+          p Furthermore, we have developed and open-sourced the CheXpert labeler, an automated rule-based labeler to extract observations from the free text radiology reports to be used as structured labels for the images. We hope that this makes it easy to help other institutions extract structured labels from their reports and release other large repositories of data that will allow for cross-institutional testing of medical imaging models.
+          p Finally, we hope that the dataset will help development and validation of chest radiograph interpretation models towards improving healthcare access and delivery worldwide.
+          // p - Jeremy Irvin, Pranav Rajpurkar, and Andrew Ng
+        .col-md-5
+          .media
+            .media-left
+              +dp_inner('Curt Langlotz', 'Professor of Radiology', false, true)
+            .media-body
+              p In the U.S., about half of all radiology studies are x-rays, mostly of the chest.  Chest x-ray studies are even more common around the world.  Chest x-ray interpretation is a “bread and butter” problem for radiologists with vital public health implications.  Chest x-rays can stop the spread of tuberculosis, detect lung cancer early, and support the responsible use of antibiotics. 
+          .media
+            .media-left
+              +dp_inner('Matt Lungren', 'Assistant Professor of Radiology', false, true)
+            .media-body
+              p Ground truth is critical in evaluating deep learning models in medical imaging and provide the foundation for clinical relevance when interpreting results in this field - this is why we focus a lot of our effort on considering the best available ground truth via a panel of medical sub specialist experts to best understand the clinical implication of our model results.
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h1 Downloading the Dataset (v1.0)
+          p Please read the Stanford University School of Medicine CheXpert Dataset Research Use Agreement. Once you register to download the CheXpert dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
+          #agreement.well
+            include agreement
+          include mailchimp
+  section
+    .container
+      .row
+        .col-md-7
+          h2 CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison.
+          h3 Jeremy Irvin *, Pranav Rajpurkar *, Michael Ko, Yifan Yu, Silviana Ciurea-Ilcus, Chris Chute, Henrik Marklund, Behzad Haghgoo, Robyn Ball, Katie Shpanskaya, Jayne Seekins, David A. Mong, Safwan S. Halabi, Jesse K. Sandberg, Ricky Jones, David B. Larson, Curtis P. Langlotz, Bhavik N. Patel, Matthew P. Lungren, Andrew Y. Ng
+          p
+            | If you have questions about our work,
+            | contact us at our 
+            a(href="https://groups.google.com/forum/#!forum/chexpert-dataset") google group
+            |.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1901.07031") Read the Paper
