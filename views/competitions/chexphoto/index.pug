@@ -1,0 +1,128 @@
+extends ../../layout
+
+block title
+  title CheXphoto Competition 
+
+block description
+  meta(name='description', content='CheXphoto is a competition for x-ray interpretation based on a new dataset of naturally and synthetically perturbed chest-xrays.')
+  meta(property="og:image", content="https://stanfordmlgroup.github.io/competitions/chexphoto/img/CheXphoto.png")
+  meta(property="og:title", content="CheXphoto: A Dataset of Naturally and Synthetically Perturbed Chest X-Rays and Competition for Automated X-Ray Interpretation.")
+  meta(name='twitter:card', content='summary_large_image')
+  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/competitions/chexphoto/img/CheXphoto.png")
+
+block extralinks
+  link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
+  link(rel='stylesheet', type='text/css', href='/competitions/chexpert/css/index.css')
+
+block extrascripts
+
+include ../../includes/profile
+
+mixin model_display(group)
+  table.table.performanceTable
+    tr
+      th Rank
+      th Date
+      th Model
+      th AUC
+      th Num Rads Below Curve
+    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.auc; }))
+    each model in group
+      tr
+        td.rank
+          | #{model.rank} <br>
+        td
+          span.date.label.label-default #{moment.unix(model.date).format('MMM DD, YYYY')}
+        td(style="word-break:break-word;")
+          | #{model.model_name}
+          if model.institution != ''
+              em  #{model.institution} 
+          if model.link
+            a.link(href=model.link) #{model.link}
+        td
+          if model.auc == largest_auc
+            b #{model.auc.toPrecision(3)}
+          else
+            | #{model.auc.toPrecision(3)}
+        td
+          | #{model.average_num_rads_under_roc.toPrecision(2)}
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-12
+          img#title-image(src="/competitions/chexphoto/img/CheXphoto.svg")
+          h3#page-subtitle A Perturbed Chest X-Ray Dataset And Competition
+  section
+    .container
+      .row
+        .col-md-7
+          h1 What is CheXphoto?
+          p CheXphoto is a competition for x-ray interpretation based on a new dataset of naturally and synthetically perturbed chest x-rays. 
+          a.btn.btn-default(href="https://arxiv.org/abs/2007.06199") Read the Paper (Phillips, Rajpurkar & Sabini et al.)
+          h2 Why CheXphoto?
+          p 
+            | Chest radiography is the most common imaging examination globally, and is critical for screening, diagnosis, and management of many life threatening diseases. Most chest x-ray algorithms have been developed and validated on digital x-rays, while the vast majority of developing regions use films.
+            | An appealing solution to scaled deployment is to leverage the ubiquity of smartphones for automated interpretation of film through cellphone photography. Automated interpretation of photos of chest x-rays at the same high-level of performance as with digital chest x-rays is challenging because photographs of x-rays introduce visual artifacts not commonly found in digital x-rays.
+            | To encourage high model performance for this application,  we developed CheXphoto, a dataset of photos of chest x-rays and synthetic transformations designed to mimic the effects of photography.
+        .col-md-5
+          h2 Leaderboard (coming soon)
+          h3 How can I participate?
+          p CheXphoto measures model performance in relation to the CheXpert x-ray dataset. CheXphoto uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
+          p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
+          ul.list-inline
+            li
+              a.btn.btn-lg.btn-default(href="https://worksheets.codalab.org/worksheets/0x693b0063ee504702b21f94ffb2d99c6d/") Submission Tutorial
+            li
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h2 How did we produce the CheXphoto dataset?
+          p CheXphoto comprises a training set of natural photos and synthetic transformations of 10,507 x-rays from 3,000 unique patients that were sampled at random from the CheXpert training set, and a validation and test set of natural and synthetic transformations applied to all 234 x-rays from 200 patients and 668 x-rays from 500 patients in the CheXpert validation and test sets, respectively.
+          h3 Natural Transformations Dataset
+          p
+            | Natural photos consist of x-ray photography using cell phone cameras in various lighting conditions and environments. We developed two sets of natural photos: images captured through an automated process using a Nokia 6.1 cell phone, and images captured manually with an iPhone 8.
+          h3 Synthetic Transformations Dataset
+          p
+            | Synthetic transformations consist of automatic changes to the digital x-rays designed to make them look like photos of digital x-rays and x-ray films. We developed two sets of complementary synthetic transformations: digital transformations to alter contrast and brightness, and spatial transformations to add glare, moiré effects and perspective changes.
+            | To ensure that the level of these transformations did not impact the quality of the image for physician diagnosis, the images were verified by a physician. In some cases, the effects may be visually imperceptible, but may still be adversarial for classification models. For both sets, we apply the transformations to the same set of 10,507 x-rays selected for the Nokia10k dataset.
+          
+
+          a.btn.btn-lg.btn-default(href="https://github.com/stanfordmlgroup/cheXphoto") View on Github
+        .col-md-5
+            img(src='/competitions/chexphoto/img/distribution.png')
+            img(src='/competitions/chexphoto/img/sample_images.png')
+  section
+    .container
+      .row
+        .col-md-8
+          h2 Validation and Test Sets
+          p 
+            | We developed a CheXphoto validation and test set to be used for model validation and evaluation.
+            | The validation set comprises natural photos and synthetic transformations of all 234 x-rays in the CheXpert validation set, and is included in the public release, while the test set comprises natural photos of all 668 x-rays in the CheXpert test set, and is withheld for evaluation purposes.
+          p
+            | We generated the natural photos of the validation set by manually capturing images of x-rays displayed on a 2560×1080 monitor using a OnePlus 6 cell phone, following a protocol that mirrored the iPhone1k dataset. Synthetic transformations of the validation images were produced using the same protocol as the synthetic training set.
+            | The test set was captured using an iPhone 8, following the same protocol as the iPhone1k dataset.
+  section.gray
+    .container
+      .row
+        .col-md-7
+          h1 Downloading the Dataset (v1.0)
+          p Please read the Stanford University School of Medicine CheXphoto Dataset Research Use Agreement. Once you register to download the CheXphoto dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
+          #agreement.well
+            include agreement
+          include mailchimp
+  section
+    .container
+      .row
+        .col-md-7
+          h2 CheXphoto: 10,000+ Smartphone Photos and Synthetic Photographic Transformations of Chest X-rays for Benchmarking Deep Learning Robustness
+          h3 Nick A. Phillips *, Pranav Rajpurkar *, Mark Sabini *, Rayan Krishnan, Sharen Zhou, Anuj Pareek, Nguyet Minh Phu, Chris Wang, Andrew Ng, and Matthew Lungren
+          p
+            | If you have questions about our work,
+            | contact us at our 
+            a(href="https://groups.google.com/forum/#!forum/chexpert-dataset") google group
+            |.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/2007.06199") Read the Paper

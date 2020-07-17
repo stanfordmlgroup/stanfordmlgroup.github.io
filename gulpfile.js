@@ -60,7 +60,7 @@ var parseCompEntries = function (comp_file, comp_name) {
         if (!(entry.kappa >= 0)) throw 'Score invalid'
         if (entry.kappa < 0.5) throw 'Score too low'
         entry.score = entry.kappa
-      } else if (comp_name === 'chexpert'){
+      } else if (comp_name === 'chexpert' || comp_name === 'chexphoto'){
         entry.auc = parseFloat(o_entry.scores.average_auroc)
         entry.average_num_rads_under_roc = parseFloat(o_entry.scores.average_num_rads_under_roc)
         if (!(entry.auc >= 0)) throw 'Score invalid'
@@ -81,7 +81,7 @@ var parseCompEntries = function (comp_file, comp_name) {
   return entries
 }
 
-var comps = ["mura", "chexpert", "mrnet"]
+var comps = ["mura", "chexpert", "mrnet", "chexphoto"]
 comps.forEach(function (comp) {
   var dir = './competitions/' + comp
   gulp.task('process_' + comp + '_comp_output', function (cb) { //'competitions-'+comp, function(cb) {
@@ -125,7 +125,7 @@ folders.forEach(function (folder) {
   }
 })
 
-gulp.task('build', ['index', 'projects', 'programs', 'competitions-mura', 'competitions-chexpert', 'competitions-mrnet'])
+gulp.task('build', ['index', 'projects', 'programs', 'competitions-mura', 'competitions-chexpert', 'competitions-mrnet', 'competitions-chexphoto'])
 
 gulp.task('watch_build', ['build'], function () {
   return gulp.watch('./views/**/*.pug', ['build', browserSync.reload])

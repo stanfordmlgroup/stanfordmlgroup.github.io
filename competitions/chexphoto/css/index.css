@@ -1,0 +1,30 @@
+#page-title, #page-subtitle {
+  text-align: center;
+}
+
+#page-subtitle {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+#title-image {
+	max-width: 500px;
+}
+
+#agreement > p {
+	font-size: 1em;
+	line-height: 1.2em;
+	text-align: justify;
+}
+
+#mc-embedded-subscribe-form {
+	padding: 0px !important;
+}
+
+.human-row {
+	background-color: whitesmoke;
+}
+
+.rank {
+    text-align: center;
+}
