@@ -31,22 +31,25 @@ block content
         //-   img(src='/img/aicc-bootcamp.jpg', width="90%")
   section
     .container
-      .row
-        .col-sm-4
+      .ro
+        .col-sm-5
           div(class="clearfix")
             h3 Teaching Team
-            +alumni_inside('climate_bootcamp_phd', 'big')
-            +dp('Andrew Ng', 'prof', false, 'big')
+            +alumni_inside('climate_bootcamp_phd', 'medium')
+            +dp('Andrew Ng', 'prof', false, 'medium')
           div(class="clearfix")
             h3 Climate Change Faculty
-            +alumni_inside('climate_faculty', 'big')
+            +alumni_inside('climate_faculty', 'medium')
+          div(class="clearfix")
+            h3 Nonprofit Collaborators
+            +alumni_inside('climate_nonprofit', 'medium')
           div(class="clearfix")
             h3 Industry Collaborators
-            +alumni_inside('climate_industry', 'big')
-        .col-sm-8
+            +alumni_inside('climate_industry', 'medium')
+        .col-sm-7
           h2 Program
           p 
-            | The AICC bootcamp is an intense two-quarter program where students work on high-impact research problems at the intersection of AI and climate change. Students work closely with PhD students in Professor Andrew Ng's lab, with earth system science and civil and environmental engineering faculty, and with climate change experts in industry.
+            | The AICC bootcamp is an intense two-quarter program where students work on high-impact research problems at the intersection of AI and climate change. Students work closely with PhD students in Professor Andrew Ng's lab and with faculty members in earth science, energy, and urban planning. Students also collaborate with climate change experts from industry.
           .applications
             h2 Applications
             p Students with a background in artificial intelligence are encouraged to apply.
@@ -58,7 +61,7 @@ block content
               li Rolling interviews and selections through September 14th, 2020.
               li Bootcamp starts September 15th, 2020.
             h3 Prerequisites and Commitment
-            p The bootcamp is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with earth system science and civil and environmental engineering faculty and industry experts. Students have the opportunity to take a deep dive into climate change and co-author a research paper. We expect students to have:
+            p The bootcamp is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with faculty and industry experts. Students have the opportunity to take a deep dive into climate change and co-author a research paper. We expect students to have:
             ul
               li Taken machine learning courses (CS229/CS230/CS224N/CS231N or equivalent).
               li Proficiency in software engineering (CS107 or equivalent), and have done Python programming.
