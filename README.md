@@ -1,4 +1,4 @@
-# Stanford Machine Learning Group
+# Stanford Machine Learning Groups
 
 ## New members
 - Add a 400x400px JPG file to named *exactly* as FirstnameLastname.jpg to https://github.com/stanfordmlgroup/stanfordmlgroup.github.io/tree/master/img/headshots
