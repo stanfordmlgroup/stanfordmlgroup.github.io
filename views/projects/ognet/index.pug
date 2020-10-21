@@ -28,7 +28,7 @@ block content
           p At least a quarter of the warming that the Earth is experiencing today is due to anthropogenic methane emissions. There are multiple satellites in orbit and planned for launch in the next few years which can detect and quantify these emissions; however, to attribute methane emissions to their sources on the ground, a comprehensive database of the locations and characteristics of emission sources worldwide is essential. Deep learning on remotely-sensed imagery has the potential to automatically map oil and infrastructure to create a global database.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Read The Paper (Sheng & Irvin et al.)
 
-  section
+  section.gray
     .container
       .row
         .col-md-6
@@ -47,7 +47,7 @@ block content
           p For a single image, OGNet produces a probability that the image contains an oil and gas facility.  In order to convert the probability to a binary prediction, we used the threshold that lead to the highest precision (0.81) subject to a recall of 1.0 on the validation set.
           p To identify infrastructure in the continental U.S. using OGNet, we partition the region into equal 500 x 500 pixel tiles at 2.5m resolution leading to 5,082,722 tiles in total and run each of the tiles through OGNet. Any tile which was assigned a positive prediction is greedily mergedw ith any positively classified adjacent tiles, and the mean of the centroids of each of the tiles within the merged group is used as the detected location.
           p OGNet detections were manually reviewed and all false positive detections were removed. We discovered that OGNet was able to detect oil and gas facilities other than oil refineries, so the remaining facilities were classified as a oil refinery or petroleum terminal.  During this process, we also identified the number of storage tanks at each facility. An expert interpreter designed the annotation procedure and verified the detected facilities and their attributed characteristics.
-  section
+  section.gray
     .container
       .row
         .col-md-6
@@ -56,6 +56,12 @@ block content
           p We counted the number of detected facilities which neither occur in the combined public dataset nor the training set, and found that OGNet detected 6 new oil refineries (including one abandoned facility) and 142 new petroleum terminals.
         .col-md-6
           img(src='/projects/ognet/img/table1.png')
+      .row
+        .col-md-6
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download the Public Datasets
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download OGNet Detections (v1.0)
+          .pad
+          p Disclaimer: this is the first version of the database produced by OGNet. Its use should be carefully considered.
   section
     .container
       .row

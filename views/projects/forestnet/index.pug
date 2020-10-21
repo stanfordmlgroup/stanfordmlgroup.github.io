@@ -28,7 +28,7 @@ block content
           p Characterizing the processes leading to deforestation is critical to the development and implementation of targeted forest conservation and management policies. Methods to automate forest loss driver classification enable spatially-broad and temporally-dense driver attribution with significant implications on forest conservation policies.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Read The Paper (Irvin & Sheng et al.)
 
-  section
+  section.gray
     .container
       .row
         .col-md-6
@@ -47,7 +47,7 @@ block content
           h2 ForestNet uses scene data augmentation, transfer learning, and multi-modal fusion.
           p We trained deep learning models on the dataset to classify satellite imagery of forest loss events. Instead of a canonical multi-class classification approach, we formulate the task as semantic segmentation to (1) address that there are often multiple land uses within a single image, (2) implicitly utilize the information specific to the loss region, and (3) allow for high resolution (15m) predictions that can be used to predict different drivers for multiple loss regions of varying sizes. At test-time, the per-pixel model predictions in the forest loss region are used to obtain a single classification of the whole region.
           p We investigated the effect of (a) using scene data augmentation (SDA) where we randomly sample from the scenes and composite images during training to capture changes in landscape over time, (b) pre-training (PT) the model on a large land cover dataset in Indonesia that we curated, and (c) using multi-modal fusion with a variety of auxiliary predictors.
-  section
+  section.gray
     .container
       .row
         .col-md-6
