@@ -4,12 +4,12 @@ block title
   title ForestNet: Classifying Drivers of Deforestation in Indonesia using Deep Learning on Satellite Imagery
 
 block description
-  meta(name='description', content='Classifying Deforestation Drivers in Satellite Imagery.')
-  meta(property="og:image", content="https://stanfordmlgroup.github.io/projects/forestnet/img/fig1.png")
-  meta(name="twitter:image",content="https://stanfordmlgroup.github.io/projects/forestnet/img/fig1.png")
+  meta(name='description' content='Classifying Deforestation Drivers in Satellite Imagery.')
+  meta(property="og:image" content="https://stanfordmlgroup.github.io/projects/forestnet/img/fig1.png")
+  meta(name="twitter:image" content="https://stanfordmlgroup.github.io/projects/forestnet/img/fig1.png")
 
 block extralinks
-  link(rel='stylesheet', type='text/css', href='/projects/chexnext/css/chexnext.css')
+  link(rel='stylesheet' type='text/css' href='/projects/chexnext/css/chexnext.css')
 
 block extrascripts
 
@@ -20,6 +20,7 @@ block content
         .col-lg-10
           h1 ForestNet: Classifying Drivers of Deforestation in Indonesia using Deep Learning on Satellite Imagery
           p Jeremy Irvin *, Hao Sheng *, Neel Ramachandran, Sonja Johnson-Yu, Sharon Zhou, Rose Rustowicz, Kyle Story, Cooper Elsworth, Kemen Austin<sup>&#8224;</sup>, Andrew Y. Ng<sup>&#8224;</sup>
+    
   section
     .container
       .row
@@ -38,24 +39,83 @@ block content
           p The dataset consists of 2,756 satellite images of forest loss events with driver annotations. Global Forest Change (GFC) published maps were used to obtain forest loss events, each represented as a polygon and associated with a year indicating when the forest loss event occurred. An expert interpreter annotated each event with the direct driver of deforestation using high resolution satellite imagery from Google Earth. The driver annotations were grouped into Plantation, Smallholder Agriculture, Grassland/shrubland, and Other.
           p We captured each forest loss region with Landsat 8 satellite imagery acquired within five years of the event’s occurrence using a custom cloud-minimizing search procedure. Using this procedure, we obtained exactly one composite image for each example and additional images for any individual cloud-filtered scenes.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download the Dataset
+    
   section
     .container
       .row
         .col-md-12
-          img(src='/projects/forestnet/img/fig1.png', style='max-height:700px;')
+          img(src='/projects/forestnet/img/fig1.png' style='max-height:700px;')
         .col-md-12
           h2 ForestNet uses scene data augmentation, transfer learning, and multi-modal fusion.
           p We trained deep learning models on the dataset to classify satellite imagery of forest loss events. Instead of a canonical multi-class classification approach, we formulate the task as semantic segmentation to (1) address that there are often multiple land uses within a single image, (2) implicitly utilize the information specific to the loss region, and (3) allow for high resolution (15m) predictions that can be used to predict different drivers for multiple loss regions of varying sizes. At test-time, the per-pixel model predictions in the forest loss region are used to obtain a single classification of the whole region.
           p We investigated the effect of (a) using scene data augmentation (SDA) where we randomly sample from the scenes and composite images during training to capture changes in landscape over time, (b) pre-training (PT) the model on a large land cover dataset in Indonesia that we curated, and (c) using multi-modal fusion with a variety of auxiliary predictors.
+    
   section.gray
     .container
       .row
         .col-md-6
           h2 ForestNet achieves higher classification performance than standard driver classification models.
-          p Following recent work on automatically classifying land-use conversion from deforestation, we developed random forest (RF) models which input a variety of variables including topographic, climatic, soil, accessibility, proximity, and spectral imaging predictors. We found that all of the CNN models outperformed the RF models on the validation set.
-          p The best performing model, which we call ForestNet, used a Feature Pyramid Network architecture with an EfficientNet-B2 backbone. The use of SDA provided large performance gains on the validation set, and land cover pre-training and incorporating auxiliary predictors each led to additional performance improvements
+          p Following recent work on automatically classifying land-use conversion from deforestation, we developed random forest (RF) models that input various variables, including topographic, climatic, soil, accessibility, proximity, and spectral imaging predictors. We found that all of the CNN models outperformed the RF models on the validation set.
+          p The best performing model, which we call ForestNet, used a Feature Pyramid Network architecture with an EfficientNet-B2 backbone. The use of SDA provided large performance gains on the validation set, and land cover pre-training and incorporating auxiliary predictors each led to additional performance improvements.
         .col-md-6
-          img(src='/projects/forestnet/img/table2.png')
+          h2 
+          table.table.performanceTable
+            thead 
+            tr
+              th(rowspan=2) Model 
+              th(rowspan=2) Predictors 
+              th(colspan=2, style="text-align:center;") Val
+              th(colspan=2, style="text-align:center;") Test
+            tr
+              th Acc
+              th F1
+              th Acc
+              th F1
+            tbody
+            tr
+              td RF
+              td Visible
+              td 0.60
+              td 0.52
+              td 0.54
+              td 0.44
+            tr
+              td RF 
+              td Visible + Aux
+              td 0.71
+              td 0.67
+              td 0.69
+              td 0.64
+            tr
+              td CNN 
+              td Visible
+              td 0.79
+              td 0.76
+              td 0.76
+              td 0.72
+            tr
+              td CNN + SDA 
+              td Visible
+              td 0.83
+              td 0.79
+              td 0.77
+              td 0.72
+            tr
+              td CNN + SDA + PT 
+              td Visible
+              td 0.84
+              td 0.81
+              td 0.79
+              td 0.74
+            tr
+              td CNN + SDA + PT 
+              td Visible + Aux
+              th 0.85
+              th 0.82
+              th 0.80
+              th 0.76
+            p(style="text-align:center;") Table 1. Accuracy and F1 scores on the validation/test set 
+
   section
     .container
       .row
