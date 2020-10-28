@@ -54,14 +54,38 @@ block content
           h2 OGNet detected several oil and gas facilities not present in four publicly available datasets.
           p We compared the list of manually verified facilities detected by OGNet with four publicly available datasets, namely GOGI, GHGRP, HIFLD, and EIA. We combined the datasets and removed duplicate records by combining coordinates within 2 km of each other. To match the coverage of NAIP imagery, we additionally removed any samples outside the continental U.S.
           p We counted the number of detected facilities which neither occur in the combined public dataset nor the training set, and found that OGNet detected 6 new oil refineries (including one abandoned facility) and 142 new petroleum terminals.
-        .col-md-6
-          img(src='/projects/ognet/img/table1.png')
-      .row
-        .col-md-6
           a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download the Public Datasets
           a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download OGNet Detections (v1.0)
           .pad
           p Disclaimer: this is the first version of the database produced by OGNet. Its use should be carefully considered.
+        .col-md-6
+          h2 
+          table.table.performanceTable
+            thead 
+            tr
+              th
+              th(style="text-align:center;") Oil Refinery 
+              th(style="text-align:center;") Petroleum Terminal
+            tbody
+            tr
+              td Total Detections
+              td(style="text-align:center;") 114
+              td(style="text-align:center;") 336
+            tr
+              td Coverage of Benchmark Datasets 
+              td(style="text-align:center;") 73.5% (108 / 147)
+              td(style="text-align:center;") 23.9% (292 / 1222)
+            tr
+              td New Detections 
+              td(style="text-align:center;") 6
+              td(style="text-align:center;") 142
+            tr
+              td Example Image
+              td
+                img(src='/projects/ognet/img/refinery.png',style="width:350px;")
+              td
+                img(src='/projects/ognet/img/lng.png',style="width:350px;")
+            p(style="text-align:center;") Table 1. Statistics of the OGNet detections and comparison to benchmark datasets.
   section
     .container
       .row
