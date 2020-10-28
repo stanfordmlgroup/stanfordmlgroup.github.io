@@ -36,7 +36,7 @@ block content
         .col-md-6
           h2 We curated a dataset of aerial imagery capturing oil refineries.
           p The dataset consists of 7,066 aerial images in total, with 149 images of oil refineries and 6,917 negative images containing visually similar objects and landscapes around oil refineries. We used aerial imagery between 2015 and 2019 from the National Agriculture Imagery Program (NAIP), which captures the continental U.S. at a minimum of 1m resolution. The images are mosaics of the most recent captures of the location and do not suffer from cloud cover or haze because images were acquired aerially on days with low cloud cover. 
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download the Dataset
+          a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/ognet_dataset.zip") Download the Dataset
   section
     .container
       .row
@@ -54,8 +54,8 @@ block content
           h2 OGNet detected several oil and gas facilities not present in four publicly available datasets.
           p We compared the list of manually verified facilities detected by OGNet with four publicly available datasets, namely GOGI, GHGRP, HIFLD, and EIA. We combined the datasets and removed duplicate records by combining coordinates within 2 km of each other. To match the coverage of NAIP imagery, we additionally removed any samples outside the continental U.S.
           p We counted the number of detected facilities which neither occur in the combined public dataset nor the training set, and found that OGNet detected 6 new oil refineries (including one abandoned facility) and 142 new petroleum terminals.
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download the Public Datasets
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download OGNet Detections (v1.0)
+          a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/merged_public.csv") Download the Public Datasets
+          a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/deployment.csv") Download OGNet Detections (v1.0)
           .pad
           p Disclaimer: this is the first version of the database produced by OGNet. Its use should be carefully considered.
         .col-md-6
