@@ -2,6 +2,10 @@
   background-color: #f5f5f5;
 }
 
+.white {
+  background-color: #ffffff;
+}
+
 #aihc_headline {
   max-width: 600px;
   margin: 0px;
