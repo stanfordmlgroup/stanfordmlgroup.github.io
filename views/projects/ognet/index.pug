@@ -14,20 +14,21 @@ block extralinks
 block extrascripts
 
 block content
+  div(style="position: fixed; z-index: -98; width: 100%; height: 2000")
+    iframe(src="/projects/ognet/res/detection.html", frameborder="0", width="100%", height=2000)
   section#header
     .container
       .row
         .col-lg-10
           h1 OGNet: Towards a Global Oil and Gas Infrastructure Database using Deep Learning on Remotely Sensed Imagery
           p Hao Sheng *, Jeremy Irvin *, Sasankh Munukutla, Shawn Zhang, Christopher Cross, Kyle Story, Rose Rustowicz, Cooper Elsworth, Mark Omara, Ritesh Gautam, Rob Jackson, Andrew Y. Ng
-  section
+  section.white
     .container
       .row
         .col-md-9
           h2 We developed and deployed a deep learning model called OGNet to detect oil and gas infrastructure in aerial imagery.
           p At least a quarter of the warming that the Earth is experiencing today is due to anthropogenic methane emissions. There are multiple satellites in orbit and planned for launch in the next few years which can detect and quantify these emissions; however, to attribute methane emissions to their sources on the ground, a comprehensive database of the locations and characteristics of emission sources worldwide is essential. Deep learning on remotely-sensed imagery has the potential to automatically map oil and infrastructure to create a global database.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Read The Paper (Sheng & Irvin et al.)
-
   section.gray
     .container
       .row
@@ -37,7 +38,7 @@ block content
           h2 We curated a dataset of aerial imagery capturing oil refineries.
           p The dataset consists of 7,066 aerial images in total, with 149 images of oil refineries and 6,917 negative images containing visually similar objects and landscapes around oil refineries. We used aerial imagery between 2015 and 2019 from the National Agriculture Imagery Program (NAIP), which captures the continental U.S. at a minimum of 1m resolution. The images are mosaics of the most recent captures of the location and do not suffer from cloud cover or haze because images were acquired aerially on days with low cloud cover. 
           a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/OGNetDevelopmentData.zip") Download the Dataset
-  section
+  section.white
     .container
       .row
         .col-md-12
@@ -86,7 +87,7 @@ block content
               td
                 img(src='/projects/ognet/img/lng.png',style="width:350px;")
             p(style="text-align:center;") Table 1. Statistics of the OGNet detections and comparison to benchmark datasets.
-  section
+  section.white
     .container
       .row
         .col-md-7
@@ -94,7 +95,7 @@ block content
             | To learn more, 
             a(href="https://arxiv.org/pdf/2002.11379.pdf") read our publication
             |.
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Read The Paper
+          //a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Read The Paper
           .pad
           p
             | We are actively looking for collaborators to work with us. If you have questions about our work,
@@ -103,3 +104,4 @@ block content
             code haosheng@cs.stanford.edu
             |  and 
             code jirvin16@cs.stanford.edu
+  div(style="position: relative; margin: 25%; z-index: -99")
