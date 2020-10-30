@@ -36,7 +36,12 @@ block content
           img(src='/projects/ognet/img/fig1.png')
         .col-md-6
           h2 We curated a dataset of aerial imagery capturing oil refineries.
-          p The dataset consists of 7,066 aerial images in total, with 149 images of oil refineries and 6,917 negative images containing visually similar objects and landscapes around oil refineries. We used aerial imagery between 2015 and 2019 from the National Agriculture Imagery Program (NAIP), which captures the continental U.S. at a minimum of 1m resolution. The images are mosaics of the most recent captures of the location and do not suffer from cloud cover or haze because images were acquired aerially on days with low cloud cover. 
+          p
+            | The dataset consists of 7,066 aerial images in total, with 149 images of oil refineries and 6,917 negative images containing visually similar objects and landscapes around oil refineries. We used aerial imagery between 2015 and 2019 from the 
+            a(href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/") National Agriculture Imagery Program (NAIP)
+            | , which captures the continental U.S. at a minimum of 1m resolution. The images are mosaics of the most recent captures of the location and do not suffer from cloud cover or haze because images were acquired aerially on days with low cloud cover. Imagery was processed and downloaded using the 
+            a(href="https://www.descarteslabs.com/") Descartes Labs platform
+            | .
           a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/OGNetDevelopmentData.zip") Download the Dataset
   section.white
     .container
@@ -51,15 +56,34 @@ block content
   section.gray
     .container
       .row
-        .col-md-6
+        .col-md-7
           h2 OGNet detected several oil and gas facilities not present in four publicly available datasets.
-          p We compared the list of manually verified facilities detected by OGNet with four publicly available datasets, namely GOGI, GHGRP, HIFLD, and EIA. We combined the datasets and removed duplicate records by combining coordinates within 2 km of each other. To match the coverage of NAIP imagery, we additionally removed any samples outside the continental U.S.
+          p
+            | We compared the manually verified facilities detected by OGNet by combining four publicly available datasets, namely 
+            a(href="https://edx.netl.doe.gov/dataset/global-oil-gas-features-database") GOGI
+            | , 
+            a(href="https://ghgdata.epa.gov/ghgp/main.do") GHGRP
+            | , 
+            a(href="https://hifld-geoplatform.opendata.arcgis.com/") HIFLD
+            | , and 
+            a(href="https://www.eia.gov/maps/layer_info-m.php") EIA. 
+            | We removed duplicate records by combining coordinates within 2 km of each other.
+          p We counted the number of reported facilities which were detected by OGNet, and found itt detected 73.5% of the oil refineries and 23.9% of the petroleum terminals in the combined dataset. Close to half of the "missed" oil refineries were due to inaccurate locations reported in the public datasets.
           p We counted the number of detected facilities which neither occur in the combined public dataset nor the training set, and found that OGNet detected 6 new oil refineries (including one abandoned facility) and 142 new petroleum terminals.
-          a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/PublicDatasets.csv") Download the Public Datasets
           a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/OGNetDeploymentData.csv") Download OGNet Detections (v1.0)
           .pad
-          p Disclaimer: this is the first version of the database produced by OGNet. Its use should be carefully considered.
-        .col-md-6
+          p 
+            b Disclaimer: 
+            //- | The locations of facilities are identified by running OGNet on NAIP imagery followed by human review. 
+            | This is the first version of the database produced by OGNet and has limitations which should be considered carefully.
+          ul
+            li 
+              | NAIP imagery does not always provide a very recent capture of a location (see 
+              a(href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/status-maps/index") NAIP Status Maps
+              | ). Results could differ with other imagery sources.
+            li The locations are not always centered on the facility.
+            li The storage tank counts are not always exact.
+        .col-md-5
           h2 
           table.table.performanceTable
             thead 
@@ -89,7 +113,7 @@ block content
             p(style="text-align:center;") Table 1. Statistics of the OGNet detections and comparison to benchmark datasets.
       .row
         .col-md-12
-            h2 Check out the interactive map below, containing oil refineres detected by OGNet as well as oil refineries reported in the four public datasets!
+            h2 Check out the interactive map below, containing oil refineres detected by OGNet!
   div(style="position: relative; margin: 25%; z-index: -99; height: 50%")
   section.white
     .container
