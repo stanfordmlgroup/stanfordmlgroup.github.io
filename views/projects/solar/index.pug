@@ -23,20 +23,25 @@ block content
   section
     .container
       .row
-        .col-md-9
+        .col-md-6
           h2 We developed a variety of probabilistic models for forecasting solar irradiance.
-          p Increasing adoption of renewable energy in the electricity sector is essential to the reduction of anthropogenic greenhouse gas emission. Due to the high volatility and intermittency of solar energy, solar forecasting methods have become necessary to increase the penetration of solar power into the grid while ensuring power system cost-effectiveness and security. Solar forecasting methods that characterize uncertainty have the potential to aid real-time grid integration of solar energy and help gauge when to deploy new storage.
+          p Increasing adoption of renewable energy in the electricity sector is essential to the reduction of anthropogenic greenhouse gas emissions. Due to the high volatility and intermittency of solar energy, solar forecasting methods have become necessary to increase the penetration of solar power into the grid while ensuring power system cost-effectiveness and security. Solar forecasting methods that characterize uncertainty have the potential to aid real-time grid integration of solar energy and help gauge when to deploy new storage.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/2010.04715") Read The Paper
+        .col-md-6
+          img(src='/projects/solar/img/fig1.gif')
+          p(style="text-align:center;") Figure 1. NGBoost 5 minute resolution probabilistic forecasts starting 5 minutes ahead up until one hour ahead, shown here for several days at the Sioux Falls SURFRAD station.
 
   section.gray
     .container
       .row
-        .col-md-8
-          img(src='/projects/solar/img/fig1.png')
         .col-md-12
           h2 We developed several probabilistic models for solar irradiance forecasting combined with recent approaches for post-hoc calibration.
-          p We used public data from NOAA’s Surface Radiation (SURFRAD) network [1], consisting of seven stations throughout the continental United States that measure a variety of meteorological variables. Relative humidity, wind speed, wind direction, air pressure, time of day, solar zenith angle, air temperature, and the five previous irradiance values up to the forecast time were used as input, and daytime global horizontal irradiance (GHI) as output. 
-          p We developed four probabilistic models which output a probability distribution over the outcome space instead of a point prediction: a Gaussian process regression model, a neural network with uncertainty based on dropout variation (Dropout Neural Network), a neural network whose predictions parameterize a Gaussian distribution optimized to maximize likelihood (Variational Neural Network), and a decision-tree based model using natural gradient boosting (NGBoost) assuming a Gaussian output distribution.
+          p 
+            | We used public data from 
+            a(href="https://www.esrl.noaa.gov/gmd/grad/surfrad/sitepage.html") NOAA’s Surface Radiation (SURFRAD) network
+            | , consisting of seven stations throughout the continental United States that measure a variety of meteorological variables. Relative humidity, wind speed, wind direction, air pressure, time of day, solar zenith angle, air temperature, and the five previous irradiance values up to the forecast time were used as input, and daytime global horizontal irradiance (GHI) as output. 
+          p 
+            | We developed four probabilistic models which output a probability distribution over the outcome space instead of a point prediction: a Gaussian process regression model, a neural network with uncertainty based on dropout variation (Dropout Neural Network), a neural network whose predictions parameterize a Gaussian distribution optimized to maximize likelihood (Variational Neural Network), and a decision-tree based model using natural gradient boosting (NGBoost) assuming a Gaussian output distribution.
           p We additionally explored the use of post-hoc probabilistic calibration methods for encouraging well-calibrated predictions, including the Kuleshov method, CRUDE, and maximum likelihood estimation (MLE).
   section
     .container
