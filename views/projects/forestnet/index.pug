@@ -38,8 +38,11 @@ block content
           img(src='/projects/forestnet/img/fig_a1.png')
         .col-md-6
           h2 We curated a dataset of satellite imagery with expert forest loss driver annotations.
-          p The dataset consists of 2,756 satellite images of forest loss events with driver annotations. Global Forest Change (GFC) published maps were used to obtain forest loss events, each represented as a polygon and associated with a year indicating when the forest loss event occurred. An expert interpreter annotated each event with the direct driver of deforestation using high resolution satellite imagery from Google Earth. The driver annotations were grouped into Plantation, Smallholder Agriculture, Grassland/shrubland, and Other.
-          p We captured each forest loss region with Landsat 8 satellite imagery acquired within five years of the event’s occurrence using a custom cloud-minimizing search procedure. Using this procedure, we obtained exactly one composite image for each example and additional images for any individual cloud-filtered scenes.
+          p The dataset consists of 2,756 satellite images of forest loss events with driver annotations. Global Forest Change published maps were used to obtain forest loss events, each represented as a polygon and associated with a year indicating when the forest loss event occurred. An expert interpreter annotated each event with the direct driver of deforestation using high resolution satellite imagery from Google Earth. The driver annotations were grouped into Plantation, Smallholder Agriculture, Grassland/shrubland, and Other.
+          p 
+            | We captured each forest loss region with Landsat 8 satellite imagery acquired within five years of the event’s occurrence using a custom cloud-minimizing search procedure. Using this procedure, we obtained exactly one composite image for each example and additional images for any individual cloud-filtered scenes. Imagery was processed and downloaded using the 
+            a(href="https://www.descarteslabs.com/") Descartes Labs platform
+            | .
           a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download the Dataset
     
   section
@@ -123,9 +126,9 @@ block content
       .row
         .col-md-7
           h3
-            | To learn more, 
-            a(href="https://arxiv.org/abs/TODO") read our publication
-            |.
+            | To learn more, read 
+            a(href="https://arxiv.org/abs/TODO") our publication 
+            | presented at the NeurIPS 2020 workshop on Tackling Climate Change with Machine Learning.
           .pad
           p
             | We are actively looking for collaborators to work with us. If you have questions about our work,
