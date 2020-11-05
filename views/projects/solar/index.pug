@@ -25,7 +25,7 @@ block content
       .row
         .col-md-6
           h2 We developed a variety of probabilistic models for forecasting solar irradiance.
-          p Increasing adoption of renewable energy in the electricity sector is essential to the reduction of anthropogenic greenhouse gas emissions. Due to the high volatility and intermittency of solar energy, solar forecasting methods have become necessary to increase the penetration of solar power into the grid while ensuring power system cost-effectiveness and security. Solar forecasting methods that characterize uncertainty have the potential to aid real-time grid integration of solar energy and help gauge when to deploy new storage.
+          p Increasing adoption of renewable energy in the electricity sector is essential to the reduction of anthropogenic greenhouse gas emissions. Due to the high volatility and intermittency of solar energy, solar forecasting methods have become necessary to increase the penetration of solar power into the grid while ensuring cost-effectiveness and security. Solar forecasting methods that characterize uncertainty have the potential to aid real-time grid integration of solar energy and help gauge when to deploy new storage.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/2010.04715") Read The Paper
         .col-md-6
           img(src='/projects/solar/img/fig1.gif')
@@ -39,7 +39,7 @@ block content
           p 
             | We used public data from 
             a(href="https://www.esrl.noaa.gov/gmd/grad/surfrad/sitepage.html") NOAA’s Surface Radiation (SURFRAD) network
-            | , consisting of seven stations throughout the continental United States that measure a variety of meteorological variables. Relative humidity, wind speed, wind direction, air pressure, time of day, solar zenith angle, air temperature, and the five previous irradiance values up to the forecast time were used as input, and daytime global horizontal irradiance (GHI) as output. 
+            | , consisting of seven stations throughout the continental U.S. measure a variety of meteorological variables. Relative humidity, wind speed, wind direction, air pressure, time of day, solar zenith angle, air temperature, and the five previous irradiance values up to the forecast time were used as input, and daytime global horizontal irradiance (GHI) as output. 
           p 
             | We developed four probabilistic models which output a probability distribution over the outcome space instead of a point prediction: a Gaussian process regression model, a neural network with uncertainty based on dropout variation (Dropout Neural Network), a neural network whose predictions parameterize a Gaussian distribution optimized to maximize likelihood (Variational Neural Network), and a decision-tree based model using natural gradient boosting (NGBoost) assuming a Gaussian output distribution.
           p We additionally explored the use of post-hoc probabilistic calibration methods for encouraging well-calibrated predictions, including the Kuleshov method, CRUDE, and maximum likelihood estimation (MLE).
@@ -62,15 +62,15 @@ block content
   section
     .container
       .row
-        .col-md-8
+        .col-md-7
           h2 NGBoost with CRUDE post-hoc calibration achieves comparable performance to a numerical weather prediction model on hourly-resolution forecasting.
-          p We compared NGBoost with CRUDE post-hoc calibration to benchmark solar irradiance forecasting models on the hourly resolution task, including the complete history persistence ensemble (CH-P), Gaussian error distribution (Gau), and a standard numerical weather prediction model (NWP) from the European Centre for Medium-Range Weather Forecasts. NGBoost(+C) was the best model on three stations, and the NWP model was the best model on another three stations, and the Gaussian error distribution was the best performing model on the other station.
-        .col-md-4
+          p We compared NGBoost with CRUDE post-hoc calibration to benchmark solar irradiance forecasting models on the hourly resolution task, including the complete history persistence ensemble (CH-P), Gaussian error distribution (Gau), and a standard numerical weather prediction model (NWP) from the European Centre for Medium-Range Weather Forecasts. NGBoost(+C) was the best model on three stations (CO, NV, MT), the NWP model was the best model on three stations (IL, MS, SD), and the Gaussian error distribution was the best model on one station (PA).
+        .col-md-5(style='margin-top:5%;')
           img(src='/projects/solar/img/table2b.png')
   section
     .container
       .row
-        .col-md-7
+        .col-md-9
           h3
             | To learn more, read 
             a(href="https://arxiv.org/abs/2010.04715") our publication 
