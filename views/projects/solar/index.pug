@@ -38,7 +38,7 @@ block content
           h2 We developed several probabilistic models for solar irradiance forecasting combined with recent approaches for post-hoc calibration.
           p 
             | We used public data from 
-            a(href="https://www.esrl.noaa.gov/gmd/grad/surfrad/sitepage.html") NOAA’s Surface Radiation (SURFRAD) network
+            a(href="https://www.esrl.noaa.gov/gmd/grad/surfrad/sitepage.html" target="_blank") NOAA’s Surface Radiation (SURFRAD) network
             | , consisting of seven stations throughout the continental U.S. measure a variety of meteorological variables. Relative humidity, wind speed, wind direction, air pressure, time of day, solar zenith angle, air temperature, and the five previous irradiance values up to the forecast time were used as input, and daytime global horizontal irradiance (GHI) as output. 
           p 
             | We developed four probabilistic models which output a probability distribution over the outcome space instead of a point prediction: a Gaussian process regression model, a neural network with uncertainty based on dropout variation (Dropout Neural Network), a neural network whose predictions parameterize a Gaussian distribution optimized to maximize likelihood (Variational Neural Network), and a decision-tree based model using natural gradient boosting (NGBoost) assuming a Gaussian output distribution.

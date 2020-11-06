@@ -27,7 +27,7 @@ block content
       .row
         .col-md-9
           h2 We developed and deployed a deep learning model called OGNet to detect oil and gas infrastructure in aerial imagery.
-          p At least a quarter of the warming that the Earth is experiencing today is due to anthropogenic methane emissions. There are multiple satellites in orbit and planned for launch in the next few years which can detect and quantify these emissions; however, to attribute methane emissions to their sources on the ground, a comprehensive database of the locations and characteristics of emission sources worldwide is essential. Deep learning on remotely-sensed imagery has the potential to automatically map oil and infrastructure to create a global database.
+          p At least a quarter of the warming that the Earth is experiencing today is due to anthropogenic methane emissions, with emissions from the oil and gas sector significantly contributing to the total anthropogenic methane budget. There are multiple satellites in orbit and planned for launch in the next few years which can detect and quantify these emissions; however, to attribute methane emissions to their sources on the ground, a comprehensive database of the locations and characteristics of emission sources worldwide is essential. Deep learning on remotely-sensed imagery has the potential to automatically detect and create a global database of oil and gas infrastructure.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/TODO") Read The Paper (Sheng & Irvin et al.)
   section.gray
     .container
@@ -38,9 +38,9 @@ block content
           h2 We curated a dataset of aerial imagery capturing oil refineries.
           p
             | The dataset consists of 7,066 aerial images in total, with 149 images of oil refineries and 6,917 negative images containing visually similar objects and landscapes around oil refineries. We used aerial imagery between 2015 and 2019 from the 
-            a(href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/") National Agriculture Imagery Program (NAIP)
+            a(href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/imagery-programs/naip-imagery/" target="_blank") National Agriculture Imagery Program (NAIP)
             | , which captures the continental U.S. at a minimum of 1m resolution. The images are mosaics of the most recent captures of the location and do not suffer from cloud cover or haze because images were acquired aerially on days with low cloud cover. Imagery was processed and downloaded using the 
-            a(href="https://www.descarteslabs.com/") Descartes Labs platform
+            a(href="https://www.descarteslabs.com/" target="_blank") Descartes Labs platform
             | .
           a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/OGNetDevelopmentData.zip") Download the Dataset
   section.white
@@ -60,27 +60,29 @@ block content
           h2 OGNet detected several oil and gas facilities not present in four publicly available datasets.
           p
             | We compared the manually verified facilities detected by OGNet by combining four publicly available datasets, namely 
-            a(href="https://edx.netl.doe.gov/dataset/global-oil-gas-features-database") GOGI
+            a(href="https://edx.netl.doe.gov/dataset/global-oil-gas-features-database" target="_blank") GOGI
             | , 
-            a(href="https://ghgdata.epa.gov/ghgp/main.do") GHGRP
+            a(href="https://ghgdata.epa.gov/ghgp/main.do" target="_blank") GHGRP
             | , 
-            a(href="https://hifld-geoplatform.opendata.arcgis.com/") HIFLD
+            a(href="https://hifld-geoplatform.opendata.arcgis.com/" target="_blank") HIFLD
             | , and 
-            a(href="https://www.eia.gov/maps/layer_info-m.php") EIA. 
+            a(href="https://www.eia.gov/maps/layer_info-m.php" target="_blank") EIA. 
             | We removed duplicate records by combining coordinates within 2 km of each other.
           p We counted the number of reported facilities which were detected by OGNet, and found itt detected 73.5% of the oil refineries and 23.9% of the petroleum terminals in the combined dataset. Close to half of the "missed" oil refineries were due to inaccurate locations reported in the public datasets.
           p We counted the number of detected facilities which neither occur in the combined public dataset nor the training set, and found that OGNet detected 6 new oil refineries (including one abandoned facility) and 142 new petroleum terminals.
           a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/OGNetDeploymentData.csv") Download OGNet Detections (v1.0)
           .pad
-          p 
+          p Each detection is associated with a latitude and longitude, facility type, storage tank count, and whether the detection corresponds to multiple adjacent facilities.
+          p
             b Disclaimer: 
             //- | The locations of facilities are identified by running OGNet on NAIP imagery followed by human review. 
             | This is the first version of the database produced by OGNet and has limitations which should be considered carefully.
           ul
             li 
               | NAIP imagery does not always provide a very recent capture of a location (see 
-              a(href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/status-maps/index") NAIP Status Maps
+              a(href="https://www.fsa.usda.gov/programs-and-services/aerial-photography/status-maps/index" target="_blank") NAIP Status Maps
               | ). Results could differ with other imagery sources.
+            li The locations of detections are restricted to the coverage of NAIP, which only captures the continental U.S.
             li The locations are not always centered on the facility.
             li The storage tank counts are not always exact.
         .col-md-5
@@ -114,6 +116,7 @@ block content
       .row
         .col-md-12
             h2 Check out the interactive map below, containing oil refineres detected by OGNet!
+            p The radius of the circles is proportional to the number of storage tanks at each facility.
   div(style="position: relative; margin: 25%; z-index: -99; height: 50%")
   section.white
     .container

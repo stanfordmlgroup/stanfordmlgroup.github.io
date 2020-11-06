@@ -38,12 +38,12 @@ block content
           img(src='/projects/forestnet/img/fig_a1.png')
         .col-md-6
           h2 We curated a dataset of satellite imagery with expert forest loss driver annotations.
-          p The dataset consists of 2,756 satellite images of forest loss events with driver annotations. Global Forest Change published maps were used to obtain forest loss events, each represented as a polygon and associated with a year indicating when the forest loss event occurred. An expert interpreter annotated each event with the direct driver of deforestation using high resolution satellite imagery from Google Earth. The driver annotations were grouped into Plantation, Smallholder Agriculture, Grassland/shrubland, and Other.
+          p The dataset consists of 2,756 satellite images of forest loss events with driver annotations. Global Forest Change (GFC) published maps were used to obtain forest loss events, each represented as a polygon and associated with a year indicating when the forest loss event occurred. An expert interpreter annotated each event with the direct driver of deforestation using high resolution satellite imagery from Google Earth. The driver annotations were grouped into Plantation, Smallholder Agriculture, Grassland/shrubland, and Other.
           p 
             | We captured each forest loss region with Landsat 8 satellite imagery acquired within five years of the event’s occurrence using a custom cloud-minimizing search procedure. Using this procedure, we obtained exactly one composite image for each example and additional images for any individual cloud-filtered scenes. Imagery was processed and downloaded using the 
-            a(href="https://www.descarteslabs.com/") Descartes Labs platform
+            a(href="https://www.descarteslabs.com/" target="_blank") Descartes Labs platform
             | .
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/pdf/2002.11379.pdf") Download the Dataset
+          a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/forestnet/ForestNetDataset.zip") Download the Dataset
     
   section
     .container
@@ -80,45 +80,45 @@ block content
             tr
               td RF
               td Visible
-              td(style="text-align:center;") 0.60
-              td(style="text-align:center;") 0.52
-              td(style="text-align:center;") 0.54
+              td(style="text-align:center;") 0.56
+              td(style="text-align:center;") 0.49
+              td(style="text-align:center;") 0.49
               td(style="text-align:center;") 0.44
             tr
               td RF 
               td Visible + Aux
-              td(style="text-align:center;") 0.71
+              td(style="text-align:center;") 0.72
               td(style="text-align:center;") 0.67
-              td(style="text-align:center;") 0.69
-              td(style="text-align:center;") 0.64
+              td(style="text-align:center;") 0.67
+              td(style="text-align:center;") 0.62
             tr
               td CNN 
               td Visible
-              td(style="text-align:center;") 0.79
-              td(style="text-align:center;") 0.76
-              td(style="text-align:center;") 0.76
-              td(style="text-align:center;") 0.72
+              td(style="text-align:center;") 0.80
+              td(style="text-align:center;") 0.75
+              td(style="text-align:center;") 0.78
+              td(style="text-align:center;") 0.70
             tr
               td CNN + SDA 
               td Visible
-              td(style="text-align:center;") 0.83
+              td(style="text-align:center;") 0.82
               td(style="text-align:center;") 0.79
-              td(style="text-align:center;") 0.77
-              td(style="text-align:center;") 0.72
+              td(style="text-align:center;") 0.78
+              td(style="text-align:center;") 0.73
             tr
               td CNN + SDA + PT 
               td Visible
-              td(style="text-align:center;") 0.84
-              td(style="text-align:center;") 0.81
-              td(style="text-align:center;") 0.79
+              td(style="text-align:center;") 0.83
+              td(style="text-align:center;") 0.80
+              td(style="text-align:center;") 0.80
               td(style="text-align:center;") 0.74
             tr
               td CNN + SDA + PT 
               td Visible + Aux
-              th(style="text-align:center;") 0.85
-              th(style="text-align:center;") 0.82
+              th(style="text-align:center;") 0.84
+              th(style="text-align:center;") 0.81
               th(style="text-align:center;") 0.80
-              th(style="text-align:center;") 0.76
+              th(style="text-align:center;") 0.75
             p(style="text-align:center;") Table 1. Accuracy and F1 scores on the validation and test sets. 
 
   section
