@@ -51,8 +51,8 @@ block content
         .col-md-12
           h2 We developed and deployed a deep learning model called OGNet to classify imagery for the presence of oil refineries.
           p For a single image, OGNet produces a probability that the image contains an oil and gas facility.  In order to convert the probability to a binary prediction, we used the threshold that lead to the highest precision (0.81) subject to a recall of 1.0 on the validation set.
-          p To identify infrastructure in the continental U.S. using OGNet, we partition the region into equal 500 x 500 pixel tiles at 2.5m resolution leading to 5,082,722 tiles in total and run each of the tiles through OGNet. Any tile which was assigned a positive prediction is greedily mergedw ith any positively classified adjacent tiles, and the mean of the centroids of each of the tiles within the merged group is used as the detected location.
-          p OGNet detections were manually reviewed and all false positive detections were removed. We discovered that OGNet was able to detect oil and gas facilities other than oil refineries, so the remaining facilities were classified as a oil refinery or petroleum terminal.  During this process, we also identified the number of storage tanks at each facility. An expert interpreter designed the annotation procedure and verified the detected facilities and their attributed characteristics.
+          p To identify infrastructure in the continental U.S. using OGNet, we partition the region into equal 500 x 500 pixel tiles at 2.5m resolution leading to 5,082,722 tiles in total and run each of the tiles through OGNet. Any tile which was assigned a positive prediction is greedily merged with any positively classified adjacent tiles, and the mean of the centroids of each of the tiles within the merged group is used as the detected location.
+          p OGNet detections were manually reviewed and all false positive detections were removed. We discovered that OGNet was able to detect oil and gas facilities other than oil refineries, so the remaining facilities were classified as oil refineries or petroleum terminals.  During this process, we also identified the number of storage tanks at each facility. An expert interpreter designed the annotation procedure and verified the detected facilities and their attributed characteristics.
   section.gray
     .container
       .row
@@ -68,7 +68,7 @@ block content
             | , and 
             a(href="https://www.eia.gov/maps/layer_info-m.php" target="_blank") EIA. 
             | We removed duplicate records by combining coordinates within 2 km of each other.
-          p We counted the number of reported facilities which were detected by OGNet, and found itt detected 73.5% of the oil refineries and 23.9% of the petroleum terminals in the combined dataset. Close to half of the "missed" oil refineries were due to inaccurate locations reported in the public datasets.
+          p We counted the number of reported facilities which were detected by OGNet, and found it detected 73.5% of the oil refineries and 23.9% of the petroleum terminals in the combined dataset. Close to half of the "missed" oil refineries were due to inaccurate locations reported in the public datasets.
           p We counted the number of detected facilities which neither occur in the combined public dataset nor the training set, and found that OGNet detected 6 new oil refineries (including one abandoned facility) and 142 new petroleum terminals.
           a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/ognet/OGNetDeploymentData.csv") Download OGNet Detections (v1.0)
           .pad
