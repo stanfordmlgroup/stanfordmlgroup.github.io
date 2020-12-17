@@ -3,21 +3,21 @@
     "max_submissions_total": 20,
     "host": "https://worksheets.codalab.org",
     "submission_tag": "chexpert-submit",
-    "log_worksheet_uuid": "0x7e4850e815d64d998381411d7b134e2e",
+    "log_worksheet_uuid": "0xd4a40e66db894274b990d985476431a6",
     "allow_multiple_models": true,
     "predict": {
         "mimic": [
             {
                 "old": "0xdb799f3b21ac4a8687b339ddd5784291",
-                "new": "0x48e3f2da46254c138fc319ec381b2bc4"
+                "new": "0x6b48068f7ea74983adbe7958999d59bd"
             },
             {
                 "old": "0x6eed34dae0cf4c8f9c076e8d4f5f123b", 
-                "new": "0xb120e6564ba74a488e5936dbae3009b2"
+                "new": "0x50e6157c63414c84ac64ffd2d3f5af02"
             }
         ],
         "depth": 10,
-        "tag": "chexpert-test-predict"
+        "tag": "chexphoto-test-predict"
     },
     "evaluate": {
         "dependencies": [
@@ -26,7 +26,7 @@
                 "child_path": "evaluate.py"
             },
             {
-                "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134",
+                "parent_uuid": "0x2fd2afdbff2e4d88abb1a3ac52f5a7f3",
                 "child_path": "test.csv"
             },
             {
@@ -39,7 +39,7 @@
         "metadata": {
           "request_docker_image": "codalab/ubuntu:1.9"
         },
-        "tag": "chexpert-test-eval"
+        "tag": "chexphoto-test-eval"
     },
     "score_specs": [
         {
@@ -92,6 +92,6 @@
         }
     ],
     "metadata": {
-        "name": "CheXpert Competition Leaderboard"
+        "name": "CheXphoto Competition Leaderboard"
     }
 }

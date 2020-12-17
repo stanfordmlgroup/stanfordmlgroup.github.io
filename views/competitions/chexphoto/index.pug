@@ -67,7 +67,10 @@ block content
             | An appealing solution to scaled deployment is to leverage the ubiquity of smartphones for automated interpretation of film through cellphone photography. Automated interpretation of photos of chest x-rays at the same high-level of performance as with digital chest x-rays is challenging because photographs of x-rays introduce visual artifacts not commonly found in digital x-rays.
             | To encourage high model performance for this application,  we developed CheXphoto, a dataset of photos of chest x-rays and synthetic transformations designed to mimic the effects of photography.
         .col-md-5
-          h2 Leaderboard (coming soon)
+          h2 Leaderboard
+          p 
+            | Will your model perform as well as radiologists in detecting different pathologies in chest X-rays?
+          +model_display(test)
           h3 How can I participate?
           p CheXphoto measures model performance in relation to the CheXpert x-ray dataset. CheXphoto uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
           p Here's a tutorial walking you through official evaluation of your model. Once your model has been evaluated officially, your scores will be added to the leaderboard.
