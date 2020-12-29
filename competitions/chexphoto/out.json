@@ -1,10 +1,10 @@
 {
     "config": {
-        "allow_multiple_models": true,
+        "allow_multiple_models": false,
         "allow_orphans": true,
         "count_failed_submissions": true,
         "evaluate": {
-            "command": "python evaluate.py test.csv predictions.csv",
+            "command": "python evaluate.py test.json predictions.json",
             "dependencies": [
                 {
                     "child_path": "evaluate.py",
@@ -14,7 +14,7 @@
                 {
                     "child_path": "test.csv",
                     "parent_path": "",
-                    "parent_uuid": "0x2fd2afdbff2e4d88abb1a3ac52f5a7f3"
+                    "parent_uuid": "0xd341b198b65045779b092fa7b69f54ee"
                 },
                 {
                     "child_path": "predictions.csv",
@@ -22,9 +22,7 @@
                     "parent_uuid": "{predict}"
                 }
             ],
-            "metadata": {
-                "request_docker_image": "codalab/ubuntu:1.9"
-            },
+            "metadata": {},
             "tag": "chexphoto-test-eval"
         },
         "host": "https://worksheets.codalab.org",
@@ -32,20 +30,18 @@
         "make_predictions_public": false,
         "max_leaderboard_size": 10000,
         "max_submissions_per_period": 5,
-        "max_submissions_total": 20,
-        "metadata": {
-            "name": "CheXphoto Competition Leaderboard"
-        },
+        "max_submissions_total": 10000,
+        "metadata": {},
         "predict": {
             "depth": 10,
             "metadata": {},
             "mimic": [
                 {
-                    "new": "0x6b48068f7ea74983adbe7958999d59bd",
+                    "new": "0xdb799f3b21ac4a8687b339ddd5784291",
                     "old": "0xdb799f3b21ac4a8687b339ddd5784291"
                 },
                 {
-                    "new": "0x50e6157c63414c84ac64ffd2d3f5af02",
+                    "new": "0x6eed34dae0cf4c8f9c076e8d4f5f123b",
                     "old": "0x6eed34dae0cf4c8f9c076e8d4f5f123b"
                 }
             ],
@@ -106,5 +102,5 @@
         "submission_tag": "chexpert-submit"
     },
     "leaderboard": [],
-    "updated": 1608192201.245295
+    "updated": 1609232876.535639
 }
