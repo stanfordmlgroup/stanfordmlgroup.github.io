@@ -11,6 +11,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Sharon Zhou', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
+      +alumni_inside('hcfall2020', use_compact)
       +alumni_inside('ccfall2020', use_compact)
       +alumni_inside('hcsummer2020', use_compact)
       +alumni_inside('ccsummer2020', use_compact)
@@ -31,6 +32,7 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'healthcare_bootcamp_alumni'
+      +alumni_inside('hcfall2020', use_compact)
       +alumni_inside('hcsummer2020', use_compact)
       +alumni_inside('hcspring2020', use_compact)
       +alumni_inside('winter2020', use_compact)
@@ -96,6 +98,17 @@ mixin alumni_inside(cohort, use_compact)
   if cohort == 'climate_bootcamp_phd'
       +dp('Jeremy Irvin', 'phd', false, use_compact)
       +dp('Hao Sheng', 'phd', false, use_compact)
+  if cohort == 'hcfall2020'
+      +dp('Bryan Gopal', 'bs', false, use_compact)
+      +dp('Can Liu', 'ms', false, use_compact)
+      +dp('Emily Wen', 'bs', false, use_compact)
+      +dp('Gautham Raghupathi', 'bs', false, use_compact)
+      +dp('Mark Endo', 'bs', false, use_compact)
+      +dp('Nhi Truong Vu', 'phd', false, use_compact)
+      +dp('Pranav Sriram', 'ms', false, use_compact)
+      +dp('Ryan Han', 'bs', false, use_compact)
+      +dp('Soham Gadgil', 'ms', false, use_compact)
+      +dp('Yujie He', 'ms', false, use_compact)
   if cohort == 'ccfall2020'
       +dp('Irena Gao', 'bs', false, use_compact)
       +dp('Sam Masling', 'ms', false, use_compact)
@@ -273,6 +286,10 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'climate_industry'
       h3 Climate Change Bootcamp Industry Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'hcfall2020'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Fall 2020-2021
       +alumni_inside(cohort, use_compact)
   if cohort == 'ccfall2020'
     .cohort.clearfix
