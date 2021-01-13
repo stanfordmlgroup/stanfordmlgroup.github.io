@@ -11,6 +11,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Sharon Zhou', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
+      +alumni_inside('ccwinter2021', use_compact)
       +alumni_inside('hcfall2020', use_compact)
       +alumni_inside('ccfall2020', use_compact)
       +alumni_inside('hcsummer2020', use_compact)
@@ -45,6 +46,7 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'climate_bootcamp_alumni'
+      +alumni_inside('ccwinter2021', use_compact)
       +alumni_inside('ccfall2020', use_compact)
       +alumni_inside('ccsummer2020', use_compact)
       +alumni_inside('ccspring2020', use_compact)
@@ -98,6 +100,13 @@ mixin alumni_inside(cohort, use_compact)
   if cohort == 'climate_bootcamp_phd'
       +dp('Jeremy Irvin', 'phd', false, use_compact)
       +dp('Hao Sheng', 'phd', false, use_compact)
+  if cohort == 'ccwinter2021'
+      +dp('Lyron Co Ting Keh', 'bs', false, use_compact)
+      +dp('Jake Taylor', 'ms', false, use_compact)
+      +dp('Sonia Chu', 'bs', false, use_compact)
+      +dp('Mauricio Wulfovich', 'ms', false, use_compact)
+      +dp('Chris Rilling', 'bs', false, use_compact)
+      +dp('Andrew Yang', 'ms', false, use_compact)
   if cohort == 'hcfall2020'
       +dp('Bryan Gopal', 'bs', false, use_compact)
       +dp('Can Liu', 'ms', false, use_compact)
