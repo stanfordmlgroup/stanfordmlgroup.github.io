@@ -26,7 +26,7 @@ block content
           // a.btn.btn-lg.btn-default(href="https://forms.gle/7fpfdCoj73Safhvh8") Apply Now
         .col-sm-5.hidden-xs
           +alumni_inside('healthcare_bootcamp_alumni', true)
-          +alumni_inside('healthcare_bootcamp_phd', true)
+          // +alumni_inside('healthcare_bootcamp_phd', true)
   section
     .container
       .row
@@ -34,7 +34,7 @@ block content
           h3 Teaching Team
           +alumni_inside('healthcare_bootcamp_phd', 'big')
           +dp('Andrew Ng', 'prof', false, 'big')
-          h3 Medical Faculty
+          h3 Collaborating Faculty
           +alumni_inside('medical_faculty', 'big')
         .col-sm-8
           .applications
@@ -75,19 +75,25 @@ block content
           h3 Past Bootcamp Projects
           ul.list-unstyled
             li
-              a.btn(href="/projects/chexpedition") CheXpedition
+              a.btn(href="https://arxiv.org/abs/2101.06871") CheXtransfer
+            li
+              a.btn(href="https://arxiv.org/abs/2010.15269") GloFlow
+            li
+              a.btn(href="https://arxiv.org/abs/2011.06129") CheXphotogenic
             li
               a.btn(href="https://arxiv.org/abs/2004.09167") CheXbert
             li
-              a.btn(href="https://arxiv.org/abs/1911.07372") Liver Cancer Classification
+              a.btn(href="/projects/chexpedition") CheXpedition
+            li
+              a.btn(href="https://arxiv.org/abs/1911.07372") HCC/CC
             li
               a.btn(href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2735471") HeadXNet
             li
               a.btn(href="https://www.ahajournals.org/doi/full/10.1161/CIRCOUTCOMES.118.005010") HTE Prediction
             li
               a.btn(href="/projects/chexnext") CheXNeXt
-            li
-              a.btn(href="https://xray4all.com") XRay4All
+            // li
+            //   a.btn(href="https://xray4all.com") XRay4All
             li
               a.btn(href="/projects/mrnet") MRNet
             li
@@ -97,7 +103,8 @@ block content
         .col-sm-8
           .row
             .col-sm-12
-              h2 Past Bootcamp Cohorts
+              h2 Bootcamp Cohorts
+              +alumni('hcwinter2021', false)
               +alumni('hcfall2020', false)
               +alumni('hcsummer2020', false)
               +alumni('hcspring2020', false)

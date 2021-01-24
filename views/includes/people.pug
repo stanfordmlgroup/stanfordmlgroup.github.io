@@ -11,6 +11,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Sharon Zhou', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
+      +alumni_inside('hcwinter2021', use_compact)
       +alumni_inside('ccwinter2021', use_compact)
       +alumni_inside('hcfall2020', use_compact)
       +alumni_inside('ccfall2020', use_compact)
@@ -33,6 +34,7 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'healthcare_bootcamp_alumni'
+      +alumni_inside('hcwinter2021', use_compact)
       +alumni_inside('hcfall2020', use_compact)
       +alumni_inside('hcsummer2020', use_compact)
       +alumni_inside('hcspring2020', use_compact)
@@ -107,6 +109,11 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Mauricio Wulfovich', 'ms', false, use_compact)
       +dp('Chris Rilling', 'bs', false, use_compact)
       +dp('Andrew Yang', 'ms', false, use_compact)
+  if cohort == 'hcwinter2021'
+      +dp('Daniel Michael', 'bs', false, use_compact)
+      +dp('Ellie Talius', 'bs', false, use_compact)
+      // +dp('Niveditha Iyer', 'bs', false, use_compact)
+      +dp('Pujan Patel', 'bs', false, use_compact)
   if cohort == 'hcfall2020'
       +dp('Bryan Gopal', 'bs', false, use_compact)
       +dp('Can Liu', 'ms', false, use_compact)
@@ -295,6 +302,10 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'climate_industry'
       h3 Climate Change Bootcamp Industry Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'hcwinter2021'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Winter 2020-2021
       +alumni_inside(cohort, use_compact)
   if cohort == 'hcfall2020'
     .cohort.clearfix
