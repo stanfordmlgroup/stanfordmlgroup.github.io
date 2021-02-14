@@ -48,6 +48,7 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'climate_bootcamp_alumni'
+      +alumni_inside('ccspring2021', use_compact)
       +alumni_inside('ccwinter2021', use_compact)
       +alumni_inside('ccfall2020', use_compact)
       +alumni_inside('ccsummer2020', use_compact)
@@ -315,6 +316,10 @@ mixin alumni(cohort, use_compact)
   if cohort == 'hcwinter2021'
     .cohort.clearfix
       h3 Healthcare Bootcamp Winter 2020-2021
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccwinter2021'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Winter 2020-2021
       +alumni_inside(cohort, use_compact)
   if cohort == 'hcfall2020'
     .cohort.clearfix
