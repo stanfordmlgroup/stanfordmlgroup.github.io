@@ -23,7 +23,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-watch": "^4.3.11",
     "moment": "^2.22.2",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1"
