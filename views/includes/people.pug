@@ -11,6 +11,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Sharon Zhou', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
+      +alumni_inside('ccspring2021', use_compact)
       +alumni_inside('hcwinter2021', use_compact)
       +alumni_inside('ccwinter2021', use_compact)
       +alumni_inside('hcfall2020', use_compact)
@@ -106,6 +107,12 @@ mixin alumni_inside(cohort, use_compact)
   if cohort == 'climate_bootcamp_phd'
       +dp('Jeremy Irvin', 'phd', false, use_compact)
       +dp('Hao Sheng', 'phd', false, use_compact)
+  if cohort == 'ccspring2021'
+      +dp('Gil Kornberg', 'ms', false, use_compact)
+      +dp('Raghav Samavedam', 'bs', false, use_compact)
+      +dp('Sergio Charles', 'bs', false, use_compact)
+      +dp('Collin Kwon', 'ms', false, use_compact)
+      +dp('Benjamin Liu', 'bs', false, use_compact)
   if cohort == 'ccwinter2021'
       +dp('Lyron Co Ting Keh', 'bs', false, use_compact)
       +dp('Jake Taylor', 'ms', false, use_compact)
@@ -312,6 +319,10 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'climate_industry'
       h3 Climate Change Bootcamp Industry Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccspring2021'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Spring 2020-2021
       +alumni_inside(cohort, use_compact)
   if cohort == 'hcwinter2021'
     .cohort.clearfix
