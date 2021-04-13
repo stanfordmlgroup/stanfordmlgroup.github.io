@@ -39,8 +39,8 @@
     <section id="header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12"><img id="title-image" src="/competitions/chexplanation/img/CheXplanation.svg">
-                    <h3 id="page-subtitle">A Chest X-Ray Segmentation Dataset And Competition.
+                <div class="col-lg-14"><img id="title-image" src="/competitions/chexplanation/img/CheXplanation.svg">
+                    <h3 id="page-subtitle">A Chest X-Ray Segmentation Dataset And Competition
                     </h3>
                 </div>
             </div>
@@ -51,30 +51,30 @@
             <div class="row">
                 <div class="col-md-7">
                     <h1>What is CheXplanation?</h1>
-                    <p>CheXplanation is a radiologist-annotated segmentation dataset on chest x-rays and
-                        competition for automated pathology segmentation. The dataset can also be used for
-                        evaluation of x-ray interpretation models.
+                    <p>CheXplanation is a radiologist-annotated segmentation dataset on chest X-rays and
+                        competition for automated pathology localization.
                     </p><a class="btn btn-default"
-                        href="https://www.medrxiv.org/content/10.1101/2021.02.28.21252634v1">Read the Paper (Saporta et
+                        href="https://www.medrxiv.org/content/10.1101/2021.02.28.21252634v1"> Read the Paper (Saporta, Gui & Agrawal et
                         al.)</a>
                     <h2>Why CheXplanation?</h2>
-                    <p> Chest radiography is the most common imaging examination globally, and is critical for
-                        screening, diagnosis, and management of many life threatening diseases. While deep learning has
-                        enabled automated medical imaging interpretation at a level shown to surpass that of practicing
+                    <p> While deep learning has enabled automated medical imaging interpretation at a level shown to
+                        surpass that of practicing
                         experts, the “black box” nature of neural networks represents a barrier to physicians’ trust and
-                        model adoption in the clinical setting. Therefore to promote clinical adoption it is crucial for
-                        the model to be able to accurately identify regions and boundaries of pathologies in addition to
-                        generate probabilistic outputs. For progress in both development and validation of automated
-                        segmentation, we published a new radiologist-annotated segmentation dataset and established
-                        expert human performance benchmark.
+                        model adoption in the clinical setting. Therefore, to encourage the development and validation
+                        of more “interpretable” models for chest X-ray interpretation, we present a new
+                        radiologist-annotated segmentation dataset and a competition for pathology localization.
                     </p>
                 </div>
                 <div class="col-md-5">
                     <h2>Leaderboard (coming soon)</h2>
+                    <p>Will your model perform as well as radiologists in localizing different pathologies in chest
+                        X-rays?</p>
                     <h3>How can I participate?</h3>
-                    <p>CheXplanation uses a hidden test set with official evaluation of models. Teams submit their
-                        segmentations per pathology which will be compared against the reference
-                        segmentations. mIoU (mean intersection over union) will be used as the evaluation metric. </p>
+                    <p>CheXplanation uses a hidden test set with official evaluation of models. Teams submit
+                        binary segmentation masks per pathology which will be compared against the reference
+                        segmentations using mIoU (mean intersection over union). We also give teams the option to submit
+                        confidence scores relating to each pixel for pointing game evaluation.
+                    </p>
                     <p>Submission format and tutorial is in progress.</p>
                     <ul class="list-inline">
                         <li><a class="btn btn-lg btn-default"
@@ -91,24 +91,32 @@
             <div class="row">
                 <div class="col-md-7">
                     <h2>How did we produce the CheXplanation dataset?</h2>
-                    <p>The original chest x-rays came from CheXpert, a large public dataset for chest X-ray
-                        interpretation. We provided pixel-level reference segmentations on the CheXpert validation and
-                        test set from two board-certified radiologists who were asked to segment any of
-                        the 10 pathologies that were present in each CXR as determined by the dataset’s ground-truth
-                        labels. We also established a human benchmark by collecting segmentations
-                        from three additional radiologists who were asked to segment the 10 pathologies of
-                        interest present in each CXR as determined by the dataset’s ground-truth labels (there was no
-                        overlap between these three radiologists and the two who drew the reference segmentations). The
-                        ten competition tasks are:
-                        Airspace Opacity, Atelectasis, Cardiomegaly, Consolidation, Edema, Enlarged Cardiomediastinum,
-                        Lung Lesion, Pleural Effusion, Pneumothorax, and Support Devices.
+                    <p>The dataset’s chest X-rays came from CheXpert, a large public dataset for chest X-ray
+                        interpretation. We obtained pixel-level reference segmentations on the CheXpert validation and
+                        test sets from two board-certified radiologists. For each chest X-ray, the radiologists were
+                        asked to segment any of the following 10 conditions that were present in that chest X-ray, as
+                        determined by CheXpert’s ground-truth labels: Airspace Opacity, Atelectasis, Cardiomegaly,
+                        Consolidation, Edema, Enlarged Cardiomediastinum, Lung Lesion, Pleural Effusion, Pneumothorax,
+                        and Support Devices.
+                        We also established a human benchmark by collecting segmentations from three additional
+                        radiologists. These radiologists were also asked to segment the 10 conditions of interest
+                        present on each chest X-ray, as determined by CheXpert’s ground-truth labels.
+
+                    </p>
+                    <h2>What is our baseline model?</h2>
+                    <p> Our baseline model leveraged saliency method, a weakly-supervised learning technique to generate
+                        segmentations. For each chest X-ray, we used Grad-CAM to
+                        generate heatmaps for each of the ten pathologies. We then applied a threshold to the heat maps
+                        to produce binary segmentations in order to evaluate their overlap
+                        with the radiologist reference segmentations. You may read the full details in the linked paper.
 
                     </p>
                 </div>
-                <div class="col-md-8"><img src="/competitions/chexplanation/img/segmentation_description.png" width="1000"
-                        height="500">
-
+                <div class="col-md-8"><img src="/competitions/chexplanation/img/pipeline.png">
+                    <p> * Note: Only positive pathologies are shown in our example figure.
+                    </p>
                 </div>
+
             </div>
     </section>
     <section>
@@ -121,9 +129,8 @@
                         board-certified radiologists. The test set consists of 668 chest X-rays from 500 patients not
                         included in the training or validation sets and was labeled according to the consensus of five
                         board-certified radiologists. </p>
-                    <p>We provided the reference segmentations and corresponding labels of the validation set. The test
-                        set will be used as a held-out set for leaderboard evaluation and will only include the original
-                        chest x-ray images.</p>
+                    <p>We provide the original X-ray images and reference segmentations of the validation set. The test
+                        set will be used as a held-out set for leaderboard evaluation.</p>
 
                 </div>
             </div>
@@ -134,38 +141,47 @@
             <div class="row">
                 <div class="col-md-7">
                     <h1>Downloading the Dataset (v1.0)</h1>
-                    <p>Please read the Stanford University School of Medicine CheXplanation Dataset Research Use Agreement.
+                    <p>Please read the Stanford University School of Medicine CheXplanation Dataset Research Use
+                        Agreement.
                         Once you register to download the CheXplanation dataset, you will receive a link to the download
                         over email. Note that you may not share the link to download the dataset with others.</p>
                     <div class="well" id="agreement">
                         <h3>Stanford University School of Medicine CheXplanation Dataset Research Use Agreement</h3>
-                        <p>By registering for downloads from the CheXplanation Dataset, you are agreeing to this Research
+                        <p>By registering for downloads from the CheXplanation Dataset, you are agreeing to this
+                            Research
                             Use Agreement, as well as to the Terms of Use of the Stanford University School of Medicine
                             website as posted and updated periodically at http://www.stanford.edu/site/terms/.</p>
-                        <p>1. Permission is granted to view and use the CheXplanation Dataset without charge for personal,
+                        <p>1. Permission is granted to view and use the CheXplanation Dataset without charge for
+                            personal,
                             non-commercial research purposes only. Any commercial use, sale, or other monetization is
                             prohibited.</p>
                         <p>2. Other than the rights granted herein, the Stanford University School of Medicine
-                            (&ldquo;School of Medicine&rdquo;) retains all rights, title, and interest in the CheXplanation
+                            (&ldquo;School of Medicine&rdquo;) retains all rights, title, and interest in the
+                            CheXplanation
                             Dataset.</p>
                         <p>3. You may make a verbatim copy of the CheXplanation Dataset for personal, non-commercial
                             research use as permitted in this Research Use Agreement. If another user within your
-                            organization wishes to use the CheXplanationDataset, they must register as an individual user
+                            organization wishes to use the CheXplanationDataset, they must register as an individual
+                            user
                             and comply with all the terms of this Research Use Agreement.</p>
                         <p>4. YOU MAY NOT DISTRIBUTE, PUBLISH, OR REPRODUCE A COPY of any portion or all of the
                             CheXplanation Dataset to others without specific prior written permission from the School of
                             Medicine.</p>
-                        <p>5. YOU MAY NOT SHARE THE DOWNLOAD LINK to the CheXplanation dataset to others. If another user
+                        <p>5. YOU MAY NOT SHARE THE DOWNLOAD LINK to the CheXplanation dataset to others. If another
+                            user
                             within your organization wishes to use the CheXplanation Dataset, they must register as an
                             individual user and comply with all the terms of this Research Use Agreement.</p>
                         <p>6. You must not modify, reverse engineer, decompile, or create derivative works from the
-                            CheXplanation Dataset. You must not remove or alter any copyright or other proprietary notices
+                            CheXplanation Dataset. You must not remove or alter any copyright or other proprietary
+                            notices
                             in the CheXplanation Dataset.</p>
                         <p>7. The CheXplanation Dataset has not been reviewed or approved by the Food and Drug
                             Administration, and is for non-clinical, Research Use Only. In no event shall data or images
-                            generated through the use of the CheXplanation Dataset be used or relied upon in the diagnosis
+                            generated through the use of the CheXplanation Dataset be used or relied upon in the
+                            diagnosis
                             or provision of patient care.</p>
-                        <p>8. THE CheXplanation DATASET IS PROVIDED "AS IS," AND STANFORD UNIVERSITY AND ITS COLLABORATORS
+                        <p>8. THE CheXplanation DATASET IS PROVIDED "AS IS," AND STANFORD UNIVERSITY AND ITS
+                            COLLABORATORS
                             DO NOT MAKE ANY WARRANTY, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF
                             MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, NOR DO THEY ASSUME ANY LIABILITY OR
                             RESPONSIBILITY FOR THE USE OF THIS CheXplanation DATASET.</p>
@@ -173,7 +189,8 @@
                             Re-identification of individuals is strictly prohibited. Any re-identification of any
                             individual data subject shall be immediately reported to the School of Medicine.</p>
                         <p>10. Any violation of this Research Use Agreement or other impermissible use shall be grounds
-                            for immediate termination of use of this CheXplanation Dataset. In the event that the School of
+                            for immediate termination of use of this CheXplanation Dataset. In the event that the School
+                            of
                             Medicine determines that the recipient has violated this Research Use Agreement or other
                             impermissible use has been made, the School of Medicine may direct that the undersigned data
                             recipient immediately return all copies of the CheXplanation Dataset and retain no copies
@@ -185,65 +202,60 @@
                         <h4>Limitation of Use</h4>
                         <p>You may use CheXplanation Dataset for legal purposes only.</p>
                         <p>You agree to indemnify and hold Stanford harmless from any claims, losses or damages,
-                            including legal fees, arising out of or resulting from your use of the CheXplanation Dataset or
+                            including legal fees, arising out of or resulting from your use of the CheXplanation Dataset
+                            or
                             your violation or role in violation of these Terms. You agree to fully cooperate in
                             Stanford&rsquo;s defense against any such claims. These Terms shall be governed by and
                             interpreted in accordance with the laws of California. </p>
                     </div><!-- Begin Mailchimp Signup Form -->
-                    <div id="mc_embed_signup">
-                        <form
-                            action="https://stanford.us10.list-manage.com/subscribe/post?u=d5a3df4e344026a19f5c0b760&amp;id=cdb7e3b4a7"
-                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                            class="validate" target="_blank" novalidate>
-                            <div id="mc_embed_signup_scroll">
-                                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                                <div class="mc-field-group">
-                                    <label for="mce-EMAIL">Email Address<span class="asterisk">*</span>
-                                    </label>
-                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                                </div>
-                                <div class="mc-field-group">
-                                    <label for="mce-FNAME">First Name <span class="asterisk">*</span>
-                                    </label>
-                                    <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
-                                </div>
-                                <div class="mc-field-group">
-                                    <label for="mce-LNAME">Last Name <span class="asterisk">*</span>
-                                    </label>
-                                    <input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
-                                </div>
-                                <div class="mc-field-group size1of2">
-                                    <label for="mce-PHONE">Phone Number <span class="asterisk">*</span>
-                                    </label>
-                                    <input type="text" name="PHONE" class="required" value="" id="mce-PHONE">
-                                </div>
-                                <div class="mc-field-group">
-                                    <label for="mce-SCHOOL">School / Organization <span class="asterisk">*</span>
-                                    </label>
-                                    <input type="text" value="" name="SCHOOL" class="required" id="mce-SCHOOL">
-                                </div>
-                                <div class="mc-field-group">
-                                    <label for="mce-ROLE">Role / Title <span class="asterisk">*</span>
-                                    </label>
-                                    <input type="text" value="" name="ROLE" class="required" id="mce-ROLE">
-                                </div>
-                                <div id="mce-responses" class="clear">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
-                                </div>
-                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                        name="b_d5a3df4e344026a19f5c0b760_cdb7e3b4a7" tabindex="-1" value=""></div>
-                                <div class="clear"><input type="submit" value="Register" name="subscribe"
-                                        id="mc-embedded-subscribe" class="button"></div>
-                            </div>
-                        </form>
-                    </div>
-                    <script type='text/javascript'
-                        src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-                    <script
-                        type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[3] = 'SCHOOL'; ftypes[3] = 'text'; fnames[5] = 'ROLE'; ftypes[5] = 'text'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
-                    <!--End mc_embed_signup-->
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us1.list-manage.com/subscribe/post?u=3a5e298b67f430e9850d43c02&amp;id=461e951eda" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>CheXplanation-v1.0</h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+<div class="mc-field-group">
+	<label for="mce-FNAME">First Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+</div>
+<div class="mc-field-group">
+	<label for="mce-LNAME">Last Name  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE3">School/Organization  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MMERGE3" class="required" id="mce-MMERGE3">
+</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE4">Role/Title  <span class="asterisk">*</span>
+</label>
+	<input type="text" value="" name="MMERGE4" class="required" id="mce-MMERGE4">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3a5e298b67f430e9850d43c02_461e951eda" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='MMERGE3';ftypes[3]='text';fnames[4]='MMERGE4';ftypes[4]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<!--End mc_embed_signup-->
                 </div>
             </div>
         </div>
@@ -252,11 +264,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h2>Deep learning saliency maps do not accurately highlight diagnostically relevant regions for medical image interpretation</h2>
-                    <h3>Adriel Saporta *, Xiaotong Gui *, Ashwin Agrawal *, Anuj Pareek, Steven QH Truong, Chanh DT Nguyen, Van-Doan Ngo, Jayne Seekins, Francis G Blankenberg, Andrew Ng, Matthew P Lungren, Pranav Rajpurkar</h3>
+                    <h2>Deep learning saliency maps do not accurately highlight diagnostically relevant regions for
+                        medical image interpretation</h2>
+                    <h3>Adriel Saporta *, Xiaotong Gui *, Ashwin Agrawal *, Anuj Pareek, Steven QH Truong, Chanh DT
+                        Nguyen, Van-Doan Ngo, Jayne Seekins, Francis G Blankenberg, Andrew Ng, Matthew P Lungren, Pranav
+                        Rajpurkar</h3>
                     <p>If you have questions about our work,
                         contact us at our <a href="https://groups.google.com/forum/#!forum/chexpert-dataset">google
-                            group</a>.</p><a class="btn btn-lg btn-default" href="https://www.medrxiv.org/content/10.1101/2021.02.28.21252634v1">Read
+                            group</a>.</p><a class="btn btn-lg btn-default"
+                        href="https://www.medrxiv.org/content/10.1101/2021.02.28.21252634v1">Read
                         the Paper</a>
                 </div>
             </div>
