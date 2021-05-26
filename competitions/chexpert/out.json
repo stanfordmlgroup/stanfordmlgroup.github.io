@@ -10998,7 +10998,7 @@
             "submission": {
                 "created": 1620437030,
                 "description": "MVD121 (single model)",
-                "num_period_submissions": 3,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "PJansson"
@@ -11740,7 +11740,7 @@
             "submission": {
                 "created": 1620761556,
                 "description": "MVD121-320 (single model)",
-                "num_period_submissions": 3,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "PJansson"
@@ -12396,6 +12396,100 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x4548945af68c41449cc1f25145983ea1 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x9640149b70b08cfe65d6bb5a8f1fe80e09e49020",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x5da1ba6059a84f3ab54bf04d3564a015",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x5da1ba6059a84f3ab54bf04d3564a015",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x5da1ba6059a84f3ab54bf04d3564a015",
+                        "parent_name": "maxium0526-predictions-xception-base-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x4548945af68c41449cc1f25145983ea1"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x5da1ba6059a84f3ab54bf04d3564a015",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1622010968,
+                    "data_size": 12727,
+                    "description": "{\"submit_id\": \"0x3c42ec94996047fa9de55fc9f674059d\", \"submitter_id\": \"0xa853620c3a384451af57351fd30bf2b4\", \"predict_id\": \"0x4548945af68c41449cc1f25145983ea1\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1622011329,
+                    "name": "maxium0526-predictions-xception-base-results",
+                    "remote": "767b3995db77-f551c00ac93440da8bd8e28894f21bf2",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1622011280,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 1.066351,
+                    "time_system": 0.0,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x5da1ba6059a84f3ab54bf04d3564a015"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8566988755156241,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.8872218843395338,
+                "average_num_rads_under_roc": 1.2,
+                "cardiomegaly_auroc": 0.8930150477238656,
+                "cardiomegaly_num_rads_under_roc": 1,
+                "consolidation_auroc": 0.8215096273519291,
+                "consolidation_num_rads_under_roc": 0,
+                "edema_auroc": 0.9092234779438572,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9556623931623932,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1621967121,
+                "description": "Xception (single model) (Macao Polytechnic Institute)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 7,
+                "public": true,
+                "user_name": "maxium0526"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xc48beec9f8184a48aa19960d3262443d \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-memory 2g --request-time 1d",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -12576,7 +12670,7 @@
             "submission": {
                 "created": 1620436996,
                 "description": "MVR50 (single model)",
-                "num_period_submissions": 3,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "PJansson"
@@ -12948,8 +13042,8 @@
             "submission": {
                 "created": 1618657035,
                 "description": "Aoitori (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 6,
+                "num_period_submissions": 1,
+                "num_total_submissions": 7,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13042,8 +13136,8 @@
             "submission": {
                 "created": 1614629919,
                 "description": "DearBrave (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 6,
+                "num_period_submissions": 1,
+                "num_total_submissions": 7,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13228,8 +13322,8 @@
             "submission": {
                 "created": 1616962066,
                 "description": "Yoake (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 6,
+                "num_period_submissions": 1,
+                "num_total_submissions": 7,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13878,8 +13972,8 @@
             "submission": {
                 "created": 1614000584,
                 "description": "GreenTeaCalpis (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 6,
+                "num_period_submissions": 1,
+                "num_total_submissions": 7,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -15176,8 +15270,8 @@
             "submission": {
                 "created": 1612295085,
                 "description": "model2_DenseNet121 (single) Macao Polytechnic Institute",
-                "num_period_submissions": 0,
-                "num_total_submissions": 6,
+                "num_period_submissions": 1,
+                "num_total_submissions": 7,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -22010,8 +22104,8 @@
             "submission": {
                 "created": 1603872468,
                 "description": "ResNeXt101 (single model) (Individual)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 6,
+                "num_period_submissions": 1,
+                "num_total_submissions": 7,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -22187,5 +22281,5 @@
             }
         }
     ],
-    "updated": 1620767133.7819278
+    "updated": 1622011923.1882849
 }
