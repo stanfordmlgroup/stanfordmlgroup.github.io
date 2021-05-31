@@ -10354,6 +10354,100 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xc897702d9f124dfcaeec5a9b9f334ef0 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x2a218f53e26d15b9dd527a595c0ae82f22a87f63",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x3cfad61a5a1d455db80b27121145233f",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x3cfad61a5a1d455db80b27121145233f",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x3cfad61a5a1d455db80b27121145233f",
+                        "parent_name": "maxium0526-predictions-accidentnet-v1-f-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xc897702d9f124dfcaeec5a9b9f334ef0"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x3cfad61a5a1d455db80b27121145233f",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1622421434,
+                    "data_size": 12727,
+                    "description": "{\"submit_id\": \"0xe7b1700ac50b4ddab71007c9925fd93a\", \"submitter_id\": \"0xa853620c3a384451af57351fd30bf2b4\", \"predict_id\": \"0xc897702d9f124dfcaeec5a9b9f334ef0\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1622422228,
+                    "name": "maxium0526-predictions-accidentnet-v1-f-results",
+                    "remote": "767b3995db77-f551c00ac93440da8bd8e28894f21bf2",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1622422179,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 1.039809,
+                    "time_system": 0.0,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x3cfad61a5a1d455db80b27121145233f"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.875779322295681,
+                "atelectasis_num_rads_under_roc": 2,
+                "average_auroc": 0.8967432990265009,
+                "average_num_rads_under_roc": 1.2,
+                "cardiomegaly_auroc": 0.8857853090191464,
+                "cardiomegaly_num_rads_under_roc": 1,
+                "consolidation_auroc": 0.8617029065085293,
+                "consolidation_num_rads_under_roc": 0,
+                "edema_auroc": 0.9033296876898773,
+                "edema_num_rads_under_roc": 2,
+                "effusion_auroc": 0.9571192696192696,
+                "effusion_num_rads_under_roc": 1
+            },
+            "submission": {
+                "created": 1622224802,
+                "description": "AccidentNet v1 (single model) (Macao Polytechnic Institute)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 8,
+                "public": true,
+                "user_name": "maxium0526"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x803d3c27a5324e14b97eb3ca7a60feb2 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -12481,9 +12575,9 @@
             },
             "submission": {
                 "created": 1621967121,
-                "description": "Xception (single model) (Macao Polytechnic Institute)",
+                "description": "Stellarium (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13043,7 +13137,7 @@
                 "created": 1618657035,
                 "description": "Aoitori (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13137,7 +13231,7 @@
                 "created": 1614629919,
                 "description": "DearBrave (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13323,7 +13417,7 @@
                 "created": 1616962066,
                 "description": "Yoake (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13973,7 +14067,7 @@
                 "created": 1614000584,
                 "description": "GreenTeaCalpis (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -15271,7 +15365,7 @@
                 "created": 1612295085,
                 "description": "model2_DenseNet121 (single) Macao Polytechnic Institute",
                 "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -22105,7 +22199,7 @@
                 "created": 1603872468,
                 "description": "ResNeXt101 (single model) (Individual)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 7,
+                "num_total_submissions": 8,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -22281,5 +22375,5 @@
             }
         }
     ],
-    "updated": 1622011923.1882849
+    "updated": 1622423783.9647622
 }
