@@ -69,6 +69,10 @@ block content
             | Chest radiography is the most common imaging examination globally, and is critical for screening, diagnosis, and management of many life threatening diseases. Most chest x-ray algorithms have been developed and validated on digital x-rays, while the vast majority of developing regions use films.
             | An appealing solution to scaled deployment is to leverage the ubiquity of smartphones for automated interpretation of film through cellphone photography. Automated interpretation of photos of chest x-rays at the same high-level of performance as with digital chest x-rays is challenging because photographs of x-rays introduce visual artifacts not commonly found in digital x-rays.
             | To encourage high model performance for this application,  we developed CheXphoto, a dataset of photos of chest x-rays and synthetic transformations designed to mimic the effects of photography.
+          p 
+            | With the launch of the CheXphoto competition, we are pleased to announce the release of an additional set of x-ray film images provided by VinBrain, a subsidiary of Vingroup. Please see 
+            a(href="#test_and_validation") Validation and Test Sets
+            | for details.
         .col-md-5
           h2 Leaderboard
           p 
@@ -100,7 +104,7 @@ block content
         .col-md-5
             img(src='/competitions/chexphoto/img/distribution.png')
             img(src='/competitions/chexphoto/img/sample_images.png')
-  section
+  section(id="test_and_validation")
     .container
       .row
         .col-md-8
@@ -111,6 +115,8 @@ block content
           p
             | We generated the natural photos of the validation set by manually capturing images of x-rays displayed on a 2560×1080 monitor using a OnePlus 6 cell phone, following a protocol that mirrored the iPhone1k dataset. Synthetic transformations of the validation images were produced using the same protocol as the synthetic training set.
             | The test set was captured using an iPhone 8, following the same protocol as the iPhone1k dataset.
+          p
+            | The validation set contains an additional 250 cell phone images of chest x-ray films provided by VinBrain, a subsidiary of Vingroup in Vietnam. These films were originally collected by VinBrain through joint research projects with leading lung hospitals in Vietnam. An additional 250 film images have been withheld in the test set for model evaluation.
   section.gray
     .container
       .row
