@@ -32,27 +32,27 @@ block content
             p.text-muted
               | Accurate radiology report labeling using bert.
             a.btn.btn-default(href="/projects/chexbert") Project Webpage
-        //- .col-md-3
-        //-   .feature-item
-        //-     i.fa.fa-tree.text-primary
-        //-     h2 ForestNet
-        //-     p.text-muted
-        //-       | Deforestation driver classification using satellite imagery.
-        //-     a.btn.btn-default(href="/projects/forestnet") Project Webpage
-        //- .col-md-3
-        //-   .feature-item
-        //-     i.fa.fa-sun-o.text-primary
-        //-     h2 Solar Forecasting
-        //-     p.text-muted
-        //-       | Calibrated probabilistic solar irradiance forecasting.
-        //-     a.btn.btn-default(href="/projects/solar") Project Webpage
-        //- .col-md-3
-        //-   .feature-item
-        //-     i.fa.fa-database.text-primary
-        //-     h2 OGNet
-        //-     p.text-muted
-        //-       | Oil and gas infrastructure mapping in aerial imagery.
-        //-     a.btn.btn-default(href="/projects/ognet") Project Webpage
+        .col-md-3
+          .feature-item
+            i.fa.fa-tree.text-primary
+            h2 ForestNet
+            p.text-muted
+              | Deforestation driver classification using satellite imagery.
+            a.btn.btn-default(href="/projects/forestnet") Project Webpage
+        .col-md-3
+          .feature-item
+            i.fa.fa-sun-o.text-primary
+            h2 Solar Forecasting
+            p.text-muted
+              | Calibrated probabilistic solar irradiance forecasting.
+            a.btn.btn-default(href="/projects/solar") Project Webpage
+        .col-md-3
+          .feature-item
+            i.fa.fa-database.text-primary
+            h2 OGNet
+            p.text-muted
+              | Oil and gas infrastructure mapping in aerial imagery.
+            a.btn.btn-default(href="/projects/ognet") Project Webpage
         .col-md-3
           .feature-item
             i.fa.fa-camera.text-primary
@@ -60,6 +60,8 @@ block content
             p.text-muted
               | Chest X-Ray Transformation Dataset And Competition
             a.btn.btn-default(href="/competitions/chexphoto") Project Webpage
+
+      .row
         .col-md-3
           .feature-item
             i.fa.fa-user-md.text-primary
@@ -81,7 +83,6 @@ block content
             p.text-muted
               | A Large Chest X-Ray Dataset And Competition
             a.btn.btn-default(href="/competitions/chexpert") Project Webpage
-      .row
         .col-md-3
           .feature-item
             i.fa.fa-heartbeat.text-primary
@@ -89,6 +90,7 @@ block content
             p.text-muted
               | Cardiologist-level arrythmia detection from ECG signals.
             a.btn.btn-default(href="/projects/ecg2") Project Webpage
+      .row
         .col-md-3
           .feature-item
             i.fa.fa-medkit.text-primary
@@ -111,7 +113,6 @@ block content
             p.text-muted
               | Chest radiograph diagnosis of multiple pathologies
             a.btn.btn-default(href="/projects/chexnext") Project Webpage
-      .row
         .col-md-3
           .feature-item
             i.fa.fa-user-md.text-primary
@@ -119,7 +120,7 @@ block content
             p.text-muted
               | Introducing a large dataset for abnormality detection from bone x-rays.
             a.btn.btn-default(href="/competitions/mura") Project Webpage
-      
+      .row
         .col-md-3
           .feature-item
             i.fa.fa-hourglass-half.text-primary
@@ -141,7 +142,6 @@ block content
             p.text-muted
               | Using Electronic Health Record Data to direct palliative care resources.
             a.btn.btn-default(href="/projects/improving-palliative-care") Project Webpage
-      .row
         .col-md-3
           .feature-item
             i.fa.fa-graduation-cap.text-primary
@@ -149,7 +149,14 @@ block content
             p.text-muted
               | Designing natural language models to detect writing errors and provide feedback.
             a.btn.btn-default(href="http://crio.stanford.edu") Project Webpage
-        
+      .row 
+        .col-md-3
+          .feature-item
+            i.fa.fa-user-md.text-primary
+            h2 CheXplanation
+            p.text-muted
+              | Chest X-Ray Localization Dataset And Competition
+            a.btn.btn-default(href="/competitions/chexplanation") Project Webpage
 
   section.gray.features#people
      .container
@@ -189,12 +196,12 @@ block content
           .section-heading
             h2.text-muted Bootcamp Collaborating Faculty
           +alumni_inside('bootcamp_faculty')
-  section#volunteering
+  section#workwithus
     .container
       .row
         .col-lg-12.text-center
           .section-heading
-            h1 Volunteer with us
+            h1 Work with us
       .row
         .col-md-10.col-md-offset-1
           h2
@@ -232,20 +239,34 @@ block content
               | : We also encourage engineers without much AI background who are interested in developing ML applications to apply. Applicants should have made significant contributions to software projects in the past, for example through developing software systems at a company or through significant open source contributions.
           h2
             | Applying
-          p  Please email us at ml-apply@cs.stanford.edu with your resume (and your transcript if you're a student) and two paragraphs on why you’d like to get involved. We expect that volunteers will commit 25 hours a week as a minimum. Due to a high number of applicants we may be unable to respond to individual emails.
+          p  Please see below for how to apply to work with our group. Due to a high number of applicants we may be unable to respond to individual emails. 
           h3
-            | Stanford Students
+            | Stanford PhD Students
           ul
             li
-              | Outside of coursework, we expect this to be your primary academic activity.
+              | Stanford PhD students interested in rotating with Professor Ng should email us at ml-apply@cs.stanford.edu using their Stanford email with the subject line “FirstName LastName PhD Rotation”.
+          h3
+            | Other Stanford Students
+          ul
+            li 
+              | We encourage other Stanford students who want to work with us to apply to either the 
+              a(href="https://stanfordmlgroup.github.io/programs/aicc-bootcamp/") AICC 
+              | or 
+              a(href="https://stanfordmlgroup.github.io/programs/aihc-bootcamp/") AIHC 
+              | bootcamp. 
+            li
+              | Outside of coursework, we expect this to be your primary academic activity. 
+            li
               | As it takes time to familiarize oneself with a research project and to make significant contributions, we expect that students will be involved for at least two quarters, with a strong preference for those who can potentially stay involved for the full school year.
           h3
-            | Non-Stanford student Volunteers
+            | Volunteers
           ul
             li
-              | You must be authorized to work in the United States and able to work on the Stanford University campus. We are not able to sponsor visas nor take on volunteers that want to work remotely.
+              | Please email us at ml-apply@cs.stanford.edu with your resume (and your transcript if you're a student) and two paragraphs on why you’d like to get involved.
             li
-              | Volunteers must be available for at least 12 weeks of research, with a strong preference for volunteers who can potentially stay involved for longer.
+              | You must be authorized to work in the United States and able to work on the Stanford University campus. We are not able to sponsor visas nor take on volunteers that want to work remotely. 
+            li
+              | Volunteers must be available for at least 12 weeks of research, with a strong preference for volunteers who can potentially stay involved for longer. We expect that volunteers will commit 25 hours a week as a minimum.
           p We believe that having a diverse and inclusive team will help us to advance AI, for the betterment of human life. We value different viewpoints. All backgrounds, ideas, and perspectives are welcome.
   section#contact.gray
     .container
@@ -256,6 +277,6 @@ block content
       .row
         .col-md-10.col-md-offset-1.text-center
           h3
-            | If you're looking to partner or volunteer with us, contact us at
+            | If you're looking to partner or work with us, contact us at 
           h2
             code ml-apply@cs.stanford.edu

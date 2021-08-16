@@ -21,9 +21,9 @@ block content
       .row
         .col-sm-7
           h3 The AI for Climate Change Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and climate change. Students receive training from PhD students and bootcamp faculty to do interdiscplinary research on high impact problems.
-          p 
-            | Projects in the bootcamp have included work in (1) energy on detecting energy infrastructure in satellite imagery, (2) climate science on predicting methane emissions from natural wetlands, (3) deforestation on classifying the drivers of forest loss events using satellite imagery, and (4) transportation on detecting travel infrastructure in urban areas using street view imagery.
-          a.btn.btn-lg.btn-default(href="https://docs.google.com/forms/d/e/1FAIpQLSfJSSsQ6ib1NG8ipXt7rgU8VisvkSsdDzQgU1uDP1IOYRp1xA/viewform") Apply Now
+          p Projects in the bootcamp have included work in (1) energy on detecting solar, wind, and oil and gas infrastructure in satellite imagery, (2) earth science on predicting methane emissions from natural wetlands, (3) deforestation on classifying the drivers of forest loss events using satellite imagery, and (4) transportation on detecting travel infrastructure in urban areas using street view imagery.
+          p Academic collaborators include faculty at Stanford Earth System Science and Civil & Environmental Engineering, UC Berkeley, and the University of Oxford.
+          a.btn.btn-lg.btn-default(href="https://docs.google.com/forms/d/e/1FAIpQLSdhKLIAhs5OXUsEbHJ_x9VRuGVcQeWWZuQWFxDXbzKDCz0XbA/viewform?usp=sf_link") Apply Now
         .col-sm-5.hidden-xs
           +alumni_inside('climate_bootcamp_alumni', 'big_compact')
           +alumni_inside('climate_bootcamp_phd', 'big_compact')
@@ -49,47 +49,56 @@ block content
         .col-sm-7
           h2 Program
           p 
-            | The AICC bootcamp is an intense two-quarter program where students work on high-impact research problems at the intersection of AI and climate change. Students work closely with PhD students in Professor Andrew Ng's lab and with faculty members in earth science, energy, and urban planning. Students also collaborate with climate change experts from industry.
+            | The AICC bootcamp is an intense two-quarter program where students work on high-impact research problems at the intersection of AI and climate change. Students work closely with PhD students in Professor Andrew Ng's lab and with faculty members in earth science, energy, urban planning, and atmospheric science. Students also collaborate with climate change experts from industry.
           .applications
             h2 Applications
             p Students with a background in artificial intelligence are encouraged to apply.
-            p Applications for the Winter+Spring 2021 bootcamp are now open.
+            //- p Applications for the Summer+Fall 2021 bootcamp have closed.
+            //- p Applications for the Spring+Summer/Fall 2021 bootcamp are now open. Students have the option to do their second quarter in the Summer or Fall.
+            p Applications for the Fall-Winter 2021-2022 bootcamp are now open.
             ul
-              li Early Applications due November 20th, 2020 at 11:59p PST.
-              li Regular Applications due December 15th, 2020 at 11:59p PST.
-              li Late Applications due January 4th, 2021 at 11:59p PST. Apply early to give yourself enough time to prepare for the interview.
-              li Rolling interviews and selections through January 8th, 2021.
-              li Bootcamp starts January 15th, 2021.
+              li Early Applications due Aug 27th, 2021 at 11:59p PST.
+              li Regular Applications due Sep 7th, 2021 at 11:59p PST.
+              li Late Applications due Sep 13th, 2021 at 11:59p PST. Apply early to give yourself enough time to prepare for the interview.
+              li Rolling interviews and selections through Sep 19th, 2021.
+              li Bootcamp starts Sep 20th, 2021.
             h3 Prerequisites and Commitment
+            //- h3 AI Specialization
             p The bootcamp is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with faculty and industry experts. Students have the opportunity to take a deep dive into climate change and co-author a research paper. We expect students to have:
+            //- p This role is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with faculty and industry experts. Students have the opportunity to take a deep dive into climate change and co-author a research paper. We expect students to have:
             ul
               li Taken machine learning courses (CS229/CS230/CS224N/CS231N or equivalent).
               li Proficiency in software engineering (CS107 or equivalent), and have done Python programming.
-              li The bootcamp as their primary academic engagement (20-30 hours per week in lab) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399 etc).
-            //- h3 Web Development Specialization
-            //- p This role is suited for students who have taken web development and human computer interaction courses. Students will be able to apply and sharpen these skills, developing solutions to challenging problems with the mentorship of CS PhD students and in collaboration with earth system science and civil and environmental engineering faculty and industry experts. Students have the opportunity to take a deep dive into climate change and co-author a research paper. We expect students to have:
+              li The bootcamp as their primary academic engagement (20-30 hours per week in lab) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399, etc).
+            //- h3 HCI Specialization
+            //- p This role is suited for students who have taken human computer interaction and software engineering courses. Students will be able to apply and sharpen these skills, developing solutions to challenging problems with the mentorship of CS PhD students and in collaboration with faculty and industry experts. Students have the opportunity to take a deep dive into climate change and co-author a research paper. We expect students to have:
             //- ul
-            //-   li Proficiency in Python, Linux, and JavaScript
-            //-   li Have taken one or more of CS142, CS147, CS193X, CS194H, CS210, or CS247
-            //-   li The bootcamp as their primary academic engagement (20-30 hours per week in lab) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399 etc).
+            //-   li Have taken one or more of CS147, CS247, CS278, or CS347.
+            //-   li Proficiency in software engineering (CS107 or equivalent), and have done Python programming.
+            //-   li The bootcamp as their primary academic engagement (20-30 hours per week in lab) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399, etc).
   section.gray
     .container
       .row
-        //- .col-sm-4
-        //-   h3 Past Bootcamp Projects
-        //-   ul.list-unstyled
-        //-     li
-        //-       a.btn(href="/projects/forestnet") ForestNet
-        //-     li
-        //-       a.btn(href="/projects/solar") Solar Forecasting
-        //-     li
-        //-       a.btn(href="/projects/ognet") OGNet
-        //-     li
-        //-       a.btn(href="https://www.climatechange.ai/papers/neurips2019/5/paper.pdf") DeepWind
+        .col-sm-4
+          h3 Past Bootcamp Projects
+          ul.list-unstyled
+            li
+              a.btn(href="https://authors.elsevier.com/a/1dNxrcFXJZ1gC") Methane Gapfilling
+            li
+              a.btn(href="/projects/forestnet") ForestNet
+            li
+              a.btn(href="/projects/solar") Solar Forecasting
+            li
+              a.btn(href="/projects/ognet") OGNet
+            li
+              a.btn(href="https://www.climatechange.ai/papers/neurips2019/5/paper.pdf") DeepWind
         .col-sm-8
           .row
             .col-sm-12
-              h2 Past Bootcamp Cohorts
+              h2 Bootcamp Cohorts
+              +alumni('ccsummer2021', false)
+              +alumni('ccspring2021', false)
+              +alumni('ccwinter2021', false)
               +alumni('ccfall2020', false)
               +alumni('ccsummer2020', false)
               +alumni('ccspring2020', false)
@@ -100,6 +109,6 @@ block content
   section.bg-primary
     .container
       .row
-        .col-md-8
+        .col-md-8.col-md-offset-4
           h2 We invite you to join the AI revolution in climate change
-          a.btn.btn-lg.btn-default(href="https://docs.google.com/forms/d/e/1FAIpQLSfJSSsQ6ib1NG8ipXt7rgU8VisvkSsdDzQgU1uDP1IOYRp1xA/viewform") Apply Now
+          a.btn.btn-lg.btn-default(href="https://docs.google.com/forms/d/e/1FAIpQLSdhKLIAhs5OXUsEbHJ_x9VRuGVcQeWWZuQWFxDXbzKDCz0XbA/viewform?usp=sf_link") Apply Now

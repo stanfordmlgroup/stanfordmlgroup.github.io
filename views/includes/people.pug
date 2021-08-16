@@ -7,10 +7,15 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Anand Avati', 'phd', false, use_compact)
       +dp('Hao Sheng', 'phd', false, use_compact)
       +dp('Jeremy Irvin', 'phd', false, use_compact)
-      +dp('Pranav Rajpurkar', 'phd', false, use_compact)
       +dp('Sharon Zhou', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
+      +alumni_inside('ccsummer2021', use_compact)
+      +alumni_inside('hcspring2021', use_compact)
+      +alumni_inside('ccspring2021', use_compact)
+      +alumni_inside('hcwinter2021', use_compact)
+      +alumni_inside('ccwinter2021', use_compact)
+      +alumni_inside('hcfall2020', use_compact)
       +alumni_inside('ccfall2020', use_compact)
       +alumni_inside('hcsummer2020', use_compact)
       +alumni_inside('ccsummer2020', use_compact)
@@ -31,6 +36,9 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'healthcare_bootcamp_alumni'
+      +alumni_inside('hcspring2021', use_compact)
+      +alumni_inside('hcwinter2021', use_compact)
+      +alumni_inside('hcfall2020', use_compact)
       +alumni_inside('hcsummer2020', use_compact)
       +alumni_inside('hcspring2020', use_compact)
       +alumni_inside('winter2020', use_compact)
@@ -43,6 +51,9 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'climate_bootcamp_alumni'
+      +alumni_inside('ccsummer2021', use_compact)
+      +alumni_inside('ccspring2021', use_compact)
+      +alumni_inside('ccwinter2021', use_compact)
       +alumni_inside('ccfall2020', use_compact)
       +alumni_inside('ccsummer2020', use_compact)
       +alumni_inside('ccspring2020', use_compact)
@@ -69,14 +80,18 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Sebastian Fernandez-Pol', 'prof', false, use_compact)
       +dp('Yaso Natkunam', 'prof', false, use_compact)
       +dp('Mitchell Rosen', 'prof', false, use_compact)
+      +dp('Geoff Tison', 'prof', false, use_compact)
+      +dp('David Kim', 'prof', false, use_compact)
+      +dp('Andrew Beam', 'prof', false, use_compact)
   if cohort == 'climate_faculty'
       +dp('Rob Jackson', 'prof', false, use_compact)
       +dp('Ram Rajagopal', 'prof', false, use_compact)
       +dp('Sara Knox', 'prof', false, use_compact)
       +dp('Daniel Rodriguez', 'prof', false, use_compact)
-      +dp('Gavin McNicol', 'postdoc', false, use_compact)
+      +dp('Gavin McNicol', 'prof', false, use_compact)
       +dp('Etienne Fluet-Chouinard', 'postdoc', false, use_compact)
       +dp('Zutao Yang', 'postdoc', false, use_compact)
+      +dp('Duncan Watson-Parris', 'postdoc', false, use_compact)
   if cohort == 'climate_industry'
       +dp('Kyle Story', 'dl', false, use_compact)
       +dp('Rose Rustowicz', 'dl', false, use_compact)
@@ -90,11 +105,53 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Ritesh Gautam', 'edf', false, use_compact)
       +dp('Mark Omara', 'edf', false, use_compact)
   if cohort == 'healthcare_bootcamp_phd'
-      +dp('Pranav Rajpurkar', 'phd', false, use_compact)
+      +dp('Pranav Rajpurkar', 'prof', false, use_compact)
       +dp('Anand Avati', 'phd', false, use_compact)
   if cohort == 'climate_bootcamp_phd'
       +dp('Jeremy Irvin', 'phd', false, use_compact)
       +dp('Hao Sheng', 'phd', false, use_compact)
+  if cohort == 'ccsummer2021'
+      +dp('Jake Silberg', 'ms', false, use_compact)
+      +dp('Matt Kolodner', 'bs', false, use_compact)
+      +dp('Sarthak Kanodia', 'ms', false, use_compact)
+  if cohort == 'ccspring2021'
+      +dp('Gil Kornberg', 'ms', false, use_compact)
+      +dp('Raghav Samavedam', 'bs', false, use_compact)
+      +dp('Sergio Charles', 'bs', false, use_compact)
+      +dp('Collin Kwon', 'ms', false, use_compact)
+      +dp('Benjamin Liu', 'bs', false, use_compact)
+  if cohort == 'hcspring2021'
+      +dp('Emily Ross', 'bs', false, use_compact)
+      +dp('David Dadey', 'MD, PhD', false, use_compact)
+  if cohort == 'ccwinter2021'
+      +dp('Lyron Co Ting Keh', 'bs', false, use_compact)
+      +dp('Jake Taylor', 'ms', false, use_compact)
+      +dp('Sonia Chu', 'bs', false, use_compact)
+      +dp('Mauricio Wulfovich', 'ms', false, use_compact)
+      +dp('Chris Rilling', 'bs', false, use_compact)
+      +dp('Andrew Yang', 'ms', false, use_compact)
+  if cohort == 'hcwinter2021'
+      +dp('Cecile Loge', 'scpd', false, use_compact)
+      +dp('Daniel Michael', 'bs', false, use_compact)
+      +dp('Ekin Tiu', 'bs', false, use_compact)
+      +dp('Ellie Talius', 'bs', false, use_compact)
+      +dp('Niveditha Iyer', 'bs', false, use_compact)
+      +dp('Pujan Patel', 'bs', false, use_compact)
+      +dp('Raj Palleti', 'bs', false, use_compact)
+      +dp('Rehaan Ahmad', 'bs', false, use_compact)
+      +dp('Ryan Chi', 'bs', false, use_compact)
+      +dp('Tom Jin', 'ms', false, use_compact)
+  if cohort == 'hcfall2020'
+      +dp('Bryan Gopal', 'bs', false, use_compact)
+      +dp('Can Liu', 'ms', false, use_compact)
+      +dp('Emily Wen', 'bs', false, use_compact)
+      +dp('Gautham Raghupathi', 'bs', false, use_compact)
+      +dp('Mark Endo', 'bs', false, use_compact)
+      +dp('Nhi Truong Vu', 'phd', false, use_compact)
+      +dp('Pranav Sriram', 'ms', false, use_compact)
+      +dp('Ryan Han', 'bs', false, use_compact)
+      +dp('Soham Gadgil', 'ms', false, use_compact)
+      +dp('Yujie He', 'ms', false, use_compact)
   if cohort == 'ccfall2020'
       +dp('Irena Gao', 'bs', false, use_compact)
       +dp('Sam Masling', 'ms', false, use_compact)
@@ -254,6 +311,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Morgan Quigley', '', true)
       +dp('Pieter Abbeel', '', true)
       +dp('Quoc Le', '', true)
+      +dp('Pranav Rajpurkar', '')
       +dp('Rajat Raina', '', true)
       +dp('Richard Socher', '', true)
       +dp('Rion Snow', '', true)
@@ -272,6 +330,30 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'climate_industry'
       h3 Climate Change Bootcamp Industry Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccsummer2021'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Summer 2021
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'hcspring2021'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Spring 2020-2021
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccspring2021'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Spring 2020-2021
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'hcwinter2021'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Winter 2020-2021
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccwinter2021'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Winter 2020-2021
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'hcfall2020'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Fall 2020-2021
       +alumni_inside(cohort, use_compact)
   if cohort == 'ccfall2020'
     .cohort.clearfix
