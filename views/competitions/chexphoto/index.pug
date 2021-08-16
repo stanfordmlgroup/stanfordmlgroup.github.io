@@ -24,9 +24,10 @@ mixin model_display(group)
       th Rank
       th Date
       th Model
-      th AUC
-      th Num Rads Below Curve
-    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.auc; }))
+      th AUC Film
+      th AUC Digital
+      th Δ CheXpert
+    - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.auc_film; }))
     each model in group
       tr
         td.rank
@@ -40,12 +41,14 @@ mixin model_display(group)
           if model.link
             a.link(href=model.link) #{model.link}
         td
-          if model.auc == largest_auc
-            b #{model.auc.toPrecision(3)}
+          if model.auc_film == largest_auc
+            b #{model.auc_film.toPrecision(3)}
           else
-            | #{model.auc.toPrecision(3)}
+            | #{model.auc_film.toPrecision(3)}
         td
-          | #{model.average_num_rads_under_roc.toPrecision(2)}
+          | #{model.auc_digital.toPrecision(2)}
+        td
+          | #{model.delta_auc.toPrecision(2)}
 
 block content
   section#header

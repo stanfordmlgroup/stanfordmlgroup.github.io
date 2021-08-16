@@ -60,12 +60,19 @@ var parseCompEntries = function (comp_file, comp_name) {
         if (!(entry.kappa >= 0)) throw 'Score invalid'
         if (entry.kappa < 0.5) throw 'Score too low'
         entry.score = entry.kappa
-      } else if (comp_name === 'chexpert' || comp_name === 'chexphoto'){
+      } else if (comp_name === 'chexpert'){
         entry.auc = parseFloat(o_entry.scores.average_auroc)
         entry.average_num_rads_under_roc = parseFloat(o_entry.scores.average_num_rads_under_roc)
         if (!(entry.auc >= 0)) throw 'Score invalid'
         if (entry.auc < 0.7) throw 'Score too low'
         entry.score = entry.auc + (entry.average_num_rads_under_roc * .001)
+      } else if (comp_name == 'chexphoto') {
+        entry.auc_film = parseFloat(o_entry.scores.chexphoto_film_auroc)
+        if (!(entry.auc_film >= 0)) throw 'Score invalid'
+        if (entry.auc_film < 0.5) throw 'Score too low'
+        entry.score = entry.auc_film
+        entry.auc_digital = parseFloat(o_entry.scores.chexphoto_digital_auroc)
+        entry.delta_auc = parseFloat(o_entry.scores.delta_auroc)
       }
       if (entry.model_name === '') {
         entry.model_name = '' + entry.user
