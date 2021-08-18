@@ -59,7 +59,7 @@ block content
       .row
         .col-md-7
           h1 What is CheXphoto?
-          p CheXphoto is a competition for x-ray interpretation based on a new dataset of naturally and synthetically perturbed chest x-rays. 
+          p CheXphoto is a competition for x-ray interpretation based on a new dataset of naturally and synthetically perturbed chest x-rays hosted by Stanford and VinBrain.
           a.btn.btn-default(href="https://arxiv.org/abs/2007.06199") Read the Paper (Phillips, Rajpurkar & Sabini et al.)
           h2 Why CheXphoto?
           p 
@@ -69,11 +69,12 @@ block content
           p 
             | With the launch of the CheXphoto competition, we are pleased to announce the release of an additional set of x-ray film images provided by VinBrain, a subsidiary of Vingroup. Please see 
             a(href="#test_and_validation") Validation and Test Sets 
-            | for details.
+            |  for details.
         .col-md-5
           h2 Leaderboard
           p 
             | Will your model perform as well as radiologists in detecting different pathologies in chest X-rays?
+          p We have launched as of August 18, 2021.
           +model_display(test)
           h3 How can I participate?
           p CheXphoto measures model performance in relation to the CheXpert x-ray dataset. CheXphoto uses a hidden test set for official evaluation of models. Teams submit their executable code on Codalab, which is then run on a test set that is not publicly readable. Such a setup preserves the integrity of the test results.
