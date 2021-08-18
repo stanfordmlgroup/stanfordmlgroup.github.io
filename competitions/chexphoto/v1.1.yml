@@ -1,0 +1,34 @@
+max_submissions_per_period: 5                               # allows at most 5 submissions per user per period, where period is 24 hours by default
+log_worksheet_uuid: '0xd4a40e66db894274b990d985476431a6'    # uuid of the worksheet to create new run bundles in
+submission_tag: chexpert-submit                             # configure the tag that participants use to submit to the competition
+
+# Configure how to mimic the submitted prediction bundles
+predict:
+  mimic:
+  - {new: '0xdb799f3b21ac4a8687b339ddd5784291', old: '0xdb799f3b21ac4a8687b339ddd5784291'}  # replace `old` bundle with `new` bundle
+  - {new: '0x6eed34dae0cf4c8f9c076e8d4f5f123b', old: '0x6eed34dae0cf4c8f9c076e8d4f5f123b'}  # replace `old` bundle with `new` bundle
+  tag: chexphoto-test-predict
+
+## Configure how to evaluate the new prediction bundles
+evaluate:
+  dependencies:
+  - {child_path: evaluate.py, parent_uuid: '0x47d8c7a6cda242a0a478f65ce40a936b'}
+  - {child_path: test.csv, parent_uuid: '0xd341b198b65045779b092fa7b69f54ee'}
+  - {child_path: predictions.csv, parent_uuid: '{predict}'}
+  command: python evaluate.py test.json predictions.json
+  tag: chexphoto-test-eval
+
+# Define how to extract the scores from the evaluation bundle
+score_specs:
+- {key: "/stdout:Average_AUROC", name: "average_auroc"}
+- {key: "/stdout:Average_NumRadsUnderROC", name: "average_num_rads_under_roc"}
+- {key: "/stdout:Atelectasis_AUROC", name: "atelectasis_auroc"}
+- {key: "/stdout:Atelectasis_NumRadsUnderROC", name: "atelectasis_num_rads_under_roc"}
+- {key: "/stdout:Cardiomegaly_AUROC", name: "cardiomegaly_auroc"}
+- {key: "/stdout:Cardiomegaly_NumRadsUnderROC", name: "cardiomegaly_num_rads_under_roc"}
+- {key: "/stdout:Consolidation_AUROC", name: "consolidation_auroc"}
+- {key: "/stdout:Consolidation_NumRadsUnderROC", name: "consolidation_num_rads_under_roc"}
+- {key: "/stdout:Edema_AUROC", name: "edema_auroc"}
+- {key: "/stdout:Edema_NumRadsUnderROC", name: "edema_num_rads_under_roc"}
+- {key: "/stdout:Effusion_AUROC", name: "effusion_auroc"}
+- {key: "/stdout:Effusion_NumRadsUnderROC", name: "effusion_num_rads_under_roc"}

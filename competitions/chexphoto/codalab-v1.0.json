@@ -3,17 +3,17 @@
     "max_submissions_total": 20,
     "host": "https://worksheets.codalab.org",
     "submission_tag": "chexpert-submit",
-    "log_worksheet_uuid": "0x7e4850e815d64d998381411d7b134e2e",
+    "log_worksheet_uuid": "0xd4a40e66db894274b990d985476431a6",
     "allow_multiple_models": true,
     "predict": {
         "mimic": [
             {
                 "old": "0xdb799f3b21ac4a8687b339ddd5784291",
-                "new": "0x48e3f2da46254c138fc319ec381b2bc4"
+                "new": "0x5a39d61ad7fb40d88408148c38d251b2"
             },
             {
                 "old": "0x6eed34dae0cf4c8f9c076e8d4f5f123b", 
-                "new": "0xb120e6564ba74a488e5936dbae3009b2"
+                "new": "0x76ae75e694ed45e6b444c7f2cd9ac824"
             }
         ],
         "depth": 10,
@@ -22,11 +22,11 @@
     "evaluate": {
         "dependencies": [
             {
-                "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b",
+                "parent_uuid": "0x646d2f7a5aac492394085d793754fc12",
                 "child_path": "evaluate.py"
             },
             {
-                "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134",
+                "parent_uuid": "0x177160e2e2f04076906224d743642972",
                 "child_path": "test.csv"
             },
             {
@@ -43,52 +43,16 @@
     },
     "score_specs": [
         {
-            "name": "average_auroc",
-            "key": "/stdout:Average_AUROC"
+            "name": "chexphoto_film_auroc",
+            "key": "/stdout:chexphoto_film"
         },
         {
-            "name": "average_num_rads_under_roc",
-            "key": "/stdout:Average_NumRadsUnderROC"
+            "name": "chexphoto_digital_auroc",
+            "key": "/stdout:chexphoto_digital"
         },
         {
-            "name": "atelectasis_auroc",
-            "key": "/stdout:Atelectasis_AUROC"
-        },
-        {
-            "name": "atelectasis_num_rads_under_roc",
-            "key": "/stdout:Atelectasis_NumRadsUnderROC"
-        },
-        {
-            "name": "cardiomegaly_auroc",
-            "key": "/stdout:Cardiomegaly_AUROC"
-        },
-        {
-            "name": "cardiomegaly_num_rads_under_roc",
-            "key": "/stdout:Cardiomegaly_NumRadsUnderROC"
-        },
-        {
-            "name": "consolidation_auroc",
-            "key": "/stdout:Consolidation_AUROC"
-        },
-        {
-            "name": "consolidation_num_rads_under_roc",
-            "key": "/stdout:Consolidation_NumRadsUnderROC"
-        },
-        {
-            "name": "edema_auroc",
-            "key": "/stdout:Edema_AUROC"
-        },
-        {
-            "name": "edema_num_rads_under_roc",
-            "key": "/stdout:Edema_NumRadsUnderROC"
-        },
-        {
-            "name": "effusion_auroc",
-            "key": "/stdout:Effusion_AUROC"
-        },
-        {
-            "name": "effusion_num_rads_under_roc",
-            "key": "/stdout:Effusion_NumRadsUnderROC"
+            "name": "delta_auroc",
+            "key": "/stdout:delta_vs_original"
         }
     ],
     "metadata": {
