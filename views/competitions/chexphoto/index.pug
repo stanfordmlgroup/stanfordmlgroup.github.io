@@ -26,7 +26,6 @@ mixin model_display(group)
       th Model
       th AUC Film
       th AUC Digital
-      th Δ CheXpert
     - var largest_auc = Math.max.apply(null, group.map(function (model) { return model.auc_film; }))
     each model in group
       tr
@@ -47,8 +46,6 @@ mixin model_display(group)
             | #{model.auc_film.toPrecision(3)}
         td
           | #{model.auc_digital.toPrecision(2)}
-        td
-          | #{model.delta_auc.toPrecision(2)}
 
 block content
   section#header
@@ -71,7 +68,7 @@ block content
             | To encourage high model performance for this application,  we developed CheXphoto, a dataset of photos of chest x-rays and synthetic transformations designed to mimic the effects of photography.
           p 
             | With the launch of the CheXphoto competition, we are pleased to announce the release of an additional set of x-ray film images provided by VinBrain, a subsidiary of Vingroup. Please see 
-            a(href="#test_and_validation") Validation and Test Sets
+            a(href="#test_and_validation") Validation and Test Sets 
             | for details.
         .col-md-5
           h2 Leaderboard
