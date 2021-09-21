@@ -10,6 +10,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Sharon Zhou', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
+      +alumni_inside('ccfall2021', use_compact)
       +alumni_inside('ccsummer2021', use_compact)
       +alumni_inside('hcspring2021', use_compact)
       +alumni_inside('ccspring2021', use_compact)
@@ -51,6 +52,7 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'climate_bootcamp_alumni'
+      +alumni_inside('ccfall2021', use_compact)
       +alumni_inside('ccsummer2021', use_compact)
       +alumni_inside('ccspring2021', use_compact)
       +alumni_inside('ccwinter2021', use_compact)
@@ -89,6 +91,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Sara Knox', 'prof', false, use_compact)
       +dp('Daniel Rodriguez', 'prof', false, use_compact)
       +dp('Gavin McNicol', 'prof', false, use_compact)
+      +dp('Chris Field', 'prof', false, use_compact)
       +dp('Etienne Fluet-Chouinard', 'postdoc', false, use_compact)
       +dp('Zutao Yang', 'postdoc', false, use_compact)
       +dp('Duncan Watson-Parris', 'postdoc', false, use_compact)
@@ -110,6 +113,14 @@ mixin alumni_inside(cohort, use_compact)
   if cohort == 'climate_bootcamp_phd'
       +dp('Jeremy Irvin', 'phd', false, use_compact)
       +dp('Hao Sheng', 'phd', false, use_compact)
+  if cohort == 'ccfall2021'
+      +dp('Nicholas Lui', 'ms', false, use_compact)
+      +dp('Bryan Zhu', 'ms', false, use_compact)
+      +dp('Timothy Dai', 'bs', false, use_compact)
+      //- +dp('Suhas Chundi', 'bs', false, use_compact)
+      +dp('Yuntao Ma', 'ms', false, use_compact)
+      +dp('Langston Nashold', 'bs', false, use_compact)
+      +dp('Jimmy Le', 'ms', false, use_compact)
   if cohort == 'ccsummer2021'
       +dp('Jake Silberg', 'ms', false, use_compact)
       +dp('Matt Kolodner', 'bs', false, use_compact)
@@ -330,6 +341,10 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'climate_industry'
       h3 Climate Change Bootcamp Industry Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccfall2021'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Fall 2021-2022
       +alumni_inside(cohort, use_compact)
   if cohort == 'ccsummer2021'
     .cohort.clearfix
