@@ -2714,7 +2714,7 @@
             "submission": {
                 "created": 1587830653,
                 "description": "DE_APR ensemble ltts ",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -2902,7 +2902,7 @@
             "submission": {
                 "created": 1587833010,
                 "description": "DE_APR_N ensemble ltts",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -5148,7 +5148,7 @@
             "submission": {
                 "created": 1592848441,
                 "description": "DE_JUN4_RS_EN ensemble LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -5520,7 +5520,7 @@
             "submission": {
                 "created": 1579610203,
                 "description": "vdn6 ensemble ltts",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -5800,7 +5800,7 @@
             "submission": {
                 "created": 1592848194,
                 "description": "DE_JUN3_RS_EN ensemble LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -6176,7 +6176,7 @@
             "submission": {
                 "created": 1592849305,
                 "description": "DE_JUN1_RS_EN ensemble LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -6926,7 +6926,7 @@
             "submission": {
                 "created": 1592849854,
                 "description": "DE_JUN2_RS_EN ensemble LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -7580,7 +7580,7 @@
             "submission": {
                 "created": 1593420550,
                 "description": "WL_Baseline (ensemble) (WL) ",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "mazine"
@@ -7766,7 +7766,7 @@
             "submission": {
                 "created": 1587831601,
                 "description": "DS_APR_N single model ltts",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -7860,7 +7860,7 @@
             "submission": {
                 "created": 1587829403,
                 "description": "DS_APR single model LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -8424,7 +8424,7 @@
             "submission": {
                 "created": 1578835390,
                 "description": "vdnnn (ensemble) (LTTS)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -8610,7 +8610,7 @@
             "submission": {
                 "created": 1578831367,
                 "description": "vbn (single model) (LTTS)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -9718,7 +9718,7 @@
             "submission": {
                 "created": 1579783751,
                 "description": "vn_2 single_model ltts",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -10278,10 +10278,110 @@
             "submission": {
                 "created": 1597706465,
                 "description": "DiseaseNet Samg2003 single model, DPS RKP, http://sambhavgupta.com",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "samg2003"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x83c63272743c41e788e2fb3b69a3eff7 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0xdd89fc9197919f88295a0ada2cd3c85c2cf08feb",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x50cf857aa6cf48de987316c38b124964",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x50cf857aa6cf48de987316c38b124964",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x50cf857aa6cf48de987316c38b124964",
+                        "parent_name": "maxium0526-predictions-LBC-v0-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x83c63272743c41e788e2fb3b69a3eff7"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x50cf857aa6cf48de987316c38b124964",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1632276416,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0xb54aeb642b6746d69c099e5de6443464\", \"submitter_id\": \"0xa853620c3a384451af57351fd30bf2b4\", \"predict_id\": \"0x83c63272743c41e788e2fb3b69a3eff7\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1632280502,
+                    "memory_usage": 0.0,
+                    "name": "maxium0526-predictions-LBC-v0-results",
+                    "remote": "3d0b000ef311-59036390c4fb4db3b84f151ce27fd27f",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1632280357,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.529231,
+                    "time_cleaning_up": 9.3157057762146,
+                    "time_preparing": 103.10280561447144,
+                    "time_running": 11.195514678955078,
+                    "time_system": 0.0,
+                    "time_uploading_results": 18.42069411277771,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x50cf857aa6cf48de987316c38b124964"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8487690945734683,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.8988652702345574,
+                "average_num_rads_under_roc": 1.4,
+                "cardiomegaly_auroc": 0.8803203096832957,
+                "cardiomegaly_num_rads_under_roc": 1,
+                "consolidation_auroc": 0.9060692583644484,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.9028739822578684,
+                "edema_num_rads_under_roc": 2,
+                "effusion_auroc": 0.9562937062937064,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1631952840,
+                "description": "LBC-v0 (ensemble) Macao Polytechnic Institute",
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
+                "public": false,
+                "user_name": "maxium0526"
             }
         },
         {
@@ -10472,7 +10572,7 @@
             "submission": {
                 "created": 1620381835,
                 "description": "",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "ljc2266"
@@ -10664,8 +10764,8 @@
             "submission": {
                 "created": 1622224802,
                 "description": "AccidentNet v1 (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -10764,10 +10864,110 @@
             "submission": {
                 "created": 1597149720,
                 "description": "NewTrickTest (ensemble) (XBSJ)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "hanfeng0409"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb861f35b5f354043afa97c258a936bad \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x5bbf9922c1c4b704743f1080f30f33a53d3d202e",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x5342689e181947819dfc32dd99902844",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x5342689e181947819dfc32dd99902844",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x5342689e181947819dfc32dd99902844",
+                        "parent_name": "maxium0526-predictions-Stellarium-local-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xb861f35b5f354043afa97c258a936bad"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x5342689e181947819dfc32dd99902844",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1632276377,
+                    "data_size": 12741,
+                    "description": "{\"submit_id\": \"0x17b070d5d164466192ed6a122b093d9e\", \"submitter_id\": \"0xa853620c3a384451af57351fd30bf2b4\", \"predict_id\": \"0xb861f35b5f354043afa97c258a936bad\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1632277181,
+                    "memory_usage": 0.0,
+                    "name": "maxium0526-predictions-Stellarium-local-results",
+                    "remote": "9a6e62bd45d3-1656a63d4f6f48049f202d95d8e83fdd",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1632277019,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.528061,
+                    "time_cleaning_up": 9.23169755935669,
+                    "time_preparing": 120.84489035606384,
+                    "time_running": 11.183173656463623,
+                    "time_system": 0.0,
+                    "time_uploading_results": 18.39491868019104,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x5342689e181947819dfc32dd99902844"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8565670264263247,
+                "atelectasis_num_rads_under_roc": 1,
+                "average_auroc": 0.8960503581467749,
+                "average_num_rads_under_roc": 1.4,
+                "cardiomegaly_auroc": 0.8906430862065693,
+                "cardiomegaly_num_rads_under_roc": 2,
+                "consolidation_auroc": 0.8689508748810308,
+                "consolidation_num_rads_under_roc": 0,
+                "edema_auroc": 0.9093753797545266,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.9547154234654236,
+                "effusion_num_rads_under_roc": 1
+            },
+            "submission": {
+                "created": 1630011445,
+                "description": "Stellarium-CheXpert-Local (single model)(Macao Polytechnic Institute)",
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
+                "public": false,
+                "user_name": "maxium0526"
             }
         },
         {
@@ -11328,7 +11528,7 @@
             "submission": {
                 "created": 1599816064,
                 "description": "{koala-large} (single model) (SJTU)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "koala"
@@ -11428,7 +11628,7 @@
             "submission": {
                 "created": 1620437030,
                 "description": "MVD121 (single model)",
-                "num_period_submissions": 3,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "PJansson"
@@ -12176,10 +12376,110 @@
             "submission": {
                 "created": 1620761556,
                 "description": "MVD121-320 (single model)",
-                "num_period_submissions": 3,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "PJansson"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x277b6aa1f8584b1193650c6bd25eedee \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x933ade3110513299d8dfe6a3943783137b7b2195",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x72708a71e77b426dad885ca22857cdf4",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x72708a71e77b426dad885ca22857cdf4",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x72708a71e77b426dad885ca22857cdf4",
+                        "parent_name": "sebstein-predictions-Overfit-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x277b6aa1f8584b1193650c6bd25eedee"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x72708a71e77b426dad885ca22857cdf4",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1632276390,
+                    "data_size": 12727,
+                    "description": "{\"submit_id\": \"0x1fa51459424d4142895a1a687dc71cac\", \"submitter_id\": \"0x968f2e4aa5364bcb9075ab265e75d838\", \"predict_id\": \"0x277b6aa1f8584b1193650c6bd25eedee\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1632277687,
+                    "memory_usage": 0.0,
+                    "name": "sebstein-predictions-Overfit-results",
+                    "remote": "761eadee4ac9-67e67034f5d2473b8db316e36591fdcc",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1632277448,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.604177,
+                    "time_cleaning_up": 8.176265239715576,
+                    "time_preparing": 195.16492891311646,
+                    "time_running": 10.195136785507202,
+                    "time_system": 0.0,
+                    "time_uploading_results": 24.468595027923584,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x72708a71e77b426dad885ca22857cdf4"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8502853591004126,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.8901183654127751,
+                "average_num_rads_under_roc": 1.0,
+                "cardiomegaly_auroc": 0.8733372549763753,
+                "cardiomegaly_num_rads_under_roc": 1,
+                "consolidation_auroc": 0.9240793615930888,
+                "consolidation_num_rads_under_roc": 3,
+                "edema_auroc": 0.8805292259083728,
+                "edema_num_rads_under_roc": 1,
+                "effusion_auroc": 0.9223606254856256,
+                "effusion_num_rads_under_roc": 0
+            },
+            "submission": {
+                "created": 1630477307,
+                "description": "Overfit ensemble OTH",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "sebstein"
             }
         },
         {
@@ -12824,7 +13124,7 @@
             "submission": {
                 "created": 1598408295,
                 "description": "{koala} (single model) (SJTU)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "koala"
@@ -12924,8 +13224,8 @@
             "submission": {
                 "created": 1621967121,
                 "description": "Stellarium (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13118,7 +13418,7 @@
             "submission": {
                 "created": 1620436996,
                 "description": "MVR50 (single model)",
-                "num_period_submissions": 3,
+                "num_period_submissions": 0,
                 "num_total_submissions": 3,
                 "public": true,
                 "user_name": "PJansson"
@@ -13402,7 +13702,7 @@
             "submission": {
                 "created": 1614843956,
                 "description": "mhealth_buet (single model) (BUET)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "mHealth-BUET"
@@ -13502,8 +13802,8 @@
             "submission": {
                 "created": 1618657035,
                 "description": "Aoitori (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13596,8 +13896,8 @@
             "submission": {
                 "created": 1614629919,
                 "description": "DearBrave (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13696,8 +13996,8 @@
             "submission": {
                 "created": 1623412506,
                 "description": "AccidentNet V2 (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -13888,8 +14188,8 @@
             "submission": {
                 "created": 1616962066,
                 "description": "Yoake (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -14538,8 +14838,8 @@
             "submission": {
                 "created": 1614000584,
                 "description": "GreenTeaCalpis (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -14730,7 +15030,7 @@
             "submission": {
                 "created": 1629154424,
                 "description": "Baseline DenseNet161 (single model) - PATREO/UFMG - http://www.cadcovid19.dcc.ufmg.br/classification",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "milalaranjeira"
@@ -15386,7 +15686,7 @@
             "submission": {
                 "created": 1593424289,
                 "description": "BASELINE Acorn (single model) TU Berlin",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "leonsteffen"
@@ -15580,7 +15880,7 @@
             "submission": {
                 "created": 1594712210,
                 "description": "CombinedTrainDenseNet121 (single model) (University of Westminster, Silva R.)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "RaviduSilva"
@@ -16042,8 +16342,8 @@
             "submission": {
                 "created": 1612295085,
                 "description": "model2_DenseNet121 (single) Macao Polytechnic Institute",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -16328,7 +16628,7 @@
             "submission": {
                 "created": 1610450173,
                 "description": "mwowra-conditional (single) (AGH UST)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "mwowra"
@@ -16520,7 +16820,7 @@
             "submission": {
                 "created": 1601016418,
                 "description": "Grp12BigCNN (ensemble)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "pereiraroland26"
@@ -16706,7 +17006,7 @@
             "submission": {
                 "created": 1581855109,
                 "description": "Grp12v2USup2OSamp (ensemble) (AITD)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "pereiraroland26"
@@ -17086,7 +17386,7 @@
             "submission": {
                 "created": 1593707351,
                 "description": "12ASLv2(single)(AITD)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "nikhil1512"
@@ -17272,7 +17572,7 @@
             "submission": {
                 "created": 1593706788,
                 "description": "12ASLv1(single)(AITD)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "nikhil1512"
@@ -21344,7 +21644,7 @@
             "submission": {
                 "created": 1583503769,
                 "description": "{DXE-CIO-MUMBAI} (Ensemble)  (CIO-Mumbai)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -21429,7 +21729,7 @@
             "submission": {
                 "created": 1583505735,
                 "description": "{DS-CIO-MUMBAI} (single) (CIO-Mumbai))",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -21514,7 +21814,7 @@
             "submission": {
                 "created": 1583506110,
                 "description": "{DSPH-ltts-mumbai} (single) (ltts-mumbai)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -21599,7 +21899,7 @@
             "submission": {
                 "created": 1583506647,
                 "description": "{DXEPH-ltts-mumbai} (ensemble) (ltts-mumbai)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -21684,7 +21984,7 @@
             "submission": {
                 "created": 1592660179,
                 "description": "DE_JUN1_EN ensemble LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -21769,7 +22069,7 @@
             "submission": {
                 "created": 1592660433,
                 "description": "DE_JUN4_EN Ensemble LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -21854,7 +22154,7 @@
             "submission": {
                 "created": 1592661031,
                 "description": "DE_JUN2_EN ensemble LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "CIO_Mumbai"
@@ -21939,7 +22239,7 @@
             "submission": {
                 "created": 1592661156,
                 "description": "DE_JUN3_EN ensemble LTTS",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 10,
                 "public": true,
                 "user_name": "ltts-mumbai"
@@ -22034,7 +22334,7 @@
             "submission": {
                 "created": 1595861393,
                 "description": "DenseNet (single model)  (high school DPS R.K. Puram,  India) https://samg2003.herokuapp.com/ ",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "samg2003"
@@ -22204,8 +22504,8 @@
             "submission": {
                 "created": 1603872468,
                 "description": "ResNeXt101 (single model) (Individual)",
-                "num_period_submissions": 5,
-                "num_total_submissions": 9,
+                "num_period_submissions": 2,
+                "num_total_submissions": 11,
                 "public": true,
                 "user_name": "maxium0526"
             }
@@ -22374,7 +22674,7 @@
             "submission": {
                 "created": 1593791175,
                 "description": "IDP_320_NoTemp_Dense121 (single model) Technical University of Munich",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "Cryptiex"
@@ -22459,7 +22759,7 @@
             "submission": {
                 "created": 1599617269,
                 "description": "Test model (single model ) (Anonymous)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "Minimanimo"
@@ -22560,7 +22860,7 @@
             "submission": {
                 "created": 1605485667,
                 "description": "torchxrayvision-all single model Mila-Quebec https://arxiv.org/abs/2002.02497",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "joecohen"
@@ -22645,7 +22945,7 @@
             "submission": {
                 "created": 1605767605,
                 "description": "{DenseSmall} (single model) (JY.Wang)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "JY.Wang"
@@ -22730,12 +23030,97 @@
             "submission": {
                 "created": 1606069987,
                 "description": "BASELINE-DENSENET121 (single model) (GATechCSE6250)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "gtrautman3"
             }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xde622da34bc341849b28a1c286b03e8f \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xfcec6172fb794694b9ec0422e9f9579c",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xfcec6172fb794694b9ec0422e9f9579c",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xfcec6172fb794694b9ec0422e9f9579c",
+                        "parent_name": "mfarre07-predictions-nextray_xception-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xde622da34bc341849b28a1c286b03e8f"
+                    }
+                ],
+                "frozen": null,
+                "id": "0xfcec6172fb794694b9ec0422e9f9579c",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1632276403,
+                    "description": "{\"submit_id\": \"0x6ac203987d2e47038622b4ed87d5bbda\", \"submitter_id\": \"0x9eaf029dc8fa44e9a5434f09b51f786e\", \"predict_id\": \"0xde622da34bc341849b28a1c286b03e8f\"}",
+                    "exclude_patterns": [],
+                    "failure_message": " Parent bundles failed: 0xde622da34bc341849b28a1c286b03e8f (Please use the --allow-failed-dependencies flag to depend on results of failed or killed bundles)",
+                    "name": "mfarre07-predictions-nextray_xception-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "chexpert-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0xfcec6172fb794694b9ec0422e9f9579c"
+            },
+            "scores": {
+                "atelectasis_auroc": null,
+                "atelectasis_num_rads_under_roc": null,
+                "average_auroc": null,
+                "average_num_rads_under_roc": null,
+                "cardiomegaly_auroc": null,
+                "cardiomegaly_num_rads_under_roc": null,
+                "consolidation_auroc": null,
+                "consolidation_num_rads_under_roc": null,
+                "edema_auroc": null,
+                "edema_num_rads_under_roc": null,
+                "effusion_auroc": null,
+                "effusion_num_rads_under_roc": null
+            },
+            "submission": {
+                "created": 1630497778,
+                "description": "{Nextray_Xception} (ensemble) (Birkbeck College, University of London)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "mfarre07"
+            }
         }
     ],
-    "updated": 1629242735.905675
+    "updated": 1632347678.3686159
 }
