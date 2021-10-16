@@ -72,6 +72,186 @@
     "leaderboard": [
         {
             "bundle": {
+                "args": "run evaluate.py:0x646d2f7a5aac492394085d793754fc12 test.csv:0x177160e2e2f04076906224d743642972 predictions.csv:0x882c101c5be34c309902bdcd8e74a2e4 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x0a613451a99480d33a88d13fcc6a5514710c6e45",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x76c448d9b76a4b4e9e2bc8157352998f",
+                        "parent_name": "evaluate-chexphoto-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x646d2f7a5aac492394085d793754fc12"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x76c448d9b76a4b4e9e2bc8157352998f",
+                        "parent_name": "chexpert_chexph..groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x177160e2e2f04076906224d743642972"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x76c448d9b76a4b4e9e2bc8157352998f",
+                        "parent_name": "maxium0526-predictions-LBC-v2-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x882c101c5be34c309902bdcd8e74a2e4"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x76c448d9b76a4b4e9e2bc8157352998f",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1634333740,
+                    "data_size": 12414,
+                    "description": "{\"submit_id\": \"0xb54cafbacdb24952b31205f641ac5c0c\", \"submitter_id\": \"0xa853620c3a384451af57351fd30bf2b4\", \"predict_id\": \"0x882c101c5be34c309902bdcd8e74a2e4\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1634338509,
+                    "memory_usage": 0.0,
+                    "name": "maxium0526-predictions-LBC-v2-results",
+                    "remote": "3778be5641d6-95e7825a98b84bc0ab148c438b69ee2e",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1634338365,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.516931,
+                    "time_cleaning_up": 8.130972385406494,
+                    "time_preparing": 107.55866551399231,
+                    "time_running": 10.145121335983276,
+                    "time_system": 0.0,
+                    "time_uploading_results": 16.264083862304688,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x657ad74cbabc44608e9424ad61e86591",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x76c448d9b76a4b4e9e2bc8157352998f"
+            },
+            "scores": {
+                "chexphoto_digital_auroc": 0.8910933125639176,
+                "chexphoto_film_auroc": 0.8502320033864936,
+                "delta_auroc": -0.0353839093933932
+            },
+            "submission": {
+                "created": 1633092963,
+                "description": "LBC-v2 (ensemble)(Macao Polytechnic Institute)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 18,
+                "user_name": "maxium0526"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x646d2f7a5aac492394085d793754fc12 test.csv:0x177160e2e2f04076906224d743642972 predictions.csv:0x5ce562b7ac7740caa68fca48c0d9ae28 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x3df9775ecc688e22463e5b3078527d96a0daa389",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x3e3b7495052f426fbba5457c65ea29f8",
+                        "parent_name": "evaluate-chexphoto-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x646d2f7a5aac492394085d793754fc12"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x3e3b7495052f426fbba5457c65ea29f8",
+                        "parent_name": "chexpert_chexph..groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x177160e2e2f04076906224d743642972"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x3e3b7495052f426fbba5457c65ea29f8",
+                        "parent_name": "maxium0526-predictions-LBC-v0-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x5ce562b7ac7740caa68fca48c0d9ae28"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x3e3b7495052f426fbba5457c65ea29f8",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1633072300,
+                    "data_size": 12414,
+                    "description": "{\"submit_id\": \"0xb54aeb642b6746d69c099e5de6443464\", \"submitter_id\": \"0xa853620c3a384451af57351fd30bf2b4\", \"predict_id\": \"0x5ce562b7ac7740caa68fca48c0d9ae28\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1633081996,
+                    "memory_usage": 0.0,
+                    "name": "maxium0526-predictions-LBC-v0-results",
+                    "remote": "3d0b000ef311-59036390c4fb4db3b84f151ce27fd27f",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1633081940,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.957449,
+                    "time_cleaning_up": 9.187260150909424,
+                    "time_preparing": 15.954715251922607,
+                    "time_running": 11.194839239120483,
+                    "time_system": 0.0,
+                    "time_uploading_results": 18.39726710319519,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x657ad74cbabc44608e9424ad61e86591",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0x3e3b7495052f426fbba5457c65ea29f8"
+            },
+            "scores": {
+                "chexphoto_digital_auroc": 0.8887154029756132,
+                "chexphoto_film_auroc": 0.8200460891835377,
+                "delta_auroc": -0.04476452166549583
+            },
+            "submission": {
+                "created": 1631952840,
+                "description": "LBC-v0 (ensemble) (Macao Polytechnic Institute)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 18,
+                "user_name": "maxium0526"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x646d2f7a5aac492394085d793754fc12 test.csv:0x177160e2e2f04076906224d743642972 predictions.csv:0x6013878fe1da47f2852dc8c8f82cbdbf \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -156,7 +336,7 @@
                 "created": 1630011445,
                 "description": "Stellarium-CheXpert-Local (single model)(Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 15,
+                "num_total_submissions": 18,
                 "user_name": "maxium0526"
             }
         },
@@ -966,7 +1146,7 @@
                 "created": 1616962066,
                 "description": "Yoake (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 15,
+                "num_total_submissions": 18,
                 "user_name": "maxium0526"
             }
         },
@@ -1146,7 +1326,7 @@
                 "created": 1623412506,
                 "description": "AccidentNet V2 (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 15,
+                "num_total_submissions": 18,
                 "user_name": "maxium0526"
             }
         },
@@ -1236,7 +1416,7 @@
                 "created": 1621967121,
                 "description": "Stellarium (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 15,
+                "num_total_submissions": 18,
                 "user_name": "maxium0526"
             }
         },
@@ -1686,7 +1866,7 @@
                 "created": 1622224802,
                 "description": "AccidentNet v1 (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 15,
+                "num_total_submissions": 18,
                 "user_name": "maxium0526"
             }
         },
@@ -1776,7 +1956,7 @@
                 "created": 1618657035,
                 "description": "Aoitori (single model) (Macao Polytechnic Institute)",
                 "num_period_submissions": 1,
-                "num_total_submissions": 15,
+                "num_total_submissions": 18,
                 "user_name": "maxium0526"
             }
         },
@@ -2320,7 +2500,82 @@
                 "num_total_submissions": 2,
                 "user_name": "ljc2266"
             }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x646d2f7a5aac492394085d793754fc12 test.csv:0x177160e2e2f04076906224d743642972 predictions.csv:0x8d99146e077c4ed0a0dfa2268cbb6277 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": null,
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x297db8244bb2446a82b7101313d9e109",
+                        "parent_name": "evaluate-chexphoto-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x646d2f7a5aac492394085d793754fc12"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x297db8244bb2446a82b7101313d9e109",
+                        "parent_name": "chexpert_chexph..groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0x177160e2e2f04076906224d743642972"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x297db8244bb2446a82b7101313d9e109",
+                        "parent_name": "sunkasin0715-predictions-ScotFloriana-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x8d99146e077c4ed0a0dfa2268cbb6277"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x297db8244bb2446a82b7101313d9e109",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "created": 1633072325,
+                    "description": "{\"submit_id\": \"0x6135fd74f10549818e86c669afb9e9fb\", \"submitter_id\": \"0xb40e2f4830aa446d81619cafd34c7f78\", \"predict_id\": \"0x8d99146e077c4ed0a0dfa2268cbb6277\"}",
+                    "exclude_patterns": [],
+                    "failure_message": " Parent bundles failed: 0x8d99146e077c4ed0a0dfa2268cbb6277 (Please use the --allow-failed-dependencies flag to depend on results of failed or killed bundles)",
+                    "name": "sunkasin0715-predictions-ScotFloriana-results",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "tags": [
+                        "chexpert-test-eval"
+                    ]
+                },
+                "owner": {
+                    "id": "0x657ad74cbabc44608e9424ad61e86591",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "failed",
+                "uuid": "0x297db8244bb2446a82b7101313d9e109"
+            },
+            "scores": {
+                "chexphoto_digital_auroc": null,
+                "chexphoto_film_auroc": null,
+                "delta_auroc": null
+            },
+            "submission": {
+                "created": 1632479023,
+                "description": "ScotFloriana single model Macao Polytechnic Institute",
+                "num_period_submissions": 0,
+                "num_total_submissions": 1,
+                "user_name": "sunkasin0715"
+            }
         }
     ],
-    "updated": 1630289060.6930099
+    "updated": 1634342626.498761
 }
