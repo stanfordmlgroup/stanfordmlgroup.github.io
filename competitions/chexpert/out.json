@@ -5340,7 +5340,7 @@
             "submission": {
                 "created": 1633085694,
                 "description": "Overfit ensemble OTH-AW",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "sebstein"
@@ -7688,6 +7688,106 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x2977f5f26e6d469880b8ecdc4ef85efb \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x7e89dec002d78e62163650df25d3fb56b025c28c",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xd002e0166ab9484ea7c93107ddd3bf12",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xd002e0166ab9484ea7c93107ddd3bf12",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xd002e0166ab9484ea7c93107ddd3bf12",
+                        "parent_name": "mHealth-BUET-predictions-anatomy_xnet_v1-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0x2977f5f26e6d469880b8ecdc4ef85efb"
+                    }
+                ],
+                "frozen": null,
+                "id": "0xd002e0166ab9484ea7c93107ddd3bf12",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1637704666,
+                    "data_size": 12740,
+                    "description": "{\"submit_id\": \"0xde67e57b341344548bf15c11684b880c\", \"submitter_id\": \"0xcb838a1cc87e4991bd64d457be27b99a\", \"predict_id\": \"0x2977f5f26e6d469880b8ecdc4ef85efb\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1637705301,
+                    "memory_usage": 0.0,
+                    "name": "mHealth-BUET-predictions-anatomy_xnet_v1-results",
+                    "remote": "3e2904d2b09d-2343a34be29c41afa5d261b10e3e4402",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1637705061,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.515564,
+                    "time_cleaning_up": 8.160989999771118,
+                    "time_preparing": 202.85142159461975,
+                    "time_running": 10.13410758972168,
+                    "time_system": 0.0,
+                    "time_uploading_results": 16.28411102294922,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xd002e0166ab9484ea7c93107ddd3bf12"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8907536117232675,
+                "atelectasis_num_rads_under_roc": 3,
+                "average_auroc": 0.9114868683903806,
+                "average_num_rads_under_roc": 2.2,
+                "cardiomegaly_auroc": 0.8977874342966661,
+                "cardiomegaly_num_rads_under_roc": 1,
+                "consolidation_auroc": 0.8957097884178931,
+                "consolidation_num_rads_under_roc": 2,
+                "edema_auroc": 0.9215275246080934,
+                "edema_num_rads_under_roc": 3,
+                "effusion_auroc": 0.951655982905983,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1635647927,
+                "description": "anatomy_xnet_v1 (single model) (BUET)",
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
+                "public": true,
+                "user_name": "mHealth-BUET"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x729cad942e204b2a8bc905b26cf75f54 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-disk 4g --request-docker-image codalab/ubuntu:1.9 --request-memory 2g --request-time 1d",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -9085,8 +9185,8 @@
             },
             "submission": {
                 "created": 1634133537,
-                "description": "LBC-v2 (ensemble)(Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "description": "LBC-v2 (ensemble)",
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": false,
                 "user_name": "maxium0526"
@@ -10577,8 +10677,8 @@
             },
             "submission": {
                 "created": 1631952840,
-                "description": "LBC-v0 (ensemble) (Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "description": "LBC-v0 (ensemble)",
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": false,
                 "user_name": "maxium0526"
@@ -10964,7 +11064,7 @@
             "submission": {
                 "created": 1622224802,
                 "description": "AccidentNet v1 (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -11163,8 +11263,8 @@
             },
             "submission": {
                 "created": 1630011445,
-                "description": "Stellarium-CheXpert-Local (single model)(Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "description": "Stellarium-CheXpert-Local (single model)",
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": false,
                 "user_name": "maxium0526"
@@ -13323,8 +13423,8 @@
             },
             "submission": {
                 "created": 1621967121,
-                "description": "Stellarium (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "description": "Stellarium (single model)",
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -13802,8 +13902,8 @@
             "submission": {
                 "created": 1614843956,
                 "description": "mhealth_buet (single model) (BUET)",
-                "num_period_submissions": 0,
-                "num_total_submissions": 1,
+                "num_period_submissions": 1,
+                "num_total_submissions": 2,
                 "public": true,
                 "user_name": "mHealth-BUET"
             }
@@ -13902,7 +14002,7 @@
             "submission": {
                 "created": 1618657035,
                 "description": "Aoitori (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -13996,7 +14096,7 @@
             "submission": {
                 "created": 1614629919,
                 "description": "DearBrave (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -14096,7 +14196,7 @@
             "submission": {
                 "created": 1623412506,
                 "description": "AccidentNet V2 (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -14288,7 +14388,7 @@
             "submission": {
                 "created": 1616962066,
                 "description": "Yoake (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -14938,7 +15038,7 @@
             "submission": {
                 "created": 1614000584,
                 "description": "GreenTeaCalpis (single model) (Macao Polytechnic Institute)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -15034,6 +15134,106 @@
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "hieupham"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xda91ccbc2b8d4cd5a451b3135674ee16 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0xf80cc1112e1202725f496b4a6c403e255570a8d4",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xd9b2ebdb386e4065b38ca06d69d00c4b",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xd9b2ebdb386e4065b38ca06d69d00c4b",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xd9b2ebdb386e4065b38ca06d69d00c4b",
+                        "parent_name": "jiadonggang-predictions-ResNet50-predict",
+                        "parent_path": "",
+                        "parent_uuid": "0xda91ccbc2b8d4cd5a451b3135674ee16"
+                    }
+                ],
+                "frozen": null,
+                "id": "0xd9b2ebdb386e4065b38ca06d69d00c4b",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1637704654,
+                    "data_size": 12743,
+                    "description": "{\"submit_id\": \"0x01142341dd8e40ca9ced7518aeacf1c7\", \"submitter_id\": \"0xedcaf60741604fa297764d5390ed5b43\", \"predict_id\": \"0xda91ccbc2b8d4cd5a451b3135674ee16\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1637705810,
+                    "memory_usage": 0.0,
+                    "name": "jiadonggang-predictions-ResNet50-results",
+                    "remote": "8b880b9424a0-dbe49fc9cb474f21bbbe0a35a6dc6dbd",
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": false,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "started": 1637705648,
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.56602,
+                    "time_cleaning_up": 9.209459066390991,
+                    "time_preparing": 121.14624238014221,
+                    "time_running": 11.211992979049683,
+                    "time_system": 0.0,
+                    "time_uploading_results": 18.378977060317993,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "uuid": "0xd9b2ebdb386e4065b38ca06d69d00c4b"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8155807952383645,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.8713131529344815,
+                "average_num_rads_under_roc": 0.6,
+                "cardiomegaly_auroc": 0.869997533160022,
+                "cardiomegaly_num_rads_under_roc": 0,
+                "consolidation_auroc": 0.8136027527637456,
+                "consolidation_num_rads_under_roc": 0,
+                "edema_auroc": 0.9046360432616357,
+                "edema_num_rads_under_roc": 1,
+                "effusion_auroc": 0.9527486402486403,
+                "effusion_num_rads_under_roc": 2
+            },
+            "submission": {
+                "created": 1635167391,
+                "description": "BASELINE ResNet50 (ensemble) ASU",
+                "num_period_submissions": 1,
+                "num_total_submissions": 1,
+                "public": true,
+                "user_name": "jiadonggang"
             }
         },
         {
@@ -16442,7 +16642,7 @@
             "submission": {
                 "created": 1612295085,
                 "description": "model2_DenseNet121 (single) Macao Polytechnic Institute",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -22604,7 +22804,7 @@
             "submission": {
                 "created": 1603872468,
                 "description": "ResNeXt101 (single model) (Individual)",
-                "num_period_submissions": 2,
+                "num_period_submissions": 0,
                 "num_total_submissions": 12,
                 "public": true,
                 "user_name": "maxium0526"
@@ -23300,12 +23500,12 @@
             "submission": {
                 "created": 1632479023,
                 "description": "ScotFloriana single model Macao Polytechnic Institute",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "sunkasin0715"
             }
         }
     ],
-    "updated": 1634577907.064775
+    "updated": 1637783454.872637
 }
