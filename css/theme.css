@@ -29,6 +29,10 @@
   letter-spacing: 2px;
 }
 
+.feature-item {
+  text-align: center;
+}
+
 .feature-item img {
   width: 100%;
   max-width: 100px;

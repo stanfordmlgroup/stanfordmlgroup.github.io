@@ -1,7 +1,7 @@
 mixin alumni_inside(cohort, use_compact)
   if cohort == 'core'
-      +dp('Andrew Ng', 'prof')
-      +dp('Swati Dube Batra', 'Program Manager')
+      +dp('Andrew Ng', 'prof', false, use_compact)
+      +dp('Swati Dube Batra', 'Program Manager', false, use_compact)
       +alumni_inside('phd', use_compact)
   if cohort == 'phd'
       +dp('Anand Avati', 'phd', false, use_compact)
