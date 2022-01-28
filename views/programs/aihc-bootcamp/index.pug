@@ -16,23 +16,55 @@ block content
   section
     .container
       .row
-        .col-sm-7
-            p The AI For Healthcare Bootcamp (AIHC) has now expanded into a Stanford-Harvard program: 
-              a(href="https://medical-ai-bootcamp.hms.harvard.edu/") the Medical AI Bootcamp
+        .col-sm-12
+            h2 The AI For Healthcare Bootcamp (AIHC) has now expanded into a Harvard-Stanford program called the  
+              a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI Bootcamp
               |.
-            p Since its founding at Stanford in Fall 2017, AIHC has graduated 100+ students with 15+ 
-              | collaborating faculty at Stanford Medicine and Engineering, UCSF, and Harvard. Over half of the students had their first research experiences in the bootcamp. We are proud to share that our bootcamp alumni have pursued PhD programs at institutions including MIT, Stanford, UW; led industry efforts at Google Brain, Apple Health, Microsoft Research, Tesla AI; and started AI startups including Valar Labs and Wispr AI.
+            hr
+            a.btn.btn-lg.btn-default(href="https://medical-ai-bootcamp.hms.harvard.edu") Apply Now
   section.gray
     .container
       .row
-        .col-sm-4
+        .col-sm-7
+            h2 AIHC History
+            p Since its founding at Stanford in Fall 2017, AIHC has graduated 100+ students with 15+ 
+              | collaborating faculty at Stanford Medicine and Engineering, UCSF, and Harvard. Over half of the students had their first research experiences in the bootcamp. We are proud to share that our bootcamp alumni have pursued PhD programs at institutions including MIT, Stanford, UW; led industry efforts at Google Brain, Apple Health, Microsoft Research, Tesla AI; and started AI startups including Valar Labs and Wispr AI.
+        .col-sm-5
           h3 Teaching Team
           +alumni_inside('healthcare_bootcamp_phd', 'big')
           +dp('Andrew Ng', 'prof', false, 'big')
+      .row
+        .col-sm-12
           h3 Collaborating Faculty
-          +alumni_inside('medical_faculty', 'big')
-          h3 Past Projects
-          ul.list-unstyled
+          +alumni_inside('medical_faculty')
+  section.gray
+    .container
+      .row
+        .col-sm-12
+          h2 Bootcamp Cohorts
+          +alumni('hcfall2021')
+          +alumni('hcspring2021')
+          +alumni('hcwinter2021')
+          +alumni('hcfall2020')
+          +alumni('hcsummer2020')
+          +alumni('hcspring2020')
+          +alumni('winter2020')
+          +alumni('fall2019')
+          +alumni('spring2019')
+          +alumni('winter2019')
+          +alumni('fall2018')
+          +alumni('summer2018')
+          +alumni('spring2018')
+          +alumni('winter2018')
+          +alumni('fall2017')
+      .row
+        .col-sm-12
+          h3 Projects
+          ul.list-inline
+            li
+              a.btn(href="https://arxiv.org/abs/2102.10663") MedAug
+            li
+              a.btn(href="https://arxiv.org/abs/2106.04452") 3KG
             li
               a.btn(href="https://arxiv.org/abs/2102.11467") VisualCheXbert
             li
@@ -60,8 +92,6 @@ block content
             li
               a.btn(href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2735471") HeadXNet
             li
-              a.btn(href="https://www.ahajournals.org/doi/full/10.1161/CIRCOUTCOMES.118.005010") HTE Prediction
-            li
               a.btn(href="/projects/chexnext") CheXNeXt
             li
               a.btn(href="/projects/mrnet") MRNet
@@ -69,23 +99,4 @@ block content
               a.btn(href="/projects/chexnet") CheXNet
             li
               a.btn(href="/projects/mura") MURA
-        .col-sm-8
-          .row
-            .col-sm-12
-              h2 Bootcamp Cohorts
-              +alumni('hcfall2021', false)
-              +alumni('hcspring2021', false)
-              +alumni('hcwinter2021', false)
-              +alumni('hcfall2020', false)
-              +alumni('hcsummer2020', false)
-              +alumni('hcspring2020', false)
-              +alumni('winter2020', false)
-              +alumni('fall2019', false)
-              +alumni('spring2019', false)
-              +alumni('winter2019', false)
-              +alumni('fall2018', false)
-              +alumni('summer2018', false)
-              +alumni('spring2018', false)
-              +alumni('winter2018', false)
-              +alumni('fall2017', false)
-
+   
