@@ -63,9 +63,14 @@ mixin dp_inner(name, position, use_placeholder, use_compact)
     img(src='/img/headshots/' + img_link + '.jpg', style="padding: 0px;margin: 0px")
   else if(use_compact === 'big_compact')
     img(src='/img/headshots/' + img_link + '.jpg', style="padding: 0px;margin: 0px")
-  else
+  else if(use_compact === 'show_position')
     .feature-item
       img.img-circle(src='/img/headshots/' + img_link + '.jpg')
       h4.compact-title #{name}
       p.compact-subtitle #{pos}
+  else
+    .feature-item
+      img.img-circle(src='/img/headshots/' + img_link + '.jpg')
+      h4.compact-title #{name}
+      p.compact-subtitle
 

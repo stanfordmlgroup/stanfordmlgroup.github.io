@@ -1,10 +1,7 @@
 extends ../../layout
 
-block title
-  title AI For Healthcare Bootcamp 
-
 block description
-  meta(name='description', content='The AI for Healthcare Bootcamp provides students an opportunity to do cutting-edge research at the intersection of AI and healthcare. Over two quarters, students receive training from PhD students and faculty in the medical school to work on high-impact research problems in small interdisciplinary teams.')
+  meta(name='description', content='The AI for Healthcare Bootcamp has now expanded into a Harvard-Stanford Program: the Medical AI Bootcamp.')
 
 block extrascripts
 include ../../includes/profile
@@ -16,65 +13,58 @@ block content
       .row
         .col-lg-9
           img#aihc_headline(src="/programs/aihc-bootcamp.svg")
+  section
+    .container
+      .row
+        .col-sm-12
+            h2 The AI For Healthcare Bootcamp (AIHC) has now expanded into a Harvard-Stanford program called the  
+              a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI Bootcamp
+              |.
+            hr
+            a.btn.btn-lg.btn-default(href="https://medical-ai-bootcamp.hms.harvard.edu") Apply Now
   section.gray
     .container
       .row
         .col-sm-7
-          h3 The AI for Healthcare Bootcamp provides students an opportunity to do cutting-edge research at the intersection of AI and healthcare. Over two quarters, students receive training from PhD students and faculty in the medical school to work on high-impact research problems in small interdisciplinary teams.
-          p Projects resulting from the bootcamp have spanned multiple subspecialties (radiology, pathology, psychiatry, public health, metabolomics, bioengineering, embryology), problem formulations (diagnosis, prognosis, treatment, operations) and technologies (computer vision, natural language processing, causal inference). 
-          p Collaborators include faculty at Stanford Medicine and Engineering, UCSF, and Harvard.
-          a.btn.btn-lg.btn-default(href="https://forms.gle/Bmyd9byGeUR55XoU8") Apply Now
-        .col-sm-5.hidden-xs
-          +alumni_inside('healthcare_bootcamp_alumni', true)
-          // +alumni_inside('healthcare_bootcamp_phd', true)
-  section
-    .container
-      .row
-        .col-sm-4
+            h2 AIHC History
+            p Since its founding at Stanford in Fall 2017, AIHC has graduated 100+ students with 15+ 
+              | collaborating faculty at Stanford Medicine and Engineering, UCSF, and Harvard. Over half of the students had their first research experiences in the bootcamp. We are proud to share that our bootcamp alumni have pursued PhD programs at institutions including MIT, Stanford, UW; led industry efforts at Google Brain, Apple Health, Microsoft Research, Tesla AI; and started AI startups including Valar Labs and Wispr AI.
+        .col-sm-5
           h3 Teaching Team
           +alumni_inside('healthcare_bootcamp_phd', 'big')
           +dp('Andrew Ng', 'prof', false, 'big')
+      .row
+        .col-sm-12
           h3 Collaborating Faculty
-          +alumni_inside('medical_faculty', 'big')
-        .col-sm-8
-          .applications
-            h2 Applications
-            p Students with a background in artificial intelligence, software engineering or medicine are encouraged to apply. 
-            p
-                | The applications for the Winter-Spring 2021-2022 bootcamp are now open. 
-            p Students have the option of pursuing the bootcamp whilst pursuing an internship if able to make the required time committment.
-            ul
-              li Early Applications due Nov 3rd, 2021 at 11:59p PT.
-              li Regular Applications due Dec 3rd, 2021 at 11:59p PT.
-              li Late Applications due Dec 26th, 2022 at 11:59p PT. Apply early to give yourself enough time to prepare for the interview.
-              li Rolling interviews and selections until Jan 2nd, 2022.
-              li Bootcamp starts Jan 3rd, 2022.
-            h3 AI Specialization
-            p This role is suited for students who have taken machine learning and software engineering courses. Students will be able to apply and sharpen these skills, developing machine learning solutions to challenging problems with the mentorship of CS PhD students and in collaboration with medical school faculty. Students have the opportunity to take a deep dive into healthcare and co-author a research paper. We expect students to have:
-            ul
-              li Taken machine learning courses (CS229/CS230/CS224N/CS231N or equivalent).
-              li Proficiency in software engineering (CS107 or equivalent), and have done Python programming.
-              li The bootcamp as their primary academic engagement (20-30 hours per week in lab) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399 etc).
-            h3 Medicine Specialization
-            p  This role is suited for students in the medical school. Students will work to define the focus of projects by exploring previous work and clinical utility. Students have the opportunity to work closely with the medical school faculty, take a deep dive into AI, and co-author a research paper. We expect students to:
-            ul
-              li Have medical knowledge / clinical experience (candidates have taken step 1 and/or completed at least some clinical rotations).
-              li Know deep learning and machine learning at a conceptual level.
-              li Dedicate 10-20 hours per week and attend 2 research meetings per week. Students can sign up for research credits (MED 199, MED 399 etc).
-            h3 Deployment Specialization
-            p AI projects are not complete before their tangible impact is demonstrated in the real world. This is why usable and robust deployment is a key element of our research projects.
-            p This role is suited for students who have taken human computer interaction and software development courses. Students will be able to apply and sharpen these skills, developing solutions to challenging problems at the intersection of AI and healthcare with the mentorship of CS PhD students, medical school faculty and software industry experts. Students have the opportunity to take a deep dive into healthcare and co-author a research paper. We expect students to have:
-            ul
-              li Proficiency in Python, Linux, Cloud Computing and JavaScript
-              li Have taken one or more of CS140, CS142, CS147, CS 193A, CS194H, CS210, or CS247
-              li The bootcamp as their primary academic engagement (20-30 hours per week in lab) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399 etc).
+          +alumni_inside('medical_faculty')
   section.gray
     .container
       .row
-        .col-sm-4
-          h3 Past Bootcamp Projects
-          p We have published papers in both top AI conferences and medical journals.
-          ul.list-unstyled
+        .col-sm-12
+          h2 Bootcamp Cohorts
+          +alumni('hcfall2021')
+          +alumni('hcspring2021')
+          +alumni('hcwinter2021')
+          +alumni('hcfall2020')
+          +alumni('hcsummer2020')
+          +alumni('hcspring2020')
+          +alumni('winter2020')
+          +alumni('fall2019')
+          +alumni('spring2019')
+          +alumni('winter2019')
+          +alumni('fall2018')
+          +alumni('summer2018')
+          +alumni('spring2018')
+          +alumni('winter2018')
+          +alumni('fall2017')
+      .row
+        .col-sm-12
+          h3 Projects
+          ul.list-inline
+            li
+              a.btn(href="https://arxiv.org/abs/2102.10663") MedAug
+            li
+              a.btn(href="https://arxiv.org/abs/2106.04452") 3KG
             li
               a.btn(href="https://arxiv.org/abs/2102.11467") VisualCheXbert
             li
@@ -102,39 +92,11 @@ block content
             li
               a.btn(href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2735471") HeadXNet
             li
-              a.btn(href="https://www.ahajournals.org/doi/full/10.1161/CIRCOUTCOMES.118.005010") HTE Prediction
-            li
               a.btn(href="/projects/chexnext") CheXNeXt
-            // li
-            //   a.btn(href="https://xray4all.com") XRay4All
             li
               a.btn(href="/projects/mrnet") MRNet
             li
               a.btn(href="/projects/chexnet") CheXNet
             li
               a.btn(href="/projects/mura") MURA
-        .col-sm-8
-          .row
-            .col-sm-12
-              h2 Bootcamp Cohorts
-              +alumni('hcfall2021', false)
-              +alumni('hcspring2021', false)
-              +alumni('hcwinter2021', false)
-              +alumni('hcfall2020', false)
-              +alumni('hcsummer2020', false)
-              +alumni('hcspring2020', false)
-              +alumni('winter2020', false)
-              +alumni('fall2019', false)
-              +alumni('spring2019', false)
-              +alumni('winter2019', false)
-              +alumni('fall2018', false)
-              +alumni('summer2018', false)
-              +alumni('spring2018', false)
-              +alumni('winter2018', false)
-              +alumni('fall2017', false)
-  section.bg-primary
-    .container
-      .row
-        .col-md-8.col-md-offset-4
-          h2 We invite you to join the AI revolution in healthcare
-          a.btn.btn-lg.btn-default(href="https://forms.gle/Bmyd9byGeUR55XoU8") Apply Now
+   

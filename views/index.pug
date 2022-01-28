@@ -60,7 +60,6 @@ block content
             p.text-muted
               | Chest X-Ray Transformation Dataset And Competition
             a.btn.btn-default(href="/competitions/chexphoto") Project Webpage
-
       .row
         .col-md-3
           .feature-item
@@ -167,7 +166,7 @@ block content
             p.text-muted Core
       .row
         .col-md-10.col-md-offset-1
-          +alumni_inside('core')
+          +alumni_inside('core', 'show_position')
       .row
         .col-md-10.col-md-offset-1
           .section-heading.text-center
@@ -181,8 +180,8 @@ block content
               h2 Bootcamps
       .row
         .col-md-6
-            a(href="/programs/aihc-bootcamp")
-              img.programHeadline(src="/programs/aihc-bootcamp.svg")
+            a(href="https://medical-ai-bootcamp.hms.harvard.edu/")
+              img(src="https://uploads-ssl.webflow.com/61d210ac9b5fc8ec43f8a4e3/61d23a07072da0dc7d4139f3_Medical%20AI%20Bootcamp%20Logo.svg")
         .col-md-6
             a(href="/programs/aicc-bootcamp")
               img.programHeadline(src="/programs/aicc-bootcamp.svg")
@@ -194,7 +193,7 @@ block content
           +alumni_inside('bootcamp_alumni')
           .clearfix
           .section-heading
-            h2.text-muted Bootcamp Collaborating Faculty
+            h2.text-muted Collaborating Faculty
           +alumni_inside('bootcamp_faculty')
   section#workwithus
     .container
@@ -252,7 +251,7 @@ block content
               | We encourage other Stanford students who want to work with us to apply to either the 
               a(href="https://stanfordmlgroup.github.io/programs/aicc-bootcamp/") AICC 
               | or 
-              a(href="https://stanfordmlgroup.github.io/programs/aihc-bootcamp/") AIHC 
+              a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI
               | bootcamp. 
             li
               | Outside of coursework, we expect this to be your primary academic activity. 
