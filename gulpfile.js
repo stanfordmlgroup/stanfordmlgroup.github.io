@@ -30,6 +30,15 @@ function assert (condition, message) {
   }
 }
 
+String.prototype.indexOfEnd = function(string) {
+  var io = this.indexOf(string);
+  if (io == -1) {
+    return this.length
+  } else {
+    return io
+  }
+}
+
 var parseCompEntries = function (comp_file, comp_name) {
   var leaderboard = require(comp_file).leaderboard
   var entries = []
@@ -40,9 +49,19 @@ var parseCompEntries = function (comp_file, comp_name) {
       var entry = {}
       entry.user = o_entry.submission.user_name
       var description = o_entry.submission.description.trim()
-      entry.model_name = description.substr(0, description.lastIndexOf('(')).trim()
-      var firstPart = description.substr(description.lastIndexOf('(') + 1)
-      entry.institution = firstPart.substr(0, firstPart.lastIndexOf(')'))
+      var paren_start = description.lastIndexOf('(')
+      if (paren_start == -1) {
+        if (description.startsWith('{')){
+          entry.model_name = ''
+        } else {
+          entry.model_name = description.substr(0, description.indexOfEnd('http')).trim()
+        }
+        entry.institution = ''
+      } else {
+        entry.model_name = description.substr(0, paren_start).trim()
+        var firstPart = description.substr(paren_start + 1)
+        entry.institution = firstPart.substr(0, firstPart.lastIndexOf(')')) 
+      }
       if (description.lastIndexOf('http') !== -1) {
         entry.link = description.substr(description.lastIndexOf('http')).trim()
       }
