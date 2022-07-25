@@ -1,0 +1,239 @@
+extends ../../layout
+
+block title
+  title METER-ML: A Multi-sensor Earth Observation Benchmark for Automated Methane Source Mapping
+
+block description
+  meta(name='description' content='Earth Observation Benchmark for Methane Source Mapping.')
+  meta(property="og:image" content="https://stanfordmlgroup.github.io/projects/meter-ml/img/fig1.png")
+  meta(name="twitter:image" content="https://stanfordmlgroup.github.io/projects/meter-ml/img/fig1.png")
+
+block extralinks
+  link(rel='stylesheet' type='text/css' href='/projects/chexnext/css/chexnext.css')
+
+block extrascripts
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-10
+          h1 METER-ML: A Multi-sensor Earth Observation Benchmark for Automated Methane Source Mapping
+          p Bryan Zhu *, Nicholas Lui *, Jeremy Irvin *, Jimmy Le, Sahil Tadwalkar, Chenghao Wang, Zutao Ouyang, Frankie Y. Liu, Andrew Y. Ng, Robert B. Jackson
+    
+  section.gray
+    .container
+      .row 
+        h1 What is METER-ML?
+      .row
+        .col-md-6
+          p
+            | In support of a new initiative to build a global database of methane emitting infrastructure called the 
+            a(href="https://meterplatform.web.app") #[strong ME]thane #[strong T]racking #[strong E]missions #[strong R]eference (#[strong METER]) database
+            | , we developed #[strong METER-ML], a multi-sensor Earth observation dataset containing georeferenced images in the U.S. labeled for the presence or absence of six methane source facilities.
+        .col-md-6
+          a.btn.btn-lg.btn-default(href="http://arxiv.org/abs/2207.11166") Read The Paper (Zhu & Lui & Irvin et al.)
+          p
+          a.btn.btn-lg.btn-default(href="http://download.cs.stanford.edu/deep/METER-ML-v1.0.zip") Download the METER-ML Dataset
+
+  section
+    .container
+      .row
+        .col-md-6
+          img(src='/projects/meter-ml/img/fig0.png')
+        .col-md-6
+          h2 Why did we develop METER-ML?
+          p Reducing methane emissions is essential for mitigating global warming. To attribute methane emissions to their sources, a comprehensive dataset of methane source infrastructure is necessary. Recent advancements with deep learning on remotely sensed imagery have the potential to identify the locations and characteristics of methane sources, but there is a substantial lack of publicly available data to enable machine learning researchers and practitioners to build automated mapping approaches. 
+          p 
+            | We developed METER-ML to allow the machine learning community to experiment with multi-view/multi-modal modeling approaches to automatically identify sources of methane emissions in remotely sensed imagery. 
+          
+    
+  section.gray
+    .container
+      .row
+        //- .col-md-12
+        //-   img(src='/projects/meter-ml/img/fig1.png' style='max-height:700px;')
+        .col-md-7
+          h2 How did we collect and label METER-ML?
+          p METER-ML consists of 86,625 georeferenced NAIP, Sentinel-1, and Sentinel-2 images in the U.S. labeled for the presence or absence of methane source facilities including concentrated animal feeding operations (CAFOs), coal mines, landfills, natural gas processing plants (Proc Plants), oil refineries and petroleum terminals (R&Ts), and wastewater treatment plants (WWTPs).
+          h3 Images in METER-ML
+          p
+            | We collected locations of methane emitting infrastructure in the U.S. from a variety of public datasets. We additionally included a variety of images in the dataset which capture none of the six methane emitting facilities (Negatives). All of the locations were paired with three publicly available remotely sensed image sources, namely aerial imagery from the USDA National Agriculture Imagery Program (NAIP) as well as satellite imagery captured by Sentinel-1 (S1) and Sentinel-2 (S2). We included the three visible (RGB) and single near-infrared (NIR) bands from NAIP and S2, the single coastal aerosol (CA) band, four red-edge (RE1-4) bands, single water vapor (WV) band, single cirrus (C) band, and the two shortwave infrared (SWIR1-2) bands from S2, and the V-transmit (VH and VV) bands from S1. Images capture a 720m x 720m footprint. Imagery was processed and downloaded using the 
+            a(href="https://www.descarteslabs.com/" target="_blank") Descartes Labs platform
+            | .
+          h3 Expert-labeled Validation and Test Sets
+          p Two Stanford University postdoctoral researchers with expertise in methane emissions and related infrastructure individually reviewed 1,534 examples to compose the held-out validation and test sets. Their consensus was used as the final label in these sets.
+        .col-md-5
+          table.table.performanceTable
+            thead 
+            tr
+              th(rowspan=1) Category 
+              th(colspan=1, style="text-align:center;") Train
+              th(colspan=1, style="text-align:center;") Valid
+              th(colspan=1, style="text-align:center;") Test
+              th(colspan=1, style="text-align:center;") Total
+            tbody
+            tr
+              td CAFOs
+              td(style="text-align:center;") 24957
+              td(style="text-align:center;") 47
+              td(style="text-align:center;") 92
+              td(style="text-align:center;") 25096
+            tr
+              td Landfills
+              td(style="text-align:center;") 4088
+              td(style="text-align:center;") 46
+              td(style="text-align:center;") 111
+              td(style="text-align:center;") 4245
+            tr
+              td Coal Mines
+              td(style="text-align:center;") 1777
+              td(style="text-align:center;") 40
+              td(style="text-align:center;") 72
+              td(style="text-align:center;") 1889
+            tr
+              td Proc Plants
+              td(style="text-align:center;") 1901
+              td(style="text-align:center;") 38
+              td(style="text-align:center;") 107
+              td(style="text-align:center;") 2046
+            tr
+              td R&Ts
+              td(style="text-align:center;") 4016
+              td(style="text-align:center;") 59
+              td(style="text-align:center;") 108
+              td(style="text-align:center;") 4183
+            tr
+              td WWTPs
+              td(style="text-align:center;") 14522
+              td(style="text-align:center;") 46
+              td(style="text-align:center;") 130
+              td(style="text-align:center;") 14698
+            tr
+              td Negatives
+              td(style="text-align:center;") 85091
+              td(style="text-align:center;") 515
+              td(style="text-align:center;") 1019
+              td(style="text-align:center;") 86625
+            p(style="text-align:center;") Table 1. Counts of each category in METER-ML.
+          table.table.performanceTable
+            thead 
+            tr
+              th(rowspan=1) Product 
+              th(colspan=1, style="text-align:center;") Bands
+              th(colspan=1, style="text-align:center;") Image Size
+              th(colspan=1, style="text-align:center;") Resolution
+            tbody
+            tr
+              td NAIP
+              td(style="text-align:center;") RGB & NIR
+              td(style="text-align:center;") 720x720
+              td(style="text-align:center;") 1m
+            tr
+              td Sentinel-2
+              td(style="text-align:center;") RGB & NIR
+              td(style="text-align:center;") 72x72
+              td(style="text-align:center;") 10m
+            tr
+              td Sentinel-2
+              td(style="text-align:center;") RE1-4 & SWIR1-2
+              td(style="text-align:center;") 36x36
+              td(style="text-align:center;") 20m
+            tr
+              td Sentinel-2
+              td(style="text-align:center;") CA & WV & C
+              td(style="text-align:center;") 12x12
+              td(style="text-align:center;") 60m
+            tr
+              td Sentinel-1
+              td(style="text-align:center;") VH & VV
+              td(style="text-align:center;") 72x72
+              td(style="text-align:center;") 10m
+            p(style="text-align:center;") Table 2. Summary of the remotely sensed image products and bands included in METER-ML. 
+    
+  section
+    .container
+      .row
+        .col-md-5
+          h2 
+          table.table.performanceTable
+            thead 
+            tr
+              th(rowspan=1) Category 
+              th(colspan=1, style="text-align:center;") AUPRC
+              th(colspan=1, style="text-align:center;") AUROCC
+              th(colspan=1, style="text-align:center;") Precision
+              th(colspan=1, style="text-align:center;") Recall
+              th(colspan=1, style="text-align:center;") F1
+            tbody
+            tr
+              td CAFOs
+              td(style="text-align:center;") 0.915
+              td(style="text-align:center;") 0.989
+              td(style="text-align:center;") 0.822
+              td(style="text-align:center;") 0.902
+              td(style="text-align:center;") 0.860
+            tr
+              td Landfills
+              td(style="text-align:center;") 0.259
+              td(style="text-align:center;") 0.754
+              td(style="text-align:center;") 0.246
+              td(style="text-align:center;") 0.523
+              td(style="text-align:center;") 0.334
+            tr
+              td Coal Mines
+              td(style="text-align:center;") 0.470
+              td(style="text-align:center;") 0.905
+              td(style="text-align:center;") 0.558
+              td(style="text-align:center;") 0.403
+              td(style="text-align:center;") 0.468
+            tr
+              td Proc Plants
+              td(style="text-align:center;") 0.350
+              td(style="text-align:center;") 0.787
+              td(style="text-align:center;") 0.336
+              td(style="text-align:center;") 0.477
+              td(style="text-align:center;") 0.394
+            tr
+              td R&Ts
+              td(style="text-align:center;") 0.821
+              td(style="text-align:center;") 0.956
+              td(style="text-align:center;") 0.752
+              td(style="text-align:center;") 0.787
+              td(style="text-align:center;") 0.769
+            tr
+              td WWTPs
+              td(style="text-align:center;") 0.534
+              td(style="text-align:center;") 0.836
+              td(style="text-align:center;") 0.633
+              td(style="text-align:center;") 0.477
+              td(style="text-align:center;") 0.544
+            tr
+              td Overall
+              td(style="text-align:center;") 0.558
+              td(style="text-align:center;") 0.871
+              td(style="text-align:center;") 0.558
+              td(style="text-align:center;") 0.595
+              td(style="text-align:center;") 0.562
+            p(style="text-align:center;") Table 3. Per-class and overall (macros-average) test metrics of our baseline model.
+        .col-md-7
+          h2 How well does our baseline model do?
+          p We experimented with a variety of models with a DenseNet-121 backbone which input combinations of image products, bands, image, and spatial resolutions. We found that a model which leverages NAIP with all four bands achieves the highest overall performance across the tested image product and spectral band combinations, followed closely by a joint NAIP, Sentinel-2, and Sentinel-1 model. We also found that the highest spatial resolution and footprint leads to the best overall performance, although performance can depend on the methane source category.
+          p We selected the best performing setting for each methane source category in our baseline model. The baseline model achieved high performance in identifying concentrated animal feeding operations and oil refineries and petroleum terminals, suggesting the potential to map them at scale. There is still a large gap to achieving high performance for each of the other methane source categories and further improve performance on the high performing categories, so METER-ML is a challenging benchmark to test new infrastructure identification approaches.
+
+  section.gray
+    .container
+      .row
+        .col-md-8
+          h3
+            | To learn more, read 
+            a(href="http://arxiv.org/abs/2207.11166") our publication 
+            | presented at the IJCAI-ECAI 2022 Workshop on Complex Data Challenges in Earth Observation.
+          .pad
+          p If you have questions about our work, contact us at:
+          h4
+            code bwzhu@cs.stanford.edu
+            |  and 
+            code niclui@stanford.edu
+            |  and 
+            code jirvin16@cs.stanford.edu
