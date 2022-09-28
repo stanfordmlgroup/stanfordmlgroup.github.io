@@ -19,13 +19,13 @@ block content
   section.gray
     .container
       .row
-        .col-sm-7
+        .col-sm-6
           h3 The AI for Climate Change Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and climate change. Students receive training from PhD students and bootcamp faculty to do interdiscplinary research on high impact problems.
           p Projects in the bootcamp have included work in a variety of climate-relevant subfields including (1) energy on detecting solar, wind, and oil and gas infrastructure in satellite imagery, (2) earth science on predicting methane emissions from natural wetlands, (3) deforestation on classifying the drivers of forest loss events using satellite imagery, and (4) transportation on detecting travel infrastructure in urban areas using street view and aerial imagery, and span a variety of machine learning subfields, including self-, semi-, and weakly supervised learning, active learning, and probabilistic forecasting.  
           p Academic collaborators include faculty at Stanford University, UC Berkeley, the University of Illinois Chicago, the University of British Columbia, and the University of Oxford.
-          p Bootcamp alumni have pursued PhD programs at Stanford, Cambridge, and Harvard University, and assumed industry roles at Google X, Meta Research, and Microsoft Research.
+          p AICC bootcamp alumni have pursued PhD programs at Stanford, Cambridge, and Harvard University, and assumed industry roles at Google X, Meta Research, and Microsoft Research.
           //- a.btn.btn-lg.btn-default(href="https://forms.gle/seLjmhJ1acFLSfdX6") Apply Now
-        .col-sm-5.hidden-xs
+        .col-sm-6.hidden-xs
           +alumni_inside('climate_bootcamp_alumni', 'big_compact')
           +alumni_inside('climate_bootcamp_phd', 'big_compact')
         //- .col-sm-4.col-sm-pull-7
@@ -117,6 +117,7 @@ block content
           .row
             .col-sm-12
               h2 Bootcamp Cohorts
+              +alumni('ccfall2022', false)
               +alumni('ccspring2022', false)
               +alumni('ccwinter2022', false)
               +alumni('ccfall2021', false)
