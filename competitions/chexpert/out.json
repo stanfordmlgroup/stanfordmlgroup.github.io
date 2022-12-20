@@ -9613,7 +9613,7 @@
             "submission": {
                 "created": 1666339827,
                 "description": "KD-Prune10 (Single model) (MPU)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "sunkasin0715"
@@ -10634,7 +10634,7 @@
             },
             "submission": {
                 "created": 1634133537,
-                "description": "LBC-v2 (ensemble) (Macao Polytechnic University)",
+                "description": "LBC-v2 (ensemble) (Macao Polytechnic University) https://arxiv.org/abs/2210.05954",
                 "num_period_submissions": 0,
                 "num_total_submissions": 15,
                 "public": false,
@@ -12549,7 +12549,7 @@
             },
             "submission": {
                 "created": 1631952840,
-                "description": "LBC-v0 (ensemble) (Macao Polytechnic University)",
+                "description": "LBC-v0 (ensemble) (Macao Polytechnic University) https://arxiv.org/abs/2210.05954",
                 "num_period_submissions": 0,
                 "num_total_submissions": 15,
                 "public": false,
@@ -13277,7 +13277,7 @@
             },
             "submission": {
                 "created": 1630011445,
-                "description": "Stellarium-CheXpert-Local (single model)",
+                "description": "Stellarium-CheXpert-Local (single model) https://arxiv.org/abs/2210.05954",
                 "num_period_submissions": 0,
                 "num_total_submissions": 15,
                 "public": false,
@@ -15478,6 +15478,116 @@
         },
         {
             "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xb08bf446ccf645abba5bbedfafc4fedc \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g --request-network",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x3b88fdb64cca8c1fbe10c060308e41f2ed40904f",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0x0e94c4786f0c43b79a87914082aacba0",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_state": "ready",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0x0e94c4786f0c43b79a87914082aacba0",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_state": "ready",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0x0e94c4786f0c43b79a87914082aacba0",
+                        "parent_name": "PrateekMunjal-predictions-rn50_0.15ppl-predict",
+                        "parent_path": "",
+                        "parent_state": "ready",
+                        "parent_uuid": "0xb08bf446ccf645abba5bbedfafc4fedc"
+                    }
+                ],
+                "frozen": null,
+                "id": "0x0e94c4786f0c43b79a87914082aacba0",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1671520011,
+                    "data_size": 12726,
+                    "description": "{\"submit_id\": \"0x14b55a1a3461460a989cc37fc7d9722f\", \"submitter_id\": \"0x42949943fcb4485797278e2c7048fdbb\", \"predict_id\": \"0xb08bf446ccf645abba5bbedfafc4fedc\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1671520374,
+                    "memory_usage": 0.0,
+                    "name": "PrateekMunjal-predictions-rn50_0.15ppl-results",
+                    "on_preemptible_worker": false,
+                    "remote": "7ee24555781a-6f9a293343f04d25b8d2afbef0555652",
+                    "remote_history": [
+                        "7ee24555781a"
+                    ],
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": true,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "staged_status": "Bundle's dependencies are all ready. Waiting for the bundle to be assigned to a worker to be run.",
+                    "started": 1671520257,
+                    "store": "",
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.480138,
+                    "time_cleaning_up": 3.255953311920166,
+                    "time_preparing": 96.83930253982544,
+                    "time_running": 3.0238230228424072,
+                    "time_system": 0.0,
+                    "time_uploading_results": 8.649169683456421,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "state_details": "Bundle command has finished executing successfully, and results have been uploaded to the server.",
+                "uuid": "0x0e94c4786f0c43b79a87914082aacba0"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8438341715168296,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.8873553353093422,
+                "average_num_rads_under_roc": 1.2,
+                "cardiomegaly_auroc": 0.899941175354371,
+                "cardiomegaly_num_rads_under_roc": 3,
+                "consolidation_auroc": 0.8494765356175417,
+                "consolidation_num_rads_under_roc": 0,
+                "edema_auroc": 0.909618422651598,
+                "edema_num_rads_under_roc": 2,
+                "effusion_auroc": 0.9339063714063713,
+                "effusion_num_rads_under_roc": 1
+            },
+            "submission": {
+                "created": 1667381953,
+                "description": "",
+                "num_period_submissions": 2,
+                "num_total_submissions": 2,
+                "public": true,
+                "user_name": "PrateekMunjal"
+            }
+        },
+        {
+            "bundle": {
                 "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0x04b0939181264dd28c91c6eb5fa012f6 \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g",
                 "bundle_type": "run",
                 "command": "python evaluate.py test.csv predictions.csv",
@@ -15580,6 +15690,116 @@
                 "num_total_submissions": 15,
                 "public": true,
                 "user_name": "maxium0526"
+            }
+        },
+        {
+            "bundle": {
+                "args": "run evaluate.py:0x47d8c7a6cda242a0a478f65ce40a936b test.csv:0xe08fb01d139348b9b23d2688ff11e134 predictions.csv:0xe02e7358f9ab4791b57865cb170d66ab \"python evaluate.py test.csv predictions.csv\" --request-cpus 1 --request-docker-image codalab/ubuntu:1.9 --request-memory 2g --request-network",
+                "bundle_type": "run",
+                "command": "python evaluate.py test.csv predictions.csv",
+                "data_hash": "0x201cc02b25e773a4278cc7a094b9fed2fcd3403a",
+                "dependencies": [
+                    {
+                        "child_path": "evaluate.py",
+                        "child_uuid": "0xc05f45d9d709457f829ae8332f3e6be4",
+                        "parent_name": "evaluate-v1.0.py",
+                        "parent_path": "",
+                        "parent_state": "ready",
+                        "parent_uuid": "0x47d8c7a6cda242a0a478f65ce40a936b"
+                    },
+                    {
+                        "child_path": "test.csv",
+                        "child_uuid": "0xc05f45d9d709457f829ae8332f3e6be4",
+                        "parent_name": "test_groundtruth.csv",
+                        "parent_path": "",
+                        "parent_state": "ready",
+                        "parent_uuid": "0xe08fb01d139348b9b23d2688ff11e134"
+                    },
+                    {
+                        "child_path": "predictions.csv",
+                        "child_uuid": "0xc05f45d9d709457f829ae8332f3e6be4",
+                        "parent_name": "PrateekMunjal-predictions-pm_rn50_0.1ppl-predict",
+                        "parent_path": "",
+                        "parent_state": "ready",
+                        "parent_uuid": "0xe02e7358f9ab4791b57865cb170d66ab"
+                    }
+                ],
+                "frozen": null,
+                "id": "0xc05f45d9d709457f829ae8332f3e6be4",
+                "is_anonymous": false,
+                "metadata": {
+                    "actions": [],
+                    "allow_failed_dependencies": false,
+                    "cpu_usage": 0.0,
+                    "created": 1671520002,
+                    "data_size": 12727,
+                    "description": "{\"submit_id\": \"0xdb1812768ed04cdcbeddaf74ced36280\", \"submitter_id\": \"0x42949943fcb4485797278e2c7048fdbb\", \"predict_id\": \"0xe02e7358f9ab4791b57865cb170d66ab\"}",
+                    "docker_image": "codalab/ubuntu@sha256:a8369aaa7afdb4d242104d85aa660c034a7bf89e438963bf73ba197fe3731be0",
+                    "exclude_patterns": [],
+                    "exitcode": 0,
+                    "last_updated": 1671520374,
+                    "memory_usage": 0.0,
+                    "name": "PrateekMunjal-predictions-pm_rn50_0.1ppl-results",
+                    "on_preemptible_worker": false,
+                    "remote": "040ac7a66689-db6dcee15691462d9f4eda439290d4ac",
+                    "remote_history": [
+                        "040ac7a66689"
+                    ],
+                    "request_cpus": 1,
+                    "request_disk": "",
+                    "request_docker_image": "codalab/ubuntu:1.9",
+                    "request_gpus": 0,
+                    "request_memory": "2g",
+                    "request_network": true,
+                    "request_priority": 0,
+                    "request_queue": "",
+                    "request_time": "",
+                    "run_status": "Finished",
+                    "staged_status": "Bundle's dependencies are all ready. Waiting for the bundle to be assigned to a worker to be run.",
+                    "started": 1671520257,
+                    "store": "",
+                    "tags": [
+                        "chexpert-test-eval"
+                    ],
+                    "time": 0.488534,
+                    "time_cleaning_up": 3.211031198501587,
+                    "time_preparing": 97.38425898551941,
+                    "time_running": 3.0222253799438477,
+                    "time_system": 0.0,
+                    "time_uploading_results": 8.612210750579834,
+                    "time_user": 0.0
+                },
+                "owner": {
+                    "id": "0x05e6e2885967491c8a6d3b7c24d02796",
+                    "type": "users"
+                },
+                "permission": 2,
+                "permission_spec": "all",
+                "state": "ready",
+                "state_details": "Bundle command has finished executing successfully, and results have been uploaded to the server.",
+                "uuid": "0xc05f45d9d709457f829ae8332f3e6be4"
+            },
+            "scores": {
+                "atelectasis_auroc": 0.8421012977717504,
+                "atelectasis_num_rads_under_roc": 0,
+                "average_auroc": 0.8864047571541743,
+                "average_num_rads_under_roc": 1.0,
+                "cardiomegaly_auroc": 0.8947228600163191,
+                "cardiomegaly_num_rads_under_roc": 2,
+                "consolidation_auroc": 0.8549674207482247,
+                "consolidation_num_rads_under_roc": 1,
+                "edema_auroc": 0.9070057115080812,
+                "edema_num_rads_under_roc": 1,
+                "effusion_auroc": 0.9332264957264957,
+                "effusion_num_rads_under_roc": 1
+            },
+            "submission": {
+                "created": 1667371483,
+                "description": "",
+                "num_period_submissions": 2,
+                "num_total_submissions": 2,
+                "public": true,
+                "user_name": "PrateekMunjal"
             }
         },
         {
@@ -15989,7 +16209,7 @@
             "submission": {
                 "created": 1661414957,
                 "description": "MNet-Fix (Single Model) (MPU)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "sunkasin0715"
@@ -18322,7 +18542,7 @@
             "submission": {
                 "created": 1660290202,
                 "description": "KD_Mobilenet (single model) (IPM)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "sunkasin0715"
@@ -18627,7 +18847,7 @@
             "submission": {
                 "created": 1661174324,
                 "description": "MLKD (Single model) (IPM)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "sunkasin0715"
@@ -18839,7 +19059,7 @@
             "submission": {
                 "created": 1646467872,
                 "description": "ErrorNet (single model) (IPM)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "sunkasin0715"
@@ -19055,7 +19275,7 @@
             "submission": {
                 "created": 1664948028,
                 "description": "UMLS_CLIP (single model) (SJTU)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "xiaomanzhang"
@@ -19261,7 +19481,7 @@
             "submission": {
                 "created": 1645968459,
                 "description": "haw02 (single model) (IPM)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "sunkasin0715"
@@ -20370,7 +20590,7 @@
             "submission": {
                 "created": 1660293298,
                 "description": "mobilenet (single model) (ipm)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "sunkasin0715"
@@ -27612,7 +27832,7 @@
             "submission": {
                 "created": 1632479023,
                 "description": "ScotFloriana single model Macao Polytechnic Institute",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 8,
                 "public": true,
                 "user_name": "sunkasin0715"
@@ -28194,12 +28414,12 @@
             "submission": {
                 "created": 1663862698,
                 "description": "MKEVLP-(single model)(SJTU)",
-                "num_period_submissions": 1,
+                "num_period_submissions": 0,
                 "num_total_submissions": 1,
                 "public": true,
                 "user_name": "chaoyiwu"
             }
         }
     ],
-    "updated": 1667514371.460293
+    "updated": 1671567570.4033558
 }
