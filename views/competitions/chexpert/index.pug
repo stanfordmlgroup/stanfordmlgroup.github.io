@@ -166,19 +166,26 @@ block content
       .row
         .col-md-7
           h1 Downloading the Dataset (v1.0)
-          p Please read the Stanford University School of Medicine CheXpert Dataset Research Use Agreement. Once you register to download the CheXpert dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
-          #agreement.well
-            include agreement
-          include mailchimp
+          p 
+            | Find the dataset on the 
+            a(href="https://stanfordaimi.azurewebsites.net/datasets/8cbd9ed4-2eb9-4565-affc-111cf4f7ebe2") Stanford AIMI website
+            | . The test set labels (and image links) are available on 
+            a(href="https://github.com/rajpurkarlab/cheXpert-test-set-labels")
+              | this GitHub repository
+            | .
+          //- p Please read the Stanford University School of Medicine CheXpert Dataset Research Use Agreement. Once you register to download the CheXpert dataset, you will receive a link to the download over email. Note that you may not share the link to download the dataset with others.
+          //- #agreement.well
+          //-   include agreement
+          //- include mailchimp
   section
     .container
       .row
         .col-md-7
           h2 CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison.
           h3 Jeremy Irvin *, Pranav Rajpurkar *, Michael Ko, Yifan Yu, Silviana Ciurea-Ilcus, Chris Chute, Henrik Marklund, Behzad Haghgoo, Robyn Ball, Katie Shpanskaya, Jayne Seekins, David A. Mong, Safwan S. Halabi, Jesse K. Sandberg, Ricky Jones, David B. Larson, Curtis P. Langlotz, Bhavik N. Patel, Matthew P. Lungren, Andrew Y. Ng
-          p
-            | If you have questions about our work,
-            | contact us at our 
-            a(href="https://groups.google.com/forum/#!forum/chexpert-dataset") google group
-            |.
+          //- p
+          //-   | If you have questions about our work,
+          //-   | contact us at our 
+          //-   a(href="https://groups.google.com/forum/#!forum/chexpert-dataset") google group
+          //-   |.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1901.07031") Read the Paper
