@@ -1,0 +1,106 @@
+extends ../../layout
+
+block title
+  title Stanford Machine Learning Group
+
+block description
+  meta(name='description', content='Our mission is to significantly improve people\'s lives through our work in Artificial Intelligence')
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-9
+          h1#page-title AI for Healthcare Research
+  section
+    .container
+      .row
+        .col-md-12
+          h1 AI for Healthcare Research History
+          p 
+            | The AI for Healthcare (AIHC) work in the lab began through the 
+            a(href="/programs/aihc-bootcamp") AI for Healthcare Bootcamp 
+            | which was founded in Fall 2017. The AIHC Bootcamp has now expanded into a new Harvard-Stanford joint program called the 
+            a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI Bootcamp
+            | .
+          p
+            | Many of our AIHC research projects, including projects in the AIHC Bootcamp, have been in close collaboration with the 
+            a(href="https://aimi.stanford.edu/") Stanford Center for Artificial Intelligence in Medicine & Imaging (AIMI)
+            | .
+  section.gray
+    .container
+      .row
+        .col-md-12
+          h1 AI for Healthcare Projects
+          hr
+          h2 Improving Palliative Care with Deep Learning
+          p Anand Avati, Kenneth Jung, Stephanie Harman, Lance Downing, Andrew Ng, Nigam Shah
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.06402") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/improving-palliative-care") Webpage
+          hr
+          h2 CheXNet: Radiologist-Level Pneumonia Detection on Chest X-Rays with Deep Learning
+          p Pranav Rajpurkar*, Jeremy Irvin*, Kaylie Zhu, Brandon Yang, Hershel Mehta, Tony Duan, Daisy Ding, Aarti Bagul, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Y. Ng
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.05225") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/chexnet") Webpage
+          hr
+          h2 Countdown Regression: Sharp and Calibrated Survival Predictions.
+          p Anand Avati, Tony Duan, Kenneth Jung, Nigam H. Shah, Andrew Ng
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1806.08324") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/countdown-regression") Webpage
+          hr
+          h2 MURA: Large Dataset for Abnormality Detection in Musculoskeletal Radiographs
+          p Pranav Rajpurkar*, Jeremy Irvin*, Aarti Bagul, Daisy Ding, Tony Duan, Hershel Mehta, Brandon Yang, Kaylie Zhu, Dillon Laird, Robyn L. Ball, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Y. Ng
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1712.06957") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/competitions/mura") Competition
+          hr
+          h2 CheXNeXt: Deep learning for chest radiograph diagnosis
+          p Pranav Rajpurkar*, Jeremy Irvin*, Robyn L. Ball, Kaylie Zhu, Brandon Yang, Hershel Mehta, Tony Duan, Daisy Ding, Aarti Bagul, Curtis P. Langlotz, Bhavik N. Patel, Kristen W. Yeom, Katie Shpanskaya, Francis G. Blankenberg, Jayne Seekins, Timothy J. Amrhein, David A. Mong, Safwan S. Halabi, Evan J. Zucker, Andrew Y. Ng†, Matthew P. Lungren†
+          a.btn.btn-lg.btn-default(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002686") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/chexnext") Webpage
+          hr
+          h2 Ambulatory Atrial Fibrillation Monitoring Using Wearable Photoplethysmography with Deep Learning
+          p Maxime Voisin*, Yichen Shen*, Alireza Aliamiri, Anand Avati, Awni Hannun, and Andrew Ng
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1811.07774") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/ppg") Webpage
+          hr
+          h2 MRNet: Deep-learning-assisted diagnosis for knee magnetic resonance imaging
+          p Nicholas Bien *, Pranav Rajpurkar *, Robyn L. Ball, Jeremy Irvin, Allison Park, Erik Jones, Michael Bereket, Bhavik N. Patel, Kristen W. Yeom, Katie Shpanskaya, Safwan Halabi, Evan Zucker, Gary Fanton, Derek F. Amanatullah, Christopher F. Beaulieu, Geoffrey M. Riley, Russell J. Stewart, Francis G. Blankenberg, David B. Larson, Ricky H. Jones, Curtis P. Langlotz, Andrew Y. Ng†, Matthew P. Lungren†
+          a.btn.btn-lg.btn-default(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002699") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/mura") Webpage
+          |
+          a.btn.btn-lg.btn-default(href="/competitions/mura") Competition
+          hr
+          h2 Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network
+          p Awni Y. Hannun*, Pranav Rajpurkar*, Masoumeh Haghpanahi*, Geoffrey H. Tison *, Codie Bourn, Mintu P. Turakhia, Andrew Y. Ng
+          a.btn.btn-lg.btn-default(href="https://www.nature.com/articles/s41591-018-0268-3") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/ecg2") Webpage
+          hr
+          h2 CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison
+          p Jeremy Irvin*, Pranav Rajpurkar*, Michael Ko, Yifan Yu, Silviana Ciurea-Ilcus, Chris Chute, Henrik Marklund, Behzad Haghgoo, Robyn Ball, Katie Shpanskaya, Jayne Seekins, David A. Mong, Safwan S. Halabi, Jesse K. Sandberg, Ricky Jones, David B. Larson, Curtis P. Langlotz, Bhavik N. Patel, Matthew P. Lungren, Andrew Y. Ng
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1901.07031") Paper
+          |
+          a.btn.btn-lg.btn-default(href="/competitions/chexpert") Competition
+          hr
+          h2 CheXpedition: Investigating Generalization Challenges for Translation of Chest X-Ray Algorithms to the Clinical Setting
+          p Pranav Rajpurkar*, Anirudh Joshi*, Anuj Pareek, Phil Chen, Amir Kiani, Jeremy Irvin, Andrew Y. Ng†, Matthew P. Lungren†
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/2002.11379") Paper
+          |
+          a.btn.btn-lg.btn-default(href="/competitions/chexpedition") Webpage
+          hr
+          h2 CheXphoto: 10,000+ Photos and Transformations of Chest X-rays for Benchmarking Deep Learning Robustness
+          p Nick A. Phillips, Pranav Rajpurkar, Mark Sabini, Rayan Krishnan, Sharon Zhou, Anuj Pareek, Nguyet Minh Phu, Chris Wang, Mudit Jain, Nguyen Duong Du, Steven QH Truong, Andrew Y. Ng, Matthew P. Lungren
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/2007.06199") Paper
+          |
+          a.btn.btn-lg.btn-default(href="/competitions/chexphoto") Webpage
+          hr
+          h2 CheXED: comparison of a deep learning model to a clinical decision support system for pneumonia in the emergency department
+          p Jeremy A Irvin*, Anuj Pareek*, Jin Long, Pranav Rajpurkar, David Ken-Ming Eng, Nishith Khandwala, Peter J Haug, Al Jephson, Karen E Conner, Benjamin H Gordon, Fernando Rodriguez, Andrew Y Ng, Matthew P Lungren, Nathan C Dean
+          a.btn.btn-lg.btn-default(href="https://pubmed.ncbi.nlm.nih.gov/34561377/") Paper
