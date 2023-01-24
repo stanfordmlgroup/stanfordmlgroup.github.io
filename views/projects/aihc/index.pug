@@ -12,95 +12,82 @@ block content
       .row
         .col-lg-9
           h1#page-title AI for Healthcare Research
-  section
-    .container
-      .row
-        .col-md-12
-          h1 AI for Healthcare Research History
-          p 
-            | The AI for Healthcare (AIHC) work in the lab began through the 
-            a(href="/programs/aihc-bootcamp") AI for Healthcare Bootcamp 
-            | which was founded in Fall 2017. The AIHC Bootcamp has now expanded into a new Harvard-Stanford joint program called the 
-            a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI Bootcamp
-            | .
-          p
-            | Many of our AIHC research projects, including projects in the AIHC Bootcamp, have been in close collaboration with the 
-            a(href="https://aimi.stanford.edu/") Stanford Center for Artificial Intelligence in Medicine & Imaging (AIMI)
-            | .
   section.gray
     .container
       .row
         .col-md-12
-          h1 AI for Healthcare Projects
+          h1 History of Our AI for Healthcare Research
+          p
+            | Our AI for Healthcare (AIHC) work began as the 
+            a(href="/programs/aihc-bootcamp") AI for Healthcare Bootcamp
+            |  which was launched in September 2017 as a cohort of six students co-led by Pranav Rajpurkar and Anand Avati, who were mentored by Nigam Shah and Andrew Ng. Since Autumn 2018, many of the projects in the AIHC Bootcamp have been in close collaboration with the Stanford Center for Artificial Intelligence in Medicine & Imaging (AIMI). In the past 5 years, the AIHC Bootcamp has graduated 100+ students with 15+ collaborating faculty. Over half of the students had their first research experiences in the bootcamp. We are proud to share that our bootcamp alumni have pursued PhD programs at institutions including MIT, Stanford, UW; led industry efforts at Google Brain, Apple Health, Microsoft Research, Tesla AI; and started AI startups including Valar Labs and Wispr AI.
+          p
+            | After 2022, the AIHC Bootcamp evolved into two programs: (1) The AI for Healthcare Bootcamp at Stanford, with an increased focus on healthcare challenges, and (2) The 
+            a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI Bootcamp
+            | , as a joint Harvard-Stanford effort.
+          p 
+            |  Below are four examples of successful bootcamp projects during 2017 - 2022 spanning Electronic Health Records, Imaging, and Wearables data.
+  section
+    .container
+      .row
+        .col-md-12
+        h1 AI for Healthcare Projects
+      .row
+        .col-md-12
           hr
           h2 Improving Palliative Care with Deep Learning
-          p Anand Avati, Kenneth Jung, Stephanie Harman, Lance Downing, Andrew Ng, Nigam Shah
+          h3 Anand Avati, Kenneth Jung, Stephanie Harman, Lance Downing, Andrew Ng, Nigam Shah
+      .row
+        .col-md-5
+          p We developed a deep learning approach which uses electronic healthcare data to identify hospitalized patients who might have palliative needs. Our approach generates a report, using careful ablation techniques, highlighting the most crucial factors in the patient's EHR data that contributed towards making a high probability decision. A later version of the model has been deployed in the Stanford Medical Center and has improved care of over 2000 patients.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.06402") Paper
           | 
           a.btn.btn-lg.btn-default(href="/projects/improving-palliative-care") Webpage
-          hr
+          | 
+          a.btn.btn-lg.btn-default(href="https://stanmed.stanford.edu/artificial-intelligence-puts-humanity-health-care/") Media
+        .col-md-7
+          img(src='/projects/improving-palliative-care/img/decision-explanation-clipped.png' style='max-height:300px;')
+  section.gray
+    .container
+      .row
+        .col-md-12
           h2 CheXNet: Radiologist-Level Pneumonia Detection on Chest X-Rays with Deep Learning
-          p Pranav Rajpurkar*, Jeremy Irvin*, Kaylie Zhu, Brandon Yang, Hershel Mehta, Tony Duan, Daisy Ding, Aarti Bagul, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Y. Ng
+          h3 Pranav Rajpurkar*, Jeremy Irvin*, Kaylie Zhu, Brandon Yang, Hershel Mehta, Tony Duan, Daisy Ding, Aarti Bagul, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Y. Ng
+      .row
+        .col-md-4
+          img(src='/projects/chexnet/img/chest-cam.png' style='max-height:275px;')
+        .col-md-8
+          p We developed a deep learning model called CheXNet which accepts a chest X-ray and outputs whether the patient has pneumonia. A comparison of CheXNet to board-certified radiologists found that it achieved diagnostic performance comparable to that of the radiologists. This model has since been further developed and extended to other diseases and use cases, resulting in follow-up works including CheXNeXt, CheXpert, CheXaid, CheXtransfer, CheXZero, and CheXED which is currently running in a shadow deployment within several emergency departments in a large national healthcare system.
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.05225") Paper
           | 
           a.btn.btn-lg.btn-default(href="/projects/chexnet") Webpage
-          hr
-          h2 Countdown Regression: Sharp and Calibrated Survival Predictions.
-          p Anand Avati, Tony Duan, Kenneth Jung, Nigam H. Shah, Andrew Ng
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1806.08324") Paper
           | 
-          a.btn.btn-lg.btn-default(href="/projects/countdown-regression") Webpage
-          hr
+          a.btn.btn-lg.btn-default(href="https://www.healthcareitnews.com/news/asia/aster-dm-healthcare-intel-carplai-launch-ai-health-data-platform-india") Media
+  section
+    .container
+      .row
+        .col-md-12
           h2 MURA: Large Dataset for Abnormality Detection in Musculoskeletal Radiographs
-          p Pranav Rajpurkar*, Jeremy Irvin*, Aarti Bagul, Daisy Ding, Tony Duan, Hershel Mehta, Brandon Yang, Kaylie Zhu, Dillon Laird, Robyn L. Ball, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Y. Ng
+          h3 Pranav Rajpurkar*, Jeremy Irvin*, Aarti Bagul, Daisy Ding, Tony Duan, Hershel Mehta, Brandon Yang, Kaylie Zhu, Dillon Laird, Robyn L. Ball, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Y. Ng
+      .row
+        .col-md-6
+          p MURA is a publicly available dataset of upper extremity bone X-rays labeled by radiologists to support the development of automated approaches for bone X-ray abnormality identification. We held a competition where users submitted their models trained on MURA, and the best submission substantially outperformed the best radiologist performance on the held-out test set. 
           a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1712.06957") Paper
           | 
           a.btn.btn-lg.btn-default(href="/competitions/mura") Competition
-          hr
-          h2 CheXNeXt: Deep learning for chest radiograph diagnosis
-          p Pranav Rajpurkar*, Jeremy Irvin*, Robyn L. Ball, Kaylie Zhu, Brandon Yang, Hershel Mehta, Tony Duan, Daisy Ding, Aarti Bagul, Curtis P. Langlotz, Bhavik N. Patel, Kristen W. Yeom, Katie Shpanskaya, Francis G. Blankenberg, Jayne Seekins, Timothy J. Amrhein, David A. Mong, Safwan S. Halabi, Evan J. Zucker, Andrew Y. Ng†, Matthew P. Lungren†
-          a.btn.btn-lg.btn-default(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002686") Paper
-          | 
-          a.btn.btn-lg.btn-default(href="/projects/chexnext") Webpage
-          hr
-          h2 Ambulatory Atrial Fibrillation Monitoring Using Wearable Photoplethysmography with Deep Learning
-          p Maxime Voisin*, Yichen Shen*, Alireza Aliamiri, Anand Avati, Awni Hannun, and Andrew Ng
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1811.07774") Paper
-          | 
-          a.btn.btn-lg.btn-default(href="/projects/ppg") Webpage
-          hr
-          h2 MRNet: Deep-learning-assisted diagnosis for knee magnetic resonance imaging
-          p Nicholas Bien *, Pranav Rajpurkar *, Robyn L. Ball, Jeremy Irvin, Allison Park, Erik Jones, Michael Bereket, Bhavik N. Patel, Kristen W. Yeom, Katie Shpanskaya, Safwan Halabi, Evan Zucker, Gary Fanton, Derek F. Amanatullah, Christopher F. Beaulieu, Geoffrey M. Riley, Russell J. Stewart, Francis G. Blankenberg, David B. Larson, Ricky H. Jones, Curtis P. Langlotz, Andrew Y. Ng†, Matthew P. Lungren†
-          a.btn.btn-lg.btn-default(href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1002699") Paper
-          | 
-          a.btn.btn-lg.btn-default(href="/projects/mura") Webpage
-          |
-          a.btn.btn-lg.btn-default(href="/competitions/mura") Competition
-          hr
+        .col-md-6
+          img(src='/competitions/mura/img/dataset-flat.png' style='max-height:250px;')
+  section.gray
+    .container
+      .row
+        .col-md-12
           h2 Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network
-          p Awni Y. Hannun*, Pranav Rajpurkar*, Masoumeh Haghpanahi*, Geoffrey H. Tison *, Codie Bourn, Mintu P. Turakhia, Andrew Y. Ng
+          h3 Awni Y. Hannun*, Pranav Rajpurkar*, Masoumeh Haghpanahi*, Geoffrey H. Tison*, Codie Bourn, Mintu P. Turakhia, Andrew Y. Ng
+      .row
+        .col-md-6
+          img(src='/projects/ecg2/img/zio.png' style='max-height:250px;')
+        .col-md-6
+          p We developed a deep neural network which can diagnose irregular heart rhythms, also known as arrhythmias, from single-lead ECG signals. We compared the model to expert cardiologists and found that it achieved diagnostic performance similar to that of the cardiologists. 
           a.btn.btn-lg.btn-default(href="https://www.nature.com/articles/s41591-018-0268-3") Paper
           | 
           a.btn.btn-lg.btn-default(href="/projects/ecg2") Webpage
-          hr
-          h2 CheXpert: A Large Chest Radiograph Dataset with Uncertainty Labels and Expert Comparison
-          p Jeremy Irvin*, Pranav Rajpurkar*, Michael Ko, Yifan Yu, Silviana Ciurea-Ilcus, Chris Chute, Henrik Marklund, Behzad Haghgoo, Robyn Ball, Katie Shpanskaya, Jayne Seekins, David A. Mong, Safwan S. Halabi, Jesse K. Sandberg, Ricky Jones, David B. Larson, Curtis P. Langlotz, Bhavik N. Patel, Matthew P. Lungren, Andrew Y. Ng
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1901.07031") Paper
-          |
-          a.btn.btn-lg.btn-default(href="/competitions/chexpert") Competition
-          hr
-          h2 CheXpedition: Investigating Generalization Challenges for Translation of Chest X-Ray Algorithms to the Clinical Setting
-          p Pranav Rajpurkar*, Anirudh Joshi*, Anuj Pareek, Phil Chen, Amir Kiani, Jeremy Irvin, Andrew Y. Ng†, Matthew P. Lungren†
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/2002.11379") Paper
-          |
-          a.btn.btn-lg.btn-default(href="/competitions/chexpedition") Webpage
-          hr
-          h2 CheXphoto: 10,000+ Photos and Transformations of Chest X-rays for Benchmarking Deep Learning Robustness
-          p Nick A. Phillips, Pranav Rajpurkar, Mark Sabini, Rayan Krishnan, Sharon Zhou, Anuj Pareek, Nguyet Minh Phu, Chris Wang, Mudit Jain, Nguyen Duong Du, Steven QH Truong, Andrew Y. Ng, Matthew P. Lungren
-          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/2007.06199") Paper
-          |
-          a.btn.btn-lg.btn-default(href="/competitions/chexphoto") Webpage
-          hr
-          h2 CheXED: comparison of a deep learning model to a clinical decision support system for pneumonia in the emergency department
-          p Jeremy A Irvin*, Anuj Pareek*, Jin Long, Pranav Rajpurkar, David Ken-Ming Eng, Nishith Khandwala, Peter J Haug, Al Jephson, Karen E Conner, Benjamin H Gordon, Fernando Rodriguez, Andrew Y Ng, Matthew P Lungren, Nathan C Dean
-          a.btn.btn-lg.btn-default(href="https://pubmed.ncbi.nlm.nih.gov/34561377/") Paper
