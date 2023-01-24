@@ -1,0 +1,93 @@
+extends ../../layout
+
+block title
+  title Stanford Machine Learning Group
+
+block description
+  meta(name='description', content='Our mission is to significantly improve people\'s lives through our work in Artificial Intelligence')
+
+block content
+  section#header
+    .container
+      .row
+        .col-lg-9
+          h1#page-title AI for Healthcare Research
+  section.gray
+    .container
+      .row
+        .col-md-12
+          h1 History of Our AI for Healthcare Research
+          p
+            | Our AI for Healthcare (AIHC) work began as the 
+            a(href="/programs/aihc-bootcamp") AI for Healthcare Bootcamp
+            |  which was launched in September 2017 as a cohort of six students co-led by Pranav Rajpurkar and Anand Avati, who were mentored by Nigam Shah and Andrew Ng. Since Autumn 2018, many of the projects in the AIHC Bootcamp have been in close collaboration with the Stanford Center for Artificial Intelligence in Medicine & Imaging (AIMI). In the past 5 years, the AIHC Bootcamp has graduated 100+ students with 15+ collaborating faculty. Over half of the students had their first research experiences in the bootcamp. We are proud to share that our bootcamp alumni have pursued PhD programs at institutions including MIT, Stanford, UW; led industry efforts at Google Brain, Apple Health, Microsoft Research, Tesla AI; and started AI startups including Valar Labs and Wispr AI.
+          p
+            | After 2022, the AIHC Bootcamp evolved into two programs: (1) The AI for Healthcare Bootcamp at Stanford, with an increased focus on healthcare challenges, and (2) The 
+            a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI Bootcamp
+            | , as a joint Harvard-Stanford effort.
+          p 
+            |  Below are four examples of successful bootcamp projects during 2017 - 2022 spanning Electronic Health Records, Imaging, and Wearables data.
+  section
+    .container
+      .row
+        .col-md-12
+        h1 AI for Healthcare Projects
+      .row
+        .col-md-12
+          hr
+          h2 Improving Palliative Care with Deep Learning
+          h3 Anand Avati, Kenneth Jung, Stephanie Harman, Lance Downing, Andrew Ng, Nigam Shah
+      .row
+        .col-md-5
+          p We developed a deep learning approach which uses electronic healthcare data to identify hospitalized patients who might have palliative needs. Our approach generates a report, using careful ablation techniques, highlighting the most crucial factors in the patient's EHR data that contributed towards making a high probability decision. A later version of the model has been deployed in the Stanford Medical Center and has improved care of over 2000 patients.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.06402") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/improving-palliative-care") Webpage
+          | 
+          a.btn.btn-lg.btn-default(href="https://stanmed.stanford.edu/artificial-intelligence-puts-humanity-health-care/") Media
+        .col-md-7
+          img(src='/projects/improving-palliative-care/img/decision-explanation-clipped.png' style='max-height:300px;')
+  section.gray
+    .container
+      .row
+        .col-md-12
+          h2 CheXNet: Radiologist-Level Pneumonia Detection on Chest X-Rays with Deep Learning
+          h3 Pranav Rajpurkar*, Jeremy Irvin*, Kaylie Zhu, Brandon Yang, Hershel Mehta, Tony Duan, Daisy Ding, Aarti Bagul, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Y. Ng
+      .row
+        .col-md-4
+          img(src='/projects/chexnet/img/chest-cam.png' style='max-height:275px;')
+        .col-md-8
+          p We developed a deep learning model called CheXNet which accepts a chest X-ray and outputs whether the patient has pneumonia. A comparison of CheXNet to board-certified radiologists found that it achieved diagnostic performance comparable to that of the radiologists. This model has since been further developed and extended to other diseases and use cases, resulting in follow-up works including CheXNeXt, CheXpert, CheXaid, CheXtransfer, CheXZero, and CheXED which is currently running in a shadow deployment within several emergency departments in a large national healthcare system.
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1711.05225") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/chexnet") Webpage
+          | 
+          a.btn.btn-lg.btn-default(href="https://www.healthcareitnews.com/news/asia/aster-dm-healthcare-intel-carplai-launch-ai-health-data-platform-india") Media
+  section
+    .container
+      .row
+        .col-md-12
+          h2 MURA: Large Dataset for Abnormality Detection in Musculoskeletal Radiographs
+          h3 Pranav Rajpurkar*, Jeremy Irvin*, Aarti Bagul, Daisy Ding, Tony Duan, Hershel Mehta, Brandon Yang, Kaylie Zhu, Dillon Laird, Robyn L. Ball, Curtis Langlotz, Katie Shpanskaya, Matthew P. Lungren, Andrew Y. Ng
+      .row
+        .col-md-6
+          p MURA is a publicly available dataset of upper extremity bone X-rays labeled by radiologists to support the development of automated approaches for bone X-ray abnormality identification. We held a competition where users submitted their models trained on MURA, and the best submission substantially outperformed the best radiologist performance on the held-out test set. 
+          a.btn.btn-lg.btn-default(href="https://arxiv.org/abs/1712.06957") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/competitions/mura") Competition
+        .col-md-6
+          img(src='/competitions/mura/img/dataset-flat.png' style='max-height:250px;')
+  section.gray
+    .container
+      .row
+        .col-md-12
+          h2 Cardiologist-level arrhythmia detection and classification in ambulatory electrocardiograms using a deep neural network
+          h3 Awni Y. Hannun*, Pranav Rajpurkar*, Masoumeh Haghpanahi*, Geoffrey H. Tison*, Codie Bourn, Mintu P. Turakhia, Andrew Y. Ng
+      .row
+        .col-md-6
+          img(src='/projects/ecg2/img/zio.png' style='max-height:250px;')
+        .col-md-6
+          p We developed a deep neural network which can diagnose irregular heart rhythms, also known as arrhythmias, from single-lead ECG signals. We compared the model to expert cardiologists and found that it achieved diagnostic performance similar to that of the cardiologists. 
+          a.btn.btn-lg.btn-default(href="https://www.nature.com/articles/s41591-018-0268-3") Paper
+          | 
+          a.btn.btn-lg.btn-default(href="/projects/ecg2") Webpage
