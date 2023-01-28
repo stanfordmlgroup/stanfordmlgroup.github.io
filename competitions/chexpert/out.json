@@ -15579,8 +15579,8 @@
             },
             "submission": {
                 "created": 1667381953,
-                "description": "",
-                "num_period_submissions": 2,
+                "description": "pm_rn50_0.15ppl",
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "PrateekMunjal"
@@ -15795,8 +15795,8 @@
             },
             "submission": {
                 "created": 1667371483,
-                "description": "",
-                "num_period_submissions": 2,
+                "description": "{pm0.1ppl}",
+                "num_period_submissions": 0,
                 "num_total_submissions": 2,
                 "public": true,
                 "user_name": "PrateekMunjal"
@@ -28421,5 +28421,5 @@
             }
         }
     ],
-    "updated": 1671567570.4033558
+    "updated": 1674877154.853678
 }
