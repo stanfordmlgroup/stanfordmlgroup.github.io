@@ -2,9 +2,12 @@ mixin alumni_inside(cohort, use_compact)
   if cohort == 'core'
       +dp('Andrew Ng', 'prof', false, use_compact)
       +dp('Swati Dube Batra', 'Program Manager', false, use_compact)
+      +alumni_inside('postdoc', use_compact)
       +alumni_inside('phd', use_compact)
+  if cohort == 'postdoc'
+      +dp('Jeya Maria Jose', 'postdoc', false, use_compact)
   if cohort == 'phd'
-      +dp('Jeremy Irvin', 'phd', false, use_compact)
+      +dp('Jeremy Irvin', 'phdc', false, use_compact)
       +dp('Yixing Jiang', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
