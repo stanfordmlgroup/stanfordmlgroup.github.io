@@ -13,52 +13,31 @@ block content
       .row
         .col-lg-9
           img#aihc_headline(src="/programs/aihc-bootcamp.svg")
-  section
-    .container
-      .row
-        .col-sm-12
-          h2 
-            | The 2017 - 2021 AI For Healthcare (AIHC) Bootcamp has now expanded into a new Harvard-Stanford joint program called the 
-            a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI Bootcamp
-            | .
   section.gray
     .container
       .row
-        .col-sm-7
-            h2 AIHC Bootcamp History
-            p Since its founding at Stanford in Fall 2017, the AIHC Bootcamp has graduated 100+ students with 15+ 
-              | collaborating faculty at Stanford Medicine and Engineering, UCSF, and Harvard. Over half of the students had their first research experiences in the bootcamp. We are proud to share that our bootcamp alumni have pursued PhD programs at institutions including MIT, Stanford, UW; led industry efforts at Google Brain, Apple Health, Microsoft Research, Tesla AI; and started AI startups including Valar Labs and Wispr AI.
-        .col-sm-5
+        .col-sm-12
+            h2 AIHC Bootcamp
+            p The AI for Healthcare Bootcamp offers Stanford students an unique chance to engage in advanced research at the intersection of AI and healthcare. Students collaborate closely with Postdocs, PhD students from Professor Andrew Ng's lab, the AIMI Center, and  faculty members in medicine. This program is tailored for students with a background in machine learning and software engineering, providing them with an in-depth exploration of research topics and the opportunity to co-author a research paper. We are proud to share that our bootcamp alumni have pursued PhD programs at institutions including MIT, Stanford, UW; led industry efforts at Google Brain, Apple Health, Microsoft Research, Tesla AI; and started AI startups including Valar Labs and Wispr AI.
+            h3 Prerequisites and Commitment
+            ul
+              li Have experience working on deep learning projects.
+              li Consider the bootcamp as their primary academic engagement (30 hours per week) outside of 1 or 2 courses. We encourage students to sign up for research credits (CS 199, CS 399, etc).
+              li Taken machine learning courses (CS229/CS230/CS224N/CS231N or equivalent).
+              li Proficiency in software engineering (CS106B or equivalent), computer systems (CS107 or equivalent), and have done Python programming.
+              
+      .row
+        .col-sm-12
           h3 Teaching Team
-          +alumni_inside('healthcare_bootcamp_phd', 'big')
-          +dp('Andrew Ng', 'prof', false, 'big')
+          div(class="clearfix")
+            +dp('Jeya Maria Jose', 'postdoc', false, use_compact)
+            +dp('Yixing Jiang', 'phd', false, use_compact)
+            +dp('Jeremy Irvin', 'phd', false, use_compact)
+            +dp('Andrew Ng', 'prof', false, use_compact)
       .row
         .col-sm-12
-          h3 Collaborating Faculty
-          +alumni_inside('medical_faculty')
-  section.gray
-    .container
-      .row
-        .col-sm-12
-          h2 Bootcamp Cohorts
-          +alumni('hcfall2021')
-          +alumni('hcspring2021')
-          +alumni('hcwinter2021')
-          +alumni('hcfall2020')
-          +alumni('hcsummer2020')
-          +alumni('hcspring2020')
-          +alumni('winter2020')
-          +alumni('fall2019')
-          +alumni('spring2019')
-          +alumni('winter2019')
-          +alumni('fall2018')
-          +alumni('summer2018')
-          +alumni('spring2018')
-          +alumni('winter2018')
-          +alumni('fall2017')
-      .row
-        .col-sm-12
-          h3 Projects
+          h3 Previous Projects
+          div(class="clearfix")
           ul.list-inline
             li
               a.btn(href="https://arxiv.org/abs/2102.10663") MedAug
@@ -98,4 +77,40 @@ block content
               a.btn(href="/projects/chexnet") CheXNet
             li
               a.btn(href="/projects/mura") MURA
+      .row
+        .col-sm-12
+          h3 Collaborating Faculty
+          div(class="clearfix")
+          +alumni_inside('medical_faculty')
+  section
+    .container
+      .row
+        .col-sm-12
+          h3 
+            | The AI For Healthcare (AIHC) Bootcamp is also continued as a Harvard-Stanford joint program called the 
+            a(href="https://medical-ai-bootcamp.hms.harvard.edu/") Medical AI Bootcamp
+            | .
+  section.gray
+    .container
+      .row
+        .col-sm-12
+          h2 Bootcamp Cohorts
+          +alumni('hcfall2021')
+          +alumni('hcspring2021')
+          +alumni('hcwinter2021')
+          +alumni('hcfall2020')
+          +alumni('hcsummer2020')
+          +alumni('hcspring2020')
+          +alumni('winter2020')
+          +alumni('fall2019')
+          +alumni('spring2019')
+          +alumni('winter2019')
+          +alumni('fall2018')
+          +alumni('summer2018')
+          +alumni('spring2018')
+          +alumni('winter2018')
+          +alumni('fall2017')
+      .row
+        .col-sm-12
+
    
