@@ -526,4 +526,8 @@ mixin alumni(cohort, use_compact)
     .cohort.clearfix
       h3 Healthcare Bootcamp Winter 2022-2023
       +alumni_inside(cohort, use_compact)
+  if cohort == 'hcspring2023'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Spring 2022-2023
+      +alumni_inside(cohort, use_compact)
 
