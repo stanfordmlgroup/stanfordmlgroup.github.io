@@ -111,6 +111,11 @@ mixin alumni_inside(cohort, use_compact)
   if cohort == 'climate_bootcamp_phd'
       +dp('Jeremy Irvin', 'phd', false, use_compact)
       +dp('Hao Sheng', 'phd', false, use_compact)
+  if cohort == 'hcfall2023'
+      +dp('Jamil Dhanani', 'ms', false, use_compact)
+      +dp('Harper Hua', 'ms', false, use_compact)
+      +dp('Chih-Ying Liu', 'ms', false, use_compact)
+      +dp('Rui Deng', 'ms', false, use_compact)
   if cohort == 'hcsummer2023'
       +dp('Eva Prakash', 'ms', false, use_compact)
       +dp('Stanley Yang', 'bs', false, use_compact)
@@ -520,7 +525,11 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'hcsummer2023'
     .cohort.clearfix
-      h3 Healthcare Bootcamp Summer 2023-2024
+      h3 Healthcare Bootcamp Summer 2022-2023
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'hcfall2023'
+    .cohort.clearfix
+      h3 Healthcare Bootcamp Fall 2023-2024
       +alumni_inside(cohort, use_compact)
   if cohort == 'hcwinter2022'
     .cohort.clearfix
