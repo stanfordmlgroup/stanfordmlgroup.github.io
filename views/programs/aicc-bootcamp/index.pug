@@ -27,7 +27,7 @@ block content
           //- a.btn.btn-lg.btn-default(href="https://forms.gle/8PX5wd7fQg9iG8yw9") Apply Now
         .col-sm-6.hidden-xs
           +alumni_inside('climate_bootcamp_alumni', 'big_compact')
-          +alumni_inside('climate_bootcamp_phd', 'big_compact')
+          //- +alumni_inside('climate_bootcamp_phd', 'big_compact')
         //- .col-sm-4.col-sm-pull-7
         //-   img(src='/img/aicc-bootcamp.jpg', width="90%")
   section
@@ -123,6 +123,7 @@ block content
           .row
             .col-sm-12
               h2 Bootcamp Cohorts
+              +alumni('ccwinter2024', false)
               +alumni('ccwinter2023', false)
               +alumni('ccfall2022', false)
               +alumni('ccspring2022', false)

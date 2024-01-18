@@ -11,6 +11,7 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Yixing Jiang', 'phd', false, use_compact)
   if cohort == 'bootcamp_alumni'
       //-interleaved
+      +alumni_inside('ccwinter2024', use_compact)
       +alumni_inside('ccwinter2023', use_compact)
       +alumni_inside('hcwinter2023', use_compact)
       +alumni_inside('ccfall2022', use_compact)
@@ -44,6 +45,7 @@ mixin alumni_inside(cohort, use_compact)
       +alumni_inside('winter2018', use_compact)
       +alumni_inside('fall2017', use_compact)
   if cohort == 'climate_bootcamp_alumni'
+      +alumni_inside('ccwinter2024', use_compact)
       +alumni_inside('ccwinter2023', use_compact)
       +alumni_inside('ccfall2022', use_compact)
       +alumni_inside('ccspring2022', use_compact)
@@ -129,6 +131,14 @@ mixin alumni_inside(cohort, use_compact)
       +dp('Lucas Pauker', 'ms', false, use_compact)
       +dp('Xiaoyuan Ni', 'ms', false, use_compact)
       +dp('Xiluo He', 'ms', false, use_compact)
+  if cohort == 'ccwinter2024'
+      +dp('Riya Dulepet', 'ms', false, use_compact)
+      +dp('Emily Liu', 'bs', false, use_compact)
+      +dp('Santino Ramos', 'ms', false, use_compact)
+      +dp('Joyce Chen', 'bs', false, use_compact)
+      +dp('Ines Dormoy', 'bs', false, use_compact)
+      +dp('Jinyoung Kim', 'bs', false, use_compact)
+      +dp('Apoorva Dixit', 'bs', false, use_compact)
   if cohort == 'ccwinter2023'
       +dp('Mabel Jiang', 'ms', false, use_compact)
       +dp('Ishan Sabane', 'ms', false, use_compact)
@@ -402,6 +412,10 @@ mixin alumni(cohort, use_compact)
       +alumni_inside(cohort, use_compact)
   if cohort == 'climate_industry'
       h3 Climate Change Bootcamp Industry Collaborators
+      +alumni_inside(cohort, use_compact)
+  if cohort == 'ccwinter2024'
+    .cohort.clearfix
+      h3 Climate Change Bootcamp Winter 2023-2024
       +alumni_inside(cohort, use_compact)
   if cohort == 'ccwinter2023'
     .cohort.clearfix
