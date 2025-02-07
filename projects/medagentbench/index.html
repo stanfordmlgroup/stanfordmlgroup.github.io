@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MedAgentBench: Dataset for Benchmarking LLMs as Agents in Medical Applications</title>
+    <meta name="description" content="MedAgentBench: Dataset for Benchmarking LLMs as Agents in Medical Applications.">
+    <meta property="og:image" content="https://yourwebsite.com/img/medagentbench.png">
+    <meta name="twitter:image" content="https://yourwebsite.com/img/medagentbench.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/simple-line-icons/css/simple-line-icons.css">
+    <link href="/css/theme.css" rel="stylesheet">
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="/js/analytics.js"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" id="mainNav">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll" href="https://stanfordmlgroup.github.io/">Stanford ML Group</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h1>MedAgentBench: Dataset for Benchmarking LLMs as Agents in Medical Applications</h1>
+                    <p>Yixing Jiang∗, Kameron C. Black∗, Gloria Geng, Danny Park, Andrew Y. Ng, Jonathan H. Chen
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is MedAgentBench? -->
+    <section class="gray">
+        <div class="container">
+            <div class="row">
+                <h1>What is MedAgentBench?</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <p>MedAgentBench is an agent-based frameworks and benchmarks, which can track progress and utilize agent capabilities of large language models within the medical domain. It is the necessary next step to advance and integrate AI systems into clinical workflows and AI healthcare applications.</p>
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-lg btn-default" href="https://arxiv.org/abs/2501.14654">Read The Paper</a>
+                    <p></p>
+                    <a class="btn btn-lg btn-default" href="https://stanfordmlgroup.github.io/">Download the MedAgentBench Dataset</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why MedAgentBench? -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="./img/architecture.png" alt="MedAgentBench Overview">
+                </div>
+                <div class="col-md-6">
+                    <h2>Why MedAgentBench?</h2>
+                  <p>
+                    Recently, large language models (LLMs) have demonstrated significant advancements, particularly in their ability to serve as agents, surpassing their traditional role as chatbots. Additionally, Electronic Medical Records (EMR) Integration API is a crucial tool in the HealthTech industry.
+                    Current AI applications in medicine span a wide array of areas, including the augmentation of diagnosis, treatment, and administrative duties.
+                  </p>
+                  <p>
+                  From simple QA-based chatbots to sophisticated clinical agent systems (CAS), MedAgentBench provides three key functionalities:
+                  1) A standardized, broad evaluation suite: MedAgentBench Dataset.
+                  2) A FHIR-compliant interactive environment for interactions with any agent system via standard API calls.
+                  3) A broad agent suite of state-of-the-art large language models.
+                  </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Information -->
+    <section class="gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2>How is the MedAgentBench dataset structured?</h2>
+                      <p>Benchmark examples are based on real patient cases extracted from a deidentified clinical data warehouse curated by the STARR (STAnford Research Repository) project STARR. The timestamps in the data warehouse are jittered at the patient level. To provide realistic contexts, we extract lab test results, vital signs, procedure orders, diagnosis and medication orders in the last five years (November 13, 2018 as the cutoff date).</p>
+                    <ul>
+                      <li>(1) Patient profiles, cohort, and demographics: We randomly sample 100 patients from a cohort with an inpatient sodium lab test ordered on the morning of November 13, 2023. As protected health information such as medical record numbers (MRNs), names, phone numbers and addresses are removed in the STARR data warehouse. </li>
+                      <li>(2) Lab test results: For each lab test result, we extract these fields: taken time, result time, base name, result value, unit and result flag. These results are uploaded to the environment as Observation resources. </li>
+                      <li>(3) Vital signs: As there is a large number of flowsheet records, we select six specific types of vital signs for inclusion: heart rate, SpO2, respiratory rate, FiO2, blood pressure and temperature. Besides measurement type and values, recording timestamps are also extracted</li>
+                      <li>(4) Procedure orders: The following fields are extracted for procedure orders: order date, CPT code, procedure description, and quantity.</li>
+                      <li>(5) Diagnosis: We extract the following fields for previous diagnosis: diagnosis name, ICD10 code and start date.</li>
+                      <li>(6) Medication orders: The following fields are extracted for medication orders: order date, medication description, route, frequency, dosage and unit.</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5">
+                    <table class="table performanceTable">
+                      <p style="text-align:center;">Table 1. Characteristics of patient cohort</p>
+                      <thead>
+                        <tr>
+                          <th style="text-align:center;">Name</th>
+                          <th style="text-align:center;">Value</th>
+                        </tr>
+                      </thead>
+                        <tbody>
+                          <tr>
+                            <td style="text-align:center;">Unique individuals</td>
+                            <td style="text-align:center;">100</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align:center;">Age (avg. ± SD)</td>
+                            <td style="text-align:center;">58.15 ± 19.82</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align:center;">% Female</td>
+                            <td style="text-align:center;">47%</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align:center;">Number of records (total)</td>
+                            <td style="text-align:center;">785,207</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align:center;">Number of Observation records</td>
+                            <td style="text-align:center;">563,426</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align:center;">Number of Procedure records</td>
+                            <td style="text-align:center;">124,969</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align:center;">Number of Condition records</td>
+                            <td style="text-align:center;">74,821</td>
+                          </tr>
+                          <tr>
+                            <td style="text-align:center;">Number of MedicationRequest records</td>
+                            <td style="text-align:center;">21,991</td>
+                          </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Benchmarks -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2>How well do AI agents perform on MedAgentBench?</h2>
+                  <p>Our dataset can be directly downloaded from <a href="https://github.com/stanfordmlgroup/MedAgentBench">Our Github Repository</a>. Please refer to <a href="https://github.com/stanfordmlgroup/MedAgentBench">Our Github Instructions</a> for how to read and use the data.</p>
+                </div>
+
+                <div class="col-md-5">
+                  <table class="table performanceTable">
+                    <thead>
+                      <tr>
+                        <th style="text-align:center;">Model</th>
+                        <th style="text-align:center;">Size</th>
+                        <th style="text-align:center;">Form</th>
+                        <th style="text-align:center;">Overall SR</th>
+                        <th style="text-align:center;">Query SR</th>
+                        <th style="text-align:center;">Action SR</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align:center;">GPT-4o</td>
+                        <td style="text-align:center;">N/A</td>
+                        <td style="text-align:center;">API</td>
+                        <td style="text-align:center;"><strong>72%</strong></td>
+                        <td style="text-align:center;">76%</td>
+                        <td style="text-align:center;">68%</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center;">GPT-4o-mini</td>
+                        <td style="text-align:center;">N/A</td>
+                        <td style="text-align:center;">API</td>
+                        <td style="text-align:center;">71%</td>
+                        <td style="text-align:center;">66%</td>
+                        <td style="text-align:center;"><strong>76%</strong></td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center;">Claude 3.5 Sonnet v2</td>
+                        <td style="text-align:center;">N/A</td>
+                        <td style="text-align:center;">API</td>
+                        <td style="text-align:center;">70%</td>
+                        <td style="text-align:center;"><strong>84%</strong></td>
+                        <td style="text-align:center;">56%</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center;">DeepSeek-V3</td>
+                        <td style="text-align:center;">685B</td>
+                        <td style="text-align:center;">Open</td>
+                        <td style="text-align:center;">56%</td>
+                        <td style="text-align:center;">60%</td>
+                        <td style="text-align:center;">52%</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center;">Qwen2.5</td>
+                        <td style="text-align:center;">72B</td>
+                        <td style="text-align:center;">Open</td>
+                        <td style="text-align:center;">53%</td>
+                        <td style="text-align:center;">44%</td>
+                        <td style="text-align:center;">62%</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center;">Llama 3.3</td>
+                        <td style="text-align:center;">70B</td>
+                        <td style="text-align:center;">Open</td>
+                        <td style="text-align:center;">49%</td>
+                        <td style="text-align:center;">54%</td>
+                        <td style="text-align:center;">44%</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center;">Gemma2</td>
+                        <td style="text-align:center;">27B</td>
+                        <td style="text-align:center;">Open</td>
+                        <td style="text-align:center;">28%</td>
+                        <td style="text-align:center;">40%</td>
+                        <td style="text-align:center;">16%</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center;">Gemini 2.0 Flash</td>
+                        <td style="text-align:center;">N/A</td>
+                        <td style="text-align:center;">API</td>
+                        <td style="text-align:center;">19%</td>
+                        <td style="text-align:center;">32%</td>
+                        <td style="text-align:center;">6%</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center;">Mistral v0.3</td>
+                        <td style="text-align:center;">7B</td>
+                        <td style="text-align:center;">Open</td>
+                        <td style="text-align:center;">2%</td>
+                        <td style="text-align:center;">4%</td>
+                        <td style="text-align:center;">0%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gray">
+        <div class="container">
+            <div class="row">
+                <h1>To learn more, read <a href="https://arxiv.org/abs/2501.14654">our publication</a> presented at the IJCAI-ECAI 2022 Workshop on Complex Data Challenges in Earth Observation.</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                  <p>If you have questions about our work, contact us at:
+                    jiang6@cs.stanford.edu and kb633@stanford.edu and gll2027@stanford.edu</p>
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-lg btn-default" href="https://arxiv.org/abs/2501.14654">Read The Paper</a>
+                    <p></p>
+                    <a class="btn btn-lg btn-default" href="https://stanfordmlgroup.github.io/">Download the MedAgentBench Dataset</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="/"><img src="../../img/stanfordmlgrouplogo.svg"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/theme.js"></script>
+
+</body>
+</html>
