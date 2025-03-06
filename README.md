@@ -5,7 +5,7 @@
 - Notify an admin to add you to the group!
 
 ## To run (locally)
-- Install npm (v5.6.0) and node (v9.11.2)
+- Install npm (v5.6.0) and node (v10.24.1)
 - npm install -g gulp
 - npm install
 - gulp
