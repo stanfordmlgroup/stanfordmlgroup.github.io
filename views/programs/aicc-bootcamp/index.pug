@@ -20,30 +20,41 @@ block content
     .container
       .row
         .col-sm-6
-          h3 The AI for Climate Change Bootcamp provides Stanford students an opportunity to do cutting-edge research at the intersection of AI and climate change. Students receive training from PhD students and bootcamp faculty to do interdisciplinary research on high impact problems.
-          p Projects in the bootcamp have included work in a variety of climate-relevant subfields including:
-          ol 
-            li Energy on detecting solar, wind, and oil and gas infrastructure in satellite imagery
-            li Earth science on predicting methane emissions from natural wetlands
-            li Deforestation on classifying the drivers of forest loss events using satellite imagery
-            li Transportation on detecting travel infrastructure in urban areas using street view and aerial imagery
-            li Atmospheric science on predicting the effects of interventions on the climate.
-          p Our academic collaborators include faculty at Stanford University, UC Berkeley, the University of Illinois Chicago, the University of British Columbia, and the University of Oxford.
-          p AICC bootcamp alumni have pursued PhD programs at Stanford, MIT, Cambridge, and Harvard University, and assumed industry roles at OpenAI, Scale AI, Google X, Meta Research, and Microsoft Research.
+          h3 The AI for Climate Change Bootcamp trained Stanford students to do cutting-edge AI research for addressing climate challenges.
+          p Projects spanned remote sensing, energy, Earth system science, deforestation, transportation, and atmospheric science, with many published in top AI conferences (e.g. ICLR, NeurIPS, ICML) and applied journals (e.g. Nature Communications).
+          //- ol 
+            //- li Energy on detecting solar, wind, and oil and gas infrastructure in satellite imagery
+            //- li Earth science on predicting methane emissions from natural wetlands
+            //- li Deforestation on classifying the drivers of forest loss events using satellite imagery
+            //- li Transportation on detecting travel infrastructure in urban areas using street view and aerial imagery
+            //- li Atmospheric science on predicting the effects of interventions on the climate.
+          p Our academic collaborators included faculty at Stanford University, UC Berkeley, the University of Illinois Chicago, the University of British Columbia, and the University of Oxford.
+          p AICC bootcamp alumni pursued PhD programs at Stanford, MIT, Cambridge, and Harvard University, and assumed industry roles at OpenAI, Scale AI, Google X, Meta Research, and Microsoft Research.
           //- a.btn.btn-lg.btn-default(href="https://forms.gle/8PX5wd7fQg9iG8yw9") Apply Now
         .col-sm-6.hidden-xs
-          +alumni_inside('climate_bootcamp_alumni', 'big_compact')
+          .image-grid
+            +alumni_inside('climate_bootcamp_alumni', true)
           //- +alumni_inside('climate_bootcamp_phd', 'big_compact')
         //- .col-sm-4.col-sm-pull-7
         //-   img(src='/img/aicc-bootcamp.jpg', width="90%")
   section
     .container
       .row
-        .col-sm-6
+        .col-sm-12
+          h2 Program
+          p 
+            | The AICC bootcamp was an intense program where students worked on high-impact research problems at the intersection of AI and climate change. Students worked closely with PhD students in Professor Andrew Ng's lab as well as faculty members and industry experts in climate change-related fields.
+          p
+            | The program included lectures on machine learning methods and their application to climate change, as well as reading groups covering state-of-the-art research at the intersection of AI and climate change. Students learned about a variety of AI topics relevant to climate change with an emphasis on geospatial applications. Students had the opportunity to write research papers and create new climate AI technologies, several of which are featured under 
+            a(href="#past-bootcamp-projects") Past Bootcamp Projects 
+            | below.
+        .col-sm-12
           div(class="clearfix")
-            h3 Teaching Team
+            h3 Founding Team
             //- +alumni_inside('climate_bootcamp_phd', 'medium')
             +dp('Jeremy Irvin', 'phd', false, 'medium')
+            +dp('Sharon Zhou', 'phd', false, 'medium')
+            +dp('Hao Sheng', 'phd', false, 'medium')
             +dp('Andrew Ng', 'prof', false, 'medium')
           div(class="clearfix")
             h3 Climate Change Faculty
@@ -52,18 +63,11 @@ block content
             h3 Nonprofit and Industry Collaborators
             +alumni_inside('climate_nonprofit', 'medium')
             +alumni_inside('climate_industry', 'medium')
-        .col-sm-6
-          h2 Program
-          p 
-            | The AICC bootcamp is an intense two-quarter program where students work on high-impact research problems at the intersection of AI and climate change. Students work closely with PhD students in Professor Andrew Ng's lab and with faculty members in climate change-related fields. Students also collaborate with climate change experts from industry.
-          p
-            | The program includes teaching team and guest lectures on machine learning methods and tools and their application to climate change, as well as reading groups covering state-of-the-art research at the intersection of AI and climate change. Students learn about a variety of AI topics relevant to climate change with an emphasis on remote sensing applications.
-          .applications
-            h2 Applications
-            p Students with a background in artificial intelligence are encouraged to apply. Our group’s primary focus is doing academic work that makes an impact--that is, we emphasize doing work that directly helps mitigate and adapt to climate change--so please apply only if you similarly have an impact-oriented mindset.
+          //- .applications
+            //- h2 Applications
+            //- p Students with a background in artificial intelligence are encouraged to apply. Our group’s primary focus is doing academic work that makes an impact--that is, we emphasize doing work that directly helps mitigate and adapt to climate change--so please apply only if you similarly have an impact-oriented mindset.
             //- p Applications for the Spring+Summer/Fall 2022 bootcamp are now open. Students have the option to do their second quarter in the Summer or Fall.
             //- p Applications for the Summer 2024 bootcamp are now open. Students may have the option to a second quarter in the Fall.
-            p Applications for the Summer 2024 bootcamp have closed.
             //- p Applications for the Winter+Spring 2023-2024 bootcamp are now open.
             //- p Applications for the Winter-Spring 2023-2024 bootcamp have closed.
             //- p Applications for the Winter-Spring 2022-2023 bootcamp have closed. This is the last AICC bootcamp of the year.
@@ -104,40 +108,43 @@ block content
   section.gray
     .container
       .row
-        .col-sm-4
-          h3 Past Bootcamp Projects
-          ul.list-unstyled
-            li
+        .col-sm-12
+          h3#past-bootcamp-projects Past Bootcamp Projects
+          .row
+            .col-md-4.col-sm-6.mb-2
+              a.btn(href="https://arxiv.org/abs/2512.02268") SPF
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://arxiv.org/abs/2410.06234") TEOChat
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://arxiv.org/abs/2405.09798") Many-Shot Multimodal ICL
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://www.nature.com/articles/s41467-024-50334-9") Well Pad Mapping
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://authors.elsevier.com/a/1iveH3Q8oQKslR") ForestNet Deployed
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://arxiv.org/abs/2401.14486") CloudTracks
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="http://arxiv.org/abs/2312.02199") USat
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="http://arxiv.org/abs/2312.02200") Mislabel Detection
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://arxiv.org/abs/2311.17449") WSSOD
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="/projects/meter-ml") METER-ML
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://journals.sagepub.com/doi/abs/10.1177/23998083221112157") Crosswalk Mapping
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://www.sciencedirect.com/science/article/abs/pii/S0168192321002124") Methane Gapfilling
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="/projects/forestnet") ForestNet
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="/projects/solar") Solar Forecasting
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="/projects/ognet") OGNet
-            li
+            .col-md-4.col-sm-6.mb-2
               a.btn(href="https://www.climatechange.ai/papers/neurips2019/5/paper.pdf") DeepWind
-        .col-sm-8
+  section
+    .container
           .row
             .col-sm-12
               h2 Bootcamp Cohorts
